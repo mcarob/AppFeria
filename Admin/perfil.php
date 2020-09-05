@@ -173,7 +173,11 @@ include('Header.php');
                             console.log(r);
 
                             if (r == 0) {
-                              
+                                var unique_id = $.gritter.add({
+                                    title: 'Perfil',
+                                    text: 'Se ha registrado con exito.'
+                                });
+                                location.href="index.php"
                                 
                             } else {
 
