@@ -128,7 +128,7 @@ include('Header.php');
                                     </div>
 
                                     <div class="d-flex justify-content-end mt-5">
-                                        <input type='submit' value='ENVIAR'class="btn btn-primary mb-2 btn-pill"  />
+                                        <input type='submit' value='Actualizar Datos'class="btn btn-primary mb-2 btn-pill"  />
                                     </div>
 
                                 </form>
