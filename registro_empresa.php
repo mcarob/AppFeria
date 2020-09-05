@@ -1,5 +1,5 @@
 <form autocomplete="off">
-
+<!--    esto es algo comentado---> 
   <div class="wizard-card ct-wizard-green">
     <div class="picture-container">
       <div class="picture">
