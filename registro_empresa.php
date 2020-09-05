@@ -6,7 +6,7 @@
         <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
         <input type="file" id="wizard-picture">
       </div>
-      <h6>Elegir Imágen</h6>
+      <h6>Elegir Perra</h6>
      <!-- Elegir Logo --> 
      <!-- Elegir Logo 2--> 
      <!-- Elegir Logo 1 --> 
