@@ -9,6 +9,7 @@
       <h6>Elegir Imágen</h6>
      <!-- Elegir Logo --> 
      <!-- Elegir Logo 2--> 
+     <!-- Elegir Logo 1 --> 
     </div>
   </div>
   <br>
