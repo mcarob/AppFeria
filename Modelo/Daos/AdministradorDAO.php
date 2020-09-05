@@ -81,7 +81,17 @@ class AdministradorDAO
         return $administador;
     }
 
-    
+    public function editarPerfil(Administrador $administrador){
+        $sentencia = $this->con->prepare("UPDATE administrador SET 
+        COD_USUARIO=".$administrador->getCodUsuario().",
+        NOMBRE_ADMINISTRADOR='".$administrador->getNomAdministrador()."',
+        APELLIDO_ADMINISTRADOR='".$administrador->getApellidoAdministrador()."',
+        CORREO_ADMINISTRADOR='".$administrador->getCorreoAdministrador()."'      
+        WHERE COD_ADMINISTRADOR =".$administrador->getCodAdministrador());
+        
+        $res=$sentencia->execute();
+        return $res;
+    }
 
 
 }
