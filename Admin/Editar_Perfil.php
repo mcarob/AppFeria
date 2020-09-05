@@ -1,7 +1,8 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/Proyecto_Feria/AppFeria/Controlador/ControladorAdministrador.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/Proyecto_Feria/AppFeria/Modelo/Entidades/Administrador.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/controladorAdministrador.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/controladorUsuario_Administrador.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Administrador.php');
 
 
 

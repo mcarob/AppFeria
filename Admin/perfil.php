@@ -1,9 +1,9 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/Proyecto_Feria/AppFeria/Controlador/ControladorAdministrador.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/Proyecto_Feria/AppFeria/Controlador/user.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/Proyecto_Feria/AppFeria/Modelo/Daos/AdministradorDAO.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/Proyecto_Feria/AppFeria/Modelo/Entidades/Administrador.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorAdministrador.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/AdministradorDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Administrador.php');
 
 session_start();
 if (!isset($_SESSION['user'])) {
