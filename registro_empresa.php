@@ -7,10 +7,6 @@
         <input type="file" id="wizard-picture">
       </div>
       <h6>Elegir Logo</h6>
-      <h6>Elegir Imagen</h6>
-     <!-- Elegir Logo --> 
-     <!-- Elegir Logo 2--> 
-     <!-- Elegir Logo 1 --> 
     </div>
   </div>
   <br>
