@@ -54,8 +54,9 @@
     <span class="input-group-text">
       <i class="material-icons">email</i>
     </span>
-  </div>
-  <input type="text"  autocomplete="new" class="form-control" placeholder="Correo Electronico" aria-label="Username">
+  </div>  
+  <input type="text"  autocomplete="off" class="form-control" placeholder="Correo Electronico" aria-label="Username" style="display:none;">
+  <input type="text"  autocomplete="off" class="form-control" placeholder="Correo Electronico" aria-label="Username">
   <div class="input-group-append">
     <span class="input-group-text" id="inputGroupAppend">@unbosque.edu.co</span>
   </div>
