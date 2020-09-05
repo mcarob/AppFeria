@@ -126,7 +126,7 @@
               <ul class="collapse" id="tables" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a class="sidenav-item-link" href="graficos.php">
+                    <a class="sidenav-item-link" href="BuscarCandidatos.php">
                       <span class="nav-text">Buscar Candidatos</span>
 
                     </a>
