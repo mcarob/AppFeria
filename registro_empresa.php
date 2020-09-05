@@ -1,4 +1,12 @@
-
+<div class="wizard-card ct-wizard-green">
+                  <div class="picture-container">
+                    <div class="picture">
+                      <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
+                      <input type="file" id="wizard-picture">
+                    </div>
+                    <h6>Elegir Logo</h6>
+                  </div>
+                </div>
                 <br>
                 <div class="input-group">
                   <div class="input-group-prepend">
