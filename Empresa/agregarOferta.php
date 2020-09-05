@@ -240,6 +240,7 @@ $fecha_actual = date("Y-m-d")
                             <div class="form-group mb-4">
                                 <label for="des">Descripción</label>
                                 <textarea type="" class="form-control" id="descripcion" name="descripcion" value=""></textarea>
+                                <input type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value="">
                             </div>
 
 
