@@ -100,8 +100,7 @@ $lista = $objeto->darListaEstudianteActivos();
                         </div>
                         
                         
-                        <a hreF="Reportes/EstudiantesPDF.php" class="btn btn-outline-primary">PDF</a>
-                        <a hreF="Reportes/EstudiantesExcel.php" class="btn btn-outline-primary">Excel</a>
+        
   
                     </div>
                 </div>
