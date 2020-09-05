@@ -157,13 +157,13 @@
                     </a>
                   </li>
                   <li>
-                    <a class="sidenav-item-link" href="graficos.php">
+                    <a class="sidenav-item-link" href="GPracticantesXempresa.php">
                       <span class="nav-text">Practicantes por Empresa</span>
 
                     </a>
                   </li>
                   <li>
-                    <a class="sidenav-item-link" href="graficos.php">
+                    <a class="sidenav-item-link" href="GVacantesEstado.php">
                       <span class="nav-text">Vacantes Legalizadas</span>
 
                     </a>
