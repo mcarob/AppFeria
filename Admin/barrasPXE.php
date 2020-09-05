@@ -3,7 +3,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 $claseCon = new DB();
 $con = $claseCon->connect();
-$sentencia = $con->prepare("SELECT * from vacantes_legalizadas");
+$sentencia = $con->prepare("SELECT * from practicantesXempresa");
 $sentencia->execute();
 $valoresY = array();
 $valoresX = array();
@@ -13,14 +13,14 @@ $valoresX = array();
 
 while ($ver = $sentencia->fetch()) {
 	$valoresY[] = $ver[1]; //monto
-	$valoresX[] = $ver[0]; //fecha
+	$valoresX[] = $ver[0]; //empresa
 }
 
 $datosX = json_encode($valoresX);
 $datosY = json_encode($valoresY);
 ?>
 
-<div id="graficaBarras"></div>
+<div id="graficaEmpresas"></div>
 
 <script type="text/javascript">
 	function crearCadenaBarras(json) {
@@ -56,5 +56,5 @@ $datosY = json_encode($valoresY);
 		bargap: 0.05
 	};
 
-	Plotly.newPlot('graficaBarras', data, layout);
+	Plotly.newPlot('graficaEmpresas', data, layout);
 </script>
