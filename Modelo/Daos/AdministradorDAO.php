@@ -25,18 +25,7 @@ class AdministradorDAO
         
 
     }
-
-
-  
-
-    public function EditarPerfil($cod_administrador, $correo_nuevo, $nombre, $apellido, $correo, $contraseña){
-        $sql = "UPDATE ADMINISTRADOR SET correo_Administrador='".$correo_nuevo."' and nombre_administrador='".$nombre."' 
-        and apellido_administrador='".$apellido."' and correo_administrador='".$correo."' WHERE COD_ADMINISTRADOR= $cod_administrador";
-        $result =mysqli_query($this->con, $sql);
-        return mysqli_fetch_all($result);
-    }
-
-
+ 
     public function devolverAdministrador($codigo_usuario){
 
         $query=$this->con->prepare('SELECT * FROM administrador WHERE COD_USUARIO=:user');
@@ -45,28 +34,6 @@ class AdministradorDAO
             foreach ($query as $kk) {
                 $administrador_devolver = new Administrador($kk['COD_ADMINISTRADOR'],$kk['COD_USUARIO'],$kk['NOMBRE_ADMINISTRADOR'],$kk['APELLIDO_ADMINISTRADOR'],$kk['CORREO_ADMINISTRADOR']);
                  return $administrador_devolver;
-            }
-        }
-    }
-
-    public function editarAdministrador(Administrador $administador)
-    {
-        $query=$this->con->prepare('UPDATE administrador WHERE COD_USUARIO=:user');
-
-        
-        $result = $sql = "UPDATE administrador SET NOMBRE_ADMINISTRADOR='" . $administrador->getNomAdministrador() . "', CORREO_ADMINISTRADOR='" . $administrador->getCorreoAdministrador() . "' WHERE COD_ADMINISTRADOR =" . $cliente->getCod_Administrador();
-        $result = mysqli_query($this->con, $sql);
-        return pg_fetch_all($result);
-    }
-
-    public function editarPerfilAdministrador($codigo_usuario){
-
-        $query=$this->con->prepare('UPDATE administrador WHERE COD_USUARIO=:user');
-        $query->execute(['user'=>$codigo_usuario]);
-        if($query->rowCount()){
-            foreach ($query as $kk) {
-                $editar_administrador = new Administrador($kk['COD_ADMINISTRADOR'],$kk['COD_USUARIO'],$kk['NOMBRE_ADMINISTRADOR'],$kk['APELLIDO_ADMINISTRADOR'],$kk['CORREO_ADMINISTRADOR']);
-                 return $editar_administrador;
             }
         }
     }
