@@ -61,12 +61,12 @@
             <div class="tab-content" id="myTabContent4">
               <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel" aria-labelledby="home3-tab">
                 
-              <?php include_once 'registro_estudiante.php'; ?>
+              <?php include_once 'registro_empresa.php'; ?>
 
                 <!--  fin del primer tab-->
               </div>
               <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel" aria-labelledby="profile3-tab">
-                rojo
+              <?php include_once 'registro_estudiante.php'; ?>
               </div>
             </div>
           </div>
