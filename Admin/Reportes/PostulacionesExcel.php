@@ -36,7 +36,7 @@ $lista = $objeto->darListaPostulacionesTotal();
             <td><?php echo utf8_decode ($key[5]); ?></td>
             <td><?php echo utf8_decode($key[2]); ?></td>
             <td><?php echo utf8_decode($key[3]); ?></td>
-            <td><?php echo utf8_decode($key[4]); ?></td>
+            <td><?php echo utf8_decode($key[7]); ?></td>
             <td><?php echo utf8_decode($key[4]); ?></td>
             <td><?php echo utf8_decode($key[6]); ?></td>
 

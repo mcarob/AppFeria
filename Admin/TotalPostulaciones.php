@@ -74,7 +74,7 @@ include('menuAdmi.php')
                                         echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[2] . "</td>");
                                         echo ("<td>" . $key[3] . "</td>");
-                                        echo ("<td>" . $key[4] . "</td>");
+                                        echo ("<td>" . $key[7] . "</td>");
                                         echo ("<td>" . $key[4] . "</td>");
                                         echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[6] . "</span></td>");
 
