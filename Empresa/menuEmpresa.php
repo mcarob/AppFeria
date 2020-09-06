@@ -97,7 +97,7 @@
               <ul class="collapse" id="icons" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a class="sidenav-item-link" href="material-icon.html">
+                    <a class="sidenav-item-link" href="AdminSolicitudes.php">
                       <span class="nav-text">Administrar Solicitudes</span>
 
                     </a>

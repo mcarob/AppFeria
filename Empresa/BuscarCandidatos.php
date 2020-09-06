@@ -51,11 +51,6 @@ $lista = $objeto->darListaEstudianteActivos();
         <div class="row">
             <div class="col-12">
                 <div class="card card-default">
-                    <div class="col-md-4">
-
-                        <br>
-                    </div>
-
 
 
                     <div class="card-body">
@@ -63,13 +58,12 @@ $lista = $objeto->darListaEstudianteActivos();
                             <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
+                                        <th>Nombre estudiante</th>
+                                        <th>Apellido estudiante</th>
                                         <th>Cédula</th>
                                         <th>Correo</th>
                                         <th>Carrera</th>
                                         <th>Semestre</th>
-
                                     </tr>
                                 </thead>
 
@@ -84,6 +78,7 @@ $lista = $objeto->darListaEstudianteActivos();
                                         echo ("<td>" . $key[6] . "</td>");
                                         echo ("<td>" . $key[7] . "</td>");
 
+                                        
                                     ?>
 
 
@@ -98,15 +93,14 @@ $lista = $objeto->darListaEstudianteActivos();
                                 </tbody>
                             </table>
                         </div>
-                        
-                        
-        
-  
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
 
 
 
