@@ -3,10 +3,7 @@
   if(isset($_SESSION['user'])){
     $user = new Usuario();
     $user->setUser($_SESSION['user']);
-    }
-
-
-  
+    }  
   
   ?>
   
