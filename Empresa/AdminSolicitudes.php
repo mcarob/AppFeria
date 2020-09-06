@@ -41,19 +41,19 @@ include('menuEmpresa.php')
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Empresas inscritas</h1>
+            <h1>Postulaciones de la empresa</h1>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
                     <li class="breadcrumb-item">
-                        <a href="IndexAdmi.php">
+                        <a href="index.php">
                             <span class="mdi mdi-home"></span>
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        Empresas
+                        Ofertas
                     </li>
-                    <li class="breadcrumb-item" aria-current="page">Autorizar registros</li>
+                    <li class="breadcrumb-item" aria-current="page">Administrar solicitudes</li>
                 </ol>
             </nav>
 
