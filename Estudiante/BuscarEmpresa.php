@@ -133,13 +133,6 @@ include('menuEstudiante.php')
 
 
 
-
-
-
-
     <?php
-
-
     include('Footer.php')
-
     ?>     

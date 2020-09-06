@@ -47,7 +47,7 @@ class EstudianteDAO
         if($query->rowCount()){
             foreach ($query as $kk) {
                 $estudiante_devolver = new Estudiante($kk['COD_ESTUDIANTE'],$kk['CED_ESTUDIANTE'],$kk['CORREO_ESTUDIANTE'],$kk['COD_USUARIO'],$kk['NOMBRE_ESTUDIANTE'],$kk['APELLIDO_ESTUDIANTE'],$kk['COD_PROGRAMA_ACADEMICO'],$kk['SEMESTRE_ESTUDIANTE']);
-                 return $estudiante_devolver;
+                return $estudiante_devolver;
             }
         }
     }

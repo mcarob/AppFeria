@@ -14,7 +14,7 @@ class Estudiante{
     
 
     public function __construct($codEstudiante,$cedEstudiante,$correoEstudiante,$codUsuario,$nombreEstudiante,
-    $apellidoEstudiante,$codProgamaAcademico,$semestreEstudiante,$correoPersonal)
+	$apellidoEstudiante,$codProgamaAcademico,$semestreEstudiante)
     {
         $this->codEstudiante = $codEstudiante;
         $this->cedEstudiante = $cedEstudiante;
@@ -24,9 +24,7 @@ class Estudiante{
         $this->apellidoEstudiante = $apellidoEstudiante;
         $this->codProgamaAcademico = $codProgamaAcademico;
         $this->semestreEstudiante = $semestreEstudiante;
-        $this->correoPersonal = $correoPersonal;
-       
-
+    
     }
 
 
