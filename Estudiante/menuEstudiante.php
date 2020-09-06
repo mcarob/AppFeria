@@ -135,35 +135,6 @@
             
 
 
-
-
-
-            <!-- <li class="has-sub">
-              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps" aria-expanded="false" aria-controls="maps">
-                <i class="mdi mdi-google-maps"></i>
-                <span class="nav-text">Maps</span> <b class="caret"></b>
-              </a>
-              <ul class="collapse" id="maps" data-parent="#sidebar-menu">
-                <div class="sub-menu">
-                  <li>
-                    <a class="sidenav-item-link" href="google-map.html">
-                      <span class="nav-text">Google Map</span>
-
-                    </a>
-                  </li>
-                  <li>
-                    <a class="sidenav-item-link" href="vector-map.html">
-                      <span class="nav-text">Vector Map</span>
-
-                    </a>
-                  </li>
-
-                </div>
-              </ul>
-            </li> -->
-
-
-
           </ul>
 
         </div>
