@@ -101,8 +101,8 @@ include('Header.php');
 
                                         <div class="form-group mb-4">
                                             <label for="email">Camara Y Comercio</label>
-                                            <input type="file" class="custom-file-input" name="camaraComercio" id="camaraComercio" value="<?php echo($empresa->getCamaraComercio()) ?>" >
-                                            <label class="custom-file-label" for="coverImage">Seleccione un archivo...</label>
+                                            <input type="file" class="form-control" name="camaraComercio" id="camaraComercio" value="<?php echo($empresa->getCamaraComercio()) ?>" >
+                                            <!--<label class="custom-file-label" for="coverImage">Seleccione un archivo...</label>-->
                                                 <div class="invalid-feedback"></div>
 
                                         </div>
