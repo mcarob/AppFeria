@@ -59,8 +59,8 @@ class PromocionPostulacionDAO
         return $respuesta;
     }
 
-    public function editarMotivo($cod,$estado){
-        $sentencia=$this->con->prepare("UPDATE promocion_postulacion set COD_ESTADO_PROCESO=".$estado." WHERE COD_PROMOCION_POSTULACION=".$cod);
+    public function editarMotivo($cod,$motivo){
+        $sentencia=$this->con->prepare("UPDATE promocion_postulacion set motivo_resultado='".$motivo."' WHERE COD_PROMOCION_POSTULACION=".$cod);
         $respuesta=  $sentencia->execute();
         return $respuesta;
     }

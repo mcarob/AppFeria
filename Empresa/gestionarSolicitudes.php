@@ -5,8 +5,6 @@ $cPromocionLab = new ControladorPostulacion();
 
 
 if (isset($_GET['action'])) {
-    echo("entro a 8");
-    echo($_GET['action']);
     switch ($_GET['action']) {
         case 'leer':
            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],2);
@@ -24,9 +22,13 @@ if (isset($_GET['action'])) {
             echo ($r);
            }
         break;
+
         case 'rechazar':
-            
-            echo $r=$cPromocionLab->cambiarEstado($_GET['codigo'],4);
+            $datos=array(
+                $_POST["motivo"]
+            );
+            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],4);
+            echo ($cPromocionLab->registrarMotivo($_GET['codigo'], $datos[0]));
             
         break;
         case 'formalizar':

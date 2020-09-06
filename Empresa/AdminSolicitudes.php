@@ -104,7 +104,7 @@ include('menuEmpresa.php')
                                         }
                                         if ($key["COD_ESTADO_PROCESO"] == "3") {
                                             echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='formalizar(" . '"' . $key[0] . '"' . ")'>Formalizar</button>
-                                            <button type='button' class='mb-1 btn btn-danger' onclick='rechazar(" . '"' . $key[0] . '"' . ")'  data-toggle='modal' data-target='#exampleModalForm'>Rechazar</button></td>");
+                                            <button type='button' class='mb-1 btn btn-danger' data-toggle='modal' data-target='#exampleModalForm'>Rechazar</button></td>");
                                         }
 
                                         $cod_postulacion=$key[0];
@@ -142,7 +142,7 @@ include('menuEmpresa.php')
                    
                 </div>
                 <div class="modal-body">
-                    <form method="POST">
+                    <form method="POST" id='formAgregarOf'>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Motivo de la decisión: </label>
                             <input type="text" class="form-control" name="motivo" id="motivo" aria-describedby="emailHelp" >
@@ -197,10 +197,9 @@ include('menuEmpresa.php')
             data: datos,
             url: 'gestionarSolicitudes.php?action=' + "rechazar&" + "codigo=" + cod,
             success: function(r) {
-
                 console.log(r);             
                 if (r == 1) {
-                window.location.href = "Ofertas.php";
+                window.location.href = "AdminSolicitudes.php";
                 } else {
 
                 }
