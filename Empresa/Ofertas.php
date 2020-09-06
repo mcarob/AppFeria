@@ -7,13 +7,23 @@ if (!isset($_SESSION['user'])) {
     header("location: ../index.php");
 }
 
-?>
-
-
-<?php
 
 include('menuEmpresa.php');
 include('Header.php');
+
+
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
+
+$empresa = new Usuario();
+$empresa->setUser($_SESSION['user']);
+$cod_empresa= $empresa->darCodigo();
+
+$conPromocion=new ControladorPromocion();
+$listaVacantes=$conPromocion->darVacantase($cod_empresa);
+
+
+
 ?>
 
 
@@ -43,16 +53,19 @@ include('Header.php');
 
         <div class="card card-default">
             <div class="card-header card-header-border-bottom">
-                <h2>Ecopetrol </h2>
             </div>
-            <div class="card-body">
+            <?php
+            foreach ($listaVacantes as $fila) {
+                
+            ?>
+            <div class="card-body" >
                 <div class="card-deck">
+                
                     <div class="card">
                         <img class="card-img-top" src="../Imagenes/ecopetrol.jpg" width="150" height="200" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Ingeniero de sistemas</h5>
-                            <p class="card-text pb-3" style="text-align:justify;">Se solicita un ingeniero de sistemas con dos vidas pasadas de 
-                                experiencia laboral, se pagan dos horas
+                            <h5 class="card-title text-primary"><?php echo $fila[13] ?></h5>
+                            <p class="card-text pb-3" style="text-align:justify;"><?php echo $fila[1] ?>
                             </p>
 
 
@@ -60,36 +73,12 @@ include('Header.php');
                         
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-outline-primary">Eliminar</button>
-                            <a href="editarOferta.php" class="btn btn-outline-primary">Editar</a>
+                            <button type="button" class="btn btn-outline-primary" onclick="darInformacion(<?php echo $fila[0]?>)" >Editar</button>
                         </div>
                     </div>
-                    <div class="card">
-                        <img class="card-img-top" src="../Imagenes/ecopetrol.jpg" width="150" height="200" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Card Title</h5>
-                            <p class="card-text pb-3">This card has supporting text below as a natural lead-in to additional content.</p>
-
-                        </div>
-
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-outline-primary">Eliminar</button>
-                            <a href="editarOferta.php" class="btn btn-outline-primary">Editar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="../Imagenes/ecopetrol.jpg" width="150" height="200" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Card Title</h5>
-                            <p class="card-text pb-3">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer
-                                content than the first to show that equal height action.</p>
-                        </div>
-
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-outline-primary">Eliminar</button>
-                            <a href="editarOferta.php" class="btn btn-outline-primary">Editar</a>
-                        </div>
-                    </div>
-
+            <?php
+            }
+            ?>    
                     
                 </div>
             </div>
@@ -104,3 +93,10 @@ include('Header.php');
     <?php
     include('Footer.php')
     ?>
+
+    <script>
+    function darInformacion(cod_vacante) {
+      
+       window.location.href="editarOferta.php?action="+cod_vacante;
+       }
+    </script>

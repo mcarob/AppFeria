@@ -44,6 +44,19 @@ class ContactoEmpresaDAO extends DB
             }
     }
 }
+
+    public function editarPerfil(ContactoEmpresa $ContactoEmpresa){
+        $sentencia = $this->con->prepare("UPDATE contacto_empresa SET 
+        NOM_CONTACTO='".$ContactoEmpresa->getNomContacto()."',
+        APELLIDO_CONTACTO='".$ContactoEmpresa->getApellidoContacto()."',
+        TELEFONO_CONTACTO='".$ContactoEmpresa->getTelefonoContacto()."',
+        CARGO_CONTACTO='".$ContactoEmpresa->getCargoContacto()."',
+        CORREO_CONTACTO='".$ContactoEmpresa->getCorreoContacto()."'            
+        WHERE COD_CONTACTO =".$ContactoEmpresa->getCodContacto());
+        
+        $res=$sentencia->execute();
+        return $res;
+    }
     
     
 

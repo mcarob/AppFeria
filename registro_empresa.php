@@ -6,7 +6,14 @@
         <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
         <input type="file" id="wizard-picture">
       </div>
+<<<<<<< Updated upstream
       <h6>Elegir Logo</h6>
+=======
+      <h6>Elegir Imágen</h6>
+     <!-- Elegir Logo --> 
+     <!-- Elegir Logo 2--> 
+     <!-- Elegir Logo 1 --> 
+>>>>>>> Stashed changes
     </div>
   </div>
   <br>

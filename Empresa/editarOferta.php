@@ -247,11 +247,11 @@ if(isset($_GET["action"]))
                                 </form>
                             </div>
                         </div>
+    </div>
                     </div>  
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 
@@ -273,10 +273,10 @@ include('Footer.php')
                         success: function(r) {
 
                             console.log(r);
-
-                            if (r == 0) {
-                               
-                              
+                            
+                            if (r == 1) {
+                                
+                                window.location.href = "Ofertas.php";
 
 
                             } else {
