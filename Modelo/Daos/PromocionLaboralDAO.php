@@ -63,9 +63,9 @@ class PromocionLaboralDAO
         return $em;
     }
 
-    public function agregarOfertas($oferta){
+    public function agregarOfertas(PromocionLaboral $oferta){
         $sentencia = $this->con->prepare("INSERT INTO promocion_laboral (PROMOCION_PERFIL, PROMOCION_CONOCIMIENTO_BASE, PROMOCIO_HORARIO, PROMOCION_COMPENSACION, PROMOCION_RANGO_COMPENSACION, PROMOCION_BENEFICIOS, PROMOCION_CARGO_FUNCION, PROMOCION_INICIO, PROMOCION_DESCRIPCCION, COD_EMPRESA, PROMOCION_FECHA, PROMOCION_CIUDAD, TITULO_PROMOCION, LIMITE_VACANTES, PROMOCION_ESTADO)
-                                             values (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15"); 
+                                             values (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15)")"; 
         $respuesta = $sentencia->execute(['1'=>$oferta->getPromocionPerfil(), 
                                         '2'=>NULL,
                                         '3'=>$oferta->getPromocionHorario(),

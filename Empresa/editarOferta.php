@@ -261,7 +261,7 @@ include('Footer.php')
 
 <script>
             function agregarVac() {
-                    console.log('entra funcion');
+                    
                 datos = $('#editar_oferta').serialize();
                 
 
