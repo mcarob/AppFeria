@@ -1,4 +1,4 @@
-<form  >
+<form autocomplete="off" id="formEstudianteR" action="">
 <br>
 <div class="card-header card-header-border-bottom">
   <h2>Información Del Estudiante </h2>
@@ -12,7 +12,7 @@
           <i class="material-icons">assignment_ind</i>
         </span>
       </div>
-      <input  autocomplete="off" type="text" class="form-control" placeholder="Nombres" aria-label="Username">
+      <input  autocomplete="off" type="text" class="form-control" placeholder="Nombres" aria-label="Username" required>
     </div>
   </div>
   <div class="col-md-6 mb-3">
