@@ -79,7 +79,7 @@
                             alert('Ocurrió un problema al enviar el correo');
                             console.log("FAILED. error=", err);
                         });
-                }
+                }   
             }
         });
     </script>
