@@ -57,6 +57,20 @@ public function actualizarVacante(PromocionLaboral $promocion)
 	return $promocion;
 }
 
+public function cambiarEstadoVacante($codigo)
+{
+	$oferta_DAO=new PromocionLaboralDAO();
+	$promocion=$oferta_DAO->cambiarEstado($codigo);
+	return $promocion;
+}
+
+public function eliminarVacante($codigo)
+{
+	$oferta_DAO=new PromocionLaboralDAO();
+	$promocion=$oferta_DAO->eliminar($codigo);
+	return $promocion;
+}
+
 
 
 
