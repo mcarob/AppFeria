@@ -127,11 +127,8 @@
 
 <script>
   function registrarEmpresa() {
-    console.log('entra funcion');
     var myform = document.getElementById("formEmpresaR");
     var datos = new FormData(myform);
-
-    console.log('entre rempresa 134');
     $.ajax({
       type: "POST",
       data: datos,
