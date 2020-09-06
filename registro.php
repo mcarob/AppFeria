@@ -43,23 +43,24 @@
 </style>
 
 <body class="" id="body">
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <strong class="mr-auto">Bootstrap</strong>
-        <small class="text-muted">just now</small>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="toast-body">
-        See? Just like this.
-      </div>
+  <div id="445toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="mr-auto">Bootstrap</strong>
+      <small class="text-muted">just now</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+    <div class="toast-body">
+      See? Just like this.
+    </div>
+  </div>
+
   <div class="container d-flex flex-column justify-content-between vh-100">
-    <div class="row justify-content-center mt-5" >
+    <div class="row justify-content-center mt-5">
       <div class="col-lg-8 col-sm-offset-1">
-        <div class="card card-default" >
-          <div class="card-header card-header  d-flex justify-content-center" >
+        <div class="card card-default">
+          <div class="card-header card-header  d-flex justify-content-center">
             <img src="assets/img/logo.png" style="width:180px ;" alt="">
           </div>
           <div class="card-body">
@@ -73,13 +74,13 @@
             </ul>
             <div class="tab-content" id="myTabContent4">
               <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel" aria-labelledby="home3-tab">
-                
-              <?php include_once 'registro_empresa.php'; ?>
+
+                <?php include_once 'registro_empresa.php'; ?>
 
                 <!--  fin del primer tab-->
               </div>
               <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel" aria-labelledby="profile3-tab">
-              <?php include_once 'registro_estudiante.php'; ?>
+                <?php include_once 'registro_estudiante.php'; ?>
               </div>
             </div>
           </div>
@@ -96,17 +97,17 @@
   </div>
 
 
-
-  <script src="assets/plugins/toastr/toastr.min.js"></script>
   <script src="assets/plugins/jquery/jquery.min.js"></script>
   <script src="assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
   <script src="assets/plugins/jekyll-search.min.js"></script>
   <script src="assets/js/sleek.bundle.js"></script>
   <script src="assets/plugins/select2/js/select2.min.js"></script>
   <script src="assets/plugins/jquery-mask-input/jquery.mask.min.js"></script>
+
+  <script src="assets/plugins/toastr/toastr.min.js"></script>
   <script>
     $(document).ready(function() {
-      $("#wizard-picture").change(function() {
+      $("#logo").change(function() {
         readURL(this);
       });
     });

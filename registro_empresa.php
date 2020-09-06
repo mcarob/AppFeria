@@ -1,6 +1,6 @@
 <form autocomplete="off" id="formEmpresaR" action="javascript:registrarEmpresa()" method="POST">
   <!--    esto es algo comentado--->
-  <div class="wizard-card ct-wizard-green">
+  <div class="wizard-card">
     <div class="picture-container">
       <div class="picture">
         <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
@@ -9,6 +9,8 @@
       <h6>Elegir Logo</h6>
     </div>
   </div>
+
+
   <br>
   <div class="input-group">
     <div class="input-group-prepend">
@@ -146,7 +148,7 @@
 
         } else {
 
-
+          toastr["success"](r, "Error");
 
         }
       }
