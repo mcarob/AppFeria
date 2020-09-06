@@ -13,12 +13,11 @@ if (!isset($_SESSION['user'])) {
 include('menuEmpresa.php');
 include('Header.php');
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
-
-
-$empresa = new Usuario();
-$empresa->setUser($_SESSION['user']);
-$cod_empresa= $empresa->darCodigo();
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
+$empresa_dao = new EmpresaDAO();
+$codigo= $user->darCodigo();
+$empresa = $empresa_dao->devolverEmpresa($codigo);
 
 
 $fecha_actual = date("Y-m-d")
@@ -86,9 +85,9 @@ $fecha_actual = date("Y-m-d")
                                                 <label for="lastName">Remuneración
                                                 </label>
                                                 <select name="remuneracion" id="remuneracion" class="form-control">
-                                                <option value="r1">Seleccione una opcion</option>
-                                                <option value="r1">Si</option>
-                                                <option value="r2">No</option>
+                                                <option value="0">Seleccione una opcion</option>
+                                                <option value="1">Si</option>
+                                                <option value="2">No</option>
                                             </select>
                                             </div>
                                         </div>
@@ -237,7 +236,7 @@ $fecha_actual = date("Y-m-d")
                             <div class="form-group mb-4">
                                 <label for="des">Descripción</label>
                                 <textarea type="" class="form-control" id="descripcion" name="descripcion" value=""></textarea>
-                                <input type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value=<?php echo ($cod_empresa) ?>>
+                                <input type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value=<?php echo ($empresa->getCodEmpresa()) ?>>
                             </div>
 
 

@@ -64,24 +64,18 @@ class PromocionLaboralDAO
     }
 
     public function agregarOfertas(PromocionLaboral $oferta){
-        $sentencia = $this->con->prepare("INSERT INTO promocion_laboral (PROMOCION_PERFIL, PROMOCION_CONOCIMIENTO_BASE, PROMOCIO_HORARIO, PROMOCION_COMPENSACION, PROMOCION_RANGO_COMPENSACION, PROMOCION_BENEFICIOS, PROMOCION_CARGO_FUNCION, PROMOCION_INICIO, PROMOCION_DESCRIPCCION, COD_EMPRESA, PROMOCION_FECHA, PROMOCION_CIUDAD, TITULO_PROMOCION, LIMITE_VACANTES, PROMOCION_ESTADO)
-                                             values (:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15)")"; 
-        $respuesta = $sentencia->execute(['1'=>$oferta->getPromocionPerfil(), 
-                                        '2'=>NULL,
-                                        '3'=>$oferta->getPromocionHorario(),
-                                        '4'=>$oferta->getPromocionCompensacion(),
-                                        '5'=>$oferta->getPromocionRangoCompensacion(),
-                                        '6'=>$oferta->getPromocionBeneficios(),
-                                        '7'=>$oferta->getPromocionCargoFuncion(),
-                                        '8'=>$oferta->getPromocionInicio(),
-                                        '9'=>$oferta->getPromocionDescripcion(),
-                                        '10'=>$oferta->getCodEmpresa(),
-                                        '11'=>$oferta->getPromocionFecha(),
-                                        '12'=>$oferta->getPromocionCiudad(),
-                                        '13'=>$oferta->getTituloPromocion(),
-                                        '14'=>$oferta->getLimiteVacantes(),
-                                        '15'=>$oferta->getPromocionEstado()]);
+        
+        $sql="insert into promocion_laboral (PROMOCION_PERFIL, PROMOCION_CONOCIMIENTO_BASE, PROMOCIO_HORARIO, PROMOCION_COMPENSACION,
+        PROMOCION_RANGO_COMPENSACION, PROMOCION_BENEFICIOS, PROMOCION_CARGO_FUNCION, PROMOCION_INICIO, PROMOCION_DESCRIPCCION,
+        COD_EMPRESA, PROMOCION_FECHA, PROMOCION_CIUDAD, TITULO_PROMOCION, LIMITE_VACANTES, PROMOCION_ESTADO)
+        values 
+        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $respuesta=$this->con->prepare($sql)->execute([$oferta->getPromocionPerfil(),null,$oferta->getPromocionHorario(),$oferta->getPromocionCompensacion(),$oferta->getPromocionRangoCompensacion(),
+        $oferta->getPromocionBeneficios(),$oferta->getPromocionCargoFuncion(),$oferta->getPromocionInicio(),$oferta->getPromocionDescripcion()
+        ,$oferta->getCodEmpresa(),$oferta->getPromocionFecha(),$oferta->getPromocionCiudad(),$oferta->getTituloPromocion(),$oferta->getLimiteVacantes(),1]);
+        
         return $respuesta;
+
     }
 
       
