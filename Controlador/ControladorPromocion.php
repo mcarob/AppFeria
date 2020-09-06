@@ -20,12 +20,21 @@ public function darInformacion($pCodigo)
 	return $this->promociones->detallesPostulacion($pCodigo);
 }
 
+
 public function darVacantase($pCodigo)
 {
 	$empresa_DAO=new EmpresaDAO();
 	$codigo=$empresa_DAO->darEmpresaXCodigo($pCodigo)->getCodEmpresa();
 	$this->promociones = new PromocionLaboralDAO();
 	return $this->promociones->verOfertas($codigo);
+}
+
+
+public function verOfertas($cod){
+	$empresa_DAO=new EmpresaDAO();
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->verOfertas($cod);
+
 }
 
 public function agregarPromocion($promocion)
