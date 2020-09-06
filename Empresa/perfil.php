@@ -68,7 +68,7 @@ include('Header.php');
 
                             <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                                 <div class="mt-5">
-                                    <form method="Post">
+                                    <form action="javascript: EditarPerfil();" method="POST" id="formEditar" name="formEditar">
                                         <div class="form-group row mb-6">
                                         <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">Logo nuevo</label>
                                         <div class="col-sm-8 col-lg-10">
@@ -83,7 +83,7 @@ include('Header.php');
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="firstName">Nombre</label>
-                                                    <input type="text" class="form-control" id="nombres" value="<?php echo($empresa->getRazonSocial()) ?>" required>
+                                                    <input type="text" class="form-control" name="razonSocial" id="razonSocial" value="<?php echo($empresa->getRazonSocial()) ?>" required>
                                                 </div>
                                             </div>
 
@@ -91,24 +91,24 @@ include('Header.php');
                                                 <div class="form-group">
                                                     <label for="lastName">NIT
                                                     </label>
-                                                    <input type="text" class="form-control" id="Apellidos" value="<?php echo($empresa->getNitEmpresa()) ?>" required> 
+                                                    <input type="text" class="form-control" name="nitEmpresa" id="nitEmpresa" value="<?php echo($empresa->getNitEmpresa()) ?>" required> 
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="form-group mb-4">
                                             <label for="email">Correo</label>
-                                            <input type="email" class="form-control" id="correoPersonal" value="<?php echo($empresa->getCorreoEmpresa()) ?>" readonly>
+                                            <input type="email" class="form-control" name="correoEmpresa" id="correoEmpresa" value="<?php echo($empresa->getCorreoEmpresa()) ?>" readonly>
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="userName">Nombre del contacto</label>
-                                            <input type="text" class="form-control" id="userName" value="<?php echo($nombreContacto) ?>" readonly >
+                                            <input type="text" class="form-control" name="contactoEmpresa" id="contactoEmpresa" value="<?php echo($nombreContacto) ?>" readonly >
                                             <span class="d-block mt-1"></span>
                                         </div>
 
                                         <div class="form-group mb-4">
                                             <label for="email">Telefono</label>
-                                            <input type="email" class="form-control" id="correo" value="<?php echo($empresa->getTelefonEmpresa()) ?>" required>
+                                            <input type="email" class="form-control" name="telefonEmpresa" id="telefonEmpresa" value="<?php echo($empresa->getTelefonEmpresa()) ?>" required>
                                         </div>
                                     
 
@@ -129,7 +129,7 @@ include('Header.php');
 
                                         <div class="form-group mb-4">
                                             <label for="conPassword">Descripción</label>
-                                            <textarea type="" class="form-control" cols="40" rows="9" value="<?php echo($empresa->getDescripcionEmpresa()) ?>" maxlength="1200" id="Descripcion" required> 
+                                            <textarea type="" class="form-control" id="descripcionEmpresa" name="descripcionEmpresa" cols="40" rows="9" value="<?php echo($empresa->getDescripcionEmpresa()) ?>" maxlength="1200" required> 
                                             </textarea>
                                         </div>
 
@@ -146,7 +146,53 @@ include('Header.php');
             </div>
         </div>
     </div>
+   <!-- js placed at the end of the document so the pages load faster -->
+   <script src="../assets/js/jquery.js"></script>
+        <script src="../assets/js/jquery-1.8.3.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <script class="include" type="text/javascript" src="../assets/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="../assets/js/jquery.scrollTo.min.js"></script>
+        <script src="../assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="../assets/js/jquery.sparkline.js"></script>
 
+
+        <!--common script for all pages-->
+        <script src="../assets/js/common-scripts.js"></script>
+
+        <script type="text/javascript" src="../assets/js/gritter/js/jquery.gritter.js"></script>
+        <script type="text/javascript" src="../assets/js/gritter-conf.js"></script>
+
+        <!--script for this page-->
+        <script src="../assets/js/sparkline-chart.js"></script>
+        <script src="../assets/js/zabuto_calendar.js"></script>
+
+        <script>
+        function EditarPerfil(){
+            datos = $('#formEditar').serialize();
+        
+                    $.ajax({
+                        type: "POST",
+                        data: datos,
+                        url: "Editar_Perfil_Empresa.php",
+                        success: function(r) {
+
+                            console.log(r);
+
+                            if (r == 0) {
+                              
+                                
+                            } else {
+
+                            }
+                        }
+                    });
+        }
+
+    </script>
+</body>
+
+
+<?php
 
 
 

@@ -99,5 +99,22 @@ class EmpresaDAO extends DB
         }
         return $empresa;
     }
+
+    public function editarPerfil(Empresa $empresa){
+        $sentencia = $this->con->prepare("UPDATE empresa SET 
+        NIT_EMPRESA='".$empresa->getCodUsgetNitEmpresauario()."',
+        RAZON_SOCIAL='".$empresa->getRazonSocial()."',
+        CAMARA_COMERCIO_PDF='".$empresa->getCamaraComercio()."',
+        DESCRIPCCION_EMPRESA='".$empresa->getDescripcionEmpresa()."',
+        COD_USUARIO=".$empresa->getCodUsuario().",
+        CONTACTO_EMPRESA=".$empresa->getContactoEmpresa().",
+        LOGO_EMPRESA='".$empresa->getLogoEmpresa()."',      
+        TELEFONO_EMPRESA='".$empresa->getTelefonEmpresa()."',      
+        CORREO_EMPRESA='".$empresa->getCorreoEmpresa()."'      
+        WHERE COD_EMPRESA =".$empresa->getCodEmpresa());
+        
+        $res=$sentencia->execute();
+        return $res;
+    }
 }
 ?>
