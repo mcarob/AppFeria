@@ -74,8 +74,7 @@ include('menuEmpresa.php')
                                         <th>Correo</th>
                                         <th>Fecha</th>
                                         <th>Estado</th>
-                                        <th>Acciones</th>
-                                        <th>Acciones</th>
+                                        <th>Hoja de Vida</th>
                                         <th>Acciones</th>
 
 
@@ -93,11 +92,23 @@ include('menuEmpresa.php')
                                         echo ("<td>" . $key[4] . "</td>");
                                         echo ("<td> <button type='button' class='mb-1 btn btn-primary'>
                                                  <i class='mdi mdi-star-outline mr-1'></i>Hoja de vida</button></td>");
-                                        echo ("<td><button type='button' class='mb-1 btn btn-primary'>
-                                                 <i class='mdi mdi-star-outline mr-1'></i>Leido</button> </td>");
-                                        echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
-                                                 <button type='button' class='mb-1 btn btn-danger'>Rechazar</button></td>");
 
+
+                                        if($key["COD_ESTADO_PROCESO"] == "1" ){
+                                            echo ("<td><button type='button' class='mb-1 btn btn-primary' onclick='hojaVerificada(" . '"' . $key[0] . '"' . ")'>
+                                                 <i class='mdi mdi-star-outline mr-1'></i>Leido</button></td> ");
+                                            
+                                        }
+                                        if($key["COD_ESTADO_PROCESO"] == "2" ){
+                                            echo (" <td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
+                                            <button type='button' class='mb-1 btn btn-danger'>Rechazar</button></td>");
+
+                                        }
+                                        if($key["COD_ESTADO_PROCESO"] == "3" ){
+                                            echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
+                                            <button type='button' class='mb-1 btn btn-danger'>Rechazar</button></td>");
+                                        }
+                                        
 
 
 
@@ -144,6 +155,10 @@ include('menuEmpresa.php')
 
 
     <script>
+
+        function hojaVerificada(cod){
+            window.location.href = 'gestionarSolicitudes.php?action='+"leer&"+"codigo="+cod;
+        }
         function aceptar(cod) {
             console.log(cod);
             window.location.href = 'aceptarEmpresa.php?action=' + cod;

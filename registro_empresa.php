@@ -16,6 +16,7 @@
         <i class="material-icons">face</i>
       </span>
     </div>
+    <input   type="text"  id="registroE" name="registroE" value="REM" hidden>
     <input  autocomplete="new-false" type="text" class="form-control" id="nombreE" name="nombreE" placeholder="Nombre o Razon Social" aria-label="Nombre Empresa" required>
   </div>
   <div class="row no-gutters">
@@ -96,7 +97,7 @@
             <i class="material-icons">group</i>
           </span>
         </div>
-        <input  autocomplete="false" type="text" class="form-control"id="" name="" required  placeholder="Cargo" aria-label="Username">
+        <input  autocomplete="false" type="text" class="form-control"id="cargoC" name="cargoC" required  placeholder="Cargo" aria-label="Username">
       </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -106,19 +107,55 @@
             <i class="material-icons">phone</i>
           </span>
         </div>
-        <input autocomplete="false"  type="text" class="form-control" placeholder="Teléfono " aria-label="Username">
+        <input autocomplete="false"  type="text" class="form-control" id="telC" name="telC" required placeholder="Teléfono " aria-label="Username">
       </div>
     </div>
   </div>
   <div class="form-footer pt-4 pt-5 mt-4" style="float: right;">
-    <input type="submit" class="btn btn-primary btn-default" value="Registrar"></input>
+    <input type="submit" class="btn btn-primary btn-default" value="Registrar" onclick="registrarEmpresa()"></input>
     <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso"></input>
   </div>
 </form>
 
 <script>
 
-document.getElementById('camaracomercio').onchange = function () {
+
+function registrarEmpresa() {
+                    console.log('entra funcion');
+                datos = $('#formEmpresaR').serialize();
+              
+
+                    $.ajax({
+                        type: "POST",
+                        data: datos,
+                        url: "Registrar.php",
+                        success: function(r) {
+
+                            console.log(r);
+                            
+                            if (r == 1) {
+                                
+                                window.location.href = "Ofertas.php";
+
+
+                            } else {
+
+                                
+                                
+                            }
+                        }
+                    });
+
+            }
+
+
+
+</script>
+
+
+<script>
+
+document.getElementById('camaracomercioE').onchange = function () {
   document.getElementById("nombreccomercio").innerHTML =  this.value.replace(/C:\\fakepath\\/i, '');
 };
 
