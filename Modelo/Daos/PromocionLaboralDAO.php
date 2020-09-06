@@ -116,5 +116,18 @@ class PromocionLaboralDAO
         return $res;
     }
 
+    // public function cambiarEstado(PromocionLaboral $promocion)
+    // {
+    //     if($promocion->getPromocionEstado()==1)
+    //     {
+    //     $sentencia = $this->con->prepare("UPDATE promocion_laboral SET 
+    //     promocion_estado=".2." WHERE COD_PROMOCION_LABORAL =".$promocion->getCodPromocion());
+    //     }else if($promocion->getPromocionEstado()==2)
+    //     {
+    //     $sentencia = $this->con->prepare("UPDATE promocion_laboral SET 
+    //     promocion_estado=".1." WHERE COD_PROMOCION_LABORAL =".$promocion->getCodPromocion());
+    //     }
+
+    // }
 }
 ?>
