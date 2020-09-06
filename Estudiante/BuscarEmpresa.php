@@ -7,19 +7,10 @@ if (!isset($_SESSION['user'])) {
     header("location: ../index.php");
 }
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
+
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPostulaciones.php');
-
-$user = new Usuario();
-$estudiante_dao = new EstudianteDAO();
-$user->setUser($_SESSION['user']);
-
-$codigo= $user->darCodigo();
-$estudiante = $estudiante_dao->devolverEstudiante($codigo);
-
 $controlador = new ControladorPostulacion();
-$lista = $controlador->darListaPostulacionesxEst($estudiante->getCodEstudiante());
+$lista = $controlador->darListaPostulacionesxEst(1);
 
 
 ?>
@@ -142,13 +133,6 @@ include('menuEstudiante.php')
 
 
 
-
-
-
-
     <?php
-
-
     include('Footer.php')
-
-    ?>
+    ?>     

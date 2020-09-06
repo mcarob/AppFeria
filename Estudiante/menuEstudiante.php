@@ -8,7 +8,7 @@
   <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
 
 
-  <title>Plantilla</title>
+  <title>Feria Oportunidades</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
@@ -70,8 +70,8 @@
               <ul class="collapse" id="dashboard" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a class="sidenav-item-link" href="ValidarEmpresa.php">
-                      <span class="nav-text">buscar Empresas</span>
+                    <a class="sidenav-item-link" href="BuscarEmpresa.php">
+                      <span class="nav-text">Buscar Empresas</span>
 
                     </a>
                   </li>
@@ -133,35 +133,6 @@
               </ul>
             </li>
             
-
-
-
-
-
-            <!-- <li class="has-sub">
-              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps" aria-expanded="false" aria-controls="maps">
-                <i class="mdi mdi-google-maps"></i>
-                <span class="nav-text">Maps</span> <b class="caret"></b>
-              </a>
-              <ul class="collapse" id="maps" data-parent="#sidebar-menu">
-                <div class="sub-menu">
-                  <li>
-                    <a class="sidenav-item-link" href="google-map.html">
-                      <span class="nav-text">Google Map</span>
-
-                    </a>
-                  </li>
-                  <li>
-                    <a class="sidenav-item-link" href="vector-map.html">
-                      <span class="nav-text">Vector Map</span>
-
-                    </a>
-                  </li>
-
-                </div>
-              </ul>
-            </li> -->
-
 
 
           </ul>
