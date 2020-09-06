@@ -47,7 +47,7 @@
       <div class="col-lg-8 col-sm-offset-1">
         <div class="card card-default" >
           <div class="card-header card-header  d-flex justify-content-center" >
-            <center> <img src="assets/img/logo.png" style="width:180px ;" alt=""></center>
+            <img src="assets/img/logo.png" style="width:180px ;" alt="">
           </div>
           <div class="card-body">
             <ul class="nav nav-pills nav-justified nav-style-fill" id="myTab" role="tablist">
@@ -109,7 +109,6 @@
       }
     }
   </script>
-
 
 
 </body>

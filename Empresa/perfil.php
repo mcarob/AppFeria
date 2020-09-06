@@ -16,7 +16,6 @@ $empresa_dao = new EmpresaDAO();
 $user->setUser($_SESSION['user']);
 $codigo= $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
-
 $nombreContacto = $empresa_dao->devolverNombreContacto($codigo);
 
 ?>
@@ -39,9 +38,10 @@ include('Header.php');
                 <div class="col-lg-4 col-xl-3">
                     <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                         <div class="card text-center widget-profile px-0 border-0">
-                            <div class="card-img mx-auto rounded-circle">
-                                <img src="assets/img/user/u6.jpg" alt="user image">
-                            </div>
+                                <?php   
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode( $empresa->getLogoEmpresa() ).'" lt="user image"/>';
+                                ?>
+
                             <div class="card-body">
                                 <h4 class="py-2 text-dark">Albrecht Straub</h4>
                                 
@@ -73,7 +73,7 @@ include('Header.php');
                                         <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">Logo nuevo</label>
                                         <div class="col-sm-8 col-lg-10">
                                             <div class="custom-file mb-1">
-                                                <input type="file" class="custom-file-input" name="logoEmpresa" id="logoEmpresa" value="<?php echo($empresa->getLogoEmpresa()) ?>" >
+                                                <input type="file" class="custom-file-input" id="coverImage"  >
                                                 <label class="custom-file-label" for="coverImage">Seleccione un archivo...</label>
                                                 <div class="invalid-feedback"></div>
                                             </div>
@@ -84,8 +84,6 @@ include('Header.php');
                                                 <div class="form-group">
                                                     <label for="firstName">Nombre</label>
                                                     <input type="text" class="form-control" name="razonSocial" id="razonSocial" value="<?php echo($empresa->getRazonSocial()) ?>" required>
-                                                    <input type="hidden" id="codEmpresa" name ="codEmpresa" value='<?php echo($empresa->getCodEmpresa()) ?>'>
-                                                    <input type="hidden" id="codUsuario" name ="codUsuario" value='<?php echo($empresa->getCodUsuario()) ?>'>
                                                 </div>
                                             </div>
 
@@ -94,17 +92,8 @@ include('Header.php');
                                                     <label for="lastName">NIT
                                                     </label>
                                                     <input type="text" class="form-control" name="nitEmpresa" id="nitEmpresa" value="<?php echo($empresa->getNitEmpresa()) ?>" required> 
-                                                    
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="form-group mb-4">
-                                            <label for="email">Camara Y Comercio</label>
-                                            <input type="file" class="form-control" name="camaraComercio" id="camaraComercio" value="<?php echo($empresa->getCamaraComercio()) ?>" >
-                                            <!--<label class="custom-file-label" for="coverImage">Seleccione un archivo...</label>-->
-                                                <div class="invalid-feedback"></div>
-
                                         </div>
 
                                         <div class="form-group mb-4">
@@ -118,14 +107,14 @@ include('Header.php');
                                         </div>
 
                                         <div class="form-group mb-4">
-                                            <label for="telefono">Telefono</label>
-                                            <input type="text" class="form-control" name="telefonEmpresa" id="telefonEmpresa" value="<?php echo($empresa->getTelefonEmpresa()) ?>" maxlength="30" required>
+                                            <label for="email">Telefono</label>
+                                            <input type="email" class="form-control" name="telefonEmpresa" id="telefonEmpresa" value="<?php echo($empresa->getTelefonEmpresa()) ?>" required>
                                         </div>
                                     
 
                                         <div class="form-group mb-4">
                                             <label for="oldPassword">Contraseña anterior</label>
-                                            <input type="password" class="form-control" id="oldPassword" >
+                                            <input type="password" class="form-control" id="oldPassword" required>
                                         </div>
 
                                         <div class="form-group mb-4">
@@ -158,24 +147,7 @@ include('Header.php');
         </div>
     </div>
    <!-- js placed at the end of the document so the pages load faster -->
-   <script src="../assets/js/jquery.js"></script>
-        <script src="../assets/js/jquery-1.8.3.min.js"></script>
-        <script src="../assets/js/bootstrap.min.js"></script>
-        <script class="include" type="text/javascript" src="../assets/js/jquery.dcjqaccordion.2.7.js"></script>
-        <script src="../assets/js/jquery.scrollTo.min.js"></script>
-        <script src="../assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-        <script src="../assets/js/jquery.sparkline.js"></script>
 
-
-        <!--common script for all pages-->
-        <script src="../assets/js/common-scripts.js"></script>
-
-        <script type="text/javascript" src="../assets/js/gritter/js/jquery.gritter.js"></script>
-        <script type="text/javascript" src="../assets/js/gritter-conf.js"></script>
-
-        <!--script for this page-->
-        <script src="../assets/js/sparkline-chart.js"></script>
-        <script src="../assets/js/zabuto_calendar.js"></script>
 
         <script>
         function EditarPerfil(){

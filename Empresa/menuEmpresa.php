@@ -185,6 +185,7 @@
   <script src="../assets/plugins/jekyll-search.min.js"></script>
   <script src="../assets/plugins/daterangepicker/moment.min.js"></script>
   <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="../assets/js/sleek.bundle.js"></script>
   <script>
     jQuery(document).ready(function() {
       jQuery('input[name="dateRange"]').daterangepicker({
@@ -205,7 +206,7 @@
 
 
 
-  <script src="../assets/js/sleek.bundle.js"></script>
+
 </body>
 
 </html>
