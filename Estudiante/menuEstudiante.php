@@ -8,7 +8,7 @@
   <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
 
 
-  <title>Plantilla</title>
+  <title>Feria Oportunidades</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
@@ -70,8 +70,8 @@
               <ul class="collapse" id="dashboard" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a class="sidenav-item-link" href="ValidarEmpresa.php">
-                      <span class="nav-text">buscar Empresas</span>
+                    <a class="sidenav-item-link" href="BuscarEmpresa.php">
+                      <span class="nav-text">Buscar Empresas</span>
 
                     </a>
                   </li>
