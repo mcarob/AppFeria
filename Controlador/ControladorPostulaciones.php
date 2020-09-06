@@ -32,6 +32,16 @@ class ControladorPostulacion{
 			$this->postulados = new PromocionPostulacionDAO();
 			return $this->postulados->HistorialPostulaciones();
 		}
+
+
+		public function buscarPostulacionXempresa($cod)
+		{
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->postulacionXempresa($cod);
+		}
+
+
+		
 	
 	}
 
