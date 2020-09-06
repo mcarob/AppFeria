@@ -31,7 +31,7 @@ include('menuAdmi.php')
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Empresas en la plataforma</h1>
+            <h1>Empresas inscritas</h1>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
@@ -43,7 +43,7 @@ include('menuAdmi.php')
                     <li class="breadcrumb-item">
                         Empresas
                     </li>
-                    <li class="breadcrumb-item" aria-current="page">Listar</li>
+                    <li class="breadcrumb-item" aria-current="page">Autorizar registros</li>
                 </ol>
             </nav>
 
