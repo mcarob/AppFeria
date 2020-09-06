@@ -50,7 +50,7 @@ $fecha_actual = date("Y-m-d")
 
                         <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="mt-5">
-                                <form id="formAgregarOf" method="POST" action="javascript: agregarOferta();">
+                                <form id="formAgregarOf" method="POST" action="javascript: agregarOferta()">
                                     
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil buscado</label>
@@ -257,7 +257,7 @@ $fecha_actual = date("Y-m-d")
 </div>
 
 <script>
-    function agregarOfertaLab() {
+    function agregarOferta() {
         datos = $('#formAgregarOf').serialize();
 
         $.ajax({
@@ -267,6 +267,12 @@ $fecha_actual = date("Y-m-d")
             success: function(r) {
 
                 console.log(r);             
+                if (r == 1) {
+                                
+                                window.location.href = "Ofertas.php";
+                } else {
+
+                }
             }
         });
     }
