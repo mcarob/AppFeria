@@ -78,7 +78,33 @@ class PromocionLaboralDAO
 
     }
 
-      
+    public function cambiarEstado($cod){
+        $promocion=$this->darPromocionXCodigo($cod);
+        if($promocion->getPromocionEstado()==1)
+        {
+            $sentencia=$this->con->prepare("UPDATE promocion_laboral set PROMOCION_ESTADO= 2 WHERE COD_PROMOCION_LABORAL=".$cod);
+            $respuesta=$sentencia->execute();
+            return $respuesta;
+            
+        }else if($promocion->getPromocionEstado()==2)
+        {
+            $sentencia=$this->con->prepare("UPDATE promocion_laboral set PROMOCION_ESTADO= 1 WHERE COD_PROMOCION_LABORAL=".$cod);
+            $respuesta=$sentencia->execute();
+            return $respuesta;
+        }else{
+
+        }
+
+    }  
+
+    public function eliminar($cod){
+        $promocion=$this->darPromocionXCodigo($cod);
+        $sentencia=$this->con->prepare("UPDATE promocion_laboral set PROMOCION_ESTADO= 3 WHERE COD_PROMOCION_LABORAL=".$cod);
+        $respuesta=$sentencia->execute();
+        return $respuesta;
+
+    }  
+
     public function darPromocionXCodigo($cod){
         
         $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE COD_PROMOCION_LABORAL=".$cod);

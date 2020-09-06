@@ -55,12 +55,11 @@ $listaVacantes=$conPromocion->darVacantase($cod_empresa);
             <div class="card-header card-header-border-bottom">
             </div>
             <?php
-            foreach ($listaVacantes as $fila) {
-                
+            foreach ($listaVacantes as $fila) {                
             ?>
+            
             <div class="card-body" >
                 <div class="card-deck">
-                
                     <div class="card">
                         <img class="card-img-top" src="../Imagenes/ecopetrol.jpg" width="150" height="200" alt="Card image cap">
                         <div class="card-body">
@@ -72,16 +71,21 @@ $listaVacantes=$conPromocion->darVacantase($cod_empresa);
                         </div>
                         
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-outline-primary">Eliminar</button>
                             <?php 
                             if($fila[15]==1)
-                            {?>
-                                <button type="button" class="btn btn-outline-primary">Desactivar</button>
-                            <?php }else if($fila[15]==2){?>
-                                <button type="button" class="btn btn-outline-primary">Activar</button>
-                            <?php
+                            {
+                            echo ("<td><button type='button' class='btn btn-outline-primary' onclick='estado(" . '"' . $fila[0] . '"' . ")'>
+                            Desactivar</button></td> ");
+
+                            }else if($fila[15]==2){
+
+                             echo ("<td><button type='button' class='btn btn-outline-primary' onclick='estado(" . '"' . $fila[0] . '"' . ")'>
+                            Activar</button></td> ");
+                            
                             }
                             ?>
+
+                            <button type="button" class="btn btn-outline-primary" onclick="eliminar(<?php echo $fila[0]?>)" >Eliminar</button>
                             <button type="button" class="btn btn-outline-primary" onclick="darInformacion(<?php echo $fila[0]?>)" >Editar</button>
                         </div>
                     </div>
@@ -104,8 +108,15 @@ $listaVacantes=$conPromocion->darVacantase($cod_empresa);
     ?>
 
     <script>
-    function darInformacion(cod_vacante) {
-      
+    function darInformacion(cod_vacante) {    
        window.location.href="editarOferta.php?action="+cod_vacante;
-       }
+    }
+
+    function estado(cod) {
+       window.location.href = 'gestionarOferta.php?action=' + "cambiar&" + "codigo=" + cod;
+    }
+
+    function eliminar(cod) {
+        window.location.href = 'gestionarOferta.php?action=' + "eliminar&" + "codigo=" + cod;
+    }
     </script>
