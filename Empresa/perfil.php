@@ -193,11 +193,6 @@ include('Header.php');
 
 
 <?php
-
-
-
-    <?php
-
     include('Footer.php')
 
     ?>
