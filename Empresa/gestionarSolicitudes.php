@@ -9,14 +9,35 @@ if (isset($_GET['action'])) {
     echo($_GET['action']);
     switch ($_GET['action']) {
         case 'leer':
-            echo("entro a 11");
            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],2);
             if($r){
                 header("location:AdminSolicitudes.php");
            }else{
             echo ($r);
            }
-
+        break;
+        case 'Aceptar':
+            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],3);
+            if($r){
+                header("location:AdminSolicitudes.php");
+           }else{
+            echo ($r);
+           }
+        break;
+        case 'rechazar':
+            
+            echo $r=$cPromocionLab->cambiarEstado($_GET['codigo'],4);
+            
+        break;
+        case 'formalizar':
+            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],5);
+            if($r){
+                header("location:AdminSolicitudes.php");
+           }else{
+            echo ($r);
+           }
+        break;
+            
           
     }
 

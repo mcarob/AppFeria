@@ -58,8 +58,14 @@ class PromocionPostulacionDAO
         $respuesta=  $sentencia->execute();
         return $respuesta;
     }
+
+    public function editarMotivo($cod,$estado){
+        $sentencia=$this->con->prepare("UPDATE promocion_postulacion set COD_ESTADO_PROCESO=".$estado." WHERE COD_PROMOCION_POSTULACION=".$cod);
+        $respuesta=  $sentencia->execute();
+        return $respuesta;
+    }
     public function postulacionXempresa($cod_Empresa){
-        $sentencia = $this->con->prepare("SELECT * FROM postulacionesXempresa where (COD_ESTADO_PROCESO!=3 or  COD_ESTADO_PROCESO!=5) and cod_empresa=".$cod_Empresa);
+        $sentencia = $this->con->prepare("SELECT * FROM postulacionesXempresa where (COD_ESTADO_PROCESO=1 or COD_ESTADO_PROCESO=2 or COD_ESTADO_PROCESO=3) and cod_empresa=".$cod_Empresa);
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {

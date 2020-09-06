@@ -21,7 +21,7 @@ $empresa = $empresa_dao->devolverEmpresa($codigo);
 
 $objeto = new ControladorPostulacion;
 $lista = $objeto->buscarPostulacionXempresa($empresa->getCodEmpresa());
-
+$cod_postulacion=0;
 ?>
 
 
@@ -74,7 +74,7 @@ include('menuEmpresa.php')
                                         <th>Correo</th>
                                         <th>Fecha</th>
                                         <th>Estado</th>
-                                        <th>Hoja de Vida</th>
+                                        <th>Descargar</th>
                                         <th>Acciones</th>
 
 
@@ -89,31 +89,30 @@ include('menuEmpresa.php')
                                         echo ("<td>" . $key[1] . "</td>");
                                         echo ("<td>" . $key[2] . "</td>");
                                         echo ("<td>" . $key[3] . "</td>");
-                                        echo ("<td>" . $key[4] . "</td>");
+                                        echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[4] . "</span></td>");
                                         echo ("<td> <button type='button' class='mb-1 btn btn-primary'>
                                                  <i class='mdi mdi-star-outline mr-1'></i>Hoja de vida</button></td>");
 
 
-                                        if($key["COD_ESTADO_PROCESO"] == "1" ){
+                                        if ($key["COD_ESTADO_PROCESO"] == "1") {
                                             echo ("<td><button type='button' class='mb-1 btn btn-primary' onclick='hojaVerificada(" . '"' . $key[0] . '"' . ")'>
                                                  <i class='mdi mdi-star-outline mr-1'></i>Leido</button></td> ");
-                                            
                                         }
-                                        if($key["COD_ESTADO_PROCESO"] == "2" ){
+                                        if ($key["COD_ESTADO_PROCESO"] == "2") {
                                             echo (" <td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
-                                            <button type='button' class='mb-1 btn btn-danger'>Rechazar</button></td>");
+                                            <button type='button' class='mb-1 btn btn-danger' data-toggle='modal' data-target='#exampleModalForm'>Rechazar</button></td>");
+                                        }
+                                        if ($key["COD_ESTADO_PROCESO"] == "3") {
+                                            echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='formalizar(" . '"' . $key[0] . '"' . ")'>Formalizar</button>
+                                            <button type='button' class='mb-1 btn btn-danger' onclick='rechazar(" . '"' . $key[0] . '"' . ")'  data-toggle='modal' data-target='#exampleModalForm'>Rechazar</button></td>");
+                                        }
 
-                                        }
-                                        if($key["COD_ESTADO_PROCESO"] == "3" ){
-                                            echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
-                                            <button type='button' class='mb-1 btn btn-danger'>Rechazar</button></td>");
-                                        }
-                                        
+                                        $cod_postulacion=$key[0];
 
 
 
                                     ?>
-
+                                    
 
                                     <?php
 
@@ -127,6 +126,33 @@ include('menuEmpresa.php')
                             </table>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalFormTitle">Registrar</h5>
+                   
+                </div>
+                <div class="modal-body">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Motivo de la decisión: </label>
+                            <input type="text" class="form-control" name="motivo" id="motivo" aria-describedby="emailHelp" >
+                        </div>
+                       
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
+                    <button type="button" class="btn btn-primary btn-pill" onclick="rechazar('<?php echo ($cod_postulacion) ?>')">Aceptar</button>
                 </div>
             </div>
         </div>
@@ -155,13 +181,36 @@ include('menuEmpresa.php')
 
 
     <script>
-
-        function hojaVerificada(cod){
-            window.location.href = 'gestionarSolicitudes.php?action='+"leer&"+"codigo="+cod;
+        function hojaVerificada(cod) {
+            window.location.href = 'gestionarSolicitudes.php?action=' + "leer&" + "codigo=" + cod;
         }
+
         function aceptar(cod) {
-            console.log(cod);
-            window.location.href = 'aceptarEmpresa.php?action=' + cod;
+            window.location.href = 'gestionarSolicitudes.php?action=' + "Aceptar&" + "codigo=" + cod;
+        }
+
+        function rechazar(cod) {
+            datos = $('#formAgregarOf').serialize();
+
+        $.ajax({
+            type: "POST",
+            data: datos,
+            url: 'gestionarSolicitudes.php?action=' + "rechazar&" + "codigo=" + cod,
+            success: function(r) {
+
+                console.log(r);             
+                if (r == 1) {
+                window.location.href = "Ofertas.php";
+                } else {
+
+                }
+            }
+        });
+
+        }
+
+        function formalizar(cod) {
+            window.location.href = 'gestionarSolicitudes.php?action=' + "formalizar&" + "codigo=" + cod;
         }
     </script>
 
