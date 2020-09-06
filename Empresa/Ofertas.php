@@ -73,6 +73,15 @@ $listaVacantes=$conPromocion->darVacantase($cod_empresa);
                         
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-outline-primary">Eliminar</button>
+                            <?php 
+                            if($fila[15]==1)
+                            {?>
+                                <button type="button" class="btn btn-outline-primary">Desactivar</button>
+                            <?php }else if($fila[15]==2){?>
+                                <button type="button" class="btn btn-outline-primary">Activar</button>
+                            <?php
+                            }
+                            ?>
                             <button type="button" class="btn btn-outline-primary" onclick="darInformacion(<?php echo $fila[0]?>)" >Editar</button>
                         </div>
                     </div>
