@@ -73,7 +73,7 @@ include('Header.php');
                                         <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">Logo nuevo</label>
                                         <div class="col-sm-8 col-lg-10">
                                             <div class="custom-file mb-1">
-                                                <input type="file" class="custom-file-input" id="coverImage" value="<?php echo($empresa->getLogoEmpresa()) ?>" >
+                                                <input type="file" class="custom-file-input" name="logoEmpresa" id="logoEmpresa" value="<?php echo($empresa->getLogoEmpresa()) ?>" >
                                                 <label class="custom-file-label" for="coverImage">Seleccione un archivo...</label>
                                                 <div class="invalid-feedback"></div>
                                             </div>
@@ -84,6 +84,8 @@ include('Header.php');
                                                 <div class="form-group">
                                                     <label for="firstName">Nombre</label>
                                                     <input type="text" class="form-control" name="razonSocial" id="razonSocial" value="<?php echo($empresa->getRazonSocial()) ?>" required>
+                                                    <input type="hidden" id="codEmpresa" name ="codEmpresa" value='<?php echo($empresa->getCodEmpresa()) ?>'>
+                                                    <input type="hidden" id="codUsuario" name ="codUsuario" value='<?php echo($empresa->getCodUsuario()) ?>'>
                                                 </div>
                                             </div>
 
@@ -92,8 +94,17 @@ include('Header.php');
                                                     <label for="lastName">NIT
                                                     </label>
                                                     <input type="text" class="form-control" name="nitEmpresa" id="nitEmpresa" value="<?php echo($empresa->getNitEmpresa()) ?>" required> 
+                                                    
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <div class="form-group mb-4">
+                                            <label for="email">Camara Y Comercio</label>
+                                            <input type="file" class="form-control" name="camaraComercio" id="camaraComercio" value="<?php echo($empresa->getCamaraComercio()) ?>" >
+                                            <!--<label class="custom-file-label" for="coverImage">Seleccione un archivo...</label>-->
+                                                <div class="invalid-feedback"></div>
+
                                         </div>
 
                                         <div class="form-group mb-4">
@@ -107,14 +118,14 @@ include('Header.php');
                                         </div>
 
                                         <div class="form-group mb-4">
-                                            <label for="email">Telefono</label>
-                                            <input type="email" class="form-control" name="telefonEmpresa" id="telefonEmpresa" value="<?php echo($empresa->getTelefonEmpresa()) ?>" required>
+                                            <label for="telefono">Telefono</label>
+                                            <input type="text" class="form-control" name="telefonEmpresa" id="telefonEmpresa" value="<?php echo($empresa->getTelefonEmpresa()) ?>" maxlength="30" required>
                                         </div>
                                     
 
                                         <div class="form-group mb-4">
                                             <label for="oldPassword">Contraseña anterior</label>
-                                            <input type="password" class="form-control" id="oldPassword" required>
+                                            <input type="password" class="form-control" id="oldPassword" >
                                         </div>
 
                                         <div class="form-group mb-4">
