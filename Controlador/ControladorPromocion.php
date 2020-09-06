@@ -31,7 +31,7 @@ public function darVacantase($pCodigo)
 public function agregarPromocion($promocion)
 {
 	$this->promociones=new PromocionLaboralDAO();
-	//return 
+	return $this->promociones->agregarOfertas($promocion);
 }
 
 public function darListaVacantesTotal()

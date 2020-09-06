@@ -12,9 +12,15 @@ if (!isset($_SESSION['user'])) {
 
 include('menuEmpresa.php');
 include('Header.php');
-?>
 
-<?php
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
+
+
+$empresa = new Usuario();
+$empresa->setUser($_SESSION['user']);
+$cod_empresa= $empresa->darCodigo();
+
+
 $fecha_actual = date("Y-m-d")
 
 ?>
@@ -44,17 +50,8 @@ $fecha_actual = date("Y-m-d")
 
                         <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="mt-5">
-                                <form id="formAgregarOf" method="POST" action="javascript: agregarOfertaLab();">
-                                    <!-- <div class="form-group row mb-6">
-                                        <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">User Image</label>
-                                        <div class="col-sm-8 col-lg-10">
-                                            <div class="custom-file mb-1">
-                                                <input type="file" class="custom-file-input" id="coverImage" required>
-                                                <label class="custom-file-label" for="coverImage">Choose file...</label>
-                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                <form id="formAgregarOf" method="POST" action="javascript: agregarOferta();">
+                                    
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil buscado</label>
                                         <textarea type="text" class="form-control" id="perfil" value="" name="perfil"></textarea>
@@ -72,7 +69,7 @@ $fecha_actual = date("Y-m-d")
                                             <div class="form-group">
                                                 <label for="lastName">Fecha de la publicación
                                                 </label>
-                                                <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="<?= $fecha_actual ?>">
+                                                <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="<?php echo($fecha_actual)?>">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -240,7 +237,7 @@ $fecha_actual = date("Y-m-d")
                             <div class="form-group mb-4">
                                 <label for="des">Descripción</label>
                                 <textarea type="" class="form-control" id="descripcion" name="descripcion" value=""></textarea>
-                                <input type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value="">
+                                <input type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value=<?php echo ($cod_empresa) ?>>
                             </div>
 
 
@@ -266,10 +263,10 @@ $fecha_actual = date("Y-m-d")
         $.ajax({
             type: "POST",
             data: datos,
-            url: "./escucharOferta.php?action=agregar",
+            url: "agregar_vacante.php",
             success: function(r) {
 
-                console.log(r);
+                console.log(r);             
             }
         });
     }
