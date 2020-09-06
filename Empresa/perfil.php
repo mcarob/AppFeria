@@ -114,7 +114,7 @@ include('Header.php');
 
                                         <div class="form-group mb-4">
                                             <label for="oldPassword">Contraseña anterior</label>
-                                            <input type="password" class="form-control" id="oldPassword" required>
+                                            <input type="password" class="form-control" id="oldPassword" >
                                         </div>
 
                                         <div class="form-group mb-4">
