@@ -55,7 +55,7 @@ class PromocionPostulacionDAO
     }
 
     public function postulacionXempresa($cod_Empresa){
-        $sentencia = $this->con->prepare("SELECT * FROM postulacionesXempresa where cod_empresa=".$cod_Empresa);
+        $sentencia = $this->con->prepare("SELECT * FROM postulacionesXempresa where COD_ESTADO_PROCESO=1 and  COD_ESTADO_PROCESO=1 and cod_empresa=".$cod_Empresa);
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {
