@@ -19,6 +19,8 @@ private $usuario;
         $this->usuario=new UsuarioDAO();
         return $this->usuario->validacion($id,$contra);
     }
+
+    
 }
 
 ?>

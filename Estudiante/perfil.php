@@ -102,17 +102,18 @@ include('Header.php');
                                         <input type="hidden" class="form-control" id="semestre" name="semestre"
                                             value="<?php echo($estudiante->getSemestreEstudiante()) ?>">
                                     </div>
-    
+
                                     <div class="form-group mb-4">
                                         <label for="conPassword1">Anterior contraseña</label>
-                                        <input type="password" class="form-control" id="conPassword1" name="conPassword1"
-                                            value="">
+                                        <input type="password" class="form-control" id="conPassword1"
+                                            name="conPassword1" value="">
                                     </div>
 
 
                                     <div class="form-group mb-4">
                                         <label for="newPassword">Contraseña nueva</label>
-                                        <input type="password" class="form-control" id="newPassword" name="newPassword" value="">
+                                        <input type="password" class="form-control" id="newPassword" name="newPassword"
+                                            value="">
                                     </div>
 
                                     <div class="form-group mb-4">
@@ -161,16 +162,15 @@ function editarEstudiante() {
         success: function(r) {
 
             console.log(r);
-
-            if (r == 1) {
-
+            if (r == 11) {
                 window.location.href = "index.php";
-
-
-            } else {
-
-                toastr["success"](r,"ERROR");
-
+            } else if(r==3)
+            {
+                toastr["success"](r, "ERROR");
+            }else{
+                
+                toastr["success"](r, "ERROR");
+                
             }
         }
     });

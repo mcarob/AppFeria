@@ -29,8 +29,8 @@ class UsuarioDAO
 
     public function editarUsuario($codigo,$pass)
     {
-        //$pass2 = md5($pass);
-        $sentencia = $this->con->prepare("UPDATE usuario SET CONTRA_USUARIO='".$pass."' WHERE COD_USUARIO =".$codigo);
+        $pass2 = md5($pass);
+        $sentencia = $this->con->prepare("UPDATE usuario SET CONTRA_USUARIO='".$pass2."' WHERE COD_USUARIO =".$codigo);
         $res=$sentencia->execute();
         return $res;
     }
