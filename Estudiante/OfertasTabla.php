@@ -14,7 +14,10 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/Co
 if (isset($_GET["action"])) {
     $var = $_GET["action"];
     $conPromocion = new ControladorPromocion();
-    $listaVacantes = $conPromocion->verOfertas($var);
+    $listaVacantes = $conPromocion->verOfertas2($var);
+}
+else{
+    "No hay ofertas";
 }
 
 

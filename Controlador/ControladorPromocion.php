@@ -37,6 +37,13 @@ public function verOfertas($cod){
 
 }
 
+public function verOfertas2($cod){
+	$empresa_DAO=new EmpresaDAO();
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->verOfertas2($cod);
+
+}
+
 public function agregarPromocion($promocion)
 {
 	$this->promociones=new PromocionLaboralDAO();
