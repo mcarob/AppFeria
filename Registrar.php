@@ -1,5 +1,10 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/conexion/db.php');
+
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorRegistros.php');
+
+
+$variable = new ControladorRegistros();
+
 if (isset($_POST["REM"])) {
     if (isset($_FILES['camaracomercioE'])) {
         if (($_FILES['camaracomercioE']['type']) == 'application/pdf') {
@@ -20,9 +25,18 @@ if (isset($_POST["REM"])) {
                 } catch (Exception $e) {
                     echo ("Error en los archivos, verificar");
                 }
-                
+
                 if (isset($archilogo) and isset($archicomercio)) {
-                    echo ("archivos Correctos");
+                    // ya se han realizado todas las validaciones
+                    $respuestaNit = $variable->verificarNIT($_POST['nitE']);
+                    print_r($respuestaNit[0]);
+                    $error = 0;
+                    if ($respuestaNit > 0) {
+                        echo ("Hay un error en los datos, ya se encuentra registrada una empresa con ese NIT");
+                    }
+                    $encontrar_correo = $variable->buscarCorreo($_POST['emailE']);
+                    if ($encontrar_correo > 0) {
+                    }
                 }
             } else {
                 echo ("el logo tiene que ser extensión jpeg/jpg/png");
@@ -30,6 +44,7 @@ if (isset($_POST["REM"])) {
         } else {
             echo ("El archivo Ingresado en Camara de Comercio no es PDF");
         }
+
 
         //echo($file_size);
         //echo(mime_content_type ($_FILES['camaracomercioE']['tmp_name'] ));
@@ -39,3 +54,4 @@ if (isset($_POST["REM"])) {
         // $query->execute([$archi]);
     }
 }
+?>

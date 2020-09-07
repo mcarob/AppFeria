@@ -49,7 +49,10 @@
         <i class="material-icons">email</i>
       </span>
     </div>
-    <input autocomplete="false" type="email" class="form-control" id="emailE" name="emailE" required placeholder="Correo Electronico Empresa" maxlength="60" aria-label="Username">
+    <input autocomplete="false" type="text"
+    pattern="^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(.[A-Za-z0-9]+)(.[A-Za-z]{2,})$"  
+    title="No Cumple con el Formato de Correo Electrónico"
+    class="form-control" id="emailE" name="emailE" required placeholder="Correo Electronico Empresa" maxlength="60" aria-label="Username">
   </div>
 
   <div class="input-group mb-3">
@@ -77,7 +80,7 @@
             <i class="material-icons">assignment_ind</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="nomC" name="nomC" required placeholder="Nombres" maxlength="30" aria-label="Username">
+        <input autocomplete="false" type="text" class="form-control"  title="Solo Caracteres Alfabeticos" pattern="^[a-zA-Z ]*$" id="nomC" name="nomC" required placeholder="Nombres" maxlength="30" aria-label="Username">
       </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -87,7 +90,7 @@
             <i class="material-icons">face</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="apeC" name="apeC" required placeholder="Apellidos " maxlength="30" aria-label="Username">
+        <input autocomplete="false" type="text" class="form-control" id="apeC" title="Solo Caracteres Alfabeticos" pattern="^[a-zA-Z ]*$" name="apeC" required placeholder="Apellidos " maxlength="30" aria-label="Username">
       </div>
     </div>
   </div>
@@ -119,7 +122,10 @@
         <i class="material-icons">email</i>
       </span>
     </div>
-    <input autocomplete="false" type="email" class="form-control" id="emailC" name="emailC" required placeholder="Correo Electronico Contacto" maxlength="60" aria-label="Username">
+    <input autocomplete="false" type="text" class="form-control" id="emailC" name="emailC" required placeholder="Correo Electronico Contacto"
+    pattern="^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(.[A-Za-z0-9]+)(.[A-Za-z]{2,})$" 
+    title="No Cumple con el Formato de Correo Electrónico"
+    maxlength="60" aria-label="Username">
   </div>
   <div class="form-footer pt-4 pt-5 mt-4" style="float: right;">
     <input type="submit" class="btn btn-primary btn-default" value="Registrar"></input>
