@@ -97,7 +97,7 @@ include('menuEstudiante.php')
                                         echo ("<td>" . $key[4] . "</td>");
                                         echo ("<td>" . $key[2] . "</td>");
                                         echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[7] . "</span></td>");
-                                        echo ("<td><button type='button' class='mb-1 btn btn-danger' id='boton1' data-toggle='modal' data-target='#exampleModalForm'>Motivo</button></td>");
+                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[8].'"'.")'". ">Motivo</button></td>");
 
 
                                     ?>
@@ -120,6 +120,29 @@ include('menuEstudiante.php')
         </div>
     </div>
 
+    <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalFormTitle">Motivo</h5>
+
+                </div>
+                <div class="modal-body">
+                    <form method="POST" id='formAgregarOf'>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Motivo de la decisión: </label>
+                            <label  class="form-control" name="motivo" value="" id="motivoLista" aria-describedby="emailHelp"></label>
+                        </div>
+
+                    </form> 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -127,7 +150,14 @@ include('menuEstudiante.php')
     <script src="../assets/plugins/data-tables/datatables.bootstrap4.min.js"></script>
 
 
+    <script>
+        function name(params) {
+            
+        }
+    
 
+    </script>
+    
     <script src="../assets/plugins/data-tables/datatables.responsive.min.js"></script>
     <script>
         jQuery(document).ready(function() {
@@ -143,34 +173,12 @@ include('menuEstudiante.php')
     </script>
 
 <script>
-$('#myModal').on('show.bs.modal', function (e) {
-  console.log("ENTROOO");
-})
+    function mostrarModal(valor) {
+        $('#exampleModalForm').modal('show'); 
+        elemento=document.getElementById("motivoLista").innerHTML=valor ;
+        
+    }
 </script>
-
-    <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalFormTitle">Motivo</h5>
-
-                </div>
-                <div class="modal-body">
-                    <form method="POST" id='formAgregarOf'>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Motivo de la decisión: </label>
-                            <label  class="form-control" name="motivo" value="" id="motivoLista" aria-describedby="emailHelp">
-                        </div>
-
-                    </form> 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
 
