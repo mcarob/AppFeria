@@ -54,7 +54,7 @@ class PromocionLaboralDAO
         return $promocion;
     }
     public function verOfertas($pCodigo){
-        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE promocion_estado=1 and cod_empresa =:empresa"); 
+        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =:empresa"); 
         $sentencia->execute(['empresa'=>$pCodigo]);
         $em = array();
          while ($fila = $sentencia->fetch()) {
