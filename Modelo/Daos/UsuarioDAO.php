@@ -1,7 +1,7 @@
 <?php
 
-require_once('../Entidades/Usuario.php');
-require_once('../conexion/db.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Usuario.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/conexion/db.php');
 
 /**
  * Representa el DAO de la clase Usuario
@@ -26,13 +26,13 @@ class UsuarioHojaDAO
 
     }
 
-    public function editarUsuario(Usuario $usuario, $pass2)
-    {
-        $pass = md5($pass2);
-        $sql = "UPDATE USUARIO SET clave='".$pass."' WHERE cod_usuario = ".$usuario->getCodUsuario();
-        $result =pg_query($this->con, $sql);
-        return pg_fetch_all($result);
 
+    public function editarUsuario($codigo,$pass)
+    {
+        $pass2 = md5($pass);
+        $sentencia = $this->con->prepare("UPDATE usuario SET CONTRA_USUARIO='".$pass2."' WHERE COD_USUARIO =".$codigo);
+        $res=$sentencia->execute();
+        return $res;
     }
 
    

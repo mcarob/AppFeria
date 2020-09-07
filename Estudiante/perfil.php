@@ -41,7 +41,7 @@ include('Header.php');
                         
                         <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="mt-5">
-                                <form>
+                                <form id="editarEs" method='POST' action="javascript:editarEstudiante()">
                                     <!-- <div class="form-group row mb-6">
                                         <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">User Image</label>
                                         <div class="col-sm-8 col-lg-10">
@@ -56,7 +56,10 @@ include('Header.php');
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="firstName">Nombres</label>
-                                                <input type="text" class="form-control" id="nombres" value="<?php echo($estudiante->getNombreEstudiante()) ?>">
+                                                <input type="text" class="form-control" id="nombres" name="nombres" value="<?php echo($estudiante->getNombreEstudiante()) ?>">
+                                                <input type="hidden" class="form-control" id="cod_usuario" name="cod_usuario" value="<?php echo($codigo) ?>">
+                                                <input type="hidden" class="form-control" id="cod_estudiante" name="cod_estudiante" value="<?php echo($estudiante->getCodEstudiante()) ?>">
+
                                             </div>
                                         </div>
 
@@ -64,35 +67,42 @@ include('Header.php');
                                             <div class="form-group">
                                                 <label for="lastName">Apellidos
                                                 </label>
-                                                <input type="text" class="form-control" id="Apellidos" value="<?php echo($estudiante->getApellidoEstudiante()) ?>">
+                                                <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo($estudiante->getApellidoEstudiante()) ?>">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label for="userName">Nombre de usuario</label>
-                                        <input type="text" class="form-control" id="userName" value="<?php echo (($_SESSION['user']))  ?>" readonly>
+                                        <input type="text" class="form-control" id="userName" name="userName" value="<?php echo (($_SESSION['user']))  ?>" readonly>
                                        
                                     </div>
 
                                     <div class="form-group mb-4">
+                                        <label for="userName">Cedula</label>
+                                        <input type="text" class="form-control" id="cedula" name="cedula" value="<?php echo ($estudiante->getCedEstudiante())?>">
+                                    </div>
+
+                                    <div class="form-group mb-4">
                                         <label for="email">Correo</label>
-                                        <input type="email" class="form-control" id="correo" value="<?php echo($estudiante->getCorreoEstudiante()) ?>" readonly>
+                                        <input type="email" class="form-control" id="correo" name="correo" value="<?php echo($estudiante->getCorreoEstudiante()) ?>" readonly>
+                                        <input type="hidden" class="form-control" id="programa" name="programa" value="<?php echo($estudiante->getCodProgamaAcademico()) ?>">
+                                        <input type="hidden" class="form-control" id="semestre" name="semestre" value="<?php echo($estudiante->getSemestreEstudiante()) ?>">
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label for="oldPassword">Contraseña anterior</label>
-                                        <input type="password" class="form-control" id="oldPassword">
+                                        <input type="password" class="form-control" id="oldPassword" value="">
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label for="newPassword">Contraseña nueva</label>
-                                        <input type="password" class="form-control" id="newPassword">
+                                        <input type="password" class="form-control" id="newPassword" value="">
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label for="conPassword">Confirmar contraseña</label>
-                                        <input type="password" class="form-control" id="conPassword">
+                                        <input type="password" class="form-control" id="conPassword" name="conPassword" value="">
                                     </div>
 
                                     <div class="d-flex justify-content-end mt-5">
@@ -117,3 +127,33 @@ include('Header.php');
 include('Footer.php')
 
 ?>
+<script>
+            function editarEstudiante() {
+                    
+                datos = $('#editarEs').serialize();
+                
+
+
+                    $.ajax({
+                        type: "POST",
+                        data: datos,
+                        url: "editar_perfil.php",
+                        success: function(r) {
+
+                            console.log(r);
+                            
+                            if (r == 1) {
+                                
+                                window.location.href = "index.php";
+
+
+                            } else {
+
+                                
+                                
+                            }
+                        }
+                    });
+
+            }
+        </script>

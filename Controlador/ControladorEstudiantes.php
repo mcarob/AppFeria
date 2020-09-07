@@ -16,7 +16,11 @@ class ControladorEstudiantes	{
 			return $this->estudiantes->vistaEstudiantes();
 		}
 
-		
+		public function actualizarPerfil(Estudiante $estudiante)
+		{
+			$this->estudiantes=new EstudianteDAO();
+			return $this->estudiantes->editarPerfil($estudiante);
+		}
 	}
 
 
