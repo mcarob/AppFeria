@@ -18,7 +18,9 @@ class ControladorRegistros
     public function buscarCorreo($correo)
     {
         $daoEmpresa = new EmpresaDAO();
-        return $daoEmpresa->buscarCorreo($correo);
+		return $daoEmpresa->buscarCorreo($correo);
     }
 }
-?>
+/*  */
+/*  */
+?>				
