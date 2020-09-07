@@ -58,7 +58,7 @@ class PromocionLaboralDAO
         $sentencia->execute(['empresa'=>$pCodigo]);
         $em = array();
          while ($fila = $sentencia->fetch()) {
-            $em[] = $fila;
+            $em[] = $fila;  
         }
         return $em;
     }
