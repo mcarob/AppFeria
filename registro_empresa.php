@@ -4,7 +4,7 @@
     <div class="picture-container">
       <div class="picture">
         <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
-        <input type="file" id="logo" name="logo">
+        <input type="file" id="logo" name="logo" required>
       </div>
       <h6>Elegir Logo</h6>
     </div>
@@ -19,7 +19,7 @@
       </span>
     </div>
     <input type="text" id="registroE" name="REM" value="REM" hidden>
-    <input autocomplete="new-false" type="text" class="form-control" id="nombreE" name="nombreE" placeholder="Nombre o Razon Social" aria-label="Nombre Empresa" required>
+    <input autocomplete="new-false" type="text" class="form-control" id="nombreE" name="nombreE" placeholder="Nombre o Razon Social" aria-label="Nombre Empresa"  maxlength="60" required>
   </div>
   <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -29,7 +29,10 @@
             <i class="material-icons">assignment_ind</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="nitE" name="nitE" data-mask="999999999-9" placeholder="NIT" aria-label="Nit Empresa">
+        <input autocomplete="false" type="text" class="form-control" id="nitE" name="nitE" data-mask="999999999-9" placeholder="NIT" maxlength="11"
+        pattern="(^[0-9]{9}-{1}[0-9]{1})"
+        title="El Formmato de Nit es xxxxxxxxx-x"
+        aria-label="Nit Empresa">
       </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -39,7 +42,10 @@
             <i class="material-icons">phone</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="telE" name="telE" required placeholder="Teléfono Empresa" aria-label="Telefono Empresa">
+        <input autocomplete="false" type="text" class="form-control" id="telE" name="telE" required placeholder="Teléfono Empresa" maxlength="15" 
+        pattern="(^[+]?[0-9]{7,15})"
+        title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
+        aria-label="Telefono Empresa">
       </div>
     </div>
   </div>
@@ -49,7 +55,7 @@
         <i class="material-icons">email</i>
       </span>
     </div>
-    <input autocomplete="false" type="email" class="form-control" id="emailE" name="emailE" required placeholder="Correo Electronico Empresa" aria-label="Username">
+    <input autocomplete="false" type="email" class="form-control" id="emailE" name="emailE" required placeholder="Correo Electronico Empresa" maxlength="60" aria-label="Username">
   </div>
 
   <div class="input-group mb-3">
@@ -62,7 +68,7 @@
     </div>
   </div>
   <div class="form-group">
-    <textarea class="form-control" id="exampleFormControlTextarea1" id="descE" name="descE" required rows="5" style="resize: none;" placeholder="Descripcción Empresa (max 1200)"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" id="descE" name="descE" required rows="5" style="resize: none;" maxlength="1200" placeholder="Descripcción Empresa (max 1200)"></textarea>
   </div>
 
   <div class="card-header card-header-border-bottom">
@@ -77,7 +83,7 @@
             <i class="material-icons">assignment_ind</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="nomC" name="nomC" required placeholder="Nombres" aria-label="Username">
+        <input autocomplete="false" type="text" class="form-control" id="nomC" name="nomC" required placeholder="Nombres" maxlength="30" aria-label="Username">
       </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -87,7 +93,7 @@
             <i class="material-icons">face</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="apeC" name="apeC" required placeholder="Apellidos " aria-label="Username">
+        <input autocomplete="false" type="text" class="form-control" id="apeC" name="apeC" required placeholder="Apellidos " maxlength="30" aria-label="Username">
       </div>
     </div>
   </div>
@@ -99,7 +105,7 @@
             <i class="material-icons">group</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="cargoC" name="cargoC" required placeholder="Cargo" aria-label="Username">
+        <input autocomplete="false" type="text" class="form-control" id="cargoC" name="cargoC" required placeholder="Cargo" maxlength="30" aria-label="Username">
       </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -109,7 +115,10 @@
             <i class="material-icons">phone</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="telC" name="telC" required placeholder="Teléfono " aria-label="Username">
+        <input autocomplete="false" type="text" class="form-control" id="telC" name="telC" required placeholder="Teléfono " maxlength="15"
+        pattern="(^[+]?[0-9]{7,15})"
+        title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
+        aria-label="Username">
       </div>
     </div>
   </div>
@@ -119,7 +128,7 @@
         <i class="material-icons">email</i>
       </span>
     </div>
-    <input autocomplete="false" type="email" class="form-control" id="emailC" name="emailC" required placeholder="Correo Electronico Contacto" aria-label="Username">
+    <input autocomplete="false" type="email" class="form-control" id="emailC" name="emailC" required placeholder="Correo Electronico Contacto" maxlength="60" aria-label="Username">
   </div>
   <div class="form-footer pt-4 pt-5 mt-4" style="float: right;">
     <input type="submit" class="btn btn-primary btn-default" value="Registrar"></input>
@@ -153,6 +162,12 @@
         }
       }
     });
+
+  }
+  function verificarCaramara(varnit){
+
+    var partes=varnit.split("");
+
 
   }
 </script>
