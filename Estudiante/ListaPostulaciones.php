@@ -176,7 +176,6 @@ include('menuEstudiante.php')
     function mostrarModal(valor) {
         $('#exampleModalForm').modal('show'); 
         elemento=document.getElementById("motivoLista").innerHTML=valor ;
-        
     }
 </script>
 
