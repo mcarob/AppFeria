@@ -18,18 +18,23 @@ $datos=array(
 
     
     $_POST["cod_usuario"],
-    $_POST["conPassword"]
+    $_POST["conPassword"],
+    
+    
        
 );
 
+$conUsuario=new ControladorUsuario();
+$validacion=$conUsuario->validarContra($datos[3],$_POST["conPassword1"]);
+if(count($validacion)>0)
+{
 $conEstudiante= new ControladorEstudiantes();
 $estudiante=new Estudiante($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7]);
 echo($conEstudiante->actualizarPerfil($estudiante));
+}else{
+    echo("ingrese por favor la contraseña actual para realizar cambios");
+}
 
-
-$conUsuario=new ControladorUsuario();
-
-echo($conUsuario->actualizarUsuario($datos[8],$datos[9]));
 
 
 
