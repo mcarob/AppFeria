@@ -46,7 +46,7 @@ include('Header.php');
                         
                         <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="mt-5">
-                                <form  action="javascript: EditarPerfil();" method="POST" id="formEditar" name="formEditar">
+                                <form  action="javascript: EditarPerfil()" method="POST" id="formEditar" name="formEditar">
                                     <!-- <div class="form-group row mb-6">
                                         <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">User Image</label>
                                         <div class="col-sm-8 col-lg-10">
@@ -114,7 +114,7 @@ include('Header.php');
                                     </div>
 
                                     <div class="d-flex justify-content-end mt-5">
-                                        <button type="submit" class="btn btn-primary mb-2 btn-pill">Aceptar</button>
+                                        <button type="submit" class="btn btn-primary mb-2 btn-pill">Actualizar</button>
                                     </div>
 
                                 </form>

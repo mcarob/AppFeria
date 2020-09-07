@@ -12,8 +12,6 @@ $datos=array(
     $_POST["telefonoContacto"],
     $_POST["cargoContacto"],
     $_POST["correoContacto"]
-  
-  
     
 );
 
