@@ -7,15 +7,15 @@ if (!isset($_SESSION['user'])) {
     header("location: ../index.php");
 }
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPostulaciones.php');
 
 $user = new Usuario();
 $estudiante_dao = new EstudianteDAO();
 $user->setUser($_SESSION['user']);
 
-$codigo= $user->darCodigo();
+$codigo = $user->darCodigo();
 $estudiante = $estudiante_dao->devolverEstudiante($codigo);
 
 $controlador = new ControladorPostulacion();
@@ -80,6 +80,7 @@ include('menuEstudiante.php')
                                         <th>Correo contacto</th>
                                         <th>Compensación</th>
                                         <th>Estado</th>
+                                        <th>Acción</th>
 
 
                                     </tr>
@@ -96,13 +97,13 @@ include('menuEstudiante.php')
                                         echo ("<td>" . $key[4] . "</td>");
                                         echo ("<td>" . $key[2] . "</td>");
                                         echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[7] . "</span></td>");
+                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[8].'"'.")'". ">Motivo</button></td>");
 
 
                                     ?>
 
 
                                     <?php
-
                                         echo ("</tr>");
                                     }
 
@@ -118,6 +119,29 @@ include('menuEstudiante.php')
         </div>
     </div>
 
+    <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalFormTitle">Motivo</h5>
+
+                </div>
+                <div class="modal-body">
+                    <form method="POST" id='formAgregarOf'>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Motivo de la decisión: </label>
+                            <label  class="form-control" name="motivo" value="" id="motivoLista"></label>
+                        </div>
+
+                    </form> 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -125,7 +149,14 @@ include('menuEstudiante.php')
     <script src="../assets/plugins/data-tables/datatables.bootstrap4.min.js"></script>
 
 
+    <script>
+        function name(params) {
+            
+        }
+    
 
+    </script>
+    
     <script src="../assets/plugins/data-tables/datatables.responsive.min.js"></script>
     <script>
         jQuery(document).ready(function() {
@@ -140,7 +171,12 @@ include('menuEstudiante.php')
         });
     </script>
 
-
+<script>
+    function mostrarModal(valor) {
+        $('#exampleModalForm').modal('show'); 
+        elemento=document.getElementById("motivoLista").innerHTML=valor ;
+    }
+</script>
 
 
 

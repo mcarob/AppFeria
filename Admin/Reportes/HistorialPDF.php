@@ -66,7 +66,7 @@ foreach ($lista as $sql2) {
     $pdf->Cell(53,10, utf8_decode($sql2['5']), 1, 0, 'C', 0);
     $pdf->Cell(53,10, utf8_decode($sql2['2']), 1, 0, 'C', 0);
     $pdf->Cell(53,10, utf8_decode($sql2['3']), 1, 0, 'C', 0);
-    $pdf->Cell(53,10, utf8_decode($sql2['4']), 1, 0, 'C', 0);
+    $pdf->Cell(53,10, utf8_decode($sql2['7']), 1, 0, 'C', 0);
     $pdf->Cell(53,10, $sql2['4'], 1, 0, 'C', 0);
     $pdf->Cell(53,10, $sql2['6'], 1, 1, 'C', 0);
     $no++;

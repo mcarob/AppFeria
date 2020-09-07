@@ -34,7 +34,7 @@ class PromocionPostulacionDAO
     }
 
     public function totalPostulaciones(){
-        $sentencia = $this->con->prepare("SELECT * FROM postulaciones_activas");
+        $sentencia = $this->con->prepare("SELECT * FROM postulaciones_activas1");
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {
