@@ -104,7 +104,6 @@ include('menuEstudiante.php')
 
 
                                     <?php
-
                                         echo ("</tr>");
                                     }
 
@@ -131,7 +130,7 @@ include('menuEstudiante.php')
                     <form method="POST" id='formAgregarOf'>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Motivo de la decisión: </label>
-                            <label  class="form-control" name="motivo" value="" id="motivoLista" aria-describedby="emailHelp"></label>
+                            <label  class="form-control" name="motivo" value="" id="motivoLista"></label>
                         </div>
 
                     </form> 

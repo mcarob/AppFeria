@@ -24,7 +24,7 @@ $lista = $objeto->HistorialPost();
         <th style="background-color: #7dbe4b">Nombre estudiante</th>
         <th style="background-color: #7dbe4b">Cedula estudiante</th>
         <th style="background-color: #7dbe4b">Carrera</th>
-        <th style="background-color: #7dbe4b">Titulo promoción</th>
+        <th style="background-color: #7dbe4b">Titulo promocion</th>
         <th style="background-color: #7dbe4b">Estado</th>
 
     </tr>
@@ -37,7 +37,7 @@ $lista = $objeto->HistorialPost();
             <td><?php echo utf8_decode ($key[5]); ?></td>
             <td><?php echo utf8_decode($key[2]); ?></td>
             <td><?php echo utf8_decode($key[3]); ?></td>
-            <td><?php echo utf8_decode($key[4]); ?></td>
+            <td><?php echo utf8_decode($key[7]); ?></td>
             <td><?php echo utf8_decode($key[4]); ?></td>
             <td><?php echo utf8_decode($key[6]); ?></td>
 
