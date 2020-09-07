@@ -111,7 +111,12 @@
                   <li>
                     <a class="sidenav-item-link" href="ofertas.php">
                       <span class="nav-text">Administrar Ofertas</span>
+                    </a>
+                  </li>
 
+                  <li>
+                    <a class="sidenav-item-link" href="TablaOfertasXempresa.php">
+                      <span class="nav-text">Tabla Ofertas</span>
                     </a>
                   </li>
                 </div>

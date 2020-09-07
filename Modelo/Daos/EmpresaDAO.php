@@ -77,7 +77,6 @@ class EmpresaDAO extends DB
     }
 
     public function devolverEmpresa($codigo_usuario){
-
         $query=$this->con->prepare('SELECT * FROM empresa WHERE COD_USUARIO=:user');
         $query->execute(['user'=>$codigo_usuario]);
         if($query->rowCount()){

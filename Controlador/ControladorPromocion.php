@@ -81,6 +81,13 @@ public function eliminarVacante($codigo)
 }
 
 
+public function OfertasXempresaAI($cod){
+	$oferta_DAO=new PromocionLaboralDAO();
+	$promocion=$oferta_DAO->ofertasActivasEinactivas($cod);
+	return $promocion;
+}
+
+
 
 
 }
