@@ -19,7 +19,7 @@
       </span>
     </div>
     <input type="text" id="registroE" name="REM" value="REM" hidden>
-    <input autocomplete="new-false" type="text" class="form-control" id="nombreE" name="nombreE" placeholder="Nombre o Razon Social" aria-label="Nombre Empresa"  maxlength="60" required>
+    <input autocomplete="new-false" type="text" class="form-control" id="nombreE" name="nombreE" placeholder="Nombre o Razon Social" aria-label="Nombre Empresa" maxlength="60" required>
   </div>
   <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -29,10 +29,7 @@
             <i class="material-icons">assignment_ind</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="nitE" name="nitE" data-mask="999999999-9" placeholder="NIT" maxlength="11"
-        pattern="(^[0-9]{9}-{1}[0-9]{1})"
-        title="El Formmato de Nit es xxxxxxxxx-x"
-        aria-label="Nit Empresa">
+        <input autocomplete="false" type="text" class="form-control" id="nitE" name="nitE" data-mask="999999999-9" placeholder="NIT" maxlength="11" pattern="(^[0-9]{9}-{1}[0-9]{1})" title="El Formmato de Nit es xxxxxxxxx-x" aria-label="Nit Empresa">
       </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -42,10 +39,7 @@
             <i class="material-icons">phone</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="telE" name="telE" required placeholder="Teléfono Empresa" maxlength="15" 
-        pattern="(^[+]?[0-9]{7,15})"
-        title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
-        aria-label="Telefono Empresa">
+        <input autocomplete="false" type="text" class="form-control" id="telE" name="telE" required placeholder="Teléfono Empresa" maxlength="15" pattern="(^[+]?[0-9]{7,15})" title="El Formato de telefono puede comenzar con + o solo numeros (max 15)" aria-label="Telefono Empresa">
       </div>
     </div>
   </div>
@@ -115,10 +109,7 @@
             <i class="material-icons">phone</i>
           </span>
         </div>
-        <input autocomplete="false" type="text" class="form-control" id="telC" name="telC" required placeholder="Teléfono " maxlength="15"
-        pattern="(^[+]?[0-9]{7,15})"
-        title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
-        aria-label="Username">
+        <input autocomplete="false" type="text" class="form-control" id="telC" name="telC" required placeholder="Teléfono " maxlength="15" pattern="(^[+]?[0-9]{7,15})" title="El Formato de telefono puede comenzar con + o solo numeros (max 15)" aria-label="Username">
       </div>
     </div>
   </div>
@@ -138,6 +129,8 @@
 
 <script>
   function registrarEmpresa() {
+    if(verificarCaramara(document.getElementById("nitE").value)){
+
     var myform = document.getElementById("formEmpresaR");
     var datos = new FormData(myform);
     $.ajax({
@@ -162,13 +155,29 @@
         }
       }
     });
+    }else{
+      toastr["success"]("no se puede validar el NIT", "Error");
+    }
 
   }
-  function verificarCaramara(varnit){
 
-    var partes=varnit.split("");
+  function verificarCaramara(varnit) {
 
-
+    var digitos = varnit.split("");
+    var v = 41 * digitos[0] +
+      37 * digitos[1] +
+      29 * digitos[2] +
+      23 * digitos[3] +
+      19 * digitos[4] +
+      17 * digitos[5] +
+      13 * digitos[6] +
+      7 * digitos[7] +
+      3 * digitos[8];
+    v = v % 11;
+    if(v>=2){
+      v=11-v;
+    }
+    return v==digitos[10];
   }
 </script>
 
