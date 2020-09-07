@@ -40,7 +40,7 @@
 </head>
 
 </head>
-  <body class="" id="body">
+  <body class="" id="body" style="">
       <div class="container d-flex flex-column justify-content-between vh-100">
       <div class="row justify-content-center mt-5">
         <div class="col-xl-5 col-lg-6 col-md-10">
@@ -50,7 +50,7 @@
                 <a href="/index.html">
                   
                     <g fill="none" fill-rule="evenodd">
-                      <img src="assets/img/logo.png" alt="">
+                      <img src="assets/img/logo.png" alt="" style="background-color: white;">
                     </g>
                   
                   <h3  class="brand-name">FERIA DE OPORTUNIDADES</h3>

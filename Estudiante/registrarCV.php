@@ -44,6 +44,9 @@ include('Header.php');
             body {
                 background-color: #CCCCCC;
                 background-image: url(../assets/img/UEB.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+
             }
         </style>
 
@@ -91,12 +94,7 @@ include('Header.php');
 
 
 
-<script src="../assets/plugins/jquery/jquery.min.js"></script>
-<script src="../assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
-<script src="../assets/plugins/jekyll-search.min.js"></script>
-<script src="../assets/js/sleek.bundle.js"></script>
-<script src="../assets/plugins/select2/js/select2.min.js"></script>
-<script src="../assets/plugins/jquery-mask-input/jquery.mask.min.js"></script>
+
 <script>
     $(document).ready(function() {
         $("#wizard-picture").change(function() {

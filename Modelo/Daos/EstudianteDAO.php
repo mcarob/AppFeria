@@ -53,6 +53,20 @@ class EstudianteDAO
     }
     
 
+    public function editarPerfil(Estudiante $estudiante){
+        $sentencia = $this->con->prepare("UPDATE estudiante SET 
+        CED_ESTUDIANTE='".$estudiante->getCedEstudiante()."',
+        CORREO_ESTUDIANTE='".$estudiante->getCorreoEstudiante()."',
+        COD_USUARIO=".$estudiante->getCodUsuario().",
+        NOMBRE_ESTUDIANTE='".$estudiante->getNombreEstudiante()."',
+        APELLIDO_ESTUDIANTE='".$estudiante->getApellidoEstudiante()."',
+        COD_PROGRAMA_ACADEMICO=".$estudiante->getCodProgamaAcademico().",
+        SEMESTRE_ESTUDIANTE=".$estudiante->getSemestreEstudiante()."
+        WHERE COD_ESTUDIANTE =".$estudiante->getCodEstudiante());
+
+        $res=$sentencia->execute();
+        return $res;
+    }
 
 }
 ?>
