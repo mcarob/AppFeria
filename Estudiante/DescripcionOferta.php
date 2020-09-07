@@ -6,10 +6,17 @@ if (!isset($_SESSION['user'])) {
 } else if (!$_SESSION['tipo'] == 2) {
     header("location: ../index.php");
 }
-
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 
 $conPromocion=new ControladorPromocion();
+$user = new Usuario();
+$estudiante_dao = new EstudianteDAO();
+$user->setUser($_SESSION['user']);
+$codigo= $user->darCodigo();
+$estudiante = $estudiante_dao->devolverEstudiante($codigo);
 
 
 include('menuEstudiante.php');
@@ -36,7 +43,7 @@ if(isset($_GET["action"]))
                                 <img src="../Imagenes/ecopetrol.jpg" width="100" alt="user image">
                             </div>
                             <div class="card-body">
-                                <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa() ?> </h4>
+                                <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa()     ?> </h4>
 
                             </div>
                         </div>
@@ -60,12 +67,18 @@ if(isset($_GET["action"]))
 
                             <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                                 <div class="mt-5">
-                                    <form>
-
+                                    <form id="postulados" method="POST" action="javascript: agregarPostulacion()">
+                                        <input type="hidden" id="codigooo" name="codigooo" value="<?php echo $estudiante->getCodEstudiante()?>"/>
+                                        <input type="hidden" id="ofertaa" name="ofertaa" value="<?php echo $informacion->getCodPromocion()?>"/>
 
                                         <div class="form-group mb-4">
                                             <label for="userName">Descripcion</label>
-                                            <span class="d-block mt-1">  <?php echo $informacion->getPromocionConocimientoBase() ?> </span>
+                                            <span class="d-block mt-1">  <?php echo $informacion->getPromocionDescripcion() ?> </span>
+                                        </div>
+
+                                        <div class="form-group mb-4">
+                                            <label for="userName">Descripcion</label>
+                                            <span class="d-block mt-1">  <?php echo $informacion->getPromocionPerfil()  ?> </span>
 
                                         </div>
 
@@ -111,7 +124,7 @@ if(isset($_GET["action"]))
                             
 
                                         <div class="d-flex justify-content-end mt-5">
-                                            <button type="submit" class="btn btn-primary mb-2 btn-pill">Aceptar</button>
+                                            <button type="submit"  class="btn btn-primary mb-2 btn-pill">Postularse</button>
                                         </div>
 
                                     </form>
@@ -125,7 +138,27 @@ if(isset($_GET["action"]))
     </div>
 
 
+    <script>
+    function agregarPostulacion() {
+        datos = $('#postulados').serialize();
 
+        $.ajax({
+            type: "POST",
+            data: datos,
+            url: "agregar_postulacion.php",
+            success: function(r) {
+
+                console.log(r);             
+                if (r == 1) {
+                    window.location.href = "postulaciones.php";
+    
+                } else {
+
+                }
+            }
+        });
+    }
+</script>
 
     <?php
 

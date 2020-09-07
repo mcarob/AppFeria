@@ -20,7 +20,17 @@ class PromocionPostulacionDAO
     }
     
    
+    public function agregarPost(PromocionPostulacion $oferta){
+        $sql="insert into promocion_postulacion (COD_PROMOCION_LABORAL, COD_ESTUDIANTE, COD_ESTADO_PROCESO,
+        COD_HOJA_VIDA,fecha_postulacion,motivo_resultado)
+        values 
+        (?,?,?,?,now(),?)";
+        $respuesta=$this->con->prepare($sql)->execute([$oferta->getCodPromo(),$oferta->getCodEstudiante(),$oferta->getCodEstadoProceso(),
+        $oferta->getHojaVida(),$oferta->getMotivo()]);
+        
+        return $respuesta;
 
+    }
 
     // Lista de empresas con el usuario activo
     public function ListaDePostulaciones($cod){

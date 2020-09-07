@@ -7,16 +7,20 @@ class PromocionPostulacion{
   private $codEstudiante;
   private $codEstadoProceso;
   private $hojaVida;
+  private $fecha;
+  private $motivo;
 
 
-
-  public function __construct($codPromoPost, $codPromo, $codEstudiante, $codEstadoProceso,$hojaVida)
+  public function __construct($codPromoPost, $codPromo, $codEstudiante, $codEstadoProceso,$hojaVida, $fecha_postulacion, $resultado)
   {
     $this->codPromoPost=$codPromoPost;
     $this->codPromo=$codPromo;
     $this->codEstudiante=$codEstudiante;
     $this->codEstadoProceso=$codEstadoProceso;
-    $this->hojaVida=$hojaVida;
+	$this->hojaVida=$hojaVida;
+	$this->fecha=$fecha_postulacion;
+	$this->motivo=$resultado;
+	
 
   }
   
@@ -60,5 +64,20 @@ class PromocionPostulacion{
 	function setHojaVida($hojaVida) {  
 		$this->hojaVida = $hojaVida; 
 	} 
+
+	function getMotivo() { 
+ 		return $this->motivo; 
+	} 
+
+	function setMotivo($motivo) {  
+		$this->motivo = $motivo; 
+	} 
+
+	function getFecha() { 
+ 		return $this->fecha; 
+	} 
+
+	function setFecha($fecha) {  
+		$this->fecha = $fecha; 
+	} 
 }
-?>
