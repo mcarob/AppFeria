@@ -18,7 +18,7 @@ class ControladorPostulacion{
 		public function agregarPostulacion($Postulacion)
 		{
             $this->postulados = new PromocionPostulacionDAO();
-            //return 
+			return $this->postulados->agregarPost($Postulacion);
 		}
 
 		public function darListaPostulacionesTotal()

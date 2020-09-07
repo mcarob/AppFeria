@@ -53,6 +53,7 @@ class PromocionLaboralDAO
         $row[12],$row[13],$row[14],$row[15]);
         return $promocion;
     }
+
     public function verOfertas($pCodigo){
         $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =:empresa"); 
         $sentencia->execute(['empresa'=>$pCodigo]);
@@ -63,6 +64,8 @@ class PromocionLaboralDAO
         return $em;
     }
 
+
+    // Metodo para mostrar las ofertas activas buscando por el codigo de empresa
     public function verOfertas2($pCodigo){
         $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE promocion_estado=1 and cod_empresa =:empresa"); 
         $sentencia->execute(['empresa'=>$pCodigo]);
@@ -72,6 +75,9 @@ class PromocionLaboralDAO
         }
         return $em;
     }
+
+
+    
 
 
     public function ofertasActivasEinactivas($pCodigo){
