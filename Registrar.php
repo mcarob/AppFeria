@@ -4,32 +4,27 @@ if (isset($_POST["REM"])) {
     if (isset($_FILES['camaracomercioE'])) {
         if (($_FILES['camaracomercioE']['type']) == 'application/pdf') {
             if (((($_FILES['logo']['type']) == 'image/png') || (($_FILES['logo']['type']) == 'image/jpeg'))) {
-                try{
+                try {
                     $datacomercio = ($_FILES['camaracomercioE']['tmp_name']);
                     $datalogo = ($_FILES['logo']['tmp_name']);
-                    if(($datacomercio==null)){
-                        echo("Error al cargar el archivo Camara de comercio ");
-                     
-                    }else{
-                        $archicomercio=file_get_contents($datacomercio);
+                    if (($datacomercio == null)) {
+                        echo ("Error al cargar el archivo Camara de comercio ");
+                    } else {
+                        $archicomercio = file_get_contents($datacomercio);
                     }
-                    if(($datalogo==null)){
-                        echo("Error al cargar el archivo");
-                       
-                    }else{
-                        $archilogo=file_get_contents($datalogo);
+                    if (($datalogo == null)) {
+                        echo ("Error al cargar el archivo");
+                    } else {
+                        $archilogo = file_get_contents($datalogo);
                     }
-                    
-                   
-                    
-                }catch (Exception $e){
-                    echo("Error en los archivos, verificar");
-                }
-                if(isset($archilogo) and isset($archicomercio)){
-                    echo("archivos Correctos");
+                } catch (Exception $e) {
+                    echo ("Error en los archivos, verificar");
                 }
                 
-            }else{
+                if (isset($archilogo) and isset($archicomercio)) {
+                    echo ("archivos Correctos");
+                }
+            } else {
                 echo ("el logo tiene que ser extensión jpeg/jpg/png");
             }
         } else {
@@ -43,5 +38,4 @@ if (isset($_POST["REM"])) {
         // $query=$base->connect()->prepare('UPDATE empresa SET LOGO_EMPRESA=? WHERE COD_EMPRESA=1 ');
         // $query->execute([$archi]);
     }
-    
 }
