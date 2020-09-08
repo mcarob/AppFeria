@@ -6,7 +6,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/conexion/db.php'
 /**
  * Representa el DAO de la clase Usuario
  */
-class UsuarioHojaDAO
+class UsuarioDAO
 {
    
     private $con;
@@ -35,6 +35,14 @@ class UsuarioHojaDAO
         return $res;
     }
 
+    public function validacion($id,$contra)
+    {
+        
+        $sentencia = $this->con->prepare("SELECT * from usuario where cod_usuario=? and contra_usuario=?");
+        $sentencia->execute([$id,md5($contra)]);
+        $number_of_rows = $sentencia->fetchAll();
+        return $number_of_rows;
+    }
    
 
 
