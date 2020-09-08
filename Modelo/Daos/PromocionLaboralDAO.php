@@ -46,21 +46,18 @@ class PromocionLaboralDAO
         $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral2 WHERE cod_promocion_laboral =" .$pCodigoPromocion);
         $sentencia->execute();
         $row = $sentencia->fetch();
-<<<<<<< Updated upstream
-        $promocion = new PromocionLaboral($row[0], $row[1],$row[2], 
+/*         $promocion = new PromocionLaboral($row[0], $row[1],$row[2], 
         $row[3],$row[4], $row[5], $row[6], 
         $row[7],$row[8], $row[9], $row[10],$row[11], 
         $row[12],$row[13],$row[14],$row[15]);
 
         return $promocion;
-=======
         $em = array();
         while ($fila = $sentencia->fetch()) {
            $em[] = $fila;  
        }
-       return $em;
+       return $em; */
         
->>>>>>> Stashed changes
     }
 
 

@@ -44,7 +44,16 @@ class EmpresaDAO extends DB
         return $nrows;
     }
 
+    public function registrarEmpresaProcedimiento($variable){
+    /* ni_empresa ,nombre ,ccmpdf ,descripccion,logo,telefono,correo ,nomc,apellc ,telc,cargoc,correoc ,userempresa , passw ) 
+    */
+    $sentencia = $this->con->prepare("select count(*) from empresa,usuario where nit_empresa=? and empresa.COD_USUARIO=usuario.COD_USUARIO and usuario.VALIDADO=1");
+    $sentencia->execute([$variable[0]]);
+    $nrows = $sentencia->fetchAll()[0];
 
+    return $nrows;
+
+    }
 
     public function buscarEmpresaxNit($variable)
     {

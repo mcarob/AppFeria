@@ -9,8 +9,6 @@
             <h6>Elegir Logo</h6>
         </div>
     </div>
-
-
     <br>
     <div class="input-group">
         <div class="input-group-prepend">
