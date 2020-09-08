@@ -39,7 +39,7 @@ class EmpresaDAO extends DB
     {
         $sentencia = $this->con->prepare("select * from usuario where USER_USUARIO=?");
         $sentencia->execute([$variable]);
-        $nrows = $sentencia->fetchAll()[0];
+        $nrows = $sentencia->fetchAll();
 
         return $nrows;
     }
