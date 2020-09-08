@@ -6,30 +6,30 @@ if (!isset($_SESSION['user'])) {
 } else if (!$_SESSION['tipo'] == 2) {
     header("location: ../index.php");
 }
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 
-$conPromocion=new ControladorPromocion();
+$conPromocion = new ControladorPromocion();
 $user = new Usuario();
 $estudiante_dao = new EstudianteDAO();
 $user->setUser($_SESSION['user']);
-$codigo= $user->darCodigo();
+$codigo = $user->darCodigo();
 $estudiante = $estudiante_dao->devolverEstudiante($codigo);
 
 
 include('menuEstudiante.php');
 include('Header.php');
 
-if(isset($_GET["action"]))
-{
-    $var=$_GET["action"];
-    $informacion=$conPromocion->darInformacion($var);
-    
+if (isset($_GET["action"])) {
+    $var = $_GET["action"];
+    $informacion = $conPromocion->darInformacion($var);
 }
 
 ?>
+
+
 
 <div class="content-wrapper">
     <div class="content">
@@ -43,7 +43,11 @@ if(isset($_GET["action"]))
                                 <img src="../Imagenes/ecopetrol.jpg" width="100" alt="user image">
                             </div>
                             <div class="card-body">
-                                <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa()     ?> </h4>
+<<<<<<< Updated upstream
+                                <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa() ?> </h4>
+=======
+                                <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa()?> </h4>
+>>>>>>> Stashed changes
 
                             </div>
                         </div>
@@ -68,17 +72,17 @@ if(isset($_GET["action"]))
                             <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                                 <div class="mt-5">
                                     <form id="postulados" method="POST" action="javascript: agregarPostulacion()">
-                                        <input type="hidden" id="codigooo" name="codigooo" value="<?php echo $estudiante->getCodEstudiante()?>"/>
-                                        <input type="hidden" id="ofertaa" name="ofertaa" value="<?php echo $informacion->getCodPromocion()?>"/>
+                                        <input type="hidden" id="codigooo" name="codigooo" value="<?php echo $estudiante->getCodEstudiante() ?>" />
+                                        <input type="hidden" id="ofertaa" name="ofertaa" value="<?php echo $informacion->getCodPromocion() ?>" />
 
                                         <div class="form-group mb-4">
-                                            <label for="userName">Descripcion</label>
-                                            <span class="d-block mt-1">  <?php echo $informacion->getPromocionDescripcion() ?> </span>
+                                            <label for="userName">Descripción:</label>
+                                            <span class="d-block mt-1"> <?php echo $informacion->getPromocionDescripcion() ?> </span>
                                         </div>
 
                                         <div class="form-group mb-4">
-                                            <label for="userName">Descripcion</label>
-                                            <span class="d-block mt-1">  <?php echo $informacion->getPromocionPerfil()  ?> </span>
+                                            <label for="userName">Perfil buscado:</label>
+                                            <span class="d-block mt-1"> <?php echo $informacion->getPromocionPerfil()  ?> </span>
 
                                         </div>
 
@@ -86,7 +90,12 @@ if(isset($_GET["action"]))
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="firstName">Salario</label>
-                                                    <span class="d-block mt-1"> <?php echo $informacion->getPromocionCompensacion() ?></span>
+                                                    <span class="d-block mt-1"> <?php if ($informacion->getPromocionRangoCompensacion() == "") {
+                                                                                    echo "Sin remuneración" ;
+                                                                                } else {
+                                                                                    echo $informacion->getPromocionRangoCompensacion();
+                                                                                }
+                                                                                ?></span>
                                                 </div>
                                             </div>
 
@@ -99,32 +108,118 @@ if(isset($_GET["action"]))
                                             </div>
                                         </div>
 
+                                        <?php
+                                        $horarios = explode(';', $informacion->getPromocionHorario());
 
-
+                                        ?>
                                         <div class="form-group mb-4">
                                             <label for="userName">Horarios</label>
 
                                         </div>
 
-                                        <div class="row mb-2" row="2">
-
+                                        <div class="row mb-2">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="lastName">Lunes
-                                                    </label>
-                                                    <span class="d-block mt-1">  <?php echo $informacion->getPromocionHorario() ?> </span>
+                                                    <label for="firstName">Lunes</label>
+                                                    <span class="d-block mt-1"> <?php if ($horarios[0] == "") {
+                                                                                    echo "No hay programación";
+                                                                                } else {
+                                                                                    echo $horarios[0];
+                                                                                }
+                                                                                ?></span>
                                                 </div>
                                             </div>
 
-                                                                        
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Martes
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php if ($horarios[1] == "") {
+                                                                                    echo "No hay programación";
+                                                                                } else {
+                                                                                    echo $horarios[1];
+                                                                                }
+                                                                                ?></span>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Miercoles
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php if ($horarios[2] == "") {
+                                                                                    echo "No hay programación";
+                                                                                } else {
+                                                                                    echo $horarios[2];
+                                                                                }
+                                                                                ?></span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Jueves
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php if ($horarios[3] == "") {
+                                                                                    echo "No hay programación";
+                                                                                } else {
+                                                                                    echo $horarios[3];
+                                                                                }
+                                                                                ?></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Viernes
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php if ($horarios[4] == "") {
+                                                                                    echo "No hay programación";
+                                                                                } else {
+                                                                                    echo $horarios[4];
+                                                                                }
+                                                                                ?></span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Sabado
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php if ($horarios[5] == "") {
+                                                                                    echo "No hay programación";
+                                                                                } else {
+                                                                                    echo $horarios[5];
+                                                                                }
+                                                                                ?></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Domingo
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php if ($horarios[6] == "") {
+                                                                                    echo "No hay programación";
+                                                                                } else {
+                                                                                    echo $horarios[6];
+                                                                                }
+                                                                                ?></span>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        
 
-                            
+
+
 
                                         <div class="d-flex justify-content-end mt-5">
-                                            <button type="submit"  class="btn btn-primary mb-2 btn-pill">Postularse</button>
+                                            <button type="submit" class="btn btn-primary mb-2 btn-pill">Postularse</button>
                                         </div>
 
                                     </form>
@@ -139,26 +234,26 @@ if(isset($_GET["action"]))
 
 
     <script>
-    function agregarPostulacion() {
-        datos = $('#postulados').serialize();
+        function agregarPostulacion() {
+            datos = $('#postulados').serialize();
 
-        $.ajax({
-            type: "POST",
-            data: datos,
-            url: "agregar_postulacion.php",
-            success: function(r) {
+            $.ajax({
+                type: "POST",
+                data: datos,
+                url: "agregar_postulacion.php",
+                success: function(r) {
 
-                console.log(r);             
-                if (r == 1) {
-                    window.location.href = "postulaciones.php";
-    
-                } else {
+                    console.log(r);
+                    if (r == 1) {
+                        window.location.href = "postulaciones.php";
 
+                    } else {
+
+                    }
                 }
-            }
-        });
-    }
-</script>
+            });
+        }
+    </script>
 
     <?php
 

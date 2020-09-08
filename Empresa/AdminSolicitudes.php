@@ -20,7 +20,7 @@ $empresa = $empresa_dao->devolverEmpresa($codigo);
 
 $objeto = new ControladorPostulacion;
 $lista = $objeto->buscarPostulacionXempresa($empresa->getCodEmpresa());
-$cod_postulacion=0;
+$cod_postulacion = 0;
 ?>
 
 
@@ -99,19 +99,19 @@ include('menuEmpresa.php')
                                         }
                                         if ($key["COD_ESTADO_PROCESO"] == "2") {
                                             echo (" <td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
-                                            <button type='button' class='mb-1 btn btn-danger' data-toggle='modal' data-target='#exampleModalForm'>Rechazar</button></td>");
+                                            <button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[0] . '"' . ")'" . ">Rechazar</button></td>");
                                         }
                                         if ($key["COD_ESTADO_PROCESO"] == "3") {
                                             echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='formalizar(" . '"' . $key[0] . '"' . ")'>Formalizar</button>
-                                            <button type='button' class='mb-1 btn btn-danger' data-toggle='modal' data-target='#exampleModalForm'>Rechazar</button></td>");
+                                            <button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[0] . '"' . ")'" . ">Rechazar</button></td>");
                                         }
 
-                                        $cod_postulacion=$key[0];
+                                        $cod_postulacion = $key[0];
 
 
 
                                     ?>
-                                    
+
 
                                     <?php
 
@@ -138,20 +138,21 @@ include('menuEmpresa.php')
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalFormTitle">Registrar</h5>
-                   
+
                 </div>
                 <div class="modal-body">
                     <form method="POST" id='formAgregarOf'>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Motivo de la decisión: </label>
-                            <input type="text" class="form-control" name="motivo" id="motivo" aria-describedby="emailHelp" >
+                            <input type="text" class="form-control" name="motivo" id="motivo" aria-describedby="emailHelp">
                         </div>
-                       
+                        <input type="hidden" id="escondido">
+                        
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
-                    <button type="button" class="btn btn-primary btn-pill" onclick="rechazar('<?php echo ($cod_postulacion) ?>')">Aceptar</button>
+                    <button type="button" class="btn btn-primary btn-pill" onclick="rechazar()">Aceptar</button>
                 </div>
             </div>
         </div>
@@ -178,6 +179,16 @@ include('menuEmpresa.php')
         });
     </script>
 
+<script>
+    var variableCod;
+    function mostrarModal1(valor) {
+        $('#exampleModalForm').modal('show'); 
+        variableCod = valor;    
+     
+    }
+</script>
+
+
 
     <script>
         function hojaVerificada(cod) {
@@ -188,22 +199,22 @@ include('menuEmpresa.php')
             window.location.href = 'gestionarSolicitudes.php?action=' + "Aceptar&" + "codigo=" + cod;
         }
 
-        function rechazar(cod) {
+        function rechazar() {
             datos = $('#formAgregarOf').serialize();
 
-        $.ajax({
-            type: "POST",
-            data: datos,
-            url: 'gestionarSolicitudes.php?action=' + "rechazar&" + "codigo=" + cod,
-            success: function(r) {
-                console.log(r);             
-                if (r == 1) {
-                window.location.href = "AdminSolicitudes.php";
-                } else {
+            $.ajax({
+                type: "POST",
+                data: datos,
+                url: 'gestionarSolicitudes.php?action=' + "rechazar&" + "codigo=" + variableCod,
+                success: function(r) {
+                    console.log(r);
+                    if (r == 1) {
+                        window.location.href = "AdminSolicitudes.php";
+                    } else {
 
+                    }
                 }
-            }
-        });
+            });
 
         }
 

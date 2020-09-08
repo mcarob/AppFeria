@@ -9,11 +9,18 @@ private $usuario;
 
     public function actualizarUsuario($codigo,$pass)
     {
-        $usuario=new UsuarioHojaDAO();
+        $this->usuario=new UsuarioDAO();
         return $this->usuario->editarUsuario($codigo,$pass);
     }
 
+    public function validarContra($id,$contra)
+    {
+        
+        $this->usuario=new UsuarioDAO();
+        return $this->usuario->validacion($id,$contra);
+    }
 
+    
 }
 
 ?>
