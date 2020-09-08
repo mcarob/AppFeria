@@ -43,7 +43,11 @@ if (isset($_GET["action"])) {
                                 <img src="../Imagenes/ecopetrol.jpg" width="100" alt="user image">
                             </div>
                             <div class="card-body">
+<<<<<<< Updated upstream
                                 <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa() ?> </h4>
+=======
+                                <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa()?> </h4>
+>>>>>>> Stashed changes
 
                             </div>
                         </div>
