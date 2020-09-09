@@ -67,6 +67,7 @@
             </div>
         </div>
     </div>
+   
     <button type="button" class="btn btn-warning add" style="background-color: #0B7984; border-color: #0B7984;">
         <font color="White">Añadir Formacion</font>
     </button>
@@ -125,22 +126,24 @@
     <br><br>
     <script>
         $('.add').click(function() {
-            $('.suma').append('<div class="sub-suma"><div class="row no-gutters"><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username"><option disabled="" selected="">Seleccionar tipo de formacion</option><option value="bg"> Bachiller </option><option value="md"> Bachiller Tecnico </option><option value="cl"> Universitario </option></select></div> </div><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">phone</i></span></div><input autocomplete="false" type="text" class="form-control" placeholder="Institucion" aria-label="Username"></div></div><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username"></div></div><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username"></div></div></div></div></div><button type="button" class="btn btn-warning remove" style="background-color: #0B7984; border-color: #0B7984;"><font color="White">Eliminar</font></button><br><br>');
+            $('.suma').append('<div class="sub-suma"><div class="row no-gutters"><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username"><option disabled="" selected="">Seleccionar tipo de formacion</option><option value="bg"> Bachiller </option><option value="md"> Bachiller Tecnico </option><option value="cl"> Universitario </option></select></div> </div><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">phone</i></span></div><input autocomplete="false" type="text" class="form-control" placeholder="Institucion" aria-label="Username"></div></div><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username"></div></div><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username"></div></div></div></div><button type="button" class="btn btn-warning remove1" style="background-color: #0B7984; border-color: #0B7984;"><font color="White">Eliminar</font></button><br><br>');
         });
 
 
         $('.addPro').click(function() {
-            $('.sumaPro').append('<div class="row no-gutters"><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i> </span></div><input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Cargo" aria-label="Username" ></div></div><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"> <i class="material-icons">phone</i></span></div><input autocomplete="false" type="text" class="form-control" placeholder="Empresa" aria-label="Username"> </div></div><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"> <i class="material-icons">assignment_ind</i></span></div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username"></div></div><div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username"></div></div></div><button type="button" class="btn btn-warning remove" style="background-color: #0B7984; border-color: #0B7984;"><font color="White">Eliminar</font></button><br><br>');
+            $('.sumaPro').append('<div class="sumaPro"><div class="sub-sumaPro"><div class="row no-gutters"><div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Cargo" aria-label="Username"></div></div> <div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">phone</i></span></div><input autocomplete="false" type="text" class="form-control" placeholder="Empresa" aria-label="Username"></div></div> <div class="col-md-6 mb-3"> <div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="material-icons">assignment_ind</i></span></div><input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username"> </div></div> <div class="col-md-6 mb-3"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text"> <i class="material-icons">assignment_ind</i></span></div><input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username"></div></div><button type="button" class="btn btn-warning remove" style="background-color: #0B7984; border-color: #0B7984;"><font color="White">Eliminar</font></button> </div></div></div></div></div><br>');
         });
 
 
-        $(document).on('click', '.remove', function() {
-            $(this).parent('.suma').remove();
-        });
+        $(document).on('click', '.remove', removeElement);
+   
+        function removeElement(){
+            $(this).parent.remove()
+        }
 
         $(document).on('click', '.remove', function() {
             $(this).parent('.sumaPro').remove();
-        });
+       });
     </script>
 
 </form>
