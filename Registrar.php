@@ -42,7 +42,28 @@ if (isset($_POST["REM"])) {
                     }
                     if($error==0){
                        // registrar empresa, paso las validaciones
-                       
+                       /* ni_empresa ,nombre ,ccmpdf ,descripccion,logo,telefono,correo ,nomc,apellc ,telc,cargoc,correoc ,userempresa , passw ) */
+                        $comercio = ($_FILES['camaracomercioE']['tmp_name']);
+                        $comercioarchi=file_get_contents($imgData);
+                        $logo = ($_FILES['camaracomercioE']['tmp_name']);
+                        $logoarchi=file_get_contents($imgData);
+                        $passmd5=md5($_POST['nitE']);
+                       $enviar=([   $_POST['nitE'],
+                                    $_POST['nombreE'],
+                                    $_POST['comercioarchi'],
+                                    $_POST['descE'],
+                                    $_POST['logoarchi'],
+                                    $_POST['telE'],
+                                    $_POST['emailE'],
+                                    $_POST['nomC'],
+                                    $_POST['apeC'],
+                                    $_POST['cargoC'],
+                                    $_POST['telC'],
+                                    $_POST['emailC'],
+                                    $_POST['emailE'],
+                                    $_POST['passmd5']
+                       ]);
+                        $variable->registrarEmpresa($enviar);
                     }
                 }
             } else {

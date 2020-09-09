@@ -44,14 +44,12 @@ class EmpresaDAO extends DB
         return $nrows;
     }
 
-    public function registrarEmpresaProcedimiento($variable){
+    public function registrarEmpresaProcedimiento($v){
     /* ni_empresa ,nombre ,ccmpdf ,descripccion,logo,telefono,correo ,nomc,apellc ,telc,cargoc,correoc ,userempresa , passw ) 
     */
-    $sentencia = $this->con->prepare("select count(*) from empresa,usuario where nit_empresa=? and empresa.COD_USUARIO=usuario.COD_USUARIO and usuario.VALIDADO=1");
-    $sentencia->execute([$variable[0]]);
-    $nrows = $sentencia->fetchAll()[0];
-
-    return $nrows;
+    $sentencia = $this->con->prepare("CALL agregar_Empresa(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $r=$sentencia->execute([$v[0],$v[1],$v[2],$v[3],$v[4],$v[5],$v[6],$v[7],$v[8],$v[9],$v[10],$v[11],$v[12],$v[13]]);
+    return $r;
 
     }
 

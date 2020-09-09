@@ -18,8 +18,9 @@ class ControladorRegistros
         $daoEmpresa = new EmpresaDAO();
 		return $daoEmpresa->buscarCorreo($correo);
 	}
-	public function registrarEmpresa(){
-
+	public function registrarEmpresa($var){
+		$daoEmpresa = new EmpresaDAO();
+		return $daoEmpresa->registrarEmpresaProcedimiento($var);
 	}
 }
 /*  */
