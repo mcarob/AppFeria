@@ -40,8 +40,8 @@
 body {
     background-color: #CCCCCC;
     background-image: url(assets/img/UEB.jpg);
-    background-size:  cover auto;
-    background-repeat: no-repeat;
+    background-size:  100% 100%;
+
 }
 </style>
 
@@ -52,7 +52,7 @@ body {
             <div class="col-lg-8 col-sm-offset-1">
                 <div class="card card-default">
                     <div class="card-header card-header  d-flex justify-content-center">
-                        <img src="assets/img/logo.png" style="width:180px ;" alt="">
+                        <img src="assets/img/logo.png" style="width:150px ;" alt="">
                     </div>
                     <div class="card-body">
                         <ul class="nav nav-pills nav-justified nav-style-fill" id="myTab" role="tablist">
