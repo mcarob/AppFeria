@@ -45,16 +45,7 @@ include('Header.php');
                             aria-labelledby="settings-tab">
                             <div class="mt-5">
                                 <form id="editarEs" method='POST' action="javascript:editarEstudiante()">
-                                    <!-- <div class="form-group row mb-6">
-                                        <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">User Image</label>
-                                        <div class="col-sm-8 col-lg-10">
-                                            <div class="custom-file mb-1">
-                                                <input type="file" class="custom-file-input" id="coverImage" required>
-                                                <label class="custom-file-label" for="coverImage">Choose file...</label>
-                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+       
                                     <div class="row mb-2">
                                         <div class="col-lg-6">
                                             <div class="form-group">
@@ -104,7 +95,7 @@ include('Header.php');
                                     </div>
 
                                     <div class="form-group mb-4">
-                                        <label for="conPassword1">Anterior contraseña</label>
+                                        <label for="conPassword1">Contraseña actual</label>
                                         <input type="password" class="form-control" id="conPassword1"
                                             name="conPassword1" value="">
                                     </div>

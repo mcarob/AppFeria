@@ -19,14 +19,18 @@ $codigo = $user->darCodigo();
 $estudiante = $estudiante_dao->devolverEstudiante($codigo);
 
 
+
 include('menuEstudiante.php');
 include('Header.php');
 
+
 if (isset($_GET["action"])) {
     $var = $_GET["action"];
-    $informacion = $conPromocion->darInformacion($var);
+    $informacion = $conPromocion->darInformacion($var); 
 }
 
+
+$horarios = explode(';', $informacion[3]);
 ?>
 
 
@@ -43,11 +47,7 @@ if (isset($_GET["action"])) {
                                 <img src="../Imagenes/ecopetrol.jpg" width="100" alt="user image">
                             </div>
                             <div class="card-body">
-<<<<<<< Updated upstream
-                                <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa() ?> </h4>
-=======
-                                <h4 class="py-2 text-dark"> <?php echo $informacion->getCodEmpresa()?> </h4>
->>>>>>> Stashed changes
+                                <h4 class="py-2 text-dark"> <?php echo $informacion[10]?> </h4>
 
                             </div>
                         </div>
@@ -59,7 +59,7 @@ if (isset($_GET["action"])) {
                 <div class="col-lg-8 col-xl-9">
                     <div class="profile-content-right py-5">
                         <ul class="nav nav-tabs px-3 px-xl-5 nav-style-border" id="myTab" role="tablist">
-                            <h1> <?php echo $informacion->getTituloPromocion() ?></h1>
+                            <h1> <?php echo $informacion[13] ?></h1>
                         </ul>
                         <div class="tab-content px-3 px-xl-5" id="myTabContent">
                             <div class="tab-pane fade" id="timeline" role="tabpanel" aria-labelledby="timeline-tab">
@@ -73,16 +73,16 @@ if (isset($_GET["action"])) {
                                 <div class="mt-5">
                                     <form id="postulados" method="POST" action="javascript: agregarPostulacion()">
                                         <input type="hidden" id="codigooo" name="codigooo" value="<?php echo $estudiante->getCodEstudiante() ?>" />
-                                        <input type="hidden" id="ofertaa" name="ofertaa" value="<?php echo $informacion->getCodPromocion() ?>" />
+                                        <input type="hidden" id="ofertaa" name="ofertaa" value="<?php echo $informacion[0] ?>" />
 
                                         <div class="form-group mb-4">
                                             <label for="userName">Descripción:</label>
-                                            <span class="d-block mt-1"> <?php echo $informacion->getPromocionDescripcion() ?> </span>
+                                            <span class="d-block mt-1"> <?php echo $informacion[9] ?> </span>
                                         </div>
 
                                         <div class="form-group mb-4">
                                             <label for="userName">Perfil buscado:</label>
-                                            <span class="d-block mt-1"> <?php echo $informacion->getPromocionPerfil()  ?> </span>
+                                            <span class="d-block mt-1"> <?php echo $informacion[1] ?> </span>
 
                                         </div>
 
@@ -90,10 +90,10 @@ if (isset($_GET["action"])) {
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="firstName">Salario</label>
-                                                    <span class="d-block mt-1"> <?php if ($informacion->getPromocionRangoCompensacion() == "") {
+                                                    <span class="d-block mt-1"> <?php if ($informacion[5] == "sin remuneracion") {
                                                                                     echo "Sin remuneración" ;
                                                                                 } else {
-                                                                                    echo $informacion->getPromocionRangoCompensacion();
+                                                                                    echo $informacion[5];
                                                                                 }
                                                                                 ?></span>
                                                 </div>
@@ -103,15 +103,11 @@ if (isset($_GET["action"])) {
                                                 <div class="form-group">
                                                     <label for="lastName">Ciudad
                                                     </label>
-                                                    <span class="d-block mt-1"> <?php echo $informacion->getPromocionCiudad() ?> </span>
+                                                    <span class="d-block mt-1"> <?php echo $informacion[12] ?> </span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <?php
-                                        $horarios = explode(';', $informacion->getPromocionHorario());
-
-                                        ?>
                                         <div class="form-group mb-4">
                                             <label for="userName">Horarios</label>
 
