@@ -143,10 +143,18 @@
     </div>
     <div class="form-footer pt-4 pt-5 mt-4" style="float: right;">
         <input type="submit" class="btn btn-primary btn-default" value="Registrar"></input>
-        <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso"></input>
+        <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso" onclick="devolver()"></input>
     </div>
 </form>
 
+onclick="devolver"
+<script >
+  function devolver() {
+    window.location.href = "index.php";
+  }
+
+
+</script>
 <script>
 function registrarEmpresa() {
     if (verificarCaramara(document.getElementById("nitE").value)) {
@@ -165,7 +173,7 @@ function registrarEmpresa() {
 
                 if (r == 1) {
 
-                    window.location.href = "registro.php?action=1";
+                    window.location.href = "index.php";
 
 
                 } else {
