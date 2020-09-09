@@ -47,47 +47,87 @@ include('Header.php');
                 <h2></h2>
             </div>
             <?php
+            $varrow=0;
+            $termino=false;
             foreach ($listaVacantes as $fila) {
+                $varrow=$varrow+1;
 
             ?>
 
-                <div class="card-body">
-                    <div class="card-deck">
-                        <div class="card">
+            <?php    
+                if(($varrow%3)==1){
+                    $termino=false;
+                    ?>
+            <div class="card-body">
+                <div class="card-deck">
+                    <?php
 
-                            <img class="card-img-top" src="../Imagenes/ecopetrol.jpg" width="150" height="200" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title text-primary"><?php echo $fila[13] ?></h5>
-                                <p class="card-text pb-3" style="text-align:justify;"><?php echo $fila[1] ?>
-                                </p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <!-- <a onclick="darInformacion()" href="DescripcionOferta.php" class="btn btn-outline-primary">Ver más</a> -->
-                                <button type="button" class="btn btn-outline-primary" onclick="darInformacion(<?php echo $fila[0] ?>)">Ver mas</button>
-                            </div>
+
+                }
+
+                ?>
+                    <div class="card">
+                        <img class="card-img-top" src="../Imagenes/ecopetrol.jpg" width="130" height="130"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><?php echo $fila[13] ?></h5>
+                            <p class="card-text pb-3" style="text-align:justify;"><?php echo $fila[1] ?>
+                            </p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <!-- <a onclick="darInformacion()" href="DescripcionOferta.php" class="btn btn-outline-primary">Ver más</a> -->
+                            <button type="button" class="btn btn-outline-primary"
+                                onclick="darInformacion(<?php echo $fila[0] ?>)">Ver mas</button>
                         </div>
                     </div>
+
+                    <?php    
+                if(($varrow%3)==0){
+                    $termino=true;
+                    ?>
+
                 </div>
+            </div>
+            <?php
+
+                    
+                }
+
+                ?>
 
             <?php
             }
+            if (!$termino){
+                foreach (range(0,2-($varrow%3)) as $cantidad) {
+                    ?>
+            <div class="card">
+                <div class="card-body">
+                </div>
+            </div>
+
+                    <?php
+
+
+                }
+echo("   </div> </div> ");
+            }
             ?>
 
-        </div>
+                </div>
 
 
 
 
 
 
-    </div>
-    <?php
+            </div>
+            <?php
     include('Footer.php')
     ?>
 
-    <script>
-        function darInformacion(cod_vacante) {
-            console.log("entro " + cod_vacante);
-            window.location.href = "DescripcionOferta.php?action=" + cod_vacante;
-        }
-    </script>
+            <script>
+            function darInformacion(cod_vacante) {
+                console.log("entro " + cod_vacante);
+                window.location.href = "DescripcionOferta.php?action=" + cod_vacante;
+            }
+            </script>
