@@ -6,6 +6,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/Co
 $variable = new ControladorRegistros();
 
 if (isset($_POST["REM"])) {
+    // validaciones de registro empresa y registro como tal 
     if (isset($_FILES['camaracomercioE'])) {
         if (($_FILES['camaracomercioE']['type']) == 'application/pdf') {
             if (((($_FILES['logo']['type']) == 'image/png') || (($_FILES['logo']['type']) == 'image/jpeg'))) {
@@ -29,13 +30,40 @@ if (isset($_POST["REM"])) {
                 if (isset($archilogo) and isset($archicomercio)) {
                     // ya se han realizado todas las validaciones
                     $respuestaNit = $variable->verificarNIT($_POST['nitE']);
-                    print_r($respuestaNit[0]);
-                    $error = 0;
-                    if ($respuestaNit > 0) {
-                        echo ("Hay un error en los datos, ya se encuentra registrada una empresa con ese NIT");
-                    }
                     $encontrar_correo = $variable->buscarCorreo($_POST['emailE']);
-                    if ($encontrar_correo > 0) {
+
+                    $error = 0;
+                    if ($respuestaNit[0] > 0) {
+                        echo ("Hay un error en los datos, ya se encuentra registrada una empresa con ese NIT");
+                        $error=1;
+                    }else if (count($encontrar_correo) > 0) {
+                        echo("ya se registro una empresa con el correo principal");
+                        $error=1;
+                    }
+                    if($error==0){
+                       // registrar empresa, paso las validaciones
+                       /* ni_empresa ,nombre ,ccmpdf ,descripccion,logo,telefono,correo ,nomc,apellc ,telc,cargoc,correoc ,userempresa , passw ) */
+                        $comercio = ($_FILES['camaracomercioE']['tmp_name']);
+                        $comercioarchi=file_get_contents($imgData);
+                        $logo = ($_FILES['camaracomercioE']['tmp_name']);
+                        $logoarchi=file_get_contents($imgData);
+                        $passmd5=md5($_POST['nitE']);
+                       $enviar=([   $_POST['nitE'],
+                                    $_POST['nombreE'],
+                                    $_POST['comercioarchi'],
+                                    $_POST['descE'],
+                                    $_POST['logoarchi'],
+                                    $_POST['telE'],
+                                    $_POST['emailE'],
+                                    $_POST['nomC'],
+                                    $_POST['apeC'],
+                                    $_POST['cargoC'],
+                                    $_POST['telC'],
+                                    $_POST['emailC'],
+                                    $_POST['emailE'],
+                                    $_POST['passmd5']
+                       ]);
+                        $variable->registrarEmpresa($enviar);
                     }
                 }
             } else {

@@ -9,8 +9,6 @@
             <h6>Elegir Logo</h6>
         </div>
     </div>
-
-
     <br>
     <div class="input-group">
         <div class="input-group-prepend">
@@ -23,7 +21,7 @@
             placeholder="Nombre o Razon Social" aria-label="Nombre Empresa" maxlength="60" required>
     </div>
     <div class="row no-gutters">
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 mb">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -35,7 +33,7 @@
                     title="El Formmato de Nit es xxxxxxxxx-x" aria-label="Nit Empresa">
             </div>
         </div>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 mb">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -77,12 +75,12 @@
             style="resize: none;" maxlength="1200" placeholder="Descripcción Empresa (max 1200)"></textarea>
     </div>
 
-    <div class="card-header card-header-border-bottom">
-        <h2>Información Contacto </h2>
-    </div>
 
+        <h2 style="color: black;">Información del Contacto </h2>
+
+<br>
     <div class="row no-gutters">
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 ">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -94,7 +92,7 @@
                     aria-label="Username">
             </div>
         </div>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 ">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -108,7 +106,7 @@
         </div>
     </div>
     <div class="row no-gutters">
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 ">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -119,7 +117,7 @@
                     placeholder="Cargo" maxlength="30" aria-label="Username">
             </div>
         </div>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -143,12 +141,19 @@
             pattern="^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(.[A-Za-z0-9]+)(.[A-Za-z]{2,})$"
             title="No Cumple con el Formato de Correo Electrónico" maxlength="60" aria-label="Username">
     </div>
-    <div class="form-footer pt-4 pt-5 mt-4" style="float: right;">
+    <div class="form-footer " style="float: right;">
         <input type="submit" class="btn btn-primary btn-default" value="Registrar"></input>
-        <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso"></input>
+        <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso" onclick="devolver()"></input>
     </div>
 </form>
 
+<script >
+  function devolver() {
+    window.location.href = "index.php";
+  }
+
+
+</script>
 <script>
 function registrarEmpresa() {
     if (verificarCaramara(document.getElementById("nitE").value)) {
@@ -167,7 +172,7 @@ function registrarEmpresa() {
 
                 if (r == 1) {
 
-                    window.location.href = "registro.php?action=1";
+                    window.location.href = "index.php";
 
 
                 } else {

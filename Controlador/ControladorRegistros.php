@@ -1,6 +1,5 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
 
 class ControladorRegistros
@@ -11,7 +10,6 @@ class ControladorRegistros
 
     public function verificarNIT($nit)
     {
-
         $daoEmpresa = new EmpresaDAO();
         return $daoEmpresa->buscarEmpresaxNit($nit);
     }
@@ -19,7 +17,11 @@ class ControladorRegistros
     {
         $daoEmpresa = new EmpresaDAO();
 		return $daoEmpresa->buscarCorreo($correo);
-    }
+	}
+	public function registrarEmpresa($var){
+		$daoEmpresa = new EmpresaDAO();
+		return $daoEmpresa->registrarEmpresaProcedimiento($var);
+	}
 }
 /*  */
 /*  */

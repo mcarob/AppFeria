@@ -40,29 +40,19 @@
 body {
     background-color: #CCCCCC;
     background-image: url(assets/img/UEB.jpg);
+    background-size:  100% 100%;
+
 }
 </style>
 
 <body class="" id="body">
-    <div id="445toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <strong class="mr-auto">Bootstrap</strong>
-            <small class="text-muted">just now</small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body">
-            See? Just like this.
-        </div>
-    </div>
 
-    <div class="container d-flex flex-column justify-content-between vh-100">
+    <div class="container d-flex flex-column justify-content-between vh-30">
         <div class="row justify-content-center mt-5">
             <div class="col-lg-8 col-sm-offset-1">
                 <div class="card card-default">
                     <div class="card-header card-header  d-flex justify-content-center">
-                        <img src="assets/img/logo.png" style="width:180px ;" alt="">
+                        <img src="assets/img/logo.png" style="width:150px ;" alt="">
                     </div>
                     <div class="card-body">
                         <ul class="nav nav-pills nav-justified nav-style-fill" id="myTab" role="tablist">
@@ -101,7 +91,8 @@ body {
     </div>
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"> </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"> </script>
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <script src="assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
     <script src="assets/plugins/jekyll-search.min.js"></script>
@@ -128,6 +119,7 @@ body {
         }
     }
     </script>
+
 
 
 </body>

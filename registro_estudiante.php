@@ -121,6 +121,6 @@
     </div>
     <div class="form-footer pt-4 pt-5 mt-4" style="float: right;">
         <input type="submit" class="btn btn-primary btn-default" value="Registrar"></input>
-        <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso"></input>
+        <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso" formaction="index.php"></input>
     </div>
 </form>
