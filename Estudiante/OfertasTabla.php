@@ -20,12 +20,8 @@ else{
     "No hay ofertas";
 }
 
-
 include('menuEstudiante.php');
 include('Header.php');
-
-
-
 
 ?>
 
@@ -34,14 +30,7 @@ include('Header.php');
     <div class="content">
         <div class="breadcrumb-wrapper">
             <h1>Ofertas laborales</h1>
-
-
         </div>
-
-
-
-
-
         <div class="card card-default">
             <div class="card-header card-header-border-bottom">
                 <h2></h2>
@@ -71,7 +60,7 @@ include('Header.php');
                             alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title text-primary"><?php echo $fila[13] ?></h5>
-                            <p class="card-text pb-3" style="text-align:justify;"><?php echo $fila[1] ?>
+                            <p class="card-text " style="text-align:justify;"><?php echo $fila[1] ?>
                             </p>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example">
@@ -83,7 +72,7 @@ include('Header.php');
 
                     <?php    
                 if(($varrow%3)==0){
-                    $termino=true;
+                    $termino=true;  
                     ?>
 
                 </div>
