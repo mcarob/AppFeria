@@ -138,7 +138,7 @@ include('Header.php');
         </div>
     </div>
 
-
+    <script src="../assets/plugins/toastr/toastr.min.js"></script>
     <script>
     function editarContacto() {
 
