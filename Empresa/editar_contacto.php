@@ -1,9 +1,7 @@
 <?php
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorUsuario.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEstudiantes.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
-
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorContactoEmpresa.php');
 
 
 $datos=array(
@@ -18,7 +16,7 @@ $datos=array(
     
 );
 
-
+$conUsuario=new ControladorUsuario();
 $validacion=$conUsuario->validarContra($_POST["codUsuario"],$_POST["conPassword1"]);
 $variable=3;
 if($_POST["newPassword"]==$_POST["conPassword"])
@@ -38,7 +36,7 @@ echo($conUsuario->actualizarUsuario($_POST["codUsuario"],$_POST["conPassword"]))
     echo("Las nueva coontraseña no coincide con la confirmacion");
 }
 else{
-    echo("ingrese por favor la contraseña actual para realizar cambios");
+    echo("Por favor ingrese la contraseña actual para realizar cambios");
 }
 
 

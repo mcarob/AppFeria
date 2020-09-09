@@ -42,10 +42,12 @@ class PromocionLaboralDAO
         }
         return $em;
     }
+
     public function detallesPostulacion($pCodigoPromocion){
         $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral2 WHERE cod_promocion_laboral =" .$pCodigoPromocion);
         $sentencia->execute();
         $row = $sentencia->fetch();
+<<<<<<< Updated upstream
 /*         $promocion = new PromocionLaboral($row[0], $row[1],$row[2], 
         $row[3],$row[4], $row[5], $row[6], 
         $row[7],$row[8], $row[9], $row[10],$row[11], 
@@ -57,6 +59,9 @@ class PromocionLaboralDAO
            $em[] = $fila;  
        }
        return $em; */
+=======
+        return $row;
+>>>>>>> Stashed changes
         
     }
 
