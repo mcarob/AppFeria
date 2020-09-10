@@ -99,7 +99,6 @@ include('menuEmpresa.php');
 
                                     ?>
 
-
                                     <?php
 
                                         echo ("</tr>");
@@ -194,4 +193,4 @@ include('menuEmpresa.php');
 
 <?php
 include('Footer.php')
-?>
+?>  
