@@ -76,9 +76,9 @@
     </div>
 
 
-        <h2 style="color: black;">Información del Contacto </h2>
+    <h2 style="color: black;">Información del Contacto </h2>
 
-<br>
+    <br>
     <div class="row no-gutters">
         <div class="col-md-6 ">
             <div class="input-group">
@@ -147,12 +147,10 @@
     </div>
 </form>
 
-<script >
-  function devolver() {
+<script>
+function devolver() {
     window.location.href = "index.php";
-  }
-
-
+}
 </script>
 <script>
 function registrarEmpresa() {
