@@ -133,7 +133,12 @@
                   <li>
                     <a class="sidenav-item-link" href="BuscarCandidatos.php">
                       <span class="nav-text">Buscar Candidatos</span>
+                    </a>
+                  </li>
 
+                  <li>
+                    <a class="sidenav-item-link" href="practicantes.php">
+                      <span class="nav-text">Practicantes</span>
                     </a>
                   </li>
                 </div>
