@@ -64,6 +64,7 @@ $lista = $objeto->darListaEstudianteActivos();
                                         <th>Correo</th>
                                         <th>Carrera</th>
                                         <th>Semestre</th>
+                                        <th>Acción </th>
                                     </tr>
                                 </thead>
 
@@ -77,6 +78,7 @@ $lista = $objeto->darListaEstudianteActivos();
                                         echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[6] . "</td>");
                                         echo ("<td>" . $key[7] . "</td>");
+                                        echo ("<td><button type='button' class='mb-1 btn btn-success'>Contactar</button></td>");
 
                                         
                                     ?>
