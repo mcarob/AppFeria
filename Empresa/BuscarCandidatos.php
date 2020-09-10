@@ -9,17 +9,17 @@ if (!isset($_SESSION['user'])) {
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorEstudiantes.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 
 
 
 $user = new Usuario();
 $empresa_dao = new EmpresaDAO();
 $user->setUser($_SESSION['user']);
-$codigo= $user->darCodigo();
+$codigo = $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
 $controlador = new ControladorPromocion();
 
@@ -94,7 +94,7 @@ include('menuEmpresa.php');
                                         echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[6] . "</td>");
                                         echo ("<td>" . $key[7] . "</td>");
-                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal1(".'"'.$key[0].'"'.")'". ">Contactar</button></td>");
+                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[0] . '"' . ")'" . ">Contactar</button></td>");
 
 
                                     ?>
@@ -158,24 +158,24 @@ include('menuEmpresa.php');
             <div class="modal-body">
                 <form method="POST" id='formAgregarOf'>
                     <div class="form-group">
-                    <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="" aria-label="Username">
-                    <option disabled="" selected="">Seleccione el titulo de la promoción</option>
-                    <?php
-                    foreach ($for as $key) { 
-                    echo ('<option value="">'.$key[13].'</option>');
-                    }
-                    ?>
-                
-                
-                </select>
+                        <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="" aria-label="Username">
+                            <option disabled="" selected="">Seleccione el titulo de la promoción</option>
+                            <option disabled="" selected="">No hay una oferta</option>
+                            <?php
+                            foreach ($for as $key) {
+                                echo ('<option value="">' . $key[13] . '</option>');
+                            }
+                            ?>
+                        </select>
                     </div>
-
+                    <label for="mensaje">Mensaje</label>
+                    <textarea type="" class="form-control" id="mensaje" name="mensaje" cols="40" rows="9" placeholder="Ingrese el mensaje que desea eviar..." maxlength="1200" required></textarea>
                 </form>
             </div>
+                            
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
                 <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Enviar</button>
-
             </div>
         </div>
     </div>
@@ -185,7 +185,7 @@ include('menuEmpresa.php');
 
 <script>
     function mostrarModal1(valor) {
-        $('#modall').modal('show'); 
+        $('#modall').modal('show');
     }
 </script>
 
@@ -193,4 +193,4 @@ include('menuEmpresa.php');
 
 <?php
 include('Footer.php')
-?>  
+?>
