@@ -1,4 +1,4 @@
-?php
+<?php
 session_start();
 if (!isset($_SESSION['user'])) {
 
@@ -8,41 +8,36 @@ if (!isset($_SESSION['user'])) {
 }
 
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPostulaciones.php');
 
 
 
 $user = new Usuario();
 $empresa_dao = new EmpresaDAO();
 $user->setUser($_SESSION['user']);
-$codigo= $user->darCodigo();
+$codigo = $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
-$controlador = new ControladorPromocion();
+$controlador = new ControladorPostulacion();
 
 
-$lista = $controlador->OfertasXempresaAI($empresa->getCodEmpresa());
+$lista = $controlador->practicantesXe($empresa->getCodEmpresa());
 include('menuEmpresa.php');
 include('Header.php');
 
 
 ?>
-
-
-
-
 <link href="../assets/plugins/nprogress/nprogress.css" rel="stylesheet" />
 <link href="../assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
 <link href="../assets/plugins/data-tables/datatables.bootstrap4.min.css" rel="stylesheet" />
 <link href="../assets/plugins/data-tables/responsive.datatables.min.css" rel="stylesheet" />
 
-
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Practicantes de la empresa</h1>
+            <h1>Practicantes en la empresa</h1>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
@@ -52,9 +47,9 @@ include('Header.php');
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        Candidatos
+                        Practicantes
                     </li>
-                    <li class="breadcrumb-item" aria-current="page">Practicantes</li>
+                    <li class="breadcrumb-item" aria-current="page">Listar</li>
                 </ol>
             </nav>
 
@@ -70,12 +65,12 @@ include('Header.php');
                             <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Fecha de inicio</th>
-                                        <th>Compensación</th>
-                                        <th>Rango de Compensación</th>
-                                        <th>Vacantes</th> 
+                                        <th>Titulo promoción</th>
+                                        <th>Nombres</th>
+                                        <th>Correo</th>
+                                        <th>Cédula</th>
+                                        <th>F.Postulación</th>
+                                        <th>F.Inicio</th>
                                         <th>Ciudad</th>
                                         <th>Estado</th>
                                     </tr>
@@ -85,14 +80,14 @@ include('Header.php');
                                     <?php
                                     foreach ($lista as $key) {
                                         echo ("<tr>");
-                                        echo ("<td>" . $key[13] . "</td>");
-                                        echo ("<td>" . $key[11] . "</td>");
-                                        echo ("<td>" . $key[8] . "</td>");
-                                        echo ("<td>" . $key[4] . "</td>");
+                                        echo ("<td>" . $key[0] . "</td>");
+                                        echo ("<td>" . $key[1] . "</td>");
+                                        echo ("<td>" . $key[2] . "</td>");
+                                        echo ("<td>" . $key[3] . "</td>");
+                                        echo ("<td>" . $key[6] . "</td>");
                                         echo ("<td>" . $key[5] . "</td>");
-                                        echo ("<td>" . $key[14] . "</td>");
-                                        echo ("<td>" . $key[12] . "</td>");
-                                        echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[15] . "</span></td>");
+                                        echo ("<td>" . $key[4] . "</td>");
+                                        echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[7] . "</span></td>");
                                     ?>
 
 

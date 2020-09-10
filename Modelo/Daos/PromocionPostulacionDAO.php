@@ -83,6 +83,17 @@ class PromocionPostulacionDAO
         }
         return $em;
     }
+
+
+    public function practicantesXempresa($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM practicantesXempresa where  COD_ESTADO_PROCESO = 5 and cod_empresa=".$cod);
+        $sentencia->execute();
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;
+        }
+        return $em;
+    }
     
 
     

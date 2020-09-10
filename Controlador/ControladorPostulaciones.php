@@ -50,6 +50,10 @@ class ControladorPostulacion{
 			return $this->postulados->editarMotivo($cod,$motivo);
 		}
 		
+		public function practicantesXe($cod){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->practicantesXempresa($cod);
+		}
 	
 	}
 
