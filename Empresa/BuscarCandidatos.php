@@ -159,7 +159,7 @@ include('menuEmpresa.php');
                 <form method="POST" id='formAgregarOf'>
                     <div class="form-group">
                         <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="" aria-label="Username">
-                            <option disabled="" selected="">Seleccione el titulo de la promoción</option>
+                            <option disabled="" selected="true">Seleccione el titulo de la promoción</option>
                             <option disabled="" selected="">No hay una oferta</option>
                             <?php
                             foreach ($for as $key) {
@@ -174,7 +174,7 @@ include('menuEmpresa.php');
             </div>
                             
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
+                <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Enviar</button>
             </div>
         </div>
