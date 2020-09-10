@@ -63,10 +63,10 @@ include('Header.php');
                                 <a class="nav-link active" id="home3-tab" data-toggle="tab" href="#home3" role="tab" aria-controls="home3" aria-selected="true">Datos Personales</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile3" aria-selected="false">Contenido General</a>
+                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile3" aria-selected="false">Formaciones</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile4" role="tab" aria-controls="profile4" aria-selected="false">Referencias</a>
+                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile4" role="tab" aria-controls="profile4" aria-selected="false">Experiencias</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent4">
@@ -77,10 +77,10 @@ include('Header.php');
                                 <!--  fin del primer tab-->
                             </div>
                             <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel" aria-labelledby="profile3-tab">
-                                <?php include_once 'contenidoGeneralCV.php'; ?>
+                                <?php include_once 'FormacionesCV.php'; ?>
                             </div>
                             <div class="tab-pane pt-3 fade" id="profile4" role="tabpanel" aria-labelledby="profile3-tab">
-                                <?php include_once 'referenciasCV.php'; ?>
+                                <?php include_once 'ExperienciasCV.php'; ?>
                             </div>
                         </div>
                     </div>
