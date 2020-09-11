@@ -36,7 +36,10 @@
                         <i class="material-icons">group</i>
                     </span>
                 </div>
-                <input autocomplete="off" type="text" class="form-control" placeholder="Cedula" aria-label="Username">
+                <input autocomplete="off" type="text" class="form-control" placeholder="Cedula" aria-label="Username"
+                
+                maxlength="15" pattern="(^[+]?[0-9]{7,15})"
+                >
             </div>
         </div>
         <div class="col-md-6 mb-3">
@@ -47,7 +50,10 @@
                     </span>
                 </div>
                 <input type="text" autocomplete="off" class="form-control" placeholder="Teléfono "
-                    aria-label="Username">
+                    aria-label="Username"
+                    maxlength="15" 
+                    title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
+                    required>
             </div>
         </div>
     </div>
@@ -69,8 +75,8 @@
 
 
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Programa Académico</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <label for="prog_academico">Programa Académico</label>
+        <select class="form-control" id="prog_academico">
             <option>Ingeniería de Sistemas</option>
             <option>BioIngeniería</option>
             <option>Ingeniería Ambiental</option>
@@ -79,8 +85,8 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Semestre Actual</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <label for="semestre">Semestre Actual</label>
+        <select class="form-control" id="semestre">
             <option>Semestre 1</option>
             <option>Semestre 2</option>
             <option>Semestre 3</option>
@@ -124,3 +130,29 @@
         <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso" formaction="index.php"></input>
     </div>
 </form>
+
+<script>
+ datos = $('#formEstudianteR').serialize();
+$.ajax({
+    type: "POST",
+    data: datos,
+    url: "editar_contacto.php",
+    success: function(r) {
+
+        console.log(r);
+        if (r == 11) {
+            window.location.href = "index.php";
+        } else if (r == 3) {
+            toastr["success"](r, "ERROR");
+        } else {
+
+            toastr["success"](r, "ERROR");
+
+        }
+    }
+});
+
+
+
+
+</script>
