@@ -97,7 +97,11 @@ include('Header.php');
                                         echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[14] . "</td>");
                                         echo ("<td>" . $key[12] . "</td>");
-                                        echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[15] . "</span></td>");
+                                        if($key[15]==1){
+                                            echo ("<td><span class='mb-2 mr-2 badge badge-success'>Activo</span></td>");
+                                        }else{
+                                            echo ("<td><span class='mb-2 mr-2 badge badge-success'>Inactivo</span></td>");
+                                        }
                                     ?>
 
 

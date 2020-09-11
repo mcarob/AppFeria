@@ -26,7 +26,7 @@ include('Header.php');
 
 if (isset($_GET["action"])) {
     $var = $_GET["action"];
-    $informacion = $conPromocion->darInformacion($var); 
+    $informacion = $conPromocion->darInformacion($var);
 }
 
 
@@ -47,7 +47,7 @@ $horarios = explode(';', $informacion[3]);
                                 <img src="../Imagenes/ecopetrol.jpg" width="100" alt="user image">
                             </div>
                             <div class="card-body">
-                                <h4 class="py-2 text-dark"> <?php echo $informacion[10]?> </h4>
+                                <h4 class="py-2 text-dark"> <?php echo $informacion[10] ?> </h4>
 
                             </div>
                         </div>
@@ -89,9 +89,9 @@ $horarios = explode(';', $informacion[3]);
                                         <div class="row mb-2">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="firstName">Salario</label>
-                                                    <span class="d-block mt-1"> <?php if ($informacion[5] == "sin remuneracion") {
-                                                                                    echo "Sin remuneración" ;
+                                                    <label for="firstName">Remuneración</label>
+                                                    <span class="d-block mt-1"> <?php if ($informacion[5] == "Sin remuneracion") {
+                                                                                    echo "Sin remuneración";
                                                                                 } else {
                                                                                     echo $informacion[5];
                                                                                 }
@@ -106,6 +106,42 @@ $horarios = explode(';', $informacion[3]);
                                                     <span class="d-block mt-1"> <?php echo $informacion[12] ?> </span>
                                                 </div>
                                             </div>
+
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Beneficios
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php echo $informacion[6] ?> </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Cargo
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php echo $informacion[7] ?> </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Fecha de inicio
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php echo $informacion[8] ?> </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="lastName">Total de vacantes
+                                                    </label>
+                                                    <span class="d-block mt-1"> <?php echo $informacion[14] ?> </span>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="form-group mb-4">
@@ -114,101 +150,24 @@ $horarios = explode(';', $informacion[3]);
                                         </div>
 
                                         <div class="row mb-2">
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="firstName">Lunes</label>
-                                                    <span class="d-block mt-1"> <?php if ($horarios[0] == "") {
-                                                                                    echo "No hay programación";
-                                                                                } else {
-                                                                                    echo $horarios[0];
-                                                                                }
-                                                                                ?></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="lastName">Martes
+                                            <?php
+                                            foreach ($horarios as $kk) {
+                                            ?>
+                                                <div class="col-lg-6">
+                                                    <label class="control control-checkbox checkbox-success"><?php echo $kk ?>
+                                                        <input type="checkbox" checked="checked" onclick="return false;" id="martes" name="martes" value="Martes" />
+                                                        <div class="control-indicator"></div>
                                                     </label>
-                                                    <span class="d-block mt-1"> <?php if ($horarios[1] == "") {
-                                                                                    echo "No hay programación";
-                                                                                } else {
-                                                                                    echo $horarios[1];
-                                                                                }
-                                                                                ?></span>
 
                                                 </div>
-                                            </div>
+                                            <?php
+                                            }
+                                            ?>
 
 
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="lastName">Miercoles
-                                                    </label>
-                                                    <span class="d-block mt-1"> <?php if ($horarios[2] == "") {
-                                                                                    echo "No hay programación";
-                                                                                } else {
-                                                                                    echo $horarios[2];
-                                                                                }
-                                                                                ?></span>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="lastName">Jueves
-                                                    </label>
-                                                    <span class="d-block mt-1"> <?php if ($horarios[3] == "") {
-                                                                                    echo "No hay programación";
-                                                                                } else {
-                                                                                    echo $horarios[3];
-                                                                                }
-                                                                                ?></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="lastName">Viernes
-                                                    </label>
-                                                    <span class="d-block mt-1"> <?php if ($horarios[4] == "") {
-                                                                                    echo "No hay programación";
-                                                                                } else {
-                                                                                    echo $horarios[4];
-                                                                                }
-                                                                                ?></span>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="lastName">Sabado
-                                                    </label>
-                                                    <span class="d-block mt-1"> <?php if ($horarios[5] == "") {
-                                                                                    echo "No hay programación";
-                                                                                } else {
-                                                                                    echo $horarios[5];
-                                                                                }
-                                                                                ?></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="lastName">Domingo
-                                                    </label>
-                                                    <span class="d-block mt-1"> <?php if ($horarios[6] == "") {
-                                                                                    echo "No hay programación";
-                                                                                } else {
-                                                                                    echo $horarios[6];
-                                                                                }
-                                                                                ?></span>
-                                                </div>
-                                            </div>
                                         </div>
+
+
 
 
 

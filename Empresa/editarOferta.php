@@ -50,7 +50,7 @@ if (isset($_GET["action"])) {
                         <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="mt-5">
                                 <form id='editar_oferta' method='POST' action="javascript:agregarVac()">
-                                    <input type="hidden" name="empresa" id="empresa" value="<?php echo $informacion->getCodEmpresa() ?>">;
+                                    <input type="hidden" name="empresa" id="empresa" value="<?php echo $informacion->getCodEmpresa() ?>">
 
                                     <div class="row mb-2">
                                         <div class="col-lg-6">
