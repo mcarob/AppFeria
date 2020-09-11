@@ -13,10 +13,10 @@ if (!isset($_SESSION['user'])) {
 include('menuEmpresa.php');
 include('Header.php');
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
 $empresa_dao = new EmpresaDAO();
-$codigo= $user->darCodigo();
+$codigo = $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
 
 
@@ -50,7 +50,7 @@ $fecha_actual = date("Y-m-d")
                         <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="mt-5">
                                 <form id="formAgregarOf" method="POST" action="javascript: agregarOferta()">
-                                    
+
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil buscado</label>
                                         <textarea type="text" class="form-control" id="perfil" value="" name="perfil"></textarea>
@@ -68,7 +68,7 @@ $fecha_actual = date("Y-m-d")
                                             <div class="form-group">
                                                 <label for="lastName">Fecha de la publicación
                                                 </label>
-                                                <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="<?php echo($fecha_actual)?>">
+                                                <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="<?php echo ($fecha_actual) ?>" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -80,17 +80,8 @@ $fecha_actual = date("Y-m-d")
                                         </div>
 
 
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="lastName">Remuneración
-                                                </label>
-                                                <select name="remuneracion" id="remuneracion" class="form-control">
-                                                <option value="0">Seleccione una opcion</option>
-                                                <option value="1">Si</option>
-                                                <option value="2">No</option>
-                                            </select>
-                                            </div>
-                                        </div>
+                                        <input type="hidden"  id="remuneracion" name="remuneracion" value="">
+
 
 
                                     </div>
@@ -113,21 +104,21 @@ $fecha_actual = date("Y-m-d")
                                             </div>
                                         </div>
 
-                                        
+
                                     </div>
 
                             </div>
                             <div class="form-group mb-4">
-                                            <label for="des">Rango Remuneracion</label>
-                                            <select name="ranRemuneracion" id="ranRemuneracion" class="form-control">
-                                            <option value="">Seleccione una opcion</option>
-                                            <option value="sin remuneracion">sin remuneracion</option>
-                                                <option value="0 - 1 Salarios mínimos">0 - 1 Salarios mínimos</option>
-                                                <option value="1 - 2 Salarios mínimos">1 - 2 Salarios mínimos</option>
-                                                <option value="2 o más Salarios mínimos">2 o más Salarios mínimos</option>
-                                                
-                                            </select>
-                                        </div>
+                                <label for="des">Rango Remuneracion</label>
+                                <select name="ranRemuneracion" id="ranRemuneracion" class="form-control">
+                                    <option value="">Seleccione una opcion</option>
+                                    <option value="sin remuneracion">Sin remuneracion</option>
+                                    <option value="0 - 1 Salarios mínimos">1 Salario mínimos</option>
+                                    <option value="1 - 2 Salarios mínimos">1 - 2 Salarios mínimos</option>
+                                    <option value="2 o más Salarios mínimos">2 o más Salarios mínimos</option>
+
+                                </select>
+                            </div>
                             <div class="form-group mb-4">
                                 <label for="des">Numero de vacantes</label>
                                 <input type="number" class="form-control" id="numVacantes" name="numVacantes" value=""></input>
@@ -149,89 +140,80 @@ $fecha_actual = date("Y-m-d")
                             <div class="row mb-2" row="2">
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Lunes
-                                        <input type="checkbox" checked="checked" />
-                                        <div class="control-indicator"></div>
+                                        <input type="checkbox" checked="checked" id="lunes" name="lunes" value="Lunes" />
+                                        <div class="control-indicator">
+                                        </div>
                                     </label>
-                                    <div class="form-group">
-                                        </label>
-                                        <input type="time" class="form-control" id="lunes" name="lunes" value="null">
-                                    </div>
+
                                 </div>
 
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Martes
-                                        <input type="checkbox" checked="checked" />
+
+                                        <input type="checkbox" checked="checked" id="martes" name="martes" value="Martes" />
                                         <div class="control-indicator"></div>
                                     </label>
-                                    <div class="form-group">
-                                        </label>
-                                        <input type="time" class="form-control" id="martes" name="martes" value="null">
-                                    </div>
+
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Miercoles
-                                        <input type="checkbox" checked="checked" />
+                                        <input type="checkbox" checked="checked" id="miercoles" name="miercoles" value="Miercoles" />
                                         <div class="control-indicator"></div>
                                     </label>
-                                    <div class="form-group">
-                                        </label>
-                                        <input type="time" class="form-control" id="miercoles" name="miercoles" value="">
-                                    </div>
+
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Jueves
-                                        <input type="checkbox" checked="checked" />
+                                        <input type="checkbox" checked="checked" id="jueves" name="jueves" value="Jueves" />
                                         <div class="control-indicator"></div>
                                     </label>
-                                    <div class="form-group">
-                                        </label>
-                                        <input type="time" class="form-control" id="jueves" name="jueves" value="">
-                                    </div>
+
                                 </div>
 
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Viernes
-                                        <input type="checkbox" checked="checked" />
+                                        <input type="checkbox" checked="checked" id="viernes" name="viernes" value="Viernes" />
                                         <div class="control-indicator"></div>
                                     </label>
-                                    <div class="form-group">
-                                        </label>
-                                        <input type="time" class="form-control" id="viernes" name="viernes" value="">
-                                    </div>
+
                                 </div>
 
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Sabado
-                                        <input type="checkbox" checked="checked" />
+                                        <input type="checkbox" checked="checked" id="sabado" name="sabado" value="Sabado" />
                                         <div class="control-indicator"></div>
                                     </label>
-                                    <div class="form-group">
-                                        </label>
-                                        <input type="time" class="form-control" id="sabado" name="sabado" value="">
-                                    </div>
+
                                 </div>
 
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Domingo
-                                        <input type="checkbox" checked="checked" />
+                                        <input type="checkbox" checked="checked" id="domingo" name="domingo" value="Domingo" />
                                         <div class="control-indicator"></div>
                                     </label>
-                                    <div class="form-group">
-                                        </label>
-                                        <input type="time" class="form-control" id="domingo" name="domingo" value="">
-                                    </div>
+
                                 </div>
 
 
 
 
+                            </div>
 
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Seleccione la jornada</label>
+                                <select class="form-control" id="hora" name="hora">
+                                    <option value="6:00 am - 3:00 pm">6:00 am - 3:00 pm</option>
+                                    <option value="7:00 am - 4:00 pm">7:00 am - 4:00 pm</option>
+                                    <option value="8:00 am - 5:00 pm">8:00 am - 5:00 pm</option>
+                                    <option value="9:00 am - 6:00 pm">9:00 am - 6:00 pm</option>
+
+                                </select>
                             </div>
 
 
@@ -267,10 +249,10 @@ $fecha_actual = date("Y-m-d")
             url: "agregar_vacante.php",
             success: function(r) {
 
-                console.log(r);             
+                console.log(r);
                 if (r == 1) {
-                                
-                                window.location.href = "Ofertas.php";
+
+                    window.location.href = "Ofertas.php";
                 } else {
 
                 }
