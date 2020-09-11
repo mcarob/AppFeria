@@ -195,8 +195,11 @@ if (isset($_GET["action"])) {
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Jueves
-                                                <input type="checkbox" id="jueves" name="jueves" value="Jueves" />
-                                                <div class="control-indicator"></div>
+                                                <?php if (strpos($informacion->getPromocionHorario(), 'Jueves') !== false) {
+                                                    echo '<input type="checkbox" checked="checked" id="jueves" name="jueves" value="Jueves"/>';
+                                                } else {
+                                                    echo '<input type="checkbox"  id="miercoles" name="jueves" value="jueves"/>';
+                                                } ?> <div class="control-indicator"></div>
                                             </label>
 
                                         </div>
@@ -204,8 +207,11 @@ if (isset($_GET["action"])) {
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Viernes
-                                                <input type="checkbox" id="viernes" name="viernes" value="Viernes" />
-                                                <div class="control-indicator"></div>
+                                                <?php if (strpos($informacion->getPromocionHorario(), 'Viernes') !== false) {
+                                                    echo '<input type="checkbox" checked="checked" id="viernes" name="viernes" value="Viernes"/>';
+                                                } else {
+                                                    echo '<input type="checkbox"  id="viernes" name="viernes" value="Viernes"/>';
+                                                } ?> <div class="control-indicator"></div>
                                             </label>
 
                                         </div>
@@ -213,8 +219,11 @@ if (isset($_GET["action"])) {
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Sabado
-                                                <input type="checkbox" id="sabado" name="sabado" value="Sabado" />
-                                                <div class="control-indicator"></div>
+                                                <?php if (strpos($informacion->getPromocionHorario(), 'Sabado') !== false) {
+                                                    echo '<input type="checkbox" checked="checked" id="sabado" name="sabado" value="Sabado"/>';
+                                                } else {
+                                                    echo '<input type="checkbox"  id="sabado" name="sabado" value="Sabado"/>';
+                                                } ?> <div class="control-indicator"></div>
                                             </label>
 
                                         </div>
@@ -222,8 +231,11 @@ if (isset($_GET["action"])) {
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Domingo
-                                                <input type="checkbox" id="domingo" name="domingo" value="Domingo" />
-                                                <div class="control-indicator"></div>
+                                                <?php if (strpos($informacion->getPromocionHorario(), 'Domingo') !== false) {
+                                                    echo '<input type="checkbox" checked="checked" id="domingo" name="domingo" value="Domingo"/>';
+                                                } else {
+                                                    echo '<input type="checkbox"  id="domingo" name="domingo" value="Domingo"/>';
+                                                } ?> <div class="control-indicator"></div>
                                             </label>
                                         </div>
 
@@ -237,28 +249,28 @@ if (isset($_GET["action"])) {
                                         <label for="exampleFormControlSelect1">Seleccione la jornada</label>
                                         <select class="form-control" id="hora" name="hora">
                                             <?php if (strpos($informacion->getPromocionHorario(), '6:00 am - 3:00 pm') !== false) {
-                                                echo '<option value="Sin remuneracion" selected="true" >6:00 am - 3:00 pm</option>';
+                                                echo '<option value="6:00 am - 3:00 pm" selected="true" >6:00 am - 3:00 pm</option>';
                                                 echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
                                                 echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
                                                 echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
                                             } else if (strpos($informacion->getPromocionHorario(), '7:00 am - 4:00 pm') !== false) {
-                                                echo '<option value="Sin remuneracion"  >6:00 am - 3:00 pm</option>';
+                                                echo '<option value="6:00 am - 3:00 pm"  >6:00 am - 3:00 pm</option>';
                                                 echo '<option value="7:00 am - 4:00 pm" selected="true">7:00 am - 4:00 pm</option>';
                                                 echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
                                                 echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
                                             } else if (strpos($informacion->getPromocionHorario(), '8:00 am - 5:00 pm') !== false) {
-                                                echo '<option value="Sin remuneracion" >6:00 am - 3:00 pm</option>';
+                                                echo '<option value="6:00 am - 3:00 pm" >6:00 am - 3:00 pm</option>';
                                                 echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
                                                 echo '<option value="8:00 am - 5:00 pm"  selected="true" >8:00 am - 5:00 pm</option>';
                                                 echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
                                             } else if (strpos($informacion->getPromocionHorario(), '9:00 am - 6:00 pm') !== false) {
-                                                echo '<option value="Sin remuneracion">6:00 am - 3:00 pm</option>';
+                                                echo '<option value="6:00 am - 3:00 pm">6:00 am - 3:00 pm</option>';
                                                 echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
                                                 echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
                                                 echo '<option value="9:00 am - 6:00 pm" selected="true" >9:00 am - 6:00 pm</option>';
                                             }
                                             ?>
-                                    
+
 
                                         </select>
                                     </div>

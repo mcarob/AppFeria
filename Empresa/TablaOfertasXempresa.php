@@ -43,7 +43,7 @@ include('Header.php');
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Postulaciones hechas</h1>
+            <h1>Ofertas</h1>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
@@ -53,9 +53,8 @@ include('Header.php');
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        Vacantes
+                        Tabla de ofertas
                     </li>
-                    <li class="breadcrumb-item" aria-current="page">Mis Postulaciones</li>
                 </ol>
             </nav>
 

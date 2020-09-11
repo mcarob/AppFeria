@@ -116,7 +116,7 @@ include('Header.php');
 
                                         <div class="form-group mb-4">
                                             <label for="email">Telefono</label>
-                                            <input type="email" class="form-control" name="telefonEmpresa"
+                                            <input type="text" class="form-control" name="telefonEmpresa"
                                                 id="telefonEmpresa" value="<?php echo($empresa->getTelefonEmpresa()) ?>"
                                                 required>
                                         </div>
