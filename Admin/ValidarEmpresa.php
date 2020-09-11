@@ -76,8 +76,8 @@ include('menuAdmi.php')
                                         echo ("<td>" . $key[1] . "</td>");
                                         echo ("<td>" . $key[3] . "</td>");
                                         echo ("<td>" . $key[4] . "</td>");
-                                        echo ("<td> <button type='button' class='mb-1 btn btn-primary'>
-                                                <i class='mdi mdi-star-outline mr-1'></i>PDF</button> </td>");
+                                        echo ("<td> <input type='submit' class='mb-1 btn btn-primary' href='abrirCamaraComercioPDF?".$key[0]."' target='_blank' >
+                                                <i class='mdi mdi-star-outline mr-1'></i>PDF</input> </td>");
                                         echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
                                         <button type='button' class='mb-1 btn btn-danger'>Rechazar</button></td>");
                                     ?>
@@ -126,6 +126,11 @@ include('menuAdmi.php')
         function aceptar(cod) {
             console.log(cod);
             window.location.href = 'aceptarEmpresa.php?action=' + cod;
+        }
+
+
+        function abrirPDF(){
+
         }
     </script>
 
