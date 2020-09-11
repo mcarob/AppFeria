@@ -158,12 +158,15 @@ include('menuEmpresa.php');
             <div class="modal-body">
                 <form method="POST" id='formAgregarOf'>
                     <div class="form-group">
-                        <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="" aria-label="Username">
-                            <option disabled="" selected="true">Seleccione el titulo de la promoción</option>
-                            <option disabled="" selected="">No hay una oferta</option>
+                    <label for="exampleFormControlSelect1">Seleccione una opción</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
                             <?php
-                            foreach ($for as $key) {
-                                echo ('<option value="">' . $key[13] . '</option>');
+                                if(count($for)==0){
+                                    echo ('<option value="">No hay ofertas</option>');
+                                }else{
+                                foreach ($for as $key) {
+                                 echo ('<option value="">' . $key[13] . '</option>');
+                             }
                             }
                             ?>
                         </select>
@@ -172,7 +175,7 @@ include('menuEmpresa.php');
                     <textarea type="" class="form-control" id="mensaje" name="mensaje" cols="40" rows="9" placeholder="Ingrese el mensaje que desea eviar..." maxlength="1200" required></textarea>
                 </form>
             </div>
-                            
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Enviar</button>

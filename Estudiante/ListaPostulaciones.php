@@ -75,8 +75,6 @@ include('menuEstudiante.php')
                                     <tr>
                                         <th>Nombre empresa</th>
                                         <th>Titulo Oferta</th>
-                                        <th>Telefono empresa</th>
-                                        <th>Telefono contacto</th>
                                         <th>Correo contacto</th>
                                         <th>Compensación</th>
                                         <th>Estado</th>
@@ -92,10 +90,8 @@ include('menuEstudiante.php')
                                         echo ("<tr>");
                                         echo ("<td>" . $key[0] . "</td>");
                                         echo ("<td>" . $key[1] . "</td>");
-                                        echo ("<td>" . $key[3] . "</td>");
-                                        echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[4] . "</td>");
-                                        echo ("<td>" . $key[2] . "</td>");
+                                        echo ("<td>" . $key[9] . "</td>");
                                         echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[7] . "</span></td>");
                                         echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[8].'"'.")'". ">Motivo</button></td>");
 

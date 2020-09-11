@@ -8,8 +8,8 @@ if (!isset($_SESSION['user'])) {
 }
 
 
-include('menuEmpresa.php');
-include('Header.php');
+include ('menuEmpresa.php');
+include ('Header.php');
 
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
@@ -80,7 +80,7 @@ $listaVacantes=$conPromocion->darVacantase($cod_empresa);
                             }else if($fila[15]==2){
 
                              echo ("<td><button type='button' class='btn btn-outline-primary' onclick='estado(" . '"' . $fila[0] . '"' . ")'>
-                            Activar</button></td> ");
+                            Activar</button></td>");
                             
                             }
                             ?>

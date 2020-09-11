@@ -1,26 +1,22 @@
 <?php
-
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorUsuario.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEstudiantes.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
 
 
-
-$datos=array(
-    
+$datos=array( 
     $_POST["codContacto"],
     $_POST["nomContacto"],
     $_POST["apellidoContacto"],       
     $_POST["telefonoContacto"],
     $_POST["cargoContacto"],
     $_POST["correoContacto"]
-    
-    
 );
 
 
 $validacion=$conUsuario->validarContra($_POST["codUsuario"],$_POST["conPassword1"]);
 $variable=3;
+
 if($_POST["newPassword"]==$_POST["conPassword"])
 {
     $variable=1;
@@ -40,9 +36,6 @@ echo($conUsuario->actualizarUsuario($_POST["codUsuario"],$_POST["conPassword"]))
 else{
     echo("ingrese por favor la contraseña actual para realizar cambios");
 }
-
-
-
 
 
 ?>

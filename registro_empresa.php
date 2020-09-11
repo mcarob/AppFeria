@@ -174,7 +174,6 @@ function registrarEmpresa() {
 
 
                 } else {
-
                     toastr["success"](r, "Error");
 
                 }
