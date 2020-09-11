@@ -2,20 +2,20 @@
 session_start();
 
 
-if (!isset($_SESSION['user'])) {
+/* if (!isset($_SESSION['user'])) {
 
     header("location: ../index.php");
 } else if (!($_SESSION['tipo'] == 3)) {
     header("location: ../index.php");
 }
-
-if (isset($_GET['action'])) {
+ */
+/* if (isset($_GET['action'])) {
     include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorEstudiantes.php');
 
     $control= new ControladorEstudiantes();
     $blob=$control->darEstudiante($_GET['action']); 
-   
-    $filePath=$_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/archivos/HojadeVida/'.$ddd;
+    */
+    $filePath=$_SERVER['DOCUMENT_ROOT'] .'/ProyectoFeria/AppFeria/archivos/HojadeVida/hoja.pdf';
     if (!file_exists($filePath)) {
         echo "The file $filePath does not exist";
         die();
@@ -32,7 +32,7 @@ if (isset($_GET['action'])) {
 <?php
 
     
-}
+//}
 
 ?>
 

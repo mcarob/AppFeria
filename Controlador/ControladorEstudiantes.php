@@ -23,7 +23,7 @@ class ControladorEstudiantes	{
 		}
 		public function darEstudiante($id){
 			$this->estudiantes=new EstudianteDAO();
-			return $this->estudiantes->editarPerfil($id);
+			return $this->estudiantes->devolverEstudiante($id);
 		}
 	}
 

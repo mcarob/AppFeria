@@ -89,8 +89,8 @@ include('menuEmpresa.php')
                                         echo ("<td>" . $key[2] . "</td>");
                                         echo ("<td>" . $key[3] . "</td>");
                                         echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[4] . "</span></td>");
-                                        echo ("<td> <button type='button' class='mb-1 btn btn-primary'>
-                                                 <i class='mdi mdi-star-outline mr-1'></i>Hoja de vida</button></td>");
+                                        echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='abrirPDF()'>Hoja de Vida</button>
+                                        </td>");
 
 
                                         if ($key["COD_ESTADO_PROCESO"] == "1") {
@@ -245,3 +245,12 @@ include('menuEmpresa.php')
     include('Footer.php')
 
     ?>
+     <script>
+
+
+    function abrirPDF(cod) {
+        var win = window.open('abrirHojaVida.php', '_blank');
+        win.focus();
+    
+    }
+    </script>
