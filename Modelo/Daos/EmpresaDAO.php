@@ -21,7 +21,14 @@ class EmpresaDAO extends DB
 
 
 
-
+    public function darBlobcc($variable){
+        $sentencia = $this->con->prepare("SELECT * FROM empresa WHERE COD_EMPRESA=?");
+        $sentencia->execute([$variable]);
+        $empresa=$sentencia->fetchAll();
+        return $empresa;
+        
+        
+    }
 
     // Lista de empresas con el usuario activo
     public function vistaEmpresas()

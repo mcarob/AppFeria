@@ -6,7 +6,7 @@ try {
     $claseCon = new DB();
     $con = $claseCon->connect();
     $sentencia = $con->prepare("call borrar_registro_empresa(?)");
-    $respuesta = $sentencia->execute(['miguelcaro@outlook.com']);
+    $respuesta = $sentencia->execute(['mcarob@unbosque.edu.co']);
     print_r($respuesta);
     if ($respuesta == 1) {
         echo ("todo salio muy bien");

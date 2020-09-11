@@ -11,7 +11,7 @@ if (isset($_POST["REM"])) {
         if (($_FILES['camaracomercioE']['type']) == 'application/pdf') {
             if (((($_FILES['logo']['type']) == 'image/png') || (($_FILES['logo']['type']) == 'image/jpeg'))) {
                 try {
-                    $datacomercio = ($_FILES['camaracomercioE']['tmp_name']);
+                    $datacomercio = $_FILES['camaracomercioE']['tmp_name'];
                     $datalogo = ($_FILES['logo']['tmp_name']);
                     if (($datacomercio == null)) {
                         echo ("Error al cargar el archivo Camara de comercio ");
@@ -44,13 +44,16 @@ if (isset($_POST["REM"])) {
                        // registrar empresa, paso las validaciones
                        /* ni_empresa ,nombre ,ccmpdf ,descripccion,logo,telefono,correo ,nomc,apellc ,telc,cargoc,correoc ,userempresa , passw ) */
                         $comercio = ($_FILES['camaracomercioE']['tmp_name']);
-                        $comercioarchi=file_get_contents($comercio);
+                        $pname = rand(1000,10000)."-".$_FILES["camaracomercioE"]["name"];
+                        $tname = $_FILES["camaracomercioE"]["tmp_name"];
+                        $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/archivos/camaraComercio';
+                        $seMovio=move_uploaded_file($tname, $uploads_dir.'/'.$pname);
                         $logo = ($_FILES['logo']['tmp_name']);
                         $logoarchi=file_get_contents($logo);
                         $passmd5=md5($_POST['nitE']);
                        $enviar=([   $_POST['nitE'],
                                     $_POST['nombreE'],
-                                    $comercioarchi,
+                                    $pname,
                                     $_POST['descE'],
                                     $logoarchi,
                                     $_POST['telE'],
@@ -63,7 +66,11 @@ if (isset($_POST["REM"])) {
                                     $_POST['emailE'],
                                     $passmd5
                        ]);
-                        $variable->registrarEmpresa($enviar);
+                       if($seMovio){
+                           $variable->registrarEmpresa($enviar);
+                       }else{
+                           echo("error en la carga del archivo por favor vuelva a intentarlo");
+                       }
                     }
                 }
             } else {

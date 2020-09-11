@@ -76,8 +76,8 @@ include('menuAdmi.php')
                                         echo ("<td>" . $key[1] . "</td>");
                                         echo ("<td>" . $key[3] . "</td>");
                                         echo ("<td>" . $key[4] . "</td>");
-                                        echo ("<td> <input type='submit' class='mb-1 btn btn-primary' href='abrirCamaraComercioPDF?".$key[0]."' target='_blank' >
-                                                <i class='mdi mdi-star-outline mr-1'></i>PDF</input> </td>");
+                                        echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='abrirPDF(" . '"' . $key[0] . '"' . ")'>PDF</button>
+                                                </td>");
                                         echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
                                         <button type='button' class='mb-1 btn btn-danger'>Rechazar</button></td>");
                                     ?>
@@ -109,29 +109,31 @@ include('menuAdmi.php')
 
     <script src="../assets/plugins/data-tables/datatables.responsive.min.js"></script>
     <script>
-        jQuery(document).ready(function() {
-            jQuery('#responsive-data-table').DataTable({
-                "aLengthMenu": [
-                    [20, 30, 50, 75, -1],
-                    [20, 30, 50, 75, "All"]
-                ],
-                "pageLength": 20,
-                "dom": '<"row justify-content-between top-information"lf>rt<"row justify-content-between bottom-information"ip><"clear">'
-            });
+    jQuery(document).ready(function() {
+        jQuery('#responsive-data-table').DataTable({
+            "aLengthMenu": [
+                [20, 30, 50, 75, -1],
+                [20, 30, 50, 75, "All"]
+            ],
+            "pageLength": 20,
+            "dom": '<"row justify-content-between top-information"lf>rt<"row justify-content-between bottom-information"ip><"clear">'
         });
+    });
     </script>
 
 
     <script>
-        function aceptar(cod) {
-            console.log(cod);
-            window.location.href = 'aceptarEmpresa.php?action=' + cod;
-        }
+    function aceptar(cod) {
+        console.log(cod);
+        window.location.href = 'aceptarEmpresa.php?action=' + cod;
+    }
 
 
-        function abrirPDF(){
-
-        }
+    function abrirPDF(cod) {
+        var win = window.open('abrirCamaraComercioPDF.php?action=' + cod, '_blank');
+        win.focus();
+    
+    }
     </script>
 
 

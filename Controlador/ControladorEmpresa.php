@@ -29,7 +29,11 @@ class ControladorEmpresa{
 			return $resultado_empresa;
 		}
 
-	
+		public function darBlobCamara($cod){
+			$empresa_DAO=new EmpresaDAO();
+			$resultado_empresa=$empresa_DAO->darBlobcc($cod);
+			return $resultado_empresa;
+		}
 
 	
 	}
