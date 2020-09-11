@@ -45,7 +45,7 @@ if (isset($_POST["REM"])) {
                        /* ni_empresa ,nombre ,ccmpdf ,descripccion,logo,telefono,correo ,nomc,apellc ,telc,cargoc,correoc ,userempresa , passw ) */
                         $comercio = ($_FILES['camaracomercioE']['tmp_name']);
                         $comercioarchi=file_get_contents($comercio);
-                        $logo = ($_FILES['camaracomercioE']['tmp_name']);
+                        $logo = ($_FILES['logo']['tmp_name']);
                         $logoarchi=file_get_contents($logo);
                         $passmd5=md5($_POST['nitE']);
                        $enviar=([   $_POST['nitE'],
