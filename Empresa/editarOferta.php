@@ -8,21 +8,20 @@ if (!isset($_SESSION['user'])) {
 }
 
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 include('menuEmpresa.php');
 include('Header.php');
 
-$conPromocion=new ControladorPromocion();
-$horarios="";
-if(isset($_GET["action"]))
-{
-    $var=$_GET["action"];
-    $informacion=$conPromocion->darOferta($var);
-    $horarios=explode(';',$informacion->getPromocionHorario());
-    
+$conPromocion = new ControladorPromocion();
+$horarios = "";
+if (isset($_GET["action"])) {
+    $var = $_GET["action"];
+    $informacion = $conPromocion->darOferta($var);
+    $horarios = explode(';', $informacion->getPromocionHorario());
 }
-
 ?>
+
+
 
 
 <div class="content-wrapper">
@@ -51,48 +50,39 @@ if(isset($_GET["action"]))
                         <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="mt-5">
                                 <form id='editar_oferta' method='POST' action="javascript:agregarVac()">
-                                    <!-- <div class="form-group row mb-6">
-                                        <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">User Image</label>
-                                        <div class="col-sm-8 col-lg-10">
-                                            <div class="custom-file mb-1">
-                                                <input type="file" class="custom-file-input" id="coverImage" required>
-                                                <label class="custom-file-label" for="coverImage">Choose file...</label>
-                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                    <input type="hidden" name="empresa" id="empresa" value="<?php echo $informacion->getCodEmpresa() ?>">;
+
                                     <div class="row mb-2">
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="firstName">Ciudad</label>
-                                                <input type="hidden" class="form-control"  name="codigo" id="codigo" value="<?php echo ($informacion->getCodPromocion())?>">
-                                                <input type="text" class="form-control"  name="ciudad" id="ciudad" value="<?php echo ($informacion->getPromocionCiudad())?>">
+                                                <input type="hidden" class="form-control" name="codigo" id="codigo" value="<?php echo ($informacion->getCodPromocion()) ?>">
+                                                <input type="text" class="form-control" name="ciudad" id="ciudad" value="<?php echo ($informacion->getPromocionCiudad()) ?>">
                                             </div>
                                         </div>
-                                        
+
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="lastName">Fecha de la publicación
                                                 </label>
-                                                <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo ($informacion->getPromocionFecha())?>" readonly>
+                                                <input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo ($informacion->getPromocionFecha()) ?>" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="lastName">Fecha de inicio
                                                 </label>
-                                                <input type="date" class="form-control" id="inicio" name="inicio" value="<?php echo ($informacion->getPromocionInicio())?>">
+                                                <input type="date" class="form-control" id="inicio" name="inicio" value="<?php echo ($informacion->getPromocionInicio()) ?>">
                                             </div>
                                         </div>
 
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="lastName">Remuneración
-                                                </label>
-                                                <input type="text" class="form-control" id="compensacion" name="compensacion" value="<?php echo ($informacion->getPromocionCompensacion())?>">
-                                                <input type="hidden" class="form-control" id="empresa" name="empresa" value="<?php echo ($informacion->getCodEmpresa())?>">
+                                                <label for="firstName">Cargo</label>
+                                                <input type="text" class="form-control" id="cargo" name="cargo" value="<?php echo ($informacion->getPromocionCargoFuncion()) ?>"></input>
+                                                <input type="hidden" class="form-control" name="estado" id="estado" value="<?php echo ($informacion->getPromocionEstado()) ?>">
                                             </div>
                                         </div>
 
@@ -101,157 +91,205 @@ if(isset($_GET["action"]))
                                             <div class="form-group">
                                                 <label for="lastName">Rango compensacion
                                                 </label>
-                                                <input type="text" class="form-control" id="rango" name="rango" value="<?php echo ($informacion->getPromocionRangoCompensacion())?>">
+                                                <!-- <input type="text" class="form-control" id="rango" name="rango" value="<?php echo ($informacion->getPromocionRangoCompensacion()) ?>"> -->
+                                                <select name="rango" id="rango" class="form-control">
+                                                    <option value="">Seleccione una opcion</option>
+                                                    <?php if (strpos($informacion->getPromocionRangoCompensacion(), 'Sin remuneracion') !== false) {
+                                                        echo '<option value="Sin remuneracion" selected="true" >Sin remuneracion</option>';
+                                                        echo '<option value="1 Salario mínimo" >1 Salario mínimo</option>';
+                                                        echo '<option value="1 - 2 Salarios mínimos" >1 - 2 Salarios mínimos</option>';
+                                                        echo '<option value="2 o más Salarios mínimos" >2 o más Salarios mínimos</option>';
+                                                    } else if (strpos($informacion->getPromocionRangoCompensacion(), '1 Salario mínimo') !== false) {
+                                                        echo '<option value="Sin remuneracion"  >Sin remuneracion</option>';
+                                                        echo '<option value="1 Salario mínimo" selected="true">1 Salario mínimo</option>';
+                                                        echo '<option value="1 - 2 Salarios mínimos" >1 - 2 Salarios mínimos</option>';
+                                                        echo '<option value="2 o más Salarios mínimos" >2 o más Salarios mínimos</option>';
+                                                    } else if (strpos($informacion->getPromocionRangoCompensacion(), '1 - 2 Salarios mínimos') !== false) {
+                                                        echo '<option value="Sin remuneracion"  >Sin remuneracion</option>';
+                                                        echo '<option value="1 Salario mínimo" >1 Salario mínimo</option>';
+                                                        echo '<option value="1 - 2 Salarios mínimos" selected="true" >1 - 2 Salarios mínimos</option>';
+                                                        echo '<option value="2 o más Salarios mínimos" >2 o más Salarios mínimos</option>';
+                                                    } else if (strpos($informacion->getPromocionRangoCompensacion(), '2 o más Salarios mínimos') !== false) {
+                                                        echo '<option value="Sin remuneracion"  >Sin remuneracion</option>';
+                                                        echo '<option value="1 Salario mínimo" >1 Salario mínimo</option>';
+                                                        echo '<option value="1 - 2 Salarios mínimos" >1 - 2 Salarios mínimos</option>';
+                                                        echo '<option value="2 o más Salarios mínimos" selected="true" >2 o más Salarios mínimos</option>';
+                                                    }
+                                                    ?>
+
+                                                </select>
+                                                <input type="hidden" name="compensacion" id="compensacion">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="descripcion">Limite vacantes</label>
+                                                <input type="number" class="form-control" id="vacantes" name="vacantes" value="<?php echo ($informacion->getLimiteVacantes()) ?>" />
                                             </div>
                                         </div>
 
 
                                     </div>
 
-                                    
+
 
                                     <div class="form-group mb-4">
                                         <label for="userName">Titulo</label>
-                                        <input type="text" class="form-control" name="titulo" id="titulo" value="<?php echo ($informacion->getTituloPromocion())?>">
+                                        <input type="text" class="form-control" name="titulo" id="titulo" value="<?php echo ($informacion->getTituloPromocion()) ?>">
                                         <span class="d-block mt-1"></span>
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil</label>
-                                        <input type="text" class="form-control" name="perfil" id="perfil" value="<?php echo ($informacion->getPromocionPerfil())?>">
+                                        <input type="text" class="form-control" name="perfil" id="perfil" value="<?php echo ($informacion->getPromocionPerfil()) ?>">
                                         <span class="d-block mt-1"></span>
                                     </div>
-                                    
-    
+
+
                                     <div class="form-group mb-4">
                                         <label for="userName">Horarios</label>
-
                                     </div>
 
                                     <div class="row mb-2" row="2">
-
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Lunes
-                                                <input type="checkbox" checked="checked" />
-                                                <div class="control-indicator"></div>
+
+                                                <?php if (strpos($informacion->getPromocionHorario(), 'Lunes') !== false) {
+                                                    echo '<input type="checkbox" checked="checked" id="lunes" name="lunes" value="Lunes"/>';
+                                                } else {
+                                                    echo '<input type="checkbox"  id="lunes" name="lunes" value="Lunes"/>';
+                                                } ?>
+                                                <div class="control-indicator">
+                                                </div>
                                             </label>
-                                            <div class="form-group">
-                                                </label>
-                                                <input type="time" class="form-control" id="lunes" name="lunes" value="<?php $date = date("H:i", strtotime($horarios[0])); echo "$date"; ?>">
-                                            </div>
+
                                         </div>
 
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Martes
-                                                <input type="checkbox" checked="checked" />
+                                                <?php
+                                                if (strpos($informacion->getPromocionHorario(), 'Martes') !== false) {
+                                                    echo '<input type="checkbox" checked="checked" id="martes" name="martes" value="Martes"/>';
+                                                } else {
+                                                    echo '<input type="checkbox"  id="martes" name="martes" value="Martes"/>';
+                                                } ?>
                                                 <div class="control-indicator"></div>
                                             </label>
-                                            <div class="form-group">
-                                                </label>
-                                                <input type="time" class="form-control" name="martes" id="martes" value="<?php $date = date("H:i", strtotime($horarios[1])); echo "$date"; ?>">
-                                            </div>
+
                                         </div>
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Miercoles
-                                                <input type="checkbox" checked="checked" />
+                                                <?php if (strpos($informacion->getPromocionHorario(), 'Miercoles') !== false) {
+                                                    echo '<input type="checkbox" checked="checked" id="miercoles" name="miercoles" value="Miercoles"/>';
+                                                } else {
+                                                    echo '<input type="checkbox"  id="miercoles" name="miercoles" value="Miercoles"/>';
+                                                } ?>
                                                 <div class="control-indicator"></div>
                                             </label>
-                                            <div class="form-group">
-                                                </label>
-                                                <input type="time" class="form-control" id="miercoles" name="miercoles" value="<?php $date = date("H:i", strtotime($horarios[2])); echo "$date"; ?>">
-                                            </div>
+
                                         </div>
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Jueves
-                                                <input type="checkbox" checked="checked" />
+                                                <input type="checkbox" id="jueves" name="jueves" value="Jueves" />
                                                 <div class="control-indicator"></div>
                                             </label>
-                                            <div class="form-group">
-                                                </label>
-                                                <input type="time" class="form-control" name="jueves" id="jueves" value="<?php $date = date("H:i", strtotime($horarios[3])); echo "$date"; ?>">
-                                            </div>
+
                                         </div>
 
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Viernes
-                                                <input type="checkbox" checked="checked" />
+                                                <input type="checkbox" id="viernes" name="viernes" value="Viernes" />
                                                 <div class="control-indicator"></div>
                                             </label>
-                                            <div class="form-group">
-                                                </label>
-                                                <input type="time" class="form-control" id="viernes" name="viernes" value="<?php $date = date("H:i", strtotime($horarios[4])); echo "$date"; ?>">
-                                            </div>
+
                                         </div>
 
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Sabado
-                                                <input type="checkbox" checked="checked" />
+                                                <input type="checkbox" id="sabado" name="sabado" value="Sabado" />
                                                 <div class="control-indicator"></div>
                                             </label>
-                                            <div class="form-group">
-                                                </label>
-                                                <input type="time" class="form-control" id="sabado" name="sabado" value="<?php $date = date("H:i", strtotime($horarios[5])); echo "$date"; ?>">
-                                            </div>
+
                                         </div>
 
 
                                         <div class="col-lg-6">
                                             <label class="control control-checkbox checkbox-success">Domingo
-                                                <input type="checkbox" checked="checked" />
+                                                <input type="checkbox" id="domingo" name="domingo" value="Domingo" />
                                                 <div class="control-indicator"></div>
                                             </label>
-                                            <div class="form-group">
-                                                </label>
-                                                <input type="time" class="form-control" id="domingo" name="domingo" value="<?php $date = date("H:i", strtotime($horarios[6])); echo "$date"; ?>">
-                                            </div>
                                         </div>
 
 
 
 
-
                                     </div>
 
 
-                                    <div class="form-group mb-4">
-                                        <label for="cargo">Cargo</label>
-                                        <input type="text" class="form-control" id="cargo" name="cargo" value="<?php echo ($informacion->getPromocionCargoFuncion())?>"></input>
-                                        <input type="hidden" class="form-control"  name="estado" id="estado" value="<?php echo ($informacion->getPromocionEstado())?>">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Seleccione la jornada</label>
+                                        <select class="form-control" id="hora" name="hora">
+                                            <?php if (strpos($informacion->getPromocionHorario(), '6:00 am - 3:00 pm') !== false) {
+                                                echo '<option value="Sin remuneracion" selected="true" >6:00 am - 3:00 pm</option>';
+                                                echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
+                                                echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
+                                                echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
+                                            } else if (strpos($informacion->getPromocionHorario(), '7:00 am - 4:00 pm') !== false) {
+                                                echo '<option value="Sin remuneracion"  >6:00 am - 3:00 pm</option>';
+                                                echo '<option value="7:00 am - 4:00 pm" selected="true">7:00 am - 4:00 pm</option>';
+                                                echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
+                                                echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
+                                            } else if (strpos($informacion->getPromocionHorario(), '8:00 am - 5:00 pm') !== false) {
+                                                echo '<option value="Sin remuneracion" >6:00 am - 3:00 pm</option>';
+                                                echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
+                                                echo '<option value="8:00 am - 5:00 pm"  selected="true" >8:00 am - 5:00 pm</option>';
+                                                echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
+                                            } else if (strpos($informacion->getPromocionHorario(), '9:00 am - 6:00 pm') !== false) {
+                                                echo '<option value="Sin remuneracion">6:00 am - 3:00 pm</option>';
+                                                echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
+                                                echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
+                                                echo '<option value="9:00 am - 6:00 pm" selected="true" >9:00 am - 6:00 pm</option>';
+                                            }
+                                            ?>
+                                    
+
+                                        </select>
                                     </div>
 
-                                    <div class="form-group mb-4">
-                                        <label for="descripcion">Descripción</label>
-                                        <textArea type="text" class="form-control" id="descripcion" name="descripcion" > <?php echo ($informacion->getPromocionDescripcion())?></textArea>
-                                    </div>
+
 
                                     <div class="form-group mb-4">
                                         <label for="descripcion">Beneficios</label>
-                                        <textArea type="text" class="form-control" id="beneficios" name="beneficios" > <?php echo ($informacion->getPromocionBeneficios())?></textArea>
+                                        <input type="text" class="form-control" id="beneficios" name="beneficios" value=" <?php echo ($informacion->getPromocionBeneficios()) ?>" />
                                     </div>
 
+
+
                                     <div class="form-group mb-4">
-                                        <label for="descripcion">Limite vacantes</label>
-                                        <textArea type="text" class="form-control" id="vacantes" name="vacantes" > <?php echo ($informacion->getLimiteVacantes())?></textArea>
+                                        <label for="descripcion">Descripción</label>
+                                        <textArea type="text" class="form-control" id="descripcion" name="descripcion"><?php echo ($informacion->getPromocionDescripcion()) ?></textArea>
                                     </div>
 
                                     <div class="d-flex justify-content-end mt-5">
-                                        
-                                        <input type='submit' value='ENVIAR'class="btn btn-primary mb-2 btn-pill"  />
+
+                                        <input type='submit' value='ENVIAR' class="btn btn-primary mb-2 btn-pill" />
                                     </div>
 
                                 </form>
                             </div>
                         </div>
-    </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 </div>
 
 
@@ -260,32 +298,32 @@ include('Footer.php')
 ?>
 
 <script>
-            function agregarVac() {
-                    
-                datos = $('#editar_oferta').serialize();
-                
+    function agregarVac() {
+
+        datos = $('#editar_oferta').serialize();
 
 
-                    $.ajax({
-                        type: "POST",
-                        data: datos,
-                        url: "editar_vacante.php",
-                        success: function(r) {
 
-                            console.log(r);
-                            
-                            if (r == 1) {
-                                
-                                window.location.href = "Ofertas.php";
+        $.ajax({
+            type: "POST",
+            data: datos,
+            url: "editar_vacante.php",
+            success: function(r) {
+
+                console.log(r);
+
+                if (r == 1) {
+
+                    window.location.href = "Ofertas.php";
 
 
-                            } else {
+                } else {
 
-                                
-                                
-                            }
-                        }
-                    });
 
+
+                }
             }
-        </script>
+        });
+
+    }
+</script>

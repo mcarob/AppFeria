@@ -140,7 +140,7 @@ $fecha_actual = date("Y-m-d")
                             <div class="row mb-2" row="2">
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Lunes
-                                        <input type="checkbox" checked="checked" id="lunes" name="lunes" value="Lunes" />
+                                        <input type="checkbox" checked="" id="lunes" name="lunes" value="Lunes" />
                                         <div class="control-indicator">
                                         </div>
                                     </label>
@@ -151,7 +151,7 @@ $fecha_actual = date("Y-m-d")
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Martes
 
-                                        <input type="checkbox" checked="checked" id="martes" name="martes" value="Martes" />
+                                        <input type="checkbox" checked="" id="martes" name="martes" value="Martes" />
                                         <div class="control-indicator"></div>
                                     </label>
 
@@ -159,7 +159,7 @@ $fecha_actual = date("Y-m-d")
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Miercoles
-                                        <input type="checkbox" checked="checked" id="miercoles" name="miercoles" value="Miercoles" />
+                                        <input type="checkbox" checked="" id="miercoles" name="miercoles" value="Miercoles" />
                                         <div class="control-indicator"></div>
                                     </label>
 
@@ -167,7 +167,7 @@ $fecha_actual = date("Y-m-d")
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Jueves
-                                        <input type="checkbox" checked="checked" id="jueves" name="jueves" value="Jueves" />
+                                        <input type="checkbox" checked="" id="jueves" name="jueves" value="Jueves" />
                                         <div class="control-indicator"></div>
                                     </label>
 
@@ -176,7 +176,7 @@ $fecha_actual = date("Y-m-d")
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Viernes
-                                        <input type="checkbox" checked="checked" id="viernes" name="viernes" value="Viernes" />
+                                        <input type="checkbox" checked="" id="viernes" name="viernes" value="Viernes" />
                                         <div class="control-indicator"></div>
                                     </label>
 
@@ -185,7 +185,7 @@ $fecha_actual = date("Y-m-d")
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Sabado
-                                        <input type="checkbox" checked="checked" id="sabado" name="sabado" value="Sabado" />
+                                        <input type="checkbox" checked="" id="sabado" name="sabado" value="Sabado" />
                                         <div class="control-indicator"></div>
                                     </label>
 
@@ -194,7 +194,7 @@ $fecha_actual = date("Y-m-d")
 
                                 <div class="col-lg-6">
                                     <label class="control control-checkbox checkbox-success">Domingo
-                                        <input type="checkbox" checked="checked" id="domingo" name="domingo" value="Domingo" />
+                                        <input type="checkbox" checked="" id="domingo" name="domingo" value="Domingo" />
                                         <div class="control-indicator"></div>
                                     </label>
 

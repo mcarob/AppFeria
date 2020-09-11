@@ -3,21 +3,34 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/PromocionLaboral.php');
 
+$horarios="";
+if (isset($_POST['lunes'])) {
+    $horarios="Lunes;";
+}
+if(isset($_POST['martes'])){
+    $horarios=$horarios."Martes;";
+}
+if(isset($_POST['miercoles'])){
+    $horarios=$horarios."Miercoles;";
+}
+if(isset($_POST['jueves'])){
+    $horarios=$horarios."Jueves;";
+}
+if(isset($_POST['viernes'])){
+    $horarios=$horarios."Viernes;";
+}
+if(isset($_POST['sabado'])){
+    $horarios=$horarios."Sabado;";
+}
+if(isset($_POST['domingo'])){
+    $horarios=$horarios."Domingo;";
+}
 
+$horarios=$horarios.$_POST['hora'];
 
 $datos=array(
     $_POST["codigo"],
     $_POST["perfil"],
-
-    $_POST["lunes"],
-    $_POST["martes"],
-    $_POST["miercoles"],
-    $_POST["jueves"],
-    $_POST["viernes"],
-    $_POST["sabado"],
-    $_POST["domingo"],
-
-    
     $_POST["compensacion"],
     $_POST["rango"],
     $_POST["beneficios"],
@@ -33,16 +46,15 @@ $datos=array(
     
 );
 
-$horarios=$datos[2].";".$datos[3].";".$datos[4].";".$datos[5].";".$datos[6].";".$datos[7].";".$datos[8];
 
 
 $controlador = new ControladorPromocion();
 $vacante=new PromocionLaboral($datos[0],$datos[1],null,
-                                $horarios,$datos[9],$datos[10],
-                                $datos[11],$datos[12],$datos[13],
-                                $datos[14],$datos[15],$datos[16],
-                                $datos[17],$datos[18],$datos[19],
-                                $datos[20]);
+                                $horarios,0,$datos[3],
+                                $datos[4],$datos[5],$datos[6],
+                                $datos[7],$datos[8],$datos[9],
+                                $datos[10],$datos[11],$datos[12],
+                                $datos[13]);
 
 echo($controlador->actualizarVacante($vacante));
 
