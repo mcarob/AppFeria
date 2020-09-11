@@ -51,6 +51,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
+                <h5>Fecha de inicio</h5>
+                <br>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">
@@ -61,6 +63,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
+                <h5>Fecha de finalizacion</h5>
+                <br>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">
@@ -116,6 +120,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
+                <h5>Fecha de inicio</h5>
+                <br>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">
@@ -126,6 +132,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
+                <h5>Fecha de finalizacion</h5>
+                <br>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">
