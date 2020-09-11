@@ -54,8 +54,8 @@ include('menuEmpresa.php')
                     </li>
                     <li class="breadcrumb-item" aria-current="page">Administrar solicitudes</li>
                 </ol>
-            </nav>
-
+            </nav> 
+                   
         </div>
 
         <div class="row">
