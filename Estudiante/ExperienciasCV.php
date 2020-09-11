@@ -45,19 +45,25 @@
                                 <i class="material-icons">assignment_ind</i>
                             </span>
                         </div>
-                        <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username">
+                        <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username">
+                            <option disabled="" selected="">Seleccionar periodo</option>
+                            <option value="bg">Periodo 2015-1 </option>
+                            <option value="md">Periodo 2015-2 </option>
+                            <option value="cl">Periodo 2016-1 </option>
+                            <option value="cl">Periodo 2016-2 </option>
+                            <option value="cl">Periodo 2017-1 </option>
+                            <option value="cl">Periodo 2017-2 </option>
+                            <option value="cl">Periodo 2018-1 </option>
+                            <option value="cl">Periodo 2018-2 </option>
+                            <option value="cl">Periodo 2019-1 </option>
+                            <option value="cl">Periodo 2019-2 </option>
+                            <option value="cl">Periodo 2020-1 </option>
+                            <option value="cl">Periodo 2020-2 </option>
+
+                        </select>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="material-icons">assignment_ind</i>
-                            </span>
-                        </div>
-                        <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username">
-                    </div>
-                </div>
+                
             </div>
             <div class="form-group">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" style="resize: none;" placeholder="Describa del proyecto"></textarea>
@@ -103,6 +109,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
+                <h5>Fecha de inicio</h5>
+                <br>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">
@@ -113,6 +121,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
+                <h5>Fecha de finalizacion</h5>
+                <br>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">
