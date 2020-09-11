@@ -8,8 +8,8 @@ if (!isset($_SESSION['user'])) {
 }
 
 
-include('menuEmpresa.php');
-include('Header.php');
+include ('menuEmpresa.php');
+include ('Header.php');
 
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
