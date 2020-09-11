@@ -14,31 +14,35 @@ $datos=array(
 $conUsuario=new ControladorUsuario();
 $validacion=$conUsuario->validarContra($_POST["codUsuario"],$_POST["conPassword1"]);
 
+
 if(count($validacion)>0)
 {    
-    if($_POST["logo"] != null)
+    if(isset($_FILES["logo"]))
     {
         if (((($_FILES['logo']['type']) == 'image/png') || (($_FILES['logo']['type']) == 'image/jpeg'))) 
         {
                 try 
                 {
                     $datalogo = ($_FILES['logo']['tmp_name']);
-                        
+                    
                     if (($datalogo == null)) 
                     {
                      echo ("Error al cargar el archivo");
                     } else 
                     {
+                    
                      $archilogo = file_get_contents($datalogo);
                     }
                 }catch (Exception $e) 
                 {
                   echo ("Error al cargar el logo, verificar");
                 }
+
                 if (isset($archilogo))
                 {
+                
                 $conEmpresa=new ControladorEmpresa();
-                echo($conEmpresa->actualizarEmpresa($datos[0],$datos[0],$datos[0],$datos[0],$archilogo));
+                echo($conEmpresa->actualizarEmpresa($datos[0],$datos[1],$datos[2],$datos[3],$archilogo));
                 }
         }else{
             echo("formato incorrecto");

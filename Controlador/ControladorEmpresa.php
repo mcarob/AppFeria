@@ -26,7 +26,9 @@ class ControladorEmpresa{
 		public function actualizarEmpresa($codigo,$nombre,$telefono,$descripcion,$imagen){
 			$empresa_DAO=new EmpresaDAO();
 			$resultado_empresa=$empresa_DAO->editarEmpresa($codigo,$nombre,$telefono,$descripcion,$imagen);
+			print_r($resultado_empresa);
 			return $resultado_empresa;
+			
 		}
 
 		public function darBlobCamara($cod){

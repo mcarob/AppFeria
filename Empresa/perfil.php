@@ -37,11 +37,11 @@ include('Header.php');
                     <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                         <div class="card text-center widget-profile px-0 border-0">
                             <?php   
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode( $empresa->getLogoEmpresa() ).'" lt="user image"/>';
+                                echo '<img style="max-width:100%;width:auto;height:auto;" src="data:image/jpeg;base64,'.base64_encode( $empresa->getLogoEmpresa() ).'" lt="user image"/>';
                                 ?>
 
                             <div class="card-body">
-                                <h4 class="py-2 text-dark">Albrecht Straub</h4>
+                                <h4 class="py-2 text-dark"><?php echo($empresa->getRazonSocial()) ?></h4>
 
                             </div>
                         </div>
@@ -67,6 +67,8 @@ include('Header.php');
                             <div class="tab-pane fade show active" id="settings" role="tabpanel"
                                 aria-labelledby="settings-tab">
                                 <div class="mt-5">
+
+
                                     <form action="javascript:editarEmpresa()" method="POST" id="formEmpresa"
                                         name="formEmpresa">
                                         <div class="form-group row mb-6">
@@ -74,8 +76,8 @@ include('Header.php');
                                             </label>
                                             <div class="col-sm-8 col-lg-10">
                                                 <div class="custom-file mb-1">
-                                                    <input type="file" class="custom-file-input"  id="logo" name="logo">
-                                                    <label class="custom-file-label" for="coverImage">Seleccione un
+                                                    <input type="file" class="custom-file-input" id="logo" name="logo">
+                                                    <label id="labelLogo" class="custom-file-label" for="coverImage">Seleccione un
                                                         archivo...</label>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
@@ -88,6 +90,9 @@ include('Header.php');
                                                     <input type="text" class="form-control" name="razonSocial"
                                                         id="razonSocial"
                                                         value="<?php echo($empresa->getRazonSocial()) ?>" required>
+                                                    <input type="hidden" class="form-control" name="codUsuario"
+                                                        id="codUsuario"
+                                                        value="<?php echo($codigo) ?>">
                                                 </div>
                                             </div>
 
@@ -99,8 +104,8 @@ include('Header.php');
                                                         id="nitEmpresa" value="<?php echo($empresa->getNitEmpresa())?>"
                                                         readonly>
                                                     <input type="hidden" class="form-control" name="codigo_empresa"
-                                                        id="codigo_empresa" value="<?php echo($empresa->getCodEmpresa())?>"
-                                                        required>
+                                                        id="codigo_empresa"
+                                                        value="<?php echo($empresa->getCodEmpresa())?>" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -154,7 +159,11 @@ include('Header.php');
             </div>
         </div>
     </div>
-    <!-- js placed at the end of the document so the pages load faster -->
+    <?php
+    include('Footer.php')
+
+    ?>
+
     <script src="../assets/plugins/toastr/toastr.min.js"></script>
 
     <script>
@@ -166,22 +175,25 @@ include('Header.php');
             type: "POST",
             data: datos,
             url: "editar_empresa.php",
+            processData: false,
+            contentType: false,
             success: function(r) {
 
                 console.log(r);
 
-                if (r == 1) {
+                if (r == 11) {
                     window.location.href = "index.php";
 
                 } else {
-                    toastr["success"](r, "ERROR");     
+                    toastr["success"](r, "ERROR");
                 }
             }
         });
     }
     </script>
 
-    <?php
-    include('Footer.php')
-
-    ?>
+<script>
+document.getElementById('logo').onchange = function() {
+    document.getElementById("labelLogo").innerHTML = this.value.replace(/C:\\fakepath\\/i, '');
+};
+</script>
