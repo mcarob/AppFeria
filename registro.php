@@ -101,24 +101,7 @@ body {
     <script src="assets/plugins/jquery-mask-input/jquery.mask.min.js"></script>
 
     <script src="assets/plugins/toastr/toastr.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $("#logo").change(function() {
-            readURL(this);
-        });
-    });
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    </script>
 
 
 

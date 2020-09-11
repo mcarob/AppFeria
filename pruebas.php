@@ -6,11 +6,14 @@ try {
     $claseCon = new DB();
 $con = $claseCon->connect();
 $sentencia = $con->prepare("CALL MOSTRAR_SALIDA(?)");
-$a=($sentencia->execute(['3']));
-echo $a;
+$respuesta=$sentencia->execute(['5']);
+print_r($respuesta);
+if($respuesta==1){
+    echo("todo salio muy bien");
+}
 } catch (\Throwable $th) {
-    print_r("ERROR EN LA INTEGRIDAD DE LA BASE DE DATOS");
-    print_r($th);
+    print("ERROR EN LA INTEGRIDAD DE LA BASE DE DATOS");
+    print($th);
 }
 
 
