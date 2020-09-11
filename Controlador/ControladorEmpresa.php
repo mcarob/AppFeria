@@ -23,9 +23,9 @@ class ControladorEmpresa{
 			return $this->empresas->validar($COD);
 		}
 
-		public function actualizarEmpresa(Empresa $empresa){
+		public function actualizarEmpresa($codigo,$nombre,$telefono,$descripcion,$imagen){
 			$empresa_DAO=new EmpresaDAO();
-			$resultado_empresa=$empresa_DAO->editarPerfil($empresa);
+			$resultado_empresa=$empresa_DAO->editarEmpresa($codigo,$nombre,$telefono,$descripcion,$imagen);
 			return $resultado_empresa;
 		}
 

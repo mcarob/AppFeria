@@ -1,40 +1,53 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorEstudiantes.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorUsuario.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
 
 
 $datos=array( 
-    $_POST["codContacto"],
-    $_POST["nomContacto"],
-    $_POST["apellidoContacto"],       
-    $_POST["telefonoContacto"],
-    $_POST["cargoContacto"],
-    $_POST["correoContacto"]
+    $_POST["codigo_empresa"],
+    $_POST["razonSocial"],
+    $_POST["telefonEmpresa"],
+    $_POST["descripcionEmpresa"]
 );
 
-
-$validacion=$conUsuario->validarContra($_POST["codUsuario"],$_POST["conPassword1"]);
-$variable=3;
-
-if($_POST["newPassword"]==$_POST["conPassword"])
-{
-    $variable=1;
-}
-if(count($validacion)>0 and $variable==1)
-{
-$conContacto= new ControladorContactoEmpresa();
 $conUsuario=new ControladorUsuario();
-$contacto=new ContactoEmpresa($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5]);
-echo($conContacto->actualizarContactoEmpresa($contacto));
-echo($conUsuario->actualizarUsuario($_POST["codUsuario"],$_POST["conPassword"]));
+$validacion=$conUsuario->validarContra($_POST["codUsuario"],$_POST["conPassword1"]);
 
-}else if($variable==3)
+if(count($validacion)>0)
+{    
+    if($_POST["logo"] != null)
+    {
+        if (((($_FILES['logo']['type']) == 'image/png') || (($_FILES['logo']['type']) == 'image/jpeg'))) 
+        {
+                try 
+                {
+                    $datalogo = ($_FILES['logo']['tmp_name']);
+                        
+                    if (($datalogo == null)) 
+                    {
+                     echo ("Error al cargar el archivo");
+                    } else 
+                    {
+                     $archilogo = file_get_contents($datalogo);
+                    }
+                }catch (Exception $e) 
+                {
+                  echo ("Error al cargar el logo, verificar");
+                }
+                if (isset($archilogo))
+                {
+                $conEmpresa=new ControladorEmpresa();
+                echo($conEmpresa->actualizarEmpresa($datos[0],$datos[0],$datos[0],$datos[0],$archilogo));
+                }
+        }else{
+            echo("formato incorrecto");
+        }  
+    }
+}   
+else
 {
-    echo("Las nueva coontraseña no coincide con la confirmacion");
-}
-else{
-    echo("ingrese por favor la contraseña actual para realizar cambios");
+        echo("Debe ingresar la contraseña actual para realizar cambios");
 }
 
 
