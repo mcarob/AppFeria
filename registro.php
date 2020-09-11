@@ -17,21 +17,9 @@
 
 
 
-        <!-- PLUGINS CSS STYLE -->
-        <link href="assets/plugins/nprogress/nprogress.css" rel="stylesheet" />
-        <!-- SLEEK CSS -->
+
         <link id="sleek-css" rel="stylesheet" href="assets/css/sleek.css" />
         <link href="assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
-        <!-- FAVICON -->
-        <link href="assets/img/favicon.png" rel="shortcut icon" />
-        <!--
-    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-  -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
         <script src="assets/plugins/nprogress/nprogress.js"></script>
     </head>
 
