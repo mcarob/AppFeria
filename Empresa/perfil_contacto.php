@@ -77,7 +77,6 @@ include('Header.php');
 
                                         <div class="form-group mb-4">
                                             <label for="userName">Nombre de usuario</label>
-
                                             <input type="text" class="form-control" id="userName"
                                                 value="<?php echo (($_SESSION['user']))  ?>" readonly></input>
 
