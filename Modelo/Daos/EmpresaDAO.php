@@ -47,23 +47,21 @@ class EmpresaDAO extends DB
     public function registrarEmpresaProcedimiento($v){
     /* ni_empresa ,nombre ,ccmpdf ,descripccion,logo,telefono,correo ,nomc,apellc ,telc,cargoc,correoc ,userempresa , passw ) 
     */
-    
-    $classEnviar= new Enviar();
+    $classEnviar= new enviarCorreo();
     $codigo=intval(rand(0,9).rand(0,9).rand(0,9).rand(0,9));
     $mensaje='Muchas gracias por registrarse en la aplicación de "Oportunidades El Bosque", para continar con el proceso de inscripcción, por favor ingrese a la aplicación con su correo electronico, 
     la contaseña será el nit de la empresa, para su primer ingreso, debera ingresar el codigo de verificacion que esta a continuación :  '.$codigo. " podrás acceder a toda la funciones 
     hasta que la Universidad El Bosque, confirme su registro. 
      Muchas Gracias";
-    $r1=$classEnviar->enviarCorreo($v[1],$v[6],$mensaje);
     $md5Codigo=md5($codigo);
     $sentencia = $this->con->prepare("CALL agregar_Empresa(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $r=$sentencia->execute([$v[0],$v[1],$v[2],$v[3],$v[4],$v[5],$v[6],$v[7],$v[8],$v[9],$v[10],$v[11],$v[12],$v[13],$md5Codigo]);  
-    return $r;
     if($r==1){
-        $r1=$classEnviar->enviarCorreo($v[1],$v[6],$mensaje);
+        #$nombre,$para,$asunto,$mensaje
+        $r1=$classEnviar->enviarMensaje($v[1],$v[6],'Registro Plataforma Oportunidades El Bosque',$mensaje);
         if($r1==0){
-            
-
+            $sentencia2 = $this->con->prepare("call borrar_registro_empresa(?)");
+             $sentencia2->execute([$v[6]]);
             return "Hubo un error en nuestro servidor de Correo electrónico por el momento no podemos procesar tu solicitud, intentalo mas tarde";
         }else{
             return 1;            

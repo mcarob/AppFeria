@@ -5,8 +5,8 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/conexion/db.ph
 try {
     $claseCon = new DB();
     $con = $claseCon->connect();
-    $sentencia = $con->prepare("CALL MOSTRAR_SALIDA(?)");
-    $respuesta = $sentencia->execute(['5']);
+    $sentencia = $con->prepare("call borrar_registro_empresa(?)");
+    $respuesta = $sentencia->execute(['miguelcaro@outlook.com']);
     print_r($respuesta);
     if ($respuesta == 1) {
         echo ("todo salio muy bien");

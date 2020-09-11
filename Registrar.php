@@ -44,15 +44,15 @@ if (isset($_POST["REM"])) {
                        // registrar empresa, paso las validaciones
                        /* ni_empresa ,nombre ,ccmpdf ,descripccion,logo,telefono,correo ,nomc,apellc ,telc,cargoc,correoc ,userempresa , passw ) */
                         $comercio = ($_FILES['camaracomercioE']['tmp_name']);
-                        $comercioarchi=file_get_contents($imgData);
+                        $comercioarchi=file_get_contents($comercio);
                         $logo = ($_FILES['camaracomercioE']['tmp_name']);
-                        $logoarchi=file_get_contents($imgData);
+                        $logoarchi=file_get_contents($logo);
                         $passmd5=md5($_POST['nitE']);
                        $enviar=([   $_POST['nitE'],
                                     $_POST['nombreE'],
-                                    $_POST['comercioarchi'],
+                                    $comercioarchi,
                                     $_POST['descE'],
-                                    $_POST['logoarchi'],
+                                    $logoarchi,
                                     $_POST['telE'],
                                     $_POST['emailE'],
                                     $_POST['nomC'],
@@ -61,7 +61,7 @@ if (isset($_POST["REM"])) {
                                     $_POST['telC'],
                                     $_POST['emailC'],
                                     $_POST['emailE'],
-                                    $_POST['passmd5']
+                                    $passmd5
                        ]);
                         $variable->registrarEmpresa($enviar);
                     }
