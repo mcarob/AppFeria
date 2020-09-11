@@ -27,6 +27,7 @@ include('Header.php');
     <meta charset="utf-8">
 
 </head>
+<link href="../assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
 <div class="content-wrapper">
     <div class="content">
         <div class="bg-white border rounded">
@@ -66,14 +67,14 @@ include('Header.php');
                             <div class="tab-pane fade show active" id="settings" role="tabpanel"
                                 aria-labelledby="settings-tab">
                                 <div class="mt-5">
-                                    <form action="javascript:editarEmpresa()" method="POST" id="editar_empresa"
-                                        name="editar_empresa">
+                                    <form action="javascript:editarEmpresa()" method="POST" id="formEmpresa"
+                                        name="formEmpresa">
                                         <div class="form-group row mb-6">
                                             <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">
                                             </label>
                                             <div class="col-sm-8 col-lg-10">
                                                 <div class="custom-file mb-1">
-                                                    <input type="file" class="custom-file-input" id="coverImage">
+                                                    <input type="file" class="custom-file-input"  id="logo" name="logo">
                                                     <label class="custom-file-label" for="coverImage">Seleccione un
                                                         archivo...</label>
                                                     <div class="invalid-feedback"></div>
@@ -96,6 +97,9 @@ include('Header.php');
                                                     </label>
                                                     <input type="text" class="form-control" name="nitEmpresa"
                                                         id="nitEmpresa" value="<?php echo($empresa->getNitEmpresa())?>"
+                                                        readonly>
+                                                    <input type="hidden" class="form-control" name="codigo_empresa"
+                                                        id="codigo_empresa" value="<?php echo($empresa->getCodEmpresa())?>"
                                                         required>
                                                 </div>
                                             </div>
@@ -151,32 +155,31 @@ include('Header.php');
         </div>
     </div>
     <!-- js placed at the end of the document so the pages load faster -->
-
+    <script src="../assets/plugins/toastr/toastr.min.js"></script>
 
     <script>
-    function EditarPerfil() {
-        datos = $('#formEditar').serialize();
+    function editarEmpresa() {
+        var myform = document.getElementById("formEmpresa");
+        var datos = new FormData(myform);
 
         $.ajax({
             type: "POST",
             data: datos,
-            url: "Editar_Perfil_Empresa.php",
+            url: "editar_empresa.php",
             success: function(r) {
 
                 console.log(r);
 
-                if (r == 0) {
-
+                if (r == 1) {
+                    window.location.href = "index.php";
 
                 } else {
-
+                    toastr["success"](r, "ERROR");     
                 }
             }
         });
     }
     </script>
-    </body>
-
 
     <?php
     include('Footer.php')

@@ -48,7 +48,8 @@ if (isset($_POST["REM"])) {
                         $logo = ($_FILES['logo']['tmp_name']);
                         $logoarchi=file_get_contents($logo);
                         $passmd5=md5($_POST['nitE']);
-                       $enviar=([   $_POST['nitE'],
+                       
+                        $enviar=([   $_POST['nitE'],
                                     $_POST['nombreE'],
                                     $comercioarchi,
                                     $_POST['descE'],
