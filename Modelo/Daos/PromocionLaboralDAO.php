@@ -34,7 +34,7 @@ class PromocionLaboralDAO
         return $em;
     }
     public function vistaPromocionLaboral(){
-        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral");
+        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE promocion_estado = 1");
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {
