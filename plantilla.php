@@ -55,16 +55,12 @@ https://templatemo.com/tm-503-newline
               <h6>Informacion</h6>
             </a></li>
           <li><a href="#0">
-              <div class="image-icon"><img src="assets/img/featured-icon.png"></div>
+              <div class="image-icon d"><img src="assets/img/featured-icon.png"></div>
               <h6>Requisitos</h6>
             </a></li>
-          <li><a href="#0">
+          <li><a href="registro.php">
               <div class="image-icon"><img src="assets/img/featured-icon.png"></div>
-              <h6>Estudiante</h6>
-            </a></li>
-          <li><a href="#0">
-              <div class="image-icon"><img src="assets/img/featured-icon.png"></div>
-              <h6>Empresa</h6>
+              <h6>Registro</h6>
             </a></li>
           <li><a href="#0">
               <div class="image-icon"><img src="assets/img/contact-icon.png"></div>
@@ -196,46 +192,9 @@ https://templatemo.com/tm-503-newline
         </div>
       </li>
 
-      <li>
-        <div class="heading">
-          <h1>Registrate Estudiante</h1>
-          <span>Completa tu informacion</span>
-        </div>
-        <div class="cd-half-width fourth-slide">
-          <div class="container">
-
-            
-
-              <?php include_once 'registro1.php'; ?>
 
 
 
-           
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="heading">
-          <h1>Registrate Empresa</h1>
-          <span>Completa tu informacion</span>
-        </div>
-        <div class="cd-half-width fourth-slide">
-          <div class="container">
-
-            <div class="row">
-
-              <div class="col-md-12">
-                <div class="content fourth-content">
-
-
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
 
       <li>
         <div class="heading">
