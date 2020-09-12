@@ -37,7 +37,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="./index.php" title="">
-                        <img src="./assets/images/mashuptemplate.svg" class="navbar-logo-img" alt="">
+                        <img src="./assets/images/logoU.svg" class="navbar-logo-img" alt="">
                     </a>
                 </div>
 
@@ -56,7 +56,6 @@
             </div>
         </nav>
     </header>
-
 
 
     <div class="white-text-container background-image-container"
