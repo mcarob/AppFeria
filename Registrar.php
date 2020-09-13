@@ -89,5 +89,7 @@ if (isset($_POST["REM"])) {
         // $query=$base->connect()->prepare('UPDATE empresa SET LOGO_EMPRESA=? WHERE COD_EMPRESA=1 ');
         // $query->execute([$archi]);
     }
+}else if(isset($_POST["RES"])){
+
 }
 ?>

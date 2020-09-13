@@ -69,7 +69,7 @@
         
             aria-label="Username" style="display:none;">
         <input type="text" autocomplete="off" class="form-control" placeholder="Correo Electronico" id="correoES" name="correoES"
-        pattern="[a-zA-Z]"
+        pattern="^[A-Za-z]+$"
             title="No Cumple con el Formato, no debe contener caracteres especiales ni números" maxlength="30"  required
 
             aria-label="Username">
@@ -127,7 +127,7 @@
                         <i class="material-icons">face</i>
                     </span>
                 </div>
-                <input autocomplete="off" type="password" class="form-control" placeholder="Validar Contraseña " required
+                <input autocomplete="off" type="password" class="form-control" placeholder="Validar Contraseña " required id="contraCo" name="contraCo"
                     aria-label="Username" onchange="form.pwd2.pattern = RegExp.escape(this.value);">
             </div>
         </div>
@@ -149,32 +149,32 @@ function devolver() {
 
         if(validarContra()){
 
-        datos = $('#formEstudianteR').serialize();
+/*         datos = $('#formEstudianteR').serialize();
        $.ajax({
            type: "POST",
            data: datos,
-           url: "editar_contacto.php",
+           url: "vv.php",
            success: function(r) {
        
                console.log(r);
                if (r == 11) {
                    window.location.href = "index.php";
                } else if (r == 3) {
-                   toastr["success"](r, "ERROR");
+                   toastr["warning"](r, "ERROR");
                } else {
        
-                   toastr["success"](r, "ERROR");
+                   toastr["warning"](r, "ERROR");
        
                }
            }
-       });
+       }); */
 
         }
     }
 
     function validarContra() {
-        if ($('#password').val() == $('#confirm_password').val()) {
-            
+        if ($('#contraES').val() != $('#contraCo').val()) {
+            toastr["warning"]("Las contraseñas no coinciden, por favor, vuelva a escribirlas correctamente", "ERROR");
         }
     }
 
