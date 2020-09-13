@@ -176,12 +176,11 @@ function devolver() {
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                     }
-                    toastr["success"]("Las contraseñas no coinciden, por favor, vuelva a escribirlas correctamente", "ERROR");
+                    toastr["success"]("Se ha registrado satisfactoriamente su correo", "ERROR");
 
                } else if (r == 3) {
                    toastr["warning"](r, "ERROR");
                } else {
-       
                    toastr["warning"](r, "ERROR");
        
                }
