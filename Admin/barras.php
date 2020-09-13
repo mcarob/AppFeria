@@ -57,7 +57,6 @@ $datosY = json_encode($valoresY);
 		font: {
 			family: 'Raleway, sans-serif'
 		},
-
 		bargap: 0.05
 	};
 	
