@@ -1894,7 +1894,7 @@ input[type=search] {
 .form-group-lg .form-control {
     height: 52px;
     padding: 12px 16px;
-    font-size: 19px;
+    font-size: 19px!important;
     line-height: 1.33333;
     border-radius: 2px
 }
@@ -1912,7 +1912,7 @@ input[type=search] {
     height: 52px;
     min-height: 46px;
     padding: 13px 16px;
-    font-size: 19px;
+    font-size: 19px!important;
     line-height: 1.33333
 }
 
@@ -2127,14 +2127,14 @@ input[type=search] {
 @media (min-width:768px) {
     .form-horizontal .form-group-lg .control-label {
         padding-top: 13px;
-        font-size: 19px
+        font-size: 19px!important
     }
 }
 
 @media (min-width:768px) {
     .form-horizontal .form-group-sm .control-label {
         padding-top: 7px;
-        font-size: 13px
+        font-size: 13px!important
     }
 }
 
@@ -2150,7 +2150,7 @@ input[type=search] {
     border: 1px solid transparent;
     white-space: nowrap;
     padding: 8px 12px;
-    font-size: 15px;
+    font-size: 15px!important;
     line-height: 1.81;
     border-radius: 2px;
     -webkit-user-select: none;
@@ -2445,21 +2445,21 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-group-lg>.btn, .btn-lg {
     padding: 12px 16px;
-    font-size: 19px;
+    font-size: 19px!important;
     line-height: 1.33333;
     border-radius: 2px
 }
 
 .btn-group-sm>.btn, .btn-sm {
     padding: 6px 10px;
-    font-size: 13px;
+    font-size: 13px!important;
     line-height: 1.5;
     border-radius: 2px
 }
 
 .btn-group-xs>.btn, .btn-xs {
     padding: 1px 5px;
-    font-size: 13px;
+    font-size: 13px!important;
     line-height: 1.5;
     border-radius: 2px
 }
@@ -2547,7 +2547,7 @@ tbody.collapse.in {
     padding: 5px 0;
     margin: 2px 0 0;
     list-style: none;
-    font-size: 15px;
+    font-size: 15px!important;
     text-align: left;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -2626,7 +2626,7 @@ tbody.collapse.in {
 .dropdown-header {
     display: block;
     padding: 3px 20px;
-    font-size: 13px;
+    font-size: 13px!important;
     line-height: 1.81;
     color: #777;
     white-space: nowrap
@@ -2907,7 +2907,7 @@ tbody.collapse.in {
 
 .input-group1-addon {
     padding: 8px 12px;
-    font-size: 15px;
+    font-size: 15px!important;
     font-weight: 400;
     line-height: 1;
     color: #555;
@@ -2919,13 +2919,13 @@ tbody.collapse.in {
 
 .input-group1-addon.input-sm, .input-group1-sm>.input-group1-addon, .input-group1-sm>.input-group1-btn>.input-group1-addon.btn {
     padding: 6px 10px;
-    font-size: 13px;
+    font-size: 13px!important;
     border-radius: 2px
 }
 
 .input-group1-addon.input-lg, .input-group1-lg>.input-group1-addon, .input-group1-lg>.input-group1-btn>.input-group1-addon.btn {
     padding: 12px 16px;
-    font-size: 19px;
+    font-size: 19px!important;
     border-radius: 2px
 }
 
@@ -2952,7 +2952,7 @@ tbody.collapse.in {
 }
 
 .input-group1-btn {
-    font-size: 0;
+    font-size: 0!important;
     white-space: nowrap
 }
 
@@ -3292,7 +3292,7 @@ tbody.collapse.in {
 .navbar1-brand1 {
     float: left;
     padding: 26.5px 15px;
-    font-size: 19px;
+    font-size: 19px!important;
     line-height: 27px;
     height: 80px
 }
@@ -3706,7 +3706,7 @@ tbody.collapse.in {
 .label {
     display: inline;
     padding: .2em .6em .3em;
-    font-size: 75%;
+    font-size: 75%!important;
     font-weight: 700;
     line-height: 1;
     color: #fff;
@@ -3783,7 +3783,7 @@ a.label:focus, a.label:hover {
     display: inline-block;
     min-width: 10px;
     padding: 3px 7px;
-    font-size: 13px;
+    font-size: 13px!important;
     font-weight: 700;
     color: #fff;
     line-height: 1;
@@ -3950,7 +3950,7 @@ a.badge:focus, a.badge:hover {
 
 .close {
     float: right;
-    font-size: 22.5px;
+    font-size: 22.5px!important;
     font-weight: 700;
     line-height: 1;
     color: #000;
@@ -4071,7 +4071,7 @@ button.close {
     width: 15%;
     opacity: .5;
     filter: alpha(opacity=50);
-    font-size: 20px;
+    font-size: 20px!important;
     color: #fff;
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
@@ -4191,7 +4191,7 @@ button.close {
         width: 30px;
         height: 30px;
         margin-top: -10px;
-        font-size: 30px
+        font-size: 30px!important
     }
     .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
         margin-left: -10px
@@ -4560,7 +4560,7 @@ body {
     width: 32px;
     height: 32px;
     line-height: 32px;
-    font-size: 15px;
+    font-size: 15px!important;
     text-align: center;
     display: inline-block;
     border-radius: 60px;
@@ -4578,11 +4578,11 @@ body {
 
 blockquote {
     border-left: none;
-    font-size: 28px
+    font-size: 28px!important
 }
 
 blockquote small {
-    font-size: .6em
+    font-size: .6em!important
 }
 
 blockquote small:before {
@@ -4595,7 +4595,7 @@ blockquote small:before {
 
 .signature {
     font-family: La Belle Aurore, cursive;
-    font-size: 36px
+    font-size: 36px!important
 }
 
 .link-like-text {
@@ -4634,13 +4634,13 @@ blockquote small:before {
 }
 
 .pricing-card1 .price {
-    font-size: 5em;
+    font-size: 5em!important;
     padding: 2rem 0;
     color: #fff
 }
 
 .pricing-card1 .price span {
-    font-size: .2em
+    font-size: .2em!important
 }
 
 .features {
