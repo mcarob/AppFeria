@@ -1,4 +1,4 @@
-<form autocomplete="off" >
+
     <!--    esto es algo comentado--->
     
     <br>
@@ -48,7 +48,7 @@
                         <i class="material-icons">home</i>
                     </span>
                 </div>
-                <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="" aria-label="Username" id="ciudad" name="ciudad">
+                <select autocomplete="false" type="text" class="form-control"  placeholder="" aria-label="Username" id="ciudad" name="ciudad">
                     <option disabled="" selected="">Seleccione su ciudad</option>
                     <option value="bg"> Bogota </option>
                     <option value="md"> Medellin </option>
@@ -159,8 +159,3 @@
       </div>
     </div>
   </div>
-
-
-
-
-</form>
