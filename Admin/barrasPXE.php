@@ -39,20 +39,25 @@ $datosY = json_encode($valoresY);
 	var data = [{
 		x: datosX,
 		y: datosY,
+		textposition: 'auto',
 		type: 'bar',
 		marker: {
-			color: 'blue'
+			color: 'rgb(158,202,225)',
+			opacity: 0.6,
+			line: {
+				color: 'rgb(8,48,107)',
+				width: 1.5
+			}
+
 		}
 	}];
-	
+
 
 	var layout = {
 		font: {
 			family: 'Raleway, sans-serif'
 		},
-		xaxis: {
-			tickangle: -30,
-		},
+	
 		bargap: 0.05
 	};
 
