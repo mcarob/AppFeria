@@ -160,7 +160,7 @@ function registrarEmpresa() {
         $.ajax({
             type: "POST",
             data: datos,
-            url: "Registrar.php",
+            url: "RegistrarC.php",
             processData: false,
             contentType: false,
             success: function(r) {

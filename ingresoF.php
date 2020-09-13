@@ -66,21 +66,21 @@
         </nav1>
     </header>
 
+
+
+
     <div class="container d-flex flex-column justify-content-between vh-100">
     <div class="row justify-content-center mt-5">
       <div class="col-xl-5 col-lg-6 col-md-10">
         <div class="card">
           <div class="card-header bg-primary">
-            <div class="app-brand">
-              <a href="/index.html">
-
-                <g fill="none" fill-rule="evenodd">
-                  <img src="assets/img/logo.png" alt="" style="background-color: white;">
-                </g>
-
-                <h3 class="brand-name">FERIA DE OPORTUNIDADES</h3>
-
-              </a>
+            <div class="app-brand" style="text-align: center; color: whithe!important;">
+            <br>
+            
+            <a style="font-size: 150%!important;">FERIA DE OPORTUNIDADES  </a>
+            <br>
+            
+              
             </div>
           </div>
           <div class="card-body p-5">
@@ -128,6 +128,8 @@
       </p>
     </div>
   </div>
+
+
 
     <footer>
     <div class="section1-container1 footer-container1">

@@ -27,8 +27,15 @@ class ControladorRegistros
 		return $daoEmpresa->registrarEmpresaProcedimiento($var);
     }
     public function usuarioEstudianteExiste($user){
+        
         $daoEstudiante= new EstudianteDAO();
-        $daoEstudiante->buscarCorreo($user);
+        return ($daoEstudiante->buscarCorreo($user));
+    }
+    public function registrarEstudiante($arreglo){
+        
+        $daoEstudiante= new EstudianteDAO();
+        return ($daoEstudiante->registrarEstudiante($arreglo));
+
     }
 }
 /*  */

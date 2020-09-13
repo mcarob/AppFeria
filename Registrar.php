@@ -56,7 +56,7 @@
                         <li><a href="./Registrar.php" title="">Registrarme</a></li>
                         <li>
                             <p>
-                                <a href="ingresoF.php" class="btn btn-primary navbar1-btn" title="">Iniciar sesion</a>
+                                <a href="paginaIngreso.php" class="btn btn-primary navbar1-btn" title="">Iniciar sesion</a>
                             </p>
                         </li>
                     </ul>

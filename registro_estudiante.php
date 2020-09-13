@@ -12,6 +12,7 @@
                         <i class="material-icons">assignment_ind</i>
                     </span>
                 </div>
+                <input type="text" id="RES" name="RES" value="RES" hidden>
                 <input autocomplete="off" type="text" class="form-control" placeholder="Nombres" id="nombreES" name="nombreES" aria-label="Username" required
                     required>
             </div>
@@ -23,7 +24,7 @@
                         <i class="material-icons">face</i>
                     </span>
                 </div>
-                <input autocomplete="off" type="text" class="form-control" id="apellidoES" name="nombreES" placeholder="Apellidos " required
+                <input autocomplete="off" type="text" class="form-control" id="apellidoES" name="apellidoES" placeholder="Apellidos " required
                     aria-label="Username">
             </div>
         </div>
@@ -53,6 +54,7 @@
                     id="telES" name="telES"
                     aria-label="Username"
                     maxlength="15" 
+                    placeholder="Telefono o Celular"
                     title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
                     required>
             </div>
@@ -66,7 +68,6 @@
             </span>
         </div>
         <input type="text" autocomplete="off" class="form-control" placeholder="Correo Electronico"
-        
             aria-label="Username" style="display:none;">
         <input type="text" autocomplete="off" class="form-control" placeholder="Correo Electronico" id="correoES" name="correoES"
         pattern="^[A-Za-z]+$"
@@ -128,7 +129,7 @@
                     </span>
                 </div>
                 <input autocomplete="off" type="password" class="form-control" placeholder="Validar Contraseña " required id="contraCo" name="contraCo"
-                    aria-label="Username" onchange="form.pwd2.pattern = RegExp.escape(this.value);">
+                    aria-label="Username" >
             </div>
         </div>
     </div>
@@ -148,17 +149,35 @@ function devolver() {
     function agregarEstudiante(){
 
         if(validarContra()){
-
         datos = $('#formEstudianteR').serialize();
        $.ajax({
            type: "POST",
            data: datos,
-           url: "vv.php",
+           url: "RegistrarC.php",
            success: function(r) {
        
                console.log(r);
                if (r == 11) {
-                   window.location.href = "index.php";
+                    document.getElementById("formEstudianteR").reset();
+                    toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
+                    toastr["success"]("Las contraseñas no coinciden, por favor, vuelva a escribirlas correctamente", "ERROR");
+
                } else if (r == 3) {
                    toastr["warning"](r, "ERROR");
                } else {
@@ -175,7 +194,9 @@ function devolver() {
     function validarContra() {
         if ($('#contraES').val() != $('#contraCo').val()) {
             toastr["warning"]("Las contraseñas no coinciden, por favor, vuelva a escribirlas correctamente", "ERROR");
+            return false;
         }
+        return true;
     }
 
 </script>

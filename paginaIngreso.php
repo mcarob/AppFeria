@@ -15,7 +15,7 @@ if(isset($_SESSION['user'])){
 		}else if($tipo==3){
             header('location: Empresa/index.php');
 		}
-		include_once 'ingreso.php';
+		include_once 'ingresoF.php';
 }else if(isset($_POST['username']) && isset($_POST['password'])){
     $userForm = $_POST['username'];
 	$passForm = $_POST['password'];
@@ -34,13 +34,13 @@ if(isset($_SESSION['user'])){
 
 	}else{
 		$errorEntrada="nombre de usuario o contraseña incorrecto";
-		include_once 'ingreso.php';
+		include_once 'ingresoF.php';
 	}
 
 
  	
 }else{
-    include_once 'ingreso.php';
+    include_once 'ingresoF.php';
 }
 
 

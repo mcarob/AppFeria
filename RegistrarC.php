@@ -68,7 +68,7 @@ if (isset($_POST["REM"])) {
                                     $passmd5
                        ]);
                        if($seMovio){
-                           $variable->registrarEmpresa($enviar);
+                           echo($variable->registrarEmpresa($enviar));
                        }else{
                            echo("error en la carga del archivo por favor vuelva a intentarlo");
                        }
@@ -90,12 +90,24 @@ if (isset($_POST["REM"])) {
         // $query->execute([$archi]);
     }
 }else if(isset($_POST["RES"])){
-
-    $usuario=$variable->usuarioEstudianteExiste($_POST['correoES']);
+    $correoInstucional=strtolower($_POST['correoES'])."@unbosque.edu.co";
+    $usuario=$variable->usuarioEstudianteExiste($correoInstucional);
     if(count($usuario)>0){
-        return("Ya se encuentra registrado un usuario con ese correo");
+        echo("Ya se encuentra registrado un usuario con ese correo");
     }else{
-        
+        #cedula,correo,nombre,apellido,programa,semestre,contrasena,verificacion
+        $passmd5=md5($_POST['contraES']);
+
+            $enviar=([  
+                        $_POST['cedulaES'],
+                        $correoInstucional,
+                        $_POST['nombreES'],
+                        $_POST['apellidoES'],
+                        $_POST['prog_academico'],
+                        $_POST['semestre'],
+                        $passmd5
+                    ]);
+            $variable->registrarEstudiante($enviar);
     }
 }
 ?>
