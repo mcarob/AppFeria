@@ -5,61 +5,61 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades
 
 
 
-$datosFormacion=array(
-$POST["perfil"],
+// $datosFormacion=array(
+// $_POST["perfil"],
 
-$POST["academica"],
-$POST["institucion"],
-$POST["inicioAca"],
-$POST["finAca"],
-
-
-$POST["complementaria"],
-$POST["nombreCurso"],
-$POST["nombreCurso"],
-$POST["inicioComp"],
-$POST["finComp"],
-);
+// $_POST["academica"],
+// $_POST["institucion"],
+// $_POST["inicioAca"],
+// $_POST["finAca"],
 
 
+// $_POST["complementaria"],
+// $_POST["nombreCurso"],
+// $_POST["nombreCurso"],
+// $_POST["inicioComp"],
+// $_POST["finComp"],
+// );
 
-$datosPersonales=array(
-    $POST["nombre"],
-    $POST["apellidos"],
-    $POST["cedula"],
-    $POST["telefono"],
-    $POST["ciudad"],
-    $POST["direccion"],
-    $POST["correo"],
+
+
+// $datosPersonales=array(
+//     $_POST["nombre"],
+//     $_POST["apellidos"],
+//     $_POST["cedula"],
+//     $_POST["telefono"],
+//     $_POST["ciudad"],
+//     $_POST["direccion"],
+//     $_POST["correo"],
     
-    $POST["nombreR1"],
-    $POST["cargoR1"],
-    $POST["telefonoR1"],
+//     $_POST["nombreR1"],
+//     $_POST["cargoR1"],
+//     $_POST["telefonoR1"],
 
-    $POST["nombreR2"],
-    $POST["cargoR2"],
-    $POST["telefonoR2"]
+//     $_POST["nombreR2"],
+//     $_POST["cargoR2"],
+//     $_POST["telefonoR2"]
     
     
-);
+// );
 
-$datosExperiencia=array(
-    $POST["proyecto"],
-    $POST["materia"],
-    $POST["periodo"],
-    $POST["descProy"],
+// $datosExperiencia=array(
+//     $_POST["proyecto"],
+//     $_POST["materia"],
+//     $_POST["periodo"],
+//     $_POST["descProy"],
 
-    $POST["cargoPro"],
-    $POST["empresa"],
-    $POST["inicioLab"],
-    $POST["finLab"],
-    $POST["desCargo"]
-);
-echo("EXPERIENCIA");
-print_r($datosExperiencia);
-echo("PERSONAL");
-print_r($datosPersonales);
-echo("FORMACION");
-print_r($datosFormacion);
-
+//     $_POST["cargoPro"],
+//     $_POST["empresa"],
+//     $_POST["inicioLab"],
+//     $_POST["finLab"],
+//     $_POST["desCargo"]
+// );
+// echo("EXPERIENCIA");
+// print_r($datosExperiencia);
+// echo("PERSONAL");
+// print_r($datosPersonales);
+// echo("FORMACION");
+// print_r($datosFormacion);
+print_r($_POST);
 ?>

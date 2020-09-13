@@ -1,6 +1,5 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<form autocomplete="off">
+
     <!--    esto es algo comentado--->
     <div class="wizard-card ct-wizard-green">
     </div>
@@ -191,4 +190,3 @@
 
         
     </script>
-</form>

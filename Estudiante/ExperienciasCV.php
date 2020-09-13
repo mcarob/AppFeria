@@ -1,6 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<form autocomplete="off">
     <!--    esto es algo comentado--->
    
 
@@ -21,10 +18,10 @@
                 <div class="col-md-6 mb-3">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <i class="material-icons">assignment_ind</i>
+                            <span class="input-group-text">
+                                <i class="material-icons">assignment_ind</i>
                             </span>
                         </div>
-                                    <span class="input-group-text">
                         <input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Titulo del proyecto" aria-label="Username" id="proyecto" name="proyecto">
                     </div>
                 </div>
@@ -44,10 +41,10 @@
                             <span class="input-group-text">
                                 <i class="material-icons">assignment_ind</i>
                             </span>
-                            <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username" id="periodo" name="periodo">
+                        </div>
+                        <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username" id="periodo" name="periodo">
                             <option disabled="" selected="">Seleccionar periodo</option>
                             <option value="bg">Periodo 2015-1 </option>
-                            </div>
                             <option value="md">Periodo 2015-2 </option>
                             <option value="cl">Periodo 2016-1 </option>
                             <option value="cl">Periodo 2016-2 </option>
@@ -134,7 +131,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <textarea class="form-control" id="desCargo" name="desCargo" rows="5" style="resize: none;" placeholder="Describa el cargo"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" style="resize: none;" placeholder="Describa el cargo" id="desCargo" name="desCargo"></textarea>
             </div>
         </div>
         <div class="resultsPro">
@@ -185,4 +182,3 @@
 
         
     </script>
-</form>
