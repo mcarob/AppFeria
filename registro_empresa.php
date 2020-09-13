@@ -143,7 +143,6 @@
     </div>
     <div class="form-footer " style="float: right;">
         <input type="submit" class="btn btn-primary btn-default" value="Registrar"></input>
-        <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso" onclick="devolver()"></input>
     </div>
 </form>
 

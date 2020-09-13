@@ -134,7 +134,7 @@
     </div>
     <div class="form-footer pt-4 pt-5 mt-4" style="float: right;">
         <input type="submit" class="btn btn-primary btn-default" value="Registrar"></input>
-        <input type="submit" class="btn btn-primary btn-default" value="Volver a Ingreso" onclick="devolver()"></input>
+
     </div>
 </form>
 
@@ -149,7 +149,7 @@ function devolver() {
 
         if(validarContra()){
 
-/*         datos = $('#formEstudianteR').serialize();
+        datos = $('#formEstudianteR').serialize();
        $.ajax({
            type: "POST",
            data: datos,
@@ -167,7 +167,7 @@ function devolver() {
        
                }
            }
-       }); */
+       });
 
         }
     }
