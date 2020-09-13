@@ -1,4 +1,4 @@
-<form autocomplete="off" id="formEmpresaR" action="javascript:agregarEstudiante()" method="POST">
+<form autocomplete="off" id="formEstudianteR" action="javascript:agregarEstudiante()" method="POST">
     <br>
     <div class="card-header card-header-border-bottom">
         <h2>Información Del Estudiante </h2>

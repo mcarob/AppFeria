@@ -67,7 +67,6 @@
 
 
 
-
     <div class="container d-flex flex-column justify-content-between vh-30">
         <div class="row justify-content-center mt-5">
             <div class="col-lg-8 col-sm-offset-1">
@@ -75,10 +74,19 @@
                     <div class="card-body">
                         <ul class="nav nav-pills nav-justified nav-style-fill" id="myTab" role="tablist">
                             <li class="nav-item">
+<<<<<<< Updated upstream
                                 <a class="nav-link active" id="home3-tab" data-toggle1="tab" href="#home3" role="tab" aria-controls="home3" aria-selected="true">Registro Empresa</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile3-tab" data-toggle1="tab" href="#profile3" role="tab" aria-controls="profile3" aria-selected="false">Registro Estudiante</a>
+=======
+                                <a class="nav-link active" id="home3-tab" data-toggle="tab" href="#home3" role="tab"
+                                    aria-controls="home3" aria-selected="true">Registro Empresa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab"
+                                    aria-controls="profile3" aria-selected="false">Registro Estudiante</a>
+>>>>>>> Stashed changes
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent4">
@@ -160,8 +168,8 @@
 
 
 
-    <script type="text/javascript" src="assets/srcindex/main.41beeca9.js"></script>
-</body>
+<script type="text/javascript" src="assets/srcindex/main.41beeca9.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"> </script>
 <script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"> </script>
 <script src="assets/plugins/jquery/jquery.min.js"></script>

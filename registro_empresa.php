@@ -3,7 +3,7 @@
     <div class="wizard-card">
         <div class="picture-container">
             <div class="picture">
-                <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
+                <img src="assets/img/default-avatar1.png" class="picture-src" id="wizardPicturePreview" title="" />
                 <input type="file" id="logo" name="logo" required>
             </div>
             <h6>Elegir Logo</h6>
