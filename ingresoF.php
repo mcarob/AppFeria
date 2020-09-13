@@ -70,7 +70,7 @@
 
 
     <div class="container d-flex flex-column justify-content-between vh-100">
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center mt-10">
       <div class="col-xl-5 col-lg-6 col-md-10">
         <div class="card">
           <div class="card-header bg-primary">
@@ -130,7 +130,7 @@
   </div>
 
 
-
+<div>
     <footer>
     <div class="section1-container1 footer-container1">
       <div class="container">
@@ -165,7 +165,6 @@
     </div>
     </div>
   </footer>
-
     <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         navActivePage();
