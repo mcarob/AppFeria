@@ -78,7 +78,7 @@ include('menuAdmi.php')
                                         echo ("<td>" . $key[7] . "</td>");
                                         echo ("<td>" . $key[4] . "</td>");
                                         echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[6] . "</span></td>");
-                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal1(".'"'.$key[8].'"'.")'". ">Motivo</button></td>");
+                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal1(".'"'.$key[9].'",'.'"'.$key[8].'"'.")'". ">Motivo</button></td>");
 
                                     ?>
 
