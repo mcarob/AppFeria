@@ -24,7 +24,7 @@
 
 
 
-    <title>Title page</title>
+    <title>Registro</title>
     <link href="assets/srcindex/main.a3f694c01.css" rel="stylesheet"></head>
 </head>
 
@@ -49,15 +49,12 @@
 
                 <div class="collapse navbar1-collapse" id="navbar1-collapse-uarr">
                     <ul class="nav1 navbar1-nav1 navbar1-right">
-                        <li><a href="./index.php" title="" class="active">Home</a></li>
+                        <li><a href="./index.php" title="" class="active">Inicio</a></li>
                         <li><a href="./about.php" title=""> About</a></li>
                         <li><a href="./pricing.php" title=""> Pricing </a></li>
                         <li><a href="./contact.php" title="">Contact</a></li>
-                        <li><a href="./components.php" title="">Components</a></li>
                         <li>
-                            <p>
-                                <a href="./download.php" class="btn btn-primary navbar1-btn" title="">Download</a>
-                            </p>
+                            
                         </li>
 
                     </ul>
@@ -111,22 +108,21 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <h4>About us</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor</p>
+                        
                     </div>
 
                     <div class="col-md-4">
-                        <h4>Do you like ? Share this !</h4>
+                        <h4>¡Conocenos!</h4>
                         <p>
-                            <a href="https://facebook.com/" class="social-round-icon white-round-icon fa-icon" title="">
+                            <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
-                            <a href="https://twitter.com/" class="social-round-icon white-round-icon fa-icon" title="">
+                            <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                             </a>
-                            <a href="https://www.linkedin.com/" class="social-round-icon white-round-icon fa-icon"
+                            <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon"
                                 title="">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </p>
                         <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/"
@@ -136,15 +132,10 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h4>Subscribe to newsletter</h4>
+                        <h4></h4>
 
                         <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control footer-input-text">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-primary btn-newsletter ">OK</button>
-                                </div>
-                            </div>
+                            
                         </div>
 
 
