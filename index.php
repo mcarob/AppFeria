@@ -44,12 +44,11 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
                     <ul class="nav navbar-nav navbar-right">
                     <li><a href="./index.php" title="" class="active">Inicio</a></li>
-
                         <li><a href="./about.php" title="">Informacion</a></li>
-                        <li><a href="./contact.php" title="">Registrarme</a></li>
+                        <li><a href="./Registrar.php" title="">Registrarme</a></li>
                         <li>
                             <p>
-                                <a href="./download.php" class="btn btn-primary navbar-btn" title="">Iniciar sesion</a>
+                                <a href="./index1.php" class="btn btn-primary navbar-btn" title="">Iniciar sesion</a>
                             </p>
                         </li>
 
