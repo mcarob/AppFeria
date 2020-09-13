@@ -145,7 +145,7 @@ include('menuEmpresa.php')
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Motivo</label>
-                            <select class="form-control" id="hora" name="hora">
+                            <select class="form-control" id="select" name="select">
                                 <option value="1">No cumple con el perfil</option>
                                 <option value="2">Hoja de vida erronea</option>
                                 <option value="3">Datos incorrectos</option>
