@@ -74,19 +74,10 @@
                     <div class="card-body">
                         <ul class="nav nav-pills nav-justified nav-style-fill" id="myTab" role="tablist">
                             <li class="nav-item">
-<<<<<<< Updated upstream
                                 <a class="nav-link active" id="home3-tab" data-toggle1="tab" href="#home3" role="tab" aria-controls="home3" aria-selected="true">Registro Empresa</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile3-tab" data-toggle1="tab" href="#profile3" role="tab" aria-controls="profile3" aria-selected="false">Registro Estudiante</a>
-=======
-                                <a class="nav-link active" id="home3-tab" data-toggle="tab" href="#home3" role="tab"
-                                    aria-controls="home3" aria-selected="true">Registro Empresa</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab"
-                                    aria-controls="profile3" aria-selected="false">Registro Estudiante</a>
->>>>>>> Stashed changes
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent4">
