@@ -18,6 +18,14 @@ class enviarCorreo{
             $mail->Host='smtp.gmail.com';
             $mail->Port=587;
             $mail->SMTPAuth=true;
+            // $mail->SMTPD=2;
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
             $mail->Username='proyectoferia20202@gmail.com';
             $mail->Password='feria1234';
             $mail->CharSet = 'UTF-8';
@@ -27,6 +35,9 @@ class enviarCorreo{
             $mail->subject=$asunto;
             $mail->isHTML(true);
             $mail->AddEmbeddedImage($ruta, 'my-photo', 'logo.png'); 
+            
+            
+            
             $mail->Body='
                         <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
                         <div style="display:flex;
