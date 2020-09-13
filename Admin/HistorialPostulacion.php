@@ -121,6 +121,11 @@ include('menuAdmi.php')
                             <label  class="form-control" name="motivo" value="" id="motivoLista1"></label>
                         </div>
 
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Descripción: </label>
+                            <textarea  class="form-control" style="resize:none;" rows="6"  readonly="true" id="des1"></textarea>
+                        </div>
+
                     </form> 
                 </div>
                 <div class="modal-footer">
@@ -147,9 +152,11 @@ include('menuAdmi.php')
 
 
 <script>
-    function mostrarModal1(valor) {
+    function mostrarModal1(valor, des1) {
         $('#exampleModalForm1').modal('show'); 
         elemento=document.getElementById("motivoLista1").innerHTML=valor ;
+        elemento=document.getElementById("des1").innerHTML=des1;
+
     }
 </script>
 
