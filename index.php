@@ -48,7 +48,7 @@
                         <li><a href="./Registrar.php" title="">Registrarme</a></li>
                         <li>
                             <p>
-                                <a href="./index1.php" class="btn btn-primary navbar-btn" title="">Iniciar sesion</a>
+                                <a href="ingresoF.php" class="btn btn-primary navbar-btn" title="">Iniciar sesion</a>
                             </p>
                         </li>
 

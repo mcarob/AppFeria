@@ -36,8 +36,7 @@
         <nav1 class="navbar1  navbar1-fixed-top navbar1-default">
             <div class="container1">
                 <div class="navbar1-header">
-                    <button type="button" class="navbar1-toggle1 uarr collapsed" data-toggle1="collapse"
-                        data-target="#navbar1-collapse-uarr">
+                    <button type="button" class="navbar1-toggle1 uarr collapsed" data-toggle1="collapse" data-target="#navbar1-collapse-uarr">
                         <span class="sr-only">toggle1 navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -57,7 +56,7 @@
                         <li><a href="./Registrar.php" title="">Registrarme</a></li>
                         <li>
                             <p>
-                                <a href="./index1.php" class="btn btn-primary navbar1-btn" title="">Iniciar sesion</a>
+                                <a href="ingresoF.php" class="btn btn-primary navbar1-btn" title="">Iniciar sesion</a>
                             </p>
                         </li>
                     </ul>
@@ -76,24 +75,20 @@
                     <div class="card-body">
                         <ul class="nav nav-pills nav-justified nav-style-fill" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home3-tab" data-toggle1="tab" href="#home3" role="tab"
-                                    aria-controls="home3" aria-selected="true">Registro Empresa</a>
+                                <a class="nav-link active" id="home3-tab" data-toggle1="tab" href="#home3" role="tab" aria-controls="home3" aria-selected="true">Registro Empresa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile3-tab" data-toggle1="tab" href="#profile3" role="tab"
-                                    aria-controls="profile3" aria-selected="false">Registro Estudiante</a>
+                                <a class="nav-link" id="profile3-tab" data-toggle1="tab" href="#profile3" role="tab" aria-controls="profile3" aria-selected="false">Registro Estudiante</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent4">
-                            <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel"
-                                aria-labelledby="home3-tab">
+                            <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel" aria-labelledby="home3-tab">
 
                                 <?php include_once 'registro_empresa.php'; ?>
 
                                 <!--  fin del primer tab-->
                             </div>
-                            <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel"
-                                aria-labelledby="profile3-tab">
+                            <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel" aria-labelledby="profile3-tab">
                                 <?php include_once 'registro_estudiante.php'; ?>
                             </div>
                         </div>
@@ -106,44 +101,44 @@
     </div>
 
     <footer>
-    <div class="section1-container1 footer-container1">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-          </div>
+        <div class="section1-container1 footer-container1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
 
-          <div class="col-md-4">
-            <h4>¡Conocenos!</h4>
-            <p>
-              <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </p>
-            <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup
-                  Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>
-          </div>
+                    <div class="col-md-4">
+                        <h4>¡Conocenos!</h4>
+                        <p>
+                            <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </p>
+                        <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup
+                                    Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>
+                    </div>
 
-          <div class="col-md-4">
+                    <div class="col-md-4">
 
-          </div>
+                    </div>
 
 
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </div>
-  </footer>
+        </div>
+    </footer>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        navActivePage();
-    });
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
@@ -179,22 +174,22 @@
 <script src="assets/plugins/toastr/toastr.min.js"></script>
 
 <script>
-$(document).ready(function() {
-    $("#logo").change(function() {
-        readURL(this);
+    $(document).ready(function() {
+        $("#logo").change(function() {
+            readURL(this);
+        });
     });
-});
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-        reader.onload = function(e) {
-            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+            reader.onload = function(e) {
+                $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+            }
+            reader.readAsDataURL(input.files[0]);
         }
-        reader.readAsDataURL(input.files[0]);
     }
-}
 </script>
 </body>
 
