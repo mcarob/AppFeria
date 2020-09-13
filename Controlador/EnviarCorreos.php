@@ -47,7 +47,7 @@ class enviarCorreo{
         return 1;
     }
           }  catch (Exception $e) {
-            echo $e->getMessage(); //Boring error messages from anything else!
+            return 0;
           }
         
 
