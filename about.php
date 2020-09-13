@@ -41,6 +41,8 @@
 
         <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="./index.php" title="" class="active">Inicio</a></li>
+
             <li><a href="./about.php" title="">Información</a></li>
             <li><a href="./contact.php" title="">Registrarme</a></li>
             <li>
@@ -66,9 +68,7 @@
         <div class="col-xs-12" align="center">
           <br>
           <br>
-        <iframe   width="900" height="400" src="https://www.youtube.com/embed/K4m0xLr5XZc" 
-          frameborder="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen></iframe>        
+          <iframe width="900" height="400" src="https://www.youtube.com/embed/K4m0xLr5XZc" frameborder="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -83,9 +83,9 @@
           </div>
           <p class="section-container-spacer">
             Porque la universidad y programas academicos son de alta calidad es decir forman personas y estudiantes excelentes,
-            con el conocimiento suficiente para aportar un cambio y apoyar al pais, además la Universidad El Bosque tiene muchos convenios con 
-            universidades del exterior para incentivar a los estudiantes a nunca dejar de aprender. 
- 
+            con el conocimiento suficiente para aportar un cambio y apoyar al pais, además la Universidad El Bosque tiene muchos convenios con
+            universidades del exterior para incentivar a los estudiantes a nunca dejar de aprender.
+
           </p>
 
           <div class="row section-container-spacer">
@@ -131,36 +131,33 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            </div>
-
-          <div class="col-md-4">
-          <h4>¡Conocenos!</h4>
-                        <p>
-                            <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon"
-                                title="">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </p>
-                        <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/"
-                                    class="link-like-text" title="Create website with free html template">Mashup
-                                    Template</a>/<a href="http://www.unsplash.com/" class="link-like-text"
-                                    title="Beautiful Free Images">Unsplash</a></small></p>
           </div>
 
           <div class="col-md-4">
-            
-            </div>
+            <h4>¡Conocenos!</h4>
+            <p>
+              <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </p>
+            <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup
+                  Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>
+          </div>
 
+          <div class="col-md-4">
 
           </div>
+
+
         </div>
       </div>
+    </div>
     </div>
   </footer>
 

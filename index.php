@@ -43,6 +43,8 @@
 
                 <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
                     <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./index.php" title="" class="active">Inicio</a></li>
+
                         <li><a href="./about.php" title="">Informacion</a></li>
                         <li><a href="./contact.php" title="">Registrarme</a></li>
                         <li>
@@ -72,7 +74,7 @@
                         necesidades y perfiles requeridos.
                         La Feria se desarrolla desde las 2:00 p. m. hasta las 7:00 p. m. y es de entrada libre.
                     </p>
-                    <a href="./obout.php" title="" class="btn btn-lg btn-primary">Saber mas</a>
+                    <a href="./about.php" title="" class="btn btn-lg btn-primary">Saber mas</a>
                 </div>
 
             </div>

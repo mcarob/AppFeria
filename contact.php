@@ -9,7 +9,7 @@
     <meta name="google" content="notranslate" />
     <meta content="Mashup templates have been developped by Orson.io team" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
@@ -25,7 +25,8 @@
 
 
     <title>Registro</title>
-    <link href="assets/srcindex/main.a3f694c01.css" rel="stylesheet"></head>
+    <link href="assets/srcindex/main.a3f694c01.css" rel="stylesheet">
+</head>
 </head>
 
 <body>
@@ -35,8 +36,7 @@
         <nav1 class="navbar1  navbar1-fixed-top navbar1-default">
             <div class="container">
                 <div class="navbar1-header">
-                    <button type="button" class="navbar1-toggle uarr collapsed" data-toggle="collapse"
-                        data-target="#navbar1-collapse-uarr">
+                    <button type="button" class="navbar1-toggle uarr collapsed" data-toggle="collapse" data-target="#navbar1-collapse-uarr">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -51,9 +51,9 @@
                     <ul class="nav1 navbar1-nav1 navbar1-right">
                         <li><a href="./index.php" title="" class="active">Inicio</a></li>
                         <li><a href="./about.php" title=""> Información</a></li>
-                        <li>
-                            
-                        </li>
+                        <li><a href="./contact.php" title="">Registrarme</a></li>
+
+                        
 
                     </ul>
                 </div>
@@ -71,24 +71,20 @@
                     <div class="card-body">
                         <ul class="nav nav-pills nav-justified nav-style-fill" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home3-tab" data-toggle="tab" href="#home3" role="tab"
-                                    aria-controls="home3" aria-selected="true">Registro Empresa</a>
+                                <a class="nav-link active" id="home3-tab" data-toggle="tab" href="#home3" role="tab" aria-controls="home3" aria-selected="true">Registro Empresa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab"
-                                    aria-controls="profile3" aria-selected="false">Registro Estudiante</a>
+                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile3" aria-selected="false">Registro Estudiante</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent4">
-                            <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel"
-                                aria-labelledby="home3-tab">
+                            <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel" aria-labelledby="home3-tab">
 
                                 <?php include_once 'registro_empresa.php'; ?>
 
                                 <!--  fin del primer tab-->
                             </div>
-                            <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel"
-                                aria-labelledby="profile3-tab">
+                            <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel" aria-labelledby="profile3-tab">
                                 <?php include_once 'registro_estudiante.php'; ?>
                             </div>
                         </div>
@@ -106,7 +102,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        
+
                     </div>
 
                     <div class="col-md-4">
@@ -118,22 +114,19 @@
                             <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                             </a>
-                            <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon"
-                                title="">
+                            <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                                 <i class="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </p>
-                        <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/"
-                                    class="link-like-text" title="Create website with free html template">Mashup
-                                    Template</a>/<a href="http://www.unsplash.com/" class="link-like-text"
-                                    title="Beautiful Free Images">Unsplash</a></small></p>
+                        <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup
+                                    Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>
                     </div>
 
                     <div class="col-md-4">
                         <h4></h4>
 
                         <div class="form-group">
-                            
+
                         </div>
 
 
@@ -144,9 +137,9 @@
     </footer>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        navActivePage();
-    });
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
@@ -168,19 +161,20 @@
 
 
 
-    <script type="text/javascript" src="assets/srcindex/main.41beeca9.js"></script></body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"> </script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"> </script>
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
-    <script src="assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
-    <script src="assets/plugins/jekyll-search.min.js"></script>
-    <script src="assets/js/sleek.bundle.js"></script>
-    <script src="assets/plugins/select2/js/select2.min.js"></script>
-    <script src="assets/plugins/jquery-mask-input/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="assets/srcindex/main.41beeca9.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"> </script>
+<script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"> </script>
+<script src="assets/plugins/jquery/jquery.min.js"></script>
+<script src="assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
+<script src="assets/plugins/jekyll-search.min.js"></script>
+<script src="assets/js/sleek.bundle.js"></script>
+<script src="assets/plugins/select2/js/select2.min.js"></script>
+<script src="assets/plugins/jquery-mask-input/jquery.mask.min.js"></script>
 
-    <script src="assets/plugins/toastr/toastr.min.js"></script>
+<script src="assets/plugins/toastr/toastr.min.js"></script>
 
-    <script>
+<script>
     $(document).ready(function() {
         $("#logo").change(function() {
             readURL(this);
@@ -197,7 +191,7 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-    </script>
+</script>
 </body>
 
 </html>
