@@ -157,7 +157,7 @@ function devolver() {
            success: function(r) {
        
                console.log(r);
-               if (r == 11) {
+               if (r == 1) {
                     document.getElementById("formEstudianteR").reset();
                     toastr.options = {
                     "closeButton": false,

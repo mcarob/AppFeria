@@ -107,7 +107,7 @@ if (isset($_POST["REM"])) {
                         $_POST['semestre'],
                         $passmd5
                     ]);
-            $variable->registrarEstudiante($enviar);
+           echo($variable->registrarEstudiante($enviar));
     }
 }
 ?>
