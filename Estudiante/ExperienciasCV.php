@@ -1,6 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<form autocomplete="off">
+<form autocomplete="off" method="POST">
     <!--    esto es algo comentado--->
    
 
@@ -21,11 +21,11 @@
                 <div class="col-md-6 mb-3">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="material-icons">assignment_ind</i>
+                            <i class="material-icons">assignment_ind</i>
                             </span>
                         </div>
-                        <input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Titulo del proyecto" aria-label="Username">
+                                    <span class="input-group-text">
+                        <input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Titulo del proyecto" aria-label="Username" id="proyecto" name="proyecto">
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -35,7 +35,7 @@
                                 <i class="material-icons">phone</i>
                             </span>
                         </div>
-                        <input autocomplete="false" type="text" class="form-control" placeholder="Materia" aria-label="Username">
+                        <input autocomplete="false" type="text" class="form-control" placeholder="Materia" aria-label="Username" id="materia" name="materia">
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -44,10 +44,10 @@
                             <span class="input-group-text">
                                 <i class="material-icons">assignment_ind</i>
                             </span>
-                        </div>
-                        <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username">
+                            <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username" id="periodo" name="periodo">
                             <option disabled="" selected="">Seleccionar periodo</option>
                             <option value="bg">Periodo 2015-1 </option>
+                            </div>
                             <option value="md">Periodo 2015-2 </option>
                             <option value="cl">Periodo 2016-1 </option>
                             <option value="cl">Periodo 2016-2 </option>
@@ -66,7 +66,7 @@
                 
             </div>
             <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" style="resize: none;" placeholder="Describa del proyecto"></textarea>
+                <textarea class="form-control" id="descProy" name="descProy" rows="5" style="resize: none;" placeholder="Describa del proyecto"></textarea>
             </div>
         </div>
         <div class="resultsAca">
@@ -95,7 +95,7 @@
                                 <i class="material-icons">assignment_ind</i>
                             </span>
                         </div>
-                        <input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Cargo" aria-label="Username">
+                        <input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Cargo" aria-label="Username" id="cargoPro" name="cargoPro">
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -105,7 +105,7 @@
                                 <i class="material-icons">phone</i>
                             </span>
                         </div>
-                        <input autocomplete="false" type="text" class="form-control" placeholder="Empresa" aria-label="Username">
+                        <input autocomplete="false" type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="empresa" name="empresa">
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -117,7 +117,7 @@
                                 <i class="material-icons">assignment_ind</i>
                             </span>
                         </div>
-                        <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username">
+                        <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioLab" name="inicioLab">
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -129,12 +129,12 @@
                                 <i class="material-icons">assignment_ind</i>
                             </span>
                         </div>
-                        <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username">
+                        <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finLab" name="finLab">
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" style="resize: none;" placeholder="Describa el cargo"></textarea>
+                <textarea class="form-control" id="desCargo" name="desCargo" rows="5" style="resize: none;" placeholder="Describa el cargo"></textarea>
             </div>
         </div>
         <div class="resultsPro">
