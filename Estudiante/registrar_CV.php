@@ -55,5 +55,11 @@ $datosExperiencia=array(
     $POST["finLab"],
     $POST["desCargo"]
 );
+echo("EXPERIENCIA");
+print_r($datosExperiencia);
+echo("PERSONAL");
+print_r($datosPersonales);
+echo("FORMACION");
+print_r($datosFormacion);
 
 ?>
