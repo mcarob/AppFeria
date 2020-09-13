@@ -50,9 +50,7 @@
                 <div class="collapse navbar1-collapse" id="navbar1-collapse-uarr">
                     <ul class="nav1 navbar1-nav1 navbar1-right">
                         <li><a href="./index.php" title="" class="active">Inicio</a></li>
-                        <li><a href="./about.php" title=""> About</a></li>
-                        <li><a href="./pricing.php" title=""> Pricing </a></li>
-                        <li><a href="./contact.php" title="">Contact</a></li>
+                        <li><a href="./about.php" title=""> Información</a></li>
                         <li>
                             
                         </li>
