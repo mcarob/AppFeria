@@ -22,9 +22,9 @@ class PromocionPostulacionDAO
    
     public function agregarPost(PromocionPostulacion $oferta){
         $sql="insert into promocion_postulacion (COD_PROMOCION_LABORAL, COD_ESTUDIANTE, COD_ESTADO_PROCESO,
-        COD_HOJA_VIDA,fecha_postulacion,motivo_resultado)
+        COD_HOJA_VIDA,fecha_postulacion,motivo_resultado, COD_MOTIVO_RECHAZO)
         values 
-        (?,?,?,?,now(),?)";
+        (?,?,?,?,now(),?,9)";
         $respuesta=$this->con->prepare($sql)->execute([$oferta->getCodPromo(),$oferta->getCodEstudiante(),$oferta->getCodEstadoProceso(),
         $oferta->getHojaVida(),$oferta->getMotivo()]);
         
@@ -69,9 +69,9 @@ class PromocionPostulacionDAO
         return $respuesta;
     }
 
-    public function editarMotivo($cod,$motivo){
-        $sentencia=$this->con->prepare("UPDATE promocion_postulacion set motivo_resultado='".$motivo."' WHERE COD_PROMOCION_POSTULACION=".$cod);
-        $respuesta=  $sentencia->execute();
+    public function editarMotivo($cod,$motivo, $select){
+        $sentencia=$this->con->prepare("UPDATE promocion_postulacion set COD_MOTIVO_RECHAZO=?,motivo_resultado=? WHERE COD_PROMOCION_POSTULACION=?"); 
+        $respuesta=  $sentencia->execute([$select, $motivo, $cod]);
         return $respuesta;
     }
     public function postulacionXempresa($cod_Empresa){
