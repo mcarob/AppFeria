@@ -22,6 +22,7 @@ include('menuEstudiante.php');
 include('Header.php');
 ?>
 
+<link href="../assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
 <div class="content-wrapper">
     <div class="content">
         <link href="../assets/plugins/nprogress/nprogress.css" rel="stylesheet" />
@@ -41,13 +42,13 @@ include('Header.php');
         </head>
 
         <style>
-            body {
-                background-color: #CCCCCC;
-                background-image: url(../assets/img/UEB.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
+        body {
+            background-color: #CCCCCC;
+            background-image: url(../assets/img/UEB.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
 
-            }
+        }
         </style>
 
 
@@ -60,28 +61,36 @@ include('Header.php');
                     <div class="card-body">
                         <ul class="nav nav-pills nav-justified nav-style-fill" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home3-tab" data-toggle="tab" href="#home3" role="tab" aria-controls="home3" aria-selected="true">Datos Personales</a>
+                                <a class="nav-link active" id="home3-tab" data-toggle="tab" href="#home3" role="tab"
+                                    aria-controls="home3" aria-selected="true">Datos Personales</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile3" aria-selected="false">Formaciones</a>
+                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile3" role="tab"
+                                    aria-controls="profile3" aria-selected="false">Formaciones</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile4" role="tab" aria-controls="profile4" aria-selected="false">Experiencias</a>
+                                <a class="nav-link" id="profile3-tab" data-toggle="tab" href="#profile4" role="tab"
+                                    aria-controls="profile4" aria-selected="false">Experiencias</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent4">
-                            <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel" aria-labelledby="home3-tab">
+                            <form id="hojaVida" name="hojaVida" method="POST">
+                                <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel"
+                                    aria-labelledby="home3-tab">
 
-                                <?php include_once 'datosPersonalesCV.php'; ?>
+                                    <?php include_once 'datosPersonalesCV.php'; ?>
 
-                                <!--  fin del primer tab-->
-                            </div>
-                            <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel" aria-labelledby="profile3-tab">
-                                <?php include_once 'FormacionesCV.php'; ?>
-                            </div>
-                            <div class="tab-pane pt-3 fade" id="profile4" role="tabpanel" aria-labelledby="profile3-tab">
-                                <?php include_once 'ExperienciasCV.php'; ?>
-                            </div>
+                                    <!--  fin del primer tab-->
+                                </div>
+                                <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel"
+                                    aria-labelledby="profile3-tab">
+                                    <?php include_once 'FormacionesCV.php'; ?>
+                                </div>
+                                <div class="tab-pane pt-3 fade" id="profile4" role="tabpanel"
+                                    aria-labelledby="profile3-tab">
+                                    <?php include_once 'ExperienciasCV.php'; ?>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -94,24 +103,53 @@ include('Header.php');
 
 
 
+<script src="../assets/plugins/toastr/toastr.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#wizard-picture").change(function() {
+        readURL(this);
+    });
+});
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
 
 <script>
-    $(document).ready(function() {
-        $("#wizard-picture").change(function() {
-            readURL(this);
-        });
+function cargarHoja() {
+
+    datos = $('#hojaVida').serialize();
+
+
+
+    $.ajax({
+        type: "POST",
+        data: datos,
+        url: "registrar_CV.php",
+        success: function(r) {
+
+            console.log(r);
+            if (r == 11) {
+                window.location.href = "index.php";
+            } else if (r == 3) {
+                toastr["success"](r, "ERROR");
+            } else {
+
+                toastr["success"](r, "ERROR");
+
+            }
+        }
     });
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+}
 </script>
 <?php
 
@@ -120,7 +158,3 @@ include('Footer.php')
 ?>
 </div>
 </div>
-
-
-
-

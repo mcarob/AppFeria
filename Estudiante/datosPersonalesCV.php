@@ -1,4 +1,4 @@
-<form autocomplete="off" method="POST">
+<form autocomplete="off" >
     <!--    esto es algo comentado--->
     
     <br>
