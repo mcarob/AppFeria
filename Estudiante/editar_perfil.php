@@ -27,14 +27,17 @@ if($_POST["newPassword"]==$_POST["conPassword"])
 {
     $variable=1;
 }
-if(count($validacion)>0 and $variable==1)
+if(count($validacion)>0)
 {
-$conEstudiante= new ControladorEstudiantes();
-$conUsuario=new ControladorUsuario();
-$estudiante=new Estudiante($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7]);
-echo($conEstudiante->actualizarPerfil($estudiante));
-echo($conUsuario->actualizarUsuario($datos[3],$_POST["conPassword"]));
-
+    $conEstudiante= new ControladorEstudiantes();
+    $conUsuario=new ControladorUsuario();
+    $estudiante=new Estudiante($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7]);
+    echo($conEstudiante->actualizarPerfil($estudiante));
+    
+    if($variable==1)
+    {
+        echo($conUsuario->actualizarUsuario($datos[3],$_POST["conPassword"]));
+    }
 }else if($variable==3)
 {
     echo("Las nueva coontraseña no coincide con la confirmacion");

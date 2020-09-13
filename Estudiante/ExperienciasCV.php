@@ -137,10 +137,7 @@
         <div class="resultsPro">
         </div>
     </div>
-    <button type="button" class="btn btn-warning " style="background-color: #0B7984; border-color: #0B7984;">
-                <font color="White">Guardar</font>
-            </button>
-
+  
     
 
     <br><br>
