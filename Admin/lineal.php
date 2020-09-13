@@ -56,10 +56,19 @@ while ($ver = $sentencia->fetch()) {
 			}
 
 		}
+		var layout = {
+		font: {
+			family: 'Raleway, sans-serif'
+		},
+		xaxis: {
+			tickangle: -30,
+		},
+		bargap: 0.05
+	};
 
 
 	
 		var data = [trace1];
 
-		Plotly.newPlot('graficaLineal', data);
+		Plotly.newPlot('graficaLineal', data, layout);
 	</script>

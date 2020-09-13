@@ -3,7 +3,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 $claseCon = new DB();
 $con = $claseCon->connect();
-$sentencia = $con->prepare("SELECT * from practicantesXempresa");
+$sentencia = $con->prepare("SELECT * from GEmpresasPracticantes");
 $sentencia->execute();
 $valoresY = array();
 $valoresX = array();
@@ -51,7 +51,7 @@ $datosY = json_encode($valoresY);
 			family: 'Raleway, sans-serif'
 		},
 		xaxis: {
-			tickangle: -45,
+			tickangle: -30,
 		},
 		bargap: 0.05
 	};
