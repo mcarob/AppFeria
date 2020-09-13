@@ -4,15 +4,48 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/Cont
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/HojaDeVida.php');
 
 
+//RECOLECCION DE VARIAS FORMACIONES ACADMICAS, (FORMULARIO FORMACIONES) 
+$formacionAcademica=array(
+    $_POST["academica"]
+   );
+$institucion=array(
+   $_POST["finAca"]);
 
+$InicioAca=array(
+    $_POST["inicioAca"] 
+);  
+
+$FinAca=array(
+    $_POST["finAca"]
+);
+//RECOLECCION DE VARIAS FORMACIONES COMPLEMENTARIAS, (FORMULARIO FORMACIONES) 
+$formacionComplementaria=array(
+    $_POST["complementaria"]
+   );
+$institucion=array(
+   $_POST["finAca"]);
+
+$InicioAca=array(
+    $_POST["inicioAca"] 
+);  
+
+$FinAca=array(
+    $_POST["finAca"]
+);
+
+//RECOLECCION DE DATOS DE FORMACIONES
 // $datosFormacion=array(
-// $_POST["perfil"],
 
-// $_POST["academica"],
-// $_POST["institucion"],
-// $_POST["inicioAca"],
-// $_POST["finAca"],
+//DATOS FORMACION ACADEMICA    
 
+//  $_POST["perfil"],
+// $formacionAcademica,
+// $institucion,
+// $InicioAca,
+// $FinAca,
+
+
+//DATOS FORMACION COMPLEMENTARIA
 
 // $_POST["complementaria"],
 // $_POST["nombreCurso"],
@@ -61,5 +94,5 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades
 // print_r($datosPersonales);
 // echo("FORMACION");
 // print_r($datosFormacion);
-print_r($_POST);
+
 ?>

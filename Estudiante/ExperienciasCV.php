@@ -45,18 +45,18 @@
                         <select autocomplete="false" type="text" class="form-control" 
                             aria-label="Username" id="periodo[]" name="periodo[]">
                             <option disabled="" selected="">Seleccionar periodo</option>
-                            <option value="bg">Periodo 2015-1 </option>
-                            <option value="md">Periodo 2015-2 </option>
-                            <option value="cl">Periodo 2016-1 </option>
-                            <option value="cl">Periodo 2016-2 </option>
-                            <option value="cl">Periodo 2017-1 </option>
-                            <option value="cl">Periodo 2017-2 </option>
-                            <option value="cl">Periodo 2018-1 </option>
-                            <option value="cl">Periodo 2018-2 </option>
-                            <option value="cl">Periodo 2019-1 </option>
-                            <option value="cl">Periodo 2019-2 </option>
-                            <option value="cl">Periodo 2020-1 </option>
-                            <option value="cl">Periodo 2020-2 </option>
+                            <option value="Periodo 2015-1">Periodo 2015-1 </option>
+                            <option value="Periodo 2015-2">Periodo 2015-2 </option>
+                            <option value="Periodo 2016-1">Periodo 2016-1 </option>
+                            <option value="Periodo 2016-2">Periodo 2016-2 </option>
+                            <option value="Periodo 2017-1">Periodo 2017-1 </option>
+                            <option value="Periodo 2017-2">Periodo 2017-2 </option>
+                            <option value="Periodo 2018-1">Periodo 2018-1 </option>
+                            <option value="Periodo 2018-2">Periodo 2018-2 </option>
+                            <option value="Periodo 2019-1">Periodo 2019-1 </option>
+                            <option value="Periodo 2019-2">Periodo 2019-2 </option>
+                            <option value="Periodo 2020-1">Periodo 2020-1 </option>
+                            <option value="Periodo 2020-2">Periodo 2020-2 </option>
 
                         </select>
                     </div>
@@ -152,7 +152,7 @@ $(document).ready(function() {
     $('#add').click(function() {
         i++;
         $('#agregar').append('<div id="row' + i +
-            '" class="sumaAca"> <div class="buttons"> </div> <br> <div class="elementAca"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Titulo del proyecto" aria-label="Username" id="proyecto[]" name="proyecto[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Materia" aria-label="Username" id="materia[]" name="materia[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control" aria-label="Username" id="periodo[]" name="periodo[]"> <option disabled="" selected="">Seleccionar periodo</option> <option value="bg">Periodo 2015-1 </option> <option value="md">Periodo 2015-2 </option> <option value="cl">Periodo 2016-1 </option> <option value="cl">Periodo 2016-2 </option> <option value="cl">Periodo 2017-1 </option> <option value="cl">Periodo 2017-2 </option> <option value="cl">Periodo 2018-1 </option> <option value="cl">Periodo 2018-2 </option> <option value="cl">Periodo 2019-1 </option> <option value="cl">Periodo 2019-2 </option> <option value="cl">Periodo 2020-1 </option> <option value="cl">Periodo 2020-2 </option> </select> </div> </div> </div> <div class="form-group"> <textarea class="form-control" id="descProy[]" name="descProy[]" rows="5" style="resize: none;" placeholder="Describa del proyecto"></textarea> </div> </div><button type="button" name="remove" id="' +
+            '" class="sumaAca"> <div class="buttons"> </div> <br> <div class="elementAca"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Titulo del proyecto" aria-label="Username" id="proyecto[]" name="proyecto[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Materia" aria-label="Username" id="materia[]" name="materia[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control" aria-label="Username" id="periodo[]" name="periodo[]"> <option disabled="" selected="">Seleccionar periodo</option> <option value="Periodo 2015-1">Periodo 2015-1 </option> <option value="Periodo 2015-2">Periodo 2015-2 </option> <option value="Periodo 2016-1">Periodo 2016-1 </option> <option value="Periodo 2016-2">Periodo 2016-2 </option> <option value="Periodo 2017-1">Periodo 2017-1 </option> <option value="Periodo 2017-2">Periodo 2017-2 </option> <option value="Periodo 2018-1">Periodo 2018-1 </option> <option value="Periodo 2018-2">Periodo 2018-2 </option> <option value="Periodo 2019-1">Periodo 2019-1 </option> <option value="cl">Periodo 2019-2 </option> <option value="Periodo 2020-1">Periodo 2020-1 </option> <option value="cl">Periodo 2020-2 </option> </select> </div> </div> </div> <div class="form-group"> <textarea class="form-control" id="descProy[]" name="descProy[]" rows="5" style="resize: none;" placeholder="Describa del proyecto"></textarea> </div> </div><button type="button" name="remove" id="' +
             i + '" class="btn btn-danger btn_remove">Remover</button>');
 
     });
