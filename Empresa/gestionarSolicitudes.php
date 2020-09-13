@@ -25,10 +25,11 @@ if (isset($_GET['action'])) {
 
         case 'rechazar':
             $datos=array(
-                $_POST["motivo"]
+                $_POST["motivo"],
+                $_POST["select"]
             );
             $r=$cPromocionLab->cambiarEstado($_GET['codigo'],4);
-            echo ($cPromocionLab->registrarMotivo($_GET['codigo'], $datos[0]));
+            echo ($cPromocionLab->registrarMotivo($_GET['codigo'], $datos[0], $datos[1]));
             
         break;
         case 'formalizar':

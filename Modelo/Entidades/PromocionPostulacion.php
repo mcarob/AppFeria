@@ -9,6 +9,8 @@ class PromocionPostulacion{
   private $hojaVida;
   private $fecha;
   private $motivo;
+  private $rutaHoja;
+  private $codMotivo;
 
 
   public function __construct($codPromoPost, $codPromo, $codEstudiante, $codEstadoProceso,$hojaVida, $fecha_postulacion, $resultado)
@@ -20,7 +22,7 @@ class PromocionPostulacion{
 	$this->hojaVida=$hojaVida;
 	$this->fecha=$fecha_postulacion;
 	$this->motivo=$resultado;
-	
+
 
   }
   
