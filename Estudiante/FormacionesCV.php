@@ -24,8 +24,8 @@
                             <i class="material-icons">assignment_ind</i>
                         </span>
                     </div>
-                    <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username">
-                        <option disabled="" selected="" id="academica" name="academica">Seleccionar tipo de formacion</option>
+                    <select autocomplete="false" type="text" class="form-control"  aria-label="Username"  id="academica[]" name="academica[]">
+                        <option disabled="" selected="">Seleccionar tipo de formacion</option>
                         <option value="bg"> Bachiller </option>
                         <option value="md"> Bachiller Tecnico </option>
                         <option value="cl"> Pregrado </option>
@@ -40,7 +40,7 @@
                             <i class="material-icons">phone</i>
                         </span>
                     </div>
-                    <input autocomplete="false" type="text" class="form-control" placeholder="Institucion" name="institucion" id="institucion" aria-label="Username">
+                    <input autocomplete="false" type="text" class="form-control" placeholder="Institucion" name="institucion[]" id="institucion[]" aria-label="Username">
                 </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -52,7 +52,7 @@
                             <i class="material-icons">assignment_ind</i>
                         </span>
                     </div>
-                    <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioAca" name="inicioAca">
+                    <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioAca[]" name="inicioAca[]">
                 </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -64,7 +64,7 @@
                             <i class="material-icons">assignment_ind</i>
                         </span>
                     </div>
-                    <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finAca" name="finAca">
+                    <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finAca[]" name="finAca[]">
                 </div>
             </div>
         </div>
@@ -72,6 +72,8 @@
     <div class="results" id="agregarf1">
     </div>
 </div>
+<br>
+<br>
 
 <h3>Formacion Complementaria:</h3>
 <br>
@@ -90,8 +92,8 @@
                             <i class="material-icons">assignment_ind</i>
                         </span>
                     </div>
-                    <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username">
-                        <option disabled="" selected="" id="complementaria" name="complementaria">Seleccionar tipo de formacion</option>
+                    <select autocomplete="false" type="text" class="form-control" id="complementaria[]" name="complementaria[]" aria-label="Username">
+                        <option disabled="" selected="" >Seleccionar tipo de formacion</option>
                         <option value="bg"> Seminario </option>
                         <option value="md"> Diplomado </option>
                         <option value="cl"> Curso </option>
@@ -105,7 +107,7 @@
                             <i class="material-icons">phone</i>
                         </span>
                     </div>
-                    <input autocomplete="false" type="text" class="form-control" placeholder="Nombre del curso" aria-label="Username" id="nombreCurso" name="nombreCurso">
+                    <input autocomplete="false" type="text" class="form-control" placeholder="Nombre del curso" aria-label="Username" id="nombreCurso[]" name="nombreCurso[]">
                 </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -117,7 +119,7 @@
                             <i class="material-icons">assignment_ind</i>
                         </span>
                     </div>
-                    <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioComp" name="inicioComp">
+                    <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioComp[]" name="inicioComp[]">
                 </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -129,7 +131,7 @@
                             <i class="material-icons">assignment_ind</i>
                         </span>
                     </div>
-                    <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finComp" name="finComp">
+                    <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finComp[]" name="finComp[]">
                 </div>
             </div>
         </div>
@@ -148,7 +150,7 @@
         $('#addf1').click(function() {
             i++;
             $('#agregarf1').append('<div id="row' + i +
-                '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username"> <option disabled="" selected="" id="academica" name="academica">Seleccionar tipo de formacion</option> <option value="bg"> Bachiller </option> <option value="md"> Bachiller Tecnico </option> <option value="cl"> Pregrado </option> <option value="cl"> Postgrado </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Institucion"  name="institucion" id="institucion" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioAca" name="inicioAca"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finAca" name="finAca"> </div> </div><button type="button" name="remove" id="' +
+                '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control"  aria-label="Username"  id="academica[]" name="academica[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="bg"> Bachiller </option> <option value="md"> Bachiller Tecnico </option> <option value="cl"> Pregrado </option> <option value="cl"> Postgrado </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Institucion"  name="institucion[]" id="institucion[]" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioAca[]" name="inicioAca[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finAca[]" name="finAca[]"> </div> </div><button type="button" name="remove" id="' +
                 i + '" class="btn btn-danger btn_remove">Remover</button><br>');
 
         });
@@ -156,7 +158,7 @@
         $('#addf2').click(function() {
             i++;
             $('#agregarf2').append('<div id="row' + i +
-                '" class="sumaCom"> <div class="buttons"> <br> </div> <div class="elementCom"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control" data-mask="999999999-9" aria-label="Username"> <option disabled="" selected="" id="complementaria" name="complementaria">Seleccionar tipo de formacion</option> <option value="bg"> Seminario </option> <option value="md"> Diplomado </option> <option value="cl"> Curso </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Nombre del curso" aria-label="Username" id="nombreCurso" name="nombreCurso"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioComp" name="inicioComp"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finComp" name="finComp"> </div> </div><button type="button" name="remove" id="' +
+                '" class="sumaCom"> <div class="buttons"> <br> </div> <div class="elementCom"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control" aria-label="Username" id="complementaria[]" name="complementaria[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="bg"> Seminario </option> <option value="md"> Diplomado </option> <option value="cl"> Curso </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Nombre del curso" aria-label="Username" id="nombreCurso[]" name="nombreCurso[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="inicioComp[]" name="inicioComp[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="finComp[]" name="finComp[]"> </div> </div><button type="button" name="remove" id="' +
                 i + '" class="btn btn-danger btn_remove">Remover</button>');
 
         });

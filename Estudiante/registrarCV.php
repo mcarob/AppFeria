@@ -84,16 +84,16 @@ include('Header.php');
 
     <script src="../assets/plugins/toastr/toastr.min.js"></script>
     <script>
-    function editarPerfil() {
+    function cargarHoja() {
 
-        datos = $('#editarAdministrador').serialize();
+        datos = $('#datosHoja').serialize();
 
 
 
         $.ajax({
             type: "POST",
             data: datos,
-            url: "editar_perfil.php",
+            url: "registrar_CV.php",
             success: function(r) {
 
                 console.log(r);
