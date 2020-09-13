@@ -9,6 +9,8 @@ class ControladorRegistros
 
     private $daoEmpresa;
     private $entidadEmpresa;
+    private $daoEstudiante;
+
 
     public function verificarNIT($nit)
     {
@@ -23,7 +25,11 @@ class ControladorRegistros
 	public function registrarEmpresa($var){
 		$daoEmpresa = new EmpresaDAO();
 		return $daoEmpresa->registrarEmpresaProcedimiento($var);
-	}
+    }
+    public function usuarioEstudianteExiste($user){
+        $daoEstudiante= new EstudianteDAO();
+        $daoEstudiante->buscarCorreo($user);
+    }
 }
 /*  */
 /*  */

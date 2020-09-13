@@ -67,6 +67,13 @@ class EstudianteDAO
         $res=$sentencia->execute();
         return $res;
     }
+    public function buscarCorreo($correo){
+        $sentencia = $this->con->prepare("SELECT  * from usuario where USER_USUARIO=?");
+        $sentencia->execute([$correo]);
+        $nrows = $sentencia->fetchAll();
+
+        return $nrows;
+    }
 
 }
 ?>
