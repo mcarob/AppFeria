@@ -91,5 +91,11 @@ if (isset($_POST["REM"])) {
     }
 }else if(isset($_POST["RES"])){
 
+    $usuario=$variable->usuarioEstudianteExiste($_POST['correoES']);
+    if(count($usuario)>0){
+        return("Ya se encuentra registrado un usuario con ese correo");
+    }else{
+        
+    }
 }
 ?>
