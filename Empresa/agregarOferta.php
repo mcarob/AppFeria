@@ -112,7 +112,7 @@ $fecha_actual = date("Y-m-d")
                                 <label for="des">Rango Remuneracion</label>
                                 <select name="ranRemuneracion" id="ranRemuneracion" class="form-control">
                                     <option value="">Seleccione una opcion</option>
-                                    <option value="sin remuneracion">Sin remuneracion</option>
+                                    <option value="Sin remuneracion">Sin remuneracion</option>
                                     <option value="0 - 1 Salarios mínimos">1 Salario mínimos</option>
                                     <option value="1 - 2 Salarios mínimos">1 - 2 Salarios mínimos</option>
                                     <option value="2 o más Salarios mínimos">2 o más Salarios mínimos</option>
@@ -212,6 +212,7 @@ $fecha_actual = date("Y-m-d")
                                     <option value="7:00 am - 4:00 pm">7:00 am - 4:00 pm</option>
                                     <option value="8:00 am - 5:00 pm">8:00 am - 5:00 pm</option>
                                     <option value="9:00 am - 6:00 pm">9:00 am - 6:00 pm</option>
+                                    <option value="Otro">Otro</option>
 
                                 </select>
                             </div>
