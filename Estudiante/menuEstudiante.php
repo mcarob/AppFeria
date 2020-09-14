@@ -147,16 +147,17 @@
 
 
 
-
+    
 
     <script src="../assets/plugins/nprogress/nprogress.js"></script>
+    
+
     <script src="../assets/plugins/jquery/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="../assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
     <script src="../assets/js/sleek.bundle.js"></script>
     
-    
-    
+
     
     <script src="../assets/plugins/jekyll-search.min.js"></script>
     <script src="../assets/plugins/daterangepicker/moment.min.js"></script>

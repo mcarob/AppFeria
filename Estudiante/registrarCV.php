@@ -65,7 +65,6 @@ include('Header.php');
                                         aria-labelledby="profile3-tab">
                                         <?php include_once 'ExperienciasCV.php'; ?>
                                     </div>
-
                                 </div>
                                 <button type="button" class="btn btn-warning "
                                     style="background-color: #0B7984; border-color: #0B7984;" onclick="cargarHoja()">
@@ -84,7 +83,33 @@ include('Header.php');
 
     <script src="../assets/plugins/toastr/toastr.min.js"></script>
     <script>
+    
+    //variables de formulario formaciones
+    var i = 0; //Cant. fomarciones academicas
+    var j = 0;//Cant. fomarciones laborales
+
+    //variables de formulario experiencias
+    var x=0;//Cant. exp academicas
+    var y=0;//Cant. exp profesionales
+
     function cargarHoja() {
+
+        //formulario formaciones
+        acad = document.getElementById("numAcademica");
+        acad.value = i;
+
+        comp = document.getElementById("numComplementaria");
+        comp.value = j;
+
+        //formulario experiencias
+        acad = document.getElementById("numExAcademicas");
+        acad.value = x;
+
+        comp = document.getElementById("numExProfesionales");
+        comp.value = y;
+
+
+
 
         datos = $('#datosHoja').serialize();
 
