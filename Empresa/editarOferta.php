@@ -99,21 +99,31 @@ if (isset($_GET["action"])) {
                                                         echo '<option value="1 Salario mínimo" >1 Salario mínimo</option>';
                                                         echo '<option value="1 - 2 Salarios mínimos" >1 - 2 Salarios mínimos</option>';
                                                         echo '<option value="2 o más Salarios mínimos" >2 o más Salarios mínimos</option>';
+                                                        echo '<option value="Otro" >Otro</option>';
                                                     } else if (strpos($informacion->getPromocionRangoCompensacion(), '1 Salario mínimo') !== false) {
                                                         echo '<option value="Sin remuneracion"  >Sin remuneracion</option>';
                                                         echo '<option value="1 Salario mínimo" selected="true">1 Salario mínimo</option>';
                                                         echo '<option value="1 - 2 Salarios mínimos" >1 - 2 Salarios mínimos</option>';
                                                         echo '<option value="2 o más Salarios mínimos" >2 o más Salarios mínimos</option>';
+                                                        echo '<option value="Otro" >Otro</option>';
                                                     } else if (strpos($informacion->getPromocionRangoCompensacion(), '1 - 2 Salarios mínimos') !== false) {
                                                         echo '<option value="Sin remuneracion"  >Sin remuneracion</option>';
                                                         echo '<option value="1 Salario mínimo" >1 Salario mínimo</option>';
                                                         echo '<option value="1 - 2 Salarios mínimos" selected="true" >1 - 2 Salarios mínimos</option>';
                                                         echo '<option value="2 o más Salarios mínimos" >2 o más Salarios mínimos</option>';
+                                                        echo '<option value="Otro" >Otro</option>';
                                                     } else if (strpos($informacion->getPromocionRangoCompensacion(), '2 o más Salarios mínimos') !== false) {
                                                         echo '<option value="Sin remuneracion"  >Sin remuneracion</option>';
                                                         echo '<option value="1 Salario mínimo" >1 Salario mínimo</option>';
                                                         echo '<option value="1 - 2 Salarios mínimos" >1 - 2 Salarios mínimos</option>';
                                                         echo '<option value="2 o más Salarios mínimos" selected="true" >2 o más Salarios mínimos</option>';
+                                                        echo '<option value="Otro" >Otro</option>';
+                                                    }else if (strpos($informacion->getPromocionRangoCompensacion(), 'Otro') !== false) {
+                                                        echo '<option value="Sin remuneracion"  >Sin remuneracion</option>';
+                                                        echo '<option value="1 Salario mínimo" >1 Salario mínimo</option>';
+                                                        echo '<option value="1 - 2 Salarios mínimos" >1 - 2 Salarios mínimos</option>';
+                                                        echo '<option value="2 o más Salarios mínimos"  >2 o más Salarios mínimos</option>';
+                                                        echo '<option value="Otro" selected="true" >Otro</option>';
                                                     }
                                                     ?>
 
