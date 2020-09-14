@@ -84,8 +84,44 @@ class PromocionLaboralDAO
         return $em;
     }
 
+    public function verOfertas3($pCodigo,$base,$cantidad){
+        $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1 and cod_empresa =? and disponible>0 LIMIT ?, ?"); 
+        $sentencia->execute([$pCodigo,$base,$cantidad]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        }
+        return $em;
+    }
+    public function vistaPromocionLaboral2($base,$cantidad){
+        $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1  and disponible>0 LIMIT ?, ?"); 
+        $sentencia->execute([$base,$cantidad]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;
+        }
+        return $em;
+    }
 
-    
+    public function cantidadOfertas3($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1 and cod_empresa =? and disponible>0"); 
+        $sentencia->execute([$cod]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        }
+        return count($em);
+    }
+
+    public function cantidadOfertas4(){
+        $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1  and disponible>0"); 
+        $sentencia->execute();
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        }
+        return count($em);
+    }
 
 
     public function ofertasActivasEinactivas($pCodigo){

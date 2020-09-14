@@ -13,7 +13,11 @@ public function darListaPromociones()
 	$this->promociones=new PromocionLaboralDAO();
 	return $this->promociones->vistaPromocionLaboral();
 }
-
+public function darListaPromociones2($base,$cantidad)
+{
+	$this->promociones=new PromocionLaboralDAO();
+	return $this->promociones->vistaPromocionLaboral2($base,$cantidad);
+}
 public function darInformacion($pCodigo)
 {
 	$this->promociones=new PromocionLaboralDAO();
@@ -31,18 +35,37 @@ public function darVacantase($pCodigo)
 
 
 public function verOfertas($cod){
-	$empresa_DAO=new EmpresaDAO();
+
 	$this->promociones = new PromocionLaboralDAO();
 	return $this->promociones->verOfertas($cod);
 
 }
 
 public function verOfertas2($cod){
-	$empresa_DAO=new EmpresaDAO();
+
 	$this->promociones = new PromocionLaboralDAO();
 	return $this->promociones->verOfertas2($cod);
 
 }
+public function verOfertas3($cod,$base,$cantidad){
+
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->verOfertas3($cod,$base,$cantidad);
+
+}
+public function cantidadOfertas3($cod){
+
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadOfertas3($cod);
+	
+
+}
+public function cantidadOfertas4(){
+
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadOfertas4();
+}
+	
 
 public function agregarPromocion($promocion)
 {
