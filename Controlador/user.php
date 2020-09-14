@@ -90,6 +90,7 @@ class Usuario extends DB{
                 $cod_usuario=$kk['COD_USUARIO'];
                 $this->codigo=$cod_usuario;
                 $this->tipoUsuario= $thipou;
+                $this->estado_empresa=$kk['VALIDADO'];
                 if($thipou==1 || $thipou==4){
                     $query=$this->connect()->prepare('SELECT * FROM administrador WHERE COD_USUARIO=:id');
                     $query->execute(['id'=>$cod_usuario]);
@@ -110,7 +111,6 @@ class Usuario extends DB{
                     foreach ($query as $kk) {
                         $this->nombreUsuario=$kk['RAZON_SOCIAL'];
                         $this->correo=$kk['CORREO_CONTACTO'];
-                        $tihs->estado_empresa=$kk['VALIDADO'];
                         $this->contacto_empresa=$kk['NOM_CONTACTO']." ".$kk['APELLIDO_CONTACTO'];
                     }
                 }
