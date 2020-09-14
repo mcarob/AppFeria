@@ -29,7 +29,7 @@
 </head>
 </head>
 
-<body style="background-image: url(assets/img/fondoInicio1.png); background-repeat: no-repeat; display: block; margin-left: auto; margin-right: auto; width: 100%; background-size: cover;">
+<body style="background-image: url(assets/img/fondoInicio1.png); background-repeat: repeat; ">
 
     <!-- Add your content of header -->
     <header>
