@@ -29,8 +29,8 @@ class ProcesosFormativosDAO
         MATERIA_ACADEMICA)
         values 
         (?,?,?,?,?)";
-        $respuesta=$this->con->prepare($sql)->execute([$formativos->getCodHojaVida(),$academica->getPFormativoTitulo(),
-        $academica->getPFormativoDescripcion(), $academica->getPeriodo(),$academica->getMateria()]);
+        $respuesta=$this->con->prepare($sql)->execute([$formativos->getCodHojaVida(),$formativos->getPFormativoTitulo(),
+        $formativos->getPFormativoDescripcion(), $formativos->getPeriodo(),$formativos->getMateria()]);
         
         return $respuesta;
 
