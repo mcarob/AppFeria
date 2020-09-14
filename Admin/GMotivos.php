@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 $claseCon = new DB();
 $con = $claseCon->connect();
-$sentencia = $con->prepare("SELECT * from GMotivosVotados");
+$sentencia = $con->prepare("SELECT * from GMotivosVotados WHERE COD_MOTIVO_RECHAZO!=9");
 $sentencia->execute();
 
 ?>
@@ -33,7 +33,10 @@ include('menuAdmi.php');
         <div class="row">
 
 
-            <div class="card-body" >
+           
+            <div class="col-sm-12">
+                <div class="card card-default">
+                <div class="card-body" >
                 <div class="responsive-data-table">
                     <table id="responsive-data-table" align="center" class="table dt-responsive nowrap" style="width:100%">
                         <thead>
@@ -67,10 +70,9 @@ include('menuAdmi.php');
                 </div>
                 
             </div>
-            <div class="col-sm-12">
-                <div class="card card-default">
+
                     <div class="card-header justify-content-center">
-                        <h2 class="text-center">Empresas más postuladas</h2>
+                        <h2 class="text-center">Motivos más seleccionados</h2>
                     </div>
                     <div class="card-body">
                         <div id="motivosG"></div>
