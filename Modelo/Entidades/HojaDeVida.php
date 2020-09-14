@@ -7,27 +7,27 @@ class HojaDeVida{
   private $hojaCelular;
   private $hojaDireccion;
   private $hojaCiudad;
-  private $hojaNacimiento;
-  private $hojaFoto;
-  private $hojaEstadoCivil;
+  private $perfil;
     
-    public function __construct($codHojaVida,$codEstudiante,$hojaEstudiante,$hojaCelular,$hojaDireccion,$hojaCiudad,
-    $hojaNacimiento,$hojaFoto,$hojaEstadoCivil)
+    public function __construct($codHojaVida,$codEstudiante,$hojaCelular,$hojaDireccion,$hojaCiudad,$perfil)
     {
 		$this->codHojaVida = $codHojaVida;
 		$this->codEstudiante = $codEstudiante;
-        $this->hojaEstudiante = $hojaEstudiante;
         $this->hojaCelular = $hojaCelular;
         $this->hojaDireccion = $hojaDireccion;
-        $this->hojaCiudad = $hojaCiudad;
-        $this->hojaNacimiento = $hojaNacimiento;
-        $this->hojaFoto = $hojaFoto;
-        $this->hojaEstadoCivil = $hojaEstadoCivil;
-
+		$this->hojaCiudad = $hojaCiudad;
+		$this->perfil=$perfil;
     }
 
 
 
+	function getPerfil() { 
+		return $this->perfil; 
+   } 
+
+   function setPerfil($perfil) {  
+	   $this->perfil = $perfil; 
+   } 
 
 	function getCodHojaVida() { 
  		return $this->codHojaVida; 
@@ -70,29 +70,6 @@ class HojaDeVida{
 		$this->hojaCiudad = $hojaCiudad; 
 	} 
 
-	function getHojaNacimiento() { 
- 		return $this->hojaNacimiento; 
-	} 
-
-	function setHojaNacimiento($hojaNacimiento) {  
-		$this->hojaNacimiento = $hojaNacimiento; 
-	} 
-
-	function getHojaFoto() { 
- 		return $this->hojaFoto; 
-	} 
-
-	function setHojaFoto($hojaFoto) {  
-		$this->hojaFoto = $hojaFoto; 
-	} 
-
-	function getHojaEstadoCivil() { 
- 		return $this->hojaEstadoCivil; 
-	} 
-
-	function setHojaEstadoCivil($hojaEstadoCivil) {  
-		$this->hojaEstadoCivil = $hojaEstadoCivil; 
-    } 
 }
 ?>
   
