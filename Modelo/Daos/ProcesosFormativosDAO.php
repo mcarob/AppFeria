@@ -39,7 +39,7 @@ class ProcesosFormativosDAO
 
     public function editarProcesos(ProcesosFormativos $formativos){
         
-        $sql="UPDATE procesos_formativos  SET (PROCESO_FORMATIVO_TITULO, PROCESO_FORMATIVO_DESCRIPCION, PERIODO_ACADEMICO,
+        $sql="UPDATE proceso_formativos  SET (PROCESO_FORMATIVO_TITULO, PROCESO_FORMATIVO_DESCRIPCION, PERIODO_ACADEMICO,
         MATERIA_ACADEMICA)
         values 
         (?,?,?,?)";

@@ -4,18 +4,13 @@ include_once ($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/Aca
 
 class ControladorAcademicaHoja{
 
-
+	private $hojaAcademica;
 
 
 public function insertarHojaAcademica(AcademicaHoja $academica)
 {
-<<<<<<< Updated upstream
-	$hojaAcademica=new AcademicaHojaDAO();
-	return $hojaAcademica->agregarHojaAcademica($academica);
-=======
 	$this->hojaAcademica=new AcademicaHojaDAO();
 	return $this->hojaAcademica->agregarHojaAcademica($academica);
->>>>>>> Stashed changes
 }
 
 
