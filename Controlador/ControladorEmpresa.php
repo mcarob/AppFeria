@@ -47,6 +47,12 @@ class ControladorEmpresa{
 		// 	return $this->empresas->agregarNoti($cod, $mensaje);
 		// }
 
+
+		public function notificacion($cod){
+			$this->empresas = new EmpresaDAO();
+			return $this->empresas->darNotificacionxEmpresa($cod);
+		}
+
 	
 	}
 
