@@ -48,7 +48,7 @@ class enviarCorreo{
                         <h1 align=center> Feria de Oportunidades Universidad El Bosque </h1>
                         <br> 
                         <br>
-                        <p> Muy buenas '.$nombre.'  </p>
+                        <p> Hola '.$nombre.'  </p>
                         <br>
                         <p>'.$mensaje.'  </p>
                         ';
