@@ -4524,7 +4524,7 @@ body {
 }
 
 .background-color-container {
-    background-color: rgb(225, 116, 0);
+    background-color: #0B7984;
     padding: 60px 0
 }
 
@@ -4736,7 +4736,7 @@ blockquote small:before {
 }
 
 .btn-primary, .btn-primary:hover {
-    background: #0B7984;
+    background: #7BC142;
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FF8B62FF", endColorstr="#FF3B1BFF", GradientType=1)
 }
