@@ -221,5 +221,12 @@ class EmpresaDAO extends DB
         $res = $sentencia->execute();
         return $res;
     }
+
+
+    public function darNotificacionxEmpresa($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM NOTIFICACION WHERE NOTIFACION_PARA=" . $cod);
+        $sentencia->execute();
+        return $sentencia->fetchAll();
+        }
 }
 ?>

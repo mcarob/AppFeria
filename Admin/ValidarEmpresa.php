@@ -90,7 +90,7 @@ include('menuAdmi.php')
                                                 </td>");
                                         echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
                                         <button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[0] . '"' . ")'" . ">Rechazar</button></td>");
-                                        echo ("<td><button type='submit' class='mb-1 btn btn-success' id='boton2'" . "onclick='mostrarModal23(" . '"' . $key[0] . '"' . ")'" . ">Contactar</button></td>");
+                                        echo ("<td><button type='submit' class='mb-1 btn btn-success' id='boton2'" . "onclick='mostrarModal23(" . '"' . $key[5] . '"' . ")'" . ">Contactar</button></td>");
                                    ?>
 
 

@@ -15,3 +15,11 @@ if (!isset($_SESSION['user'])) {
     include ('menuEmpresa.php');
     include ('Header.php');
 ?>
+
+
+
+
+
+<?php
+    include ('Footer.php')
+?>
