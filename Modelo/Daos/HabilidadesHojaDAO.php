@@ -1,5 +1,5 @@
 <?php
-
+// NO SIRVE
 require_once('../Entidades/HabilidadesHoja.php');
 require_once('../conexion/db.php');
 
