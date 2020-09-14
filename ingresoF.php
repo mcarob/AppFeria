@@ -70,101 +70,122 @@
 
 
     <div class="container d-flex flex-column justify-content-between vh-100">
-    <div class="row justify-content-center mt-10">
-      <div class="col-xl-5 col-lg-6 col-md-10">
-        <div class="card">
-          <div class="card-header bg-primary">
-            <div class="app-brand" style="text-align: center; color: whithe!important;">
-            <br>
-            
-            <a style="font-size: 150%!important;">FERIA DE OPORTUNIDADES  </a>
-            <br>
-            
-              
-            </div>
-          </div>
-          <div class="card-body p-5">
+        <div class="row justify-content-center mt-10">
+            <div class="col-xl-5 col-lg-6 col-md-10">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <div class="app-brand" style="text-align: center; color: whithe!important;">
+                            <br>
 
-            <h4 class="text-dark mb-5">Iniciar Sesi&oacute;n</h4>
-            <form action="" method="POST">
-              <div class="row">
-                <div class="form-group col-md-12 mb-4">
-                  <input type="text" class="form-control input-lg" id="username" name="username" placeholder="Usuario">
-                </div>
-                <div class="form-group col-md-12 ">
-                  <input type="password" class="form-control input-lg" id="password" name="password" placeholder="Contrase&ntilde;a">
-                </div>
-                <div class="col-md-12">
-                  <div class="d-flex my-2 justify-content-between">
-                    <div class="d-inline-block mr-3">
-                      <label class="control control-checkbox">Recordarme
-                        <input type="checkbox" />
-                        <div class="control-indicator"></div>
-                      </label>
+                            <a style="font-size: 150%!important;">FERIA DE OPORTUNIDADES </a>
+                            <br>
 
+
+                        </div>
                     </div>
-                    <p><a class="text-blue" href="#">Olvidaste tu contrase&ntilde;a?</a></p>
-                  </div>
-                  <?php
+                    <div class="card-body p-5">
+
+                        <h4 class="text-dark mb-5">Iniciar Sesi&oacute;n</h4>
+                        <form action="" method="POST">
+                            <div class="row">
+                                <div class="form-group col-md-12 mb-4">
+
+                                    <input type="text" class="form-control input-lg" id="username" required
+                                        autocomplete="new-user" <?php  
+                                if(isset($userForm)){
+                                  echo("value='".$userForm."'");
+                                }
+                                ?> name="username" placeholder="Usuario">
+                                </div>
+                                <div class="form-group col-md-12 ">
+                                    <input type="password" class="form-control input-lg" id="password" required
+                                        autocomplete="new-password" <?php  
+                                if(isset($passForm)){
+                                  echo("value='".$passForm."'");
+                                }
+                                ?> name="password" placeholder="Contrase&ntilde;a">
+                                </div>
+
+                                <?php  
+                                if(isset($mostrarCodigo)){
+
+                                ?>
+                                <div class="form-group col-md-12 ">
+                                    <input type="password" class="form-control input-lg" id="verifi" name="verifi"
+                                        placeholder="Codigo Verificación" required>
+                                </div>
+                                <?php
+
+                                }
+                                ?>
+
+
+                                <div class="col-md-12">
+                                    <div class="d-flex my-2 justify-content-between">
+                                        <div class="d-inline-block mr-3">
+
+                                        </div>
+                                        <p><a class="text-blue" href="#">Olvidaste tu contrase&ntilde;a?</a></p>
+                                    </div>
+                                    <?php
 
                   if (isset($errorEntrada)) {
                     echo  $errorEntrada;
                   }
                   ?>
-                  <button type="submit" class="btn btn-lg btn-primary btn-block mb-4" name="submit">Ingresar</button>
-                  <p>No tienes una cuenta?
-                    <a class="text-blue" href="registro.php">Registrate</a>
-                  </p>
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block mb-4"
+                                        name="submit">Ingresar</button>
+                                    <p>No tienes una cuenta?
+                                        <a class="text-blue" href="registro.php">Registrate</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
+
     </div>
-    <div class="copyright pl-0">
-      <p class="text-center">&copy; 2018 Copyright Sleek Dashboard Bootstrap Template by
-        <a class="text-primary" href="http://www.iamabdus.com/" target="_blank">Abdus</a>.
-      </p>
+
+
+    <div>
+        <footer>
+            <div class="section1-container1 footer-container1">
+                <div class="container1">
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>
+
+                        <div class="col-md-4">
+                            <h4>¡Conocenos!</h4>
+                            <p>
+                                <a href="https://www.facebook.com/universidadelbosque/" target="_blank"
+                                    class="social-round-icon white-round-icon fa-icon" title="">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://twitter.com/UElBosque" target="_blank"
+                                    class="social-round-icon white-round-icon fa-icon" title="">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://www.instagram.com/uelbosque/" target="_blank"
+                                    class="social-round-icon white-round-icon fa-icon" title="">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </p>
+                            <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/"
+                                        class="link-like-text" title="Create website with free html template">Mashup
+                                        Template</a>/<a href="http://www.unsplash.com/" class="link-like-text"
+                                        title="Beautiful Free Images">Unsplash</a></small></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </footer>
     </div>
-  </div>
 
-
-<div>
-    <footer>
-    <div class="section1-container1 footer-container1">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-          </div>
-
-          <div class="col-md-4">
-            <h4>¡Conocenos!</h4>
-            <p>
-              <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </p>
-            <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup
-                  Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>
-          </div>
-
-          <div class="col-md-4">
-
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-    </div>
-  </footer>
     <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         navActivePage();

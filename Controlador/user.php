@@ -18,7 +18,20 @@ class Usuario extends DB{
     private $contacto_empresa;
     private $codigo;
     private $codigo2;
+    private $estado;
+    private $verificacion;
+    private $estado_empresa;
 
+    public function darEstado_empresa(){
+        return $this->estado_empresa;
+    }
+
+    public function darEstado(){
+        return $this->estado;
+    }
+    public function darVerificacion(){
+        return $this->verificacion;
+    }
 
     public function darnombreContactoE(){
         return $this->contacto_empresa;
@@ -33,6 +46,11 @@ class Usuario extends DB{
     public function darNombreUsuario(){
         return $this->nombreUsuario;
     }
+    public function cambiarEstadoValido(){
+        $query=$this->connect()->prepare('UPDATE usuario SET ESTADO_USUARIO=1 WHERE COD_USUARIO=?');
+        $query->execute([$this->codigo]);
+    }
+
     public function darIngreso($user,$pass){
         $md5pass =md5($pass);
         $query=$this->connect()->prepare('SELECT * FROM usuario WHERE USER_USUARIO=:user and CONTRA_USUARIO=:cont');
@@ -40,6 +58,8 @@ class Usuario extends DB{
         if($query->rowCount()){
             foreach ($query as $kk) {
                 $thipou=$kk['COD_TIPO_USUARIO'];
+                $this->estado=$kk['ESTADO_USUARIO'];
+                $this->verificacion=$kk['CODIGO_VERIFICACION'];
                 return $thipou;
             }
         }else{ 
@@ -90,6 +110,7 @@ class Usuario extends DB{
                     foreach ($query as $kk) {
                         $this->nombreUsuario=$kk['RAZON_SOCIAL'];
                         $this->correo=$kk['CORREO_CONTACTO'];
+                        $tihs->estado_empresa=$kk['VALIDADO'];
                         $this->contacto_empresa=$kk['NOM_CONTACTO']." ".$kk['APELLIDO_CONTACTO'];
                     }
                 }
