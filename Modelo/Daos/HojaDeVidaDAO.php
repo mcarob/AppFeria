@@ -36,5 +36,24 @@ class HojaDeVidaDAO
 
     }
 
+    public function buscarHojaDeVida($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM hoja_vida WHERE COD_HOJA_VIDA=?" );
+        $sentencia->execute($cod);
+        while ($fila = $sentencia->fetch()) {
+            $hoja = new HojaDeVida(
+                $fila[0],
+                $fila[1],
+                $fila[2],
+                $fila[3],
+                $fila[4],
+                $fila[5]
+            );
+        }
+        return $hoja;
+    }
+
+    
+
+
 }
 ?>

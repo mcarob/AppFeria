@@ -13,6 +13,14 @@ private $hojaDeVida;
 		return $this->hojaDeVida->agregarHojaDeVida($hoja);
 	}
 
+	public function darHojaDeVida($codigo)
+	{
+		$this->hojaDeVida=new HojaDeVidaDAO();
+		return $this->hojaDeVida->buscarHojaDeVida($codigo);
+	}
+
+
+
 }
 
 ?>
