@@ -74,6 +74,8 @@ class EstudianteDAO
 
         return $nrows;
     }
+
+   
     public function registrarEstudiante($v){
         #cedula,correo,nombre,apellido,programa,semestre,contrasena,verificacion
         $classEnviar= new enviarCorreo();

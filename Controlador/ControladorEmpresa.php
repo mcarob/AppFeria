@@ -37,6 +37,16 @@ class ControladorEmpresa{
 			return $resultado_empresa;
 		}
 
+		public function editarNotificacion($cod_desde,$cod,$mensaje){
+			$this->empresas = new EmpresaDAO();
+			return $this->empresas->agregarNoti($cod_desde,$cod, $mensaje);
+		}
+
+		// public function registrarMotivo($cod,$mensaje){
+		// 	$this->empresas = new EmpresaDAO();
+		// 	return $this->empresas->agregarNoti($cod, $mensaje);
+		// }
+
 	
 	}
 
