@@ -145,8 +145,8 @@
               <ul class="collapse" id="tables" data-parent="#sidebar-menu">
                 <div class="sub-menu">
                   <li>
-                    <a class="sidenav-item-link" href="graficos.php">
-                      <span class="nav-text">Cargos Mas Postulados</span>
+                    <a class="sidenav-item-link" href="GMotivos.php">
+                      <span class="nav-text">Mótivos más usados</span>
 
                     </a>
                   </li>
