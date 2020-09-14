@@ -67,7 +67,7 @@ $(document).ready(function() {
             '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" required id="academica' +
             i + '[]" required name="academica' + i +
             '[]"> </div> </div><button type="button" name="remove" id="' +
-            i + '" class="btn btn-danger btn_remove">Remover</button><br>');
+            i + '" class="btn btn-danger btn_removeF1">Remover</button><br>');
 
     });
 
@@ -85,12 +85,12 @@ $(document).ready(function() {
             '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="complementaria' +
             j + '[]" required name="complementaria' + j +
             '[]"> </div> </div><button type="button" name="remove" id="' +
-            j + '" class="btn btn-danger btn_remove2">Remover</button>');
+            j + '" class="btn btn-danger btn_removeF2">Remover</button>');
 
     });
 
 
-    $(document).on('click', '.btn_remove', function() {
+    $(document).on('click', '.btn_removeF1', function() {
         var button_id = $(this).attr("id");
         $('#row' + button_id + '').remove();
         i--;
@@ -98,7 +98,7 @@ $(document).ready(function() {
         cambiar.innerHTML = "<p>(" + i + ")formaciones academicas</p>";
     });
 
-    $(document).on('click', '.btn_remove2', function() {
+    $(document).on('click', '.btn_removeF2', function() {
         var button_id = $(this).attr("id");
         $('#row2' + button_id + '').remove();
         j--;
