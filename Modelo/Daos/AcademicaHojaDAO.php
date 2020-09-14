@@ -37,5 +37,19 @@ class AcademicaHojaDAO
 
     }
 
+
+    public function EDITARHojaAcademica(AcademicaHoja $academica){
+        
+        $sql="UPDATE academica_hoja SET (ACADEMICA_TITULO, ACADEMICA_INSTITUTO, ACADEMICA_DESDE,
+        ACADEMICA_HASTA,COD_TIPO_FORMACION)
+        values 
+        (?,?,?,?,?)";
+        $respuesta=$this->con->prepare($sql)->execute([$academica->getFormacionTitulo(),
+        $academica->getFormacionInstitucion(), $academica->getFormacionDesde(), $academica->getFormacionHasta(),
+        $academica->getTipoFormacion()]);
+        return $respuesta;
+
+    }
+
 }
 ?>
