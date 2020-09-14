@@ -9,7 +9,7 @@ private $hojaDeVida;
 
 public function agregarHojaDeVida(HojaDeVida $hoja)
 {
-	$hojaDeVida=new HojaDeVidaDAO();
+	$this->hojaDeVida=new HojaDeVidaDAO();
 	return $this->hojaDeVida->agregarHojaDeVida($hoja);
 }
 
