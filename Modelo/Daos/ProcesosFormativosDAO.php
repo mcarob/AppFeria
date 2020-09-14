@@ -30,7 +30,7 @@ class ProcesosFormativosDAO
         values 
         (?,?,?,?,?)";
         $respuesta=$this->con->prepare($sql)->execute([$formativos->getCodHojaVida(),$formativos->getPFormativoTitulo(),
-        $formativos->getPFormativoDescripcion(), $formativos->getPeriodo(),$HojaDeVida->getMateria()]);
+        $formativos->getPFormativoDescripcion(), $formativos->getPeriodo(),$formativos->getMateria()]);
         
         return $respuesta;
 
