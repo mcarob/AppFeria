@@ -7,11 +7,11 @@ class ControladorHojaDeVida{
 private $hojaDeVida;
 
 
-public function agregarHojaDeVida(HojaDeVida $hoja)
-{
-	$this->hojaDeVida=new HojaDeVidaDAO();
-	return $this->hojaDeVida->agregarHojaDeVida($hoja);
-}
+	public function agregarHojaDeVida(HojaDeVida $hoja)
+	{
+		$this->hojaDeVida=new HojaDeVidaDAO();
+		return $this->hojaDeVida->agregarHojaDeVida($hoja);
+	}
 
 }
 
