@@ -7,6 +7,7 @@ class ControladorProcesosFormativos{
 private $procesos;
 
 
+<<<<<<< Updated upstream
 	public function insertarProcesoFormativo(ProcesosFormativos $formativos)
 	{
 		$this->procesos=new ProcesosFormativosDAO();
@@ -19,8 +20,19 @@ private $procesos;
 		$this->procesos=new ProcesosFormativosDAO();
 		return $this->procesos->editarProcesos($formativos);
 	}
+=======
+public function insertarProcesoFormativo( ProcesosFormativos $formativos)
+{
+	$this->procesos=new ProcesosFormativosDAO();
+	return $this->procesos->agregarProcesosFormativos($formativos);
+}
+>>>>>>> Stashed changes
 
-
+public function darReferencia($codigoHoja)
+{
+	$this->procesos=new ReferenciaHojaDAO();
+	return $this->procesos->buscarProcesos($codigoHoja);
+}
 
 }
 

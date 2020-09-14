@@ -28,14 +28,30 @@ class ReferenciaHojaDAO
         $sql="insert into hoja_vida (COD_HOJA_VIDA, REFERENCIA_NOMBRE, REFERENCIA_CARGO, REFERENCIA_EMPRESA,REFERENCIA_TELEFONO,
         REFERENCIA_CORREO)
         values 
-        (?,?,?,?,?)";
+        (?,?,?,?,?,?)";
         $respuesta=$this->con->prepare($sql)->execute([$referencia->getCodHojaVida(),
-        $referencia->getNombreReferencia(),$referencia->getCargoReferencia(),$referencia->getCargoReferencia(),getEmpresaReferencia(),
+        $referencia->getNombreReferencia(),$referencia->getCargoReferencia(),$referencia->getEmpresaReferencia(),
         $referencia->getTelefonoReferencia(),$referencia->getCorreoReferencia()]);
         
         return $respuesta;
 
     }
+
+
+    public function buscarReferenciaHojaDeVida($codigoHoja){
+        
+        $sentencia = $this->con->prepare("SELECT * FROM referencia_hoja WHERE cod_hoja_vida=?");
+        $sentencia->execute($codigoHoja);
+        $em = array();
+        while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;
+        }
+        return $em;
+
+    }
+
+
+
 
 }
 ?>

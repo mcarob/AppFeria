@@ -25,7 +25,7 @@ class ProcesosFormativosDAO
 
     public function agregarProcesosFormativos(ProcesosFormativos $formativos){
         
-        $sql="insert into procesos_formativos (COD_HOJA_VIDA, PROCESO_FORMATIVO_TITULO, PROCESO_FORMATIVO_DESCRIPCION, PERIODO_ACADEMICO,
+        $sql="insert into proceso_formativos (COD_HOJA_VIDA, PROCESO_FORMATIVO_TITULO, PROCESO_FORMATIVO_DESCRIPCION, PERIODO_ACADEMICO,
         MATERIA_ACADEMICA)
         values 
         (?,?,?,?,?)";
@@ -49,6 +49,21 @@ class ProcesosFormativosDAO
         return $respuesta;
 
     }
+
+
+    public function buscarProcesos($codigoHoja){
+        
+        $sentencia = $this->con->prepare("SELECT * FROM proceso_formativos WHERE cod_hoja_vida=?");
+        $sentencia->execute($codigoHoja);
+        $em = array();
+        while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;
+        }
+        return $em;
+
+    }
+
+
 
 }
 ?>
