@@ -164,7 +164,7 @@
                   </li>
                   <li>
                     <a class="sidenav-item-link" href="GVacantesEstado.php">
-                      <span class="nav-text">Vacantes Legalizadas</span>
+                      <span class="nav-text">Estado de las vacantes</span>
 
                     </a>
                   </li>
