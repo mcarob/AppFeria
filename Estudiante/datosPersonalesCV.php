@@ -112,6 +112,7 @@
     <input autocomplete="new-false" type="text" class="form-control" placeholder="Nombre" aria-label="Username"
         id="nombreR1" name="nombreR1">
 </div>
+
 <div class="input-group">
     <div class="input-group-prepend">
         <span class="input-group-text">
@@ -120,6 +121,16 @@
     </div>
     <input autocomplete="new-false" type="text" class="form-control" placeholder="Correo" aria-label="Username"
         id="correoR1" name="correoR1">
+</div>
+
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+            <i class="material-icons">face</i>
+        </span>
+    </div>
+    <input autocomplete="new-false" type="text" class="form-control" placeholder="Empresa" aria-label="Username"
+        id="empresaR1" name="empresaR1">
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -157,6 +168,7 @@
     <input autocomplete="new-false" type="text" class="form-control" placeholder="Nombre" aria-label="Username"
         id="nombreR2" name="nombreR2">
 </div>
+
 <div class="input-group">
     <div class="input-group-prepend">
         <span class="input-group-text">
@@ -165,6 +177,15 @@
     </div>
     <input autocomplete="new-false" type="text" class="form-control" placeholder="Correo" aria-label="Username"
         id="correoR2" name="correoR2">
+</div>
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+            <i class="material-icons">face</i>
+        </span>
+    </div>
+    <input autocomplete="new-false" type="text" class="form-control" placeholder="Empresa" aria-label="Username"
+        id="empresaR2" name="empresaR2">
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
