@@ -12,7 +12,6 @@ if (isset($_GET['action'])) {
         //         $_POST["select"]
         //     );
         //     echo ($cPromocionLab->registrarMotivo($_GET['codigo'], $datos[0], $datos[1]));
-            
         // break;
         case 'notificar':
             $datos=array(
