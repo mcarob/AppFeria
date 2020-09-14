@@ -1,10 +1,10 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/ExperienciaHoja.php');
+require_once ( $_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 
-require_once('../Entidades/ExperienciaHoja.php');
-require_once('../conexion/db.php');
 
 /**
- * Representa el DAO de la clase Usuario
+ * Representa el DAO de la clase Experiencia
  */
 class ExperienciaHojaDAO
 {

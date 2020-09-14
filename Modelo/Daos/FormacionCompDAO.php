@@ -1,7 +1,7 @@
 <?php
 
-require_once('../Entidades/FormacionComplementaria.php');
-require_once('../conexion/db.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/FormacionComplementaria.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 
 class FormacionCompDAO{
 
@@ -51,5 +51,20 @@ public function EditarformacionCom(FormacionComplementaria $formacion){
 }
 
 
+    public function darFormacionCompxHoja($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM procesos_formativos WHERE COD_HOJA_VIDA=" . $cod);
+        $sentencia->execute();
+        while ($fila = $sentencia->fetch()) {
+            $formativos = new FormacionComplementaria(
+                $fila[0],
+                $fila[1],
+                $fila[2],
+                $fila[3],
+                $fila[4],
+                $fila[5]
+            );
+        }
+        return $formativos;
+    }
+
 }
-?>
