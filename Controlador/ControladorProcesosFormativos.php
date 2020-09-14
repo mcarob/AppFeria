@@ -14,6 +14,13 @@ private $procesos;
 	}
 
 
+	public function EditarProcesoFormativo(ProcesosFormativos $formativos)
+	{
+		$this->procesos=new ProcesosFormativosDAO();
+		return $this->procesos->editarProcesos($formativos);
+	}
+
+
 
 }
 

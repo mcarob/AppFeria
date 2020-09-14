@@ -36,5 +36,19 @@ class ProcesosFormativosDAO
 
     }
 
+
+    public function editarProcesos(ProcesosFormativos $formativos){
+        
+        $sql="UPDATE procesos_formativos  SET (PROCESO_FORMATIVO_TITULO, PROCESO_FORMATIVO_DESCRIPCION, PERIODO_ACADEMICO,
+        MATERIA_ACADEMICA)
+        values 
+        (?,?,?,?)";
+        $respuesta=$this->con->prepare($sql)->execute([$formativos->getPFormativoTitulo(),
+        $formativos->getPFormativoDescripcion(), $formativos->getPeriodo(),$formativos->getMateria()]);
+        
+        return $respuesta;
+
+    }
+
 }
 ?>
