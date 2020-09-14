@@ -110,7 +110,7 @@ class Usuario extends DB{
                     foreach ($query as $kk) {
                         $this->nombreUsuario=$kk['RAZON_SOCIAL'];
                         $this->correo=$kk['CORREO_CONTACTO'];
-                        $tihs->estado_empresa=$kk['VALIDADO'];
+                        $this->estado_empresa=$kk['VALIDADO'];
                         $this->contacto_empresa=$kk['NOM_CONTACTO']." ".$kk['APELLIDO_CONTACTO'];
                     }
                 }
