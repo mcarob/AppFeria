@@ -7,9 +7,9 @@ class ControladorProcesosFormativos{
 private $procesos;
 
 
-	public function insertarProcesoFormativo( ProcesosFormativos $formativos)
+	public function insertarProcesoFormativo(ProcesosFormativos $formativos)
 	{
-		$procesos=new ProcesosFormativosDAO();
+		$this->procesos=new ProcesosFormativosDAO();
 		return $this->procesos->agregarProcesosFormativos($formativos);
 	}
 

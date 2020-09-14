@@ -18,7 +18,12 @@ class ControladorFormacionComp{
 		public function editarFormacionComp($formacionCom)
 		{
 			$this->formacion = new FormacionCompDAO();
-			return $this->estudiantes->editarFormacionComp($formacionCom);
+			return $this->formacion->EditarFormacionCom($formacionCom);
+		}
+
+		public function darFormacionCompxCOD($cod){
+			$this->formacion = new FormacionCompDAO();
+			return $this->formacion->darFormacionCompxHoja($cod);
 		}
     
         

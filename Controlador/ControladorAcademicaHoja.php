@@ -13,6 +13,8 @@ public function insertarHojaAcademica(AcademicaHoja $academica)
 	return $hojaAcademica->agregarHojaAcademica($academica);
 }
 
+
+
 }
 
 ?>

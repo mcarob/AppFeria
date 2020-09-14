@@ -22,7 +22,7 @@ class ExperienciaHojaDAO
     {   
     
         
-            $sql="insert into EXPERIENCIA_HOJA (COD_HOJA_VIDA,
+            $sql="INSERT into EXPERIENCIA_HOJA (COD_HOJA_VIDA,
             EXPERIENCIA_HOJA_CARGO,
             EXPERIENCIA_HOJA_EMPRESA,
             EXPERIENCIA_HOJA_DESDE,
@@ -41,14 +41,52 @@ class ExperienciaHojaDAO
 
     }
 
-    public function ModificarExperiencia($cod_experiencia, $cargo, $empresa, $desde, $hasta, $descripcion){
-        $sql = "UPDATE EXPERIENCIA_HOJA SET EXPERIENCIA_HOJA_CARGO='".$cargo."' and EXPERIENCIA_HOJA_EMPRESA='".$empresa."' 
-        AND EXPERIENCIA_HOJA_DESDE='".$desde."' and EXPERIENCIA_HOJA_HASTA='".$hasta."' and EXPERIENCIA_HOJA_descripcion='".$descripcion."' 
-        WHERE cod_experiencia_hoja= $cod_experiencia";
-        $respuesta = $this->con->prepare($sql)->execute();
-        return $respuesta;
+    // public function ModificarExperiencia($cod_experiencia, $cargo, $empresa, $desde, $hasta, $descripcion){
+    //     $sql = "UPDATE EXPERIENCIA_HOJA SET EXPERIENCIA_HOJA_CARGO='".$cargo."' and EXPERIENCIA_HOJA_EMPRESA='".$empresa."' 
+    //     AND EXPERIENCIA_HOJA_DESDE='".$desde."' and EXPERIENCIA_HOJA_HASTA='".$hasta."' and EXPERIENCIA_HOJA_descripcion='".$descripcion."' 
+    //     WHERE cod_experiencia_hoja= $cod_experiencia";
+    //     $respuesta = $this->con->prepare($sql)->execute();
+    //     return $respuesta;
+    // }
+
+    public function editarExperienciaHoja(ExperienciaHoja $experiencia)
+    {   
+    
+        
+            $sql="UPDATE EXPERIENCIA_HOJA SET (
+            EXPERIENCIA_HOJA_CARGO,
+            EXPERIENCIA_HOJA_EMPRESA,
+            EXPERIENCIA_HOJA_DESDE,
+            EXPERIENCIA_HOJA_HASTA,
+            EXPERIENCIA_HOJA_DESCRIPCCION)
+            values 
+            (?,?,?,?,?)";
+            $respuesta=$this->con->prepare($sql)->execute([$experiencia->getExperienciaCargo(),
+            $experiencia->getExperienciaEmpresa(), $experiencia->getExperienciaDesde(),$experiencia->getExperienciaHasta(),
+            $experiencia->getExperienciaDescripcion()]);
+            
+            return $respuesta;
+    
+
+
     }
 
+    public function darExperienciaXHoja($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM EXPERIENCIA_HOJA WHERE COD_HOJA_VIDA=" . $cod);
+        $sentencia->execute();
+        while ($fila = $sentencia->fetch()) {
+            $experiencia = new ExperienciaHoja(
+                $fila[0],
+                $fila[1],
+                $fila[2],
+                $fila[3],
+                $fila[4],
+                $fila[5],
+                $fila[6]
+            );
+        }
+        return $experiencia;
+    }
 
     
 
