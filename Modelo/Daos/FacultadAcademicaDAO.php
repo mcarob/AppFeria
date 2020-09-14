@@ -34,7 +34,7 @@ class AcademicaHojaDAO
         $academica->getTipoFormacion()]);
         
         return $respuesta;
-
+        
     }
 
 }

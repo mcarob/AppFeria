@@ -13,6 +13,8 @@ public function insertarProcesoFormativo( ProcesosFormativos $formativos)
 	return $this->procesos->agregarProcesosFormativos($formativos);
 }
 
+
+
 }
 
 ?>
