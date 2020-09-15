@@ -33,6 +33,21 @@ public function darVacantase($pCodigo)
 	return $this->promociones->verOfertas($codigo);
 }
 
+public function darVacantaseNueva($pCodigo,$desde,$hasta)
+{
+	$empresa_DAO=new EmpresaDAO();
+	$codigo=$empresa_DAO->darEmpresaXCodigo($pCodigo)->getCodEmpresa();
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->verOfertasNueva($codigo,$desde,$hasta);
+}
+public function cantidadOfertas3Empresa($cod){
+	$empresa_DAO=new EmpresaDAO();
+	$codigo=$empresa_DAO->darEmpresaXCodigo($cod)->getCodEmpresa();
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadOfertasNueva($codigo);
+	
+
+}
 
 public function verOfertas($cod){
 
@@ -60,6 +75,7 @@ public function cantidadOfertas3($cod){
 	
 
 }
+
 public function cantidadOfertas4(){
 
 	$this->promociones = new PromocionLaboralDAO();
