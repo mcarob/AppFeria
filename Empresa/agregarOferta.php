@@ -53,7 +53,7 @@ $fecha_actual = date("Y-m-d")
 
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil buscado</label>
-                                        <textarea maxlength="1200" type="text" class="form-control" id="perfil" value="" name="perfil"></textarea>
+                                        <textarea maxlength="1200" type="text" placeholder="Describa el perfil buscado (Max. 1200)" class="form-control" id="perfil" value="" name="perfil"></textarea>
                                         <span class="d-block mt-1"></span>
                                     </div>
                                     <div class="row mb-2">
@@ -98,7 +98,7 @@ $fecha_actual = date("Y-m-d")
                                             <div class="form-group">
                                                 <label for="lastName">Beneficios extra
                                                 </label>
-                                                <input type="" class="form-control" id="beneficioExtra" name="beneficioExtra" value="">
+                                                <input type="" onkeypress="return soloLetras(event)" class="form-control" id="beneficioExtra" name="beneficioExtra" value="">
                                                 <br>
 
                                             </div>
@@ -220,7 +220,7 @@ $fecha_actual = date("Y-m-d")
 
                             <div class="form-group mb-4">
                                 <label for="des">Descripción</label>
-                                <textarea type="" class="form-control" id="descripcion" name="descripcion" value=""></textarea>
+                                <textarea type="" class="form-control" placeholder="Si tiene una jordana diferente ecribala aqui"  id="descripcion" name="descripcion" value=""></textarea>
                                 <input type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value=<?php echo ($empresa->getCodEmpresa()) ?>>
                             </div>
 
@@ -260,6 +260,26 @@ $fecha_actual = date("Y-m-d")
             }
         });
     }
+
+    function soloLetras(e) {
+    var key = e.keyCode || e.which,
+      tecla = String.fromCharCode(key).toLowerCase(),
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
+      especiales = [8, 37, 39, 46],
+      tecla_especial = false;
+
+    for (var i in especiales) {
+      if (key == especiales[i]) {
+        tecla_especial = true;
+        break;
+      }
+    }
+
+    if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+      return false;
+    }
+    }
+    
 </script>
 
 <?php

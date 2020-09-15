@@ -92,7 +92,7 @@ include('Header.php');
 
                                         <div class="form-group mb-4">
                                             <label for="telefono">Teléfono</label>
-                                            <input type="text" class="form-control" name="telefonoContacto"
+                                            <input type="number" class="form-control" name="telefonoContacto"
                                                 id="telefonoContacto"
                                                 value="<?php echo($contactoEmpresa->getTelefonoContacto()) ?>">
                                         </div>
