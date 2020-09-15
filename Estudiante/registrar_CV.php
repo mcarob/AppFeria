@@ -23,29 +23,60 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades
 // $variable2=$_POST["academica".$i];
 // print_r($variable);
 // print_r($variable2);
- print_r($_POST);
- $academica=$_POST["numAcademica"];
+ 
 
- if($academica==0)
- {
-     if(isset($_POST["academica"]))
-     {
+ $numeroComplementarias=$_POST["numComplementaria"];
+ $rangoComplementrarias=range(1,$numeroComplementarias);
 
-         $arreglo=$_POST["academica"];
+
+
+ $numeroAcademicas=intval($_POST["numAcademica"]);
+ $rangoAcademicas=range(1,$numeroAcademicas);
+ 
+ 
+ print_r($rangoAcademicas);
+ echo $numeroAcademicas;
+ 
+ 
+
+//  echo( "NUMERO ACADEMICAS: ".$numeroAcademicas."   ");
+
+
+ $numeroAcademicas=$_POST["numExAcademicas"];
+ $numeroProfesionales=$_POST["numExProfesionales"];
+
+
+
+ 
+
+//  $academica=$_POST["numAcademica"];
+
+//  if($academica==0)
+//  {
+//      if(isset($_POST["academica"]))
+//      {
+
+//          $arreglo=$_POST["academica"];
          
 
-     }
+//      }
     
- }else
- {
+//  }else
+//  {
     $arreglo=array();
-     foreach(range(0,$academica) as $numero)
+     foreach($rangoAcademicas as $numero)
      {
-        array_push($arreglo,$_POST["academica"+$numero]);
+        //  echo($numeroAcademicas);
+        echo "ESTE ES EL NUMERO: ".$numero;
+        // array_push($arreglo,$_POST["academica".$numero]);
         
      }
- }
- print_r($arreglo);
+  
+    //  print_r($arreglo);
+
+     
+//  }
+//  print_r($arreglo);
 
 
 
