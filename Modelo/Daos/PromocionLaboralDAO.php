@@ -63,7 +63,7 @@ class PromocionLaboralDAO
 
     // Metodo 
     public function verOfertas($pCodigo){
-        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =:empresa"); 
+        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =:empresa "); 
         $sentencia->execute(['empresa'=>$pCodigo]);
         $em = array();
          while ($fila = $sentencia->fetch()) {
@@ -72,6 +72,15 @@ class PromocionLaboralDAO
         return $em;
     }
 
+    public function verOfertasNueva($codigo,$desde,$hasta){
+        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3 LIMIT ?, ?"); 
+        $sentencia->execute([$codigo,$desde,$hasta]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        }
+        return $em;
+    }
 
     // Metodo para mostrar las ofertas activas buscando por el codigo de empresa
     public function verOfertas2($pCodigo){
@@ -112,7 +121,17 @@ class PromocionLaboralDAO
         }
         return count($em);
     }
+    
+    public function cantidadOfertasNueva($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3"); 
+        $sentencia->execute([$cod]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        }
+        return count($em);
 
+    }
     public function cantidadOfertas4(){
         $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1  and disponible>0"); 
         $sentencia->execute();

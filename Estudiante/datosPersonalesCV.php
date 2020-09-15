@@ -27,7 +27,7 @@
                     <i class="material-icons">assignment_ind</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control" data-mask="999999999-9"
+            <input autocomplete="false" type="text" class="form-control" 
                 placeholder="Documento de identidad" aria-label="Username" id="cedula" name="cedula">
         </div>
     </div>
@@ -110,7 +110,7 @@
         </span>
     </div>
     <input autocomplete="new-false" type="text" class="form-control" placeholder="Nombre" aria-label="Username"
-        id="nombreR1" name="nombreR1">
+        id="nombreR1" name="nombreR1" >
 </div>
 
 <div class="input-group">
@@ -140,7 +140,7 @@
                     <i class="material-icons">assignment_ind</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Cargo"
+            <input autocomplete="false" type="text" class="form-control"  placeholder="Cargo"
                 aria-label="Username" id="cargoR1" name="cargoR1">
         </div>
     </div>

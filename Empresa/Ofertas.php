@@ -19,8 +19,19 @@ $empresa = new Usuario();
 $empresa->setUser($_SESSION['user']);
 $cod_empresa = $empresa->darCodigo();
 
-$conPromocion = new ControladorPromocion();
-$listaVacantes = $conPromocion->darVacantase($cod_empresa);
+$listaVacantes=[];
+if (isset($_GET["pagina"])){
+    $conPromocion = new ControladorPromocion();
+    $listaVacantes = $conPromocion->darVacantaseNueva($cod_empresa,($_GET["pagina"]-1)*8,8);
+    $total=$conPromocion->cantidadOfertas3Empresa($var);
+    $pagina=$_GET["pagina"];
+}else{
+    $conPromocion = new ControladorPromocion();
+$listaVacantes=[];
+$listaVacantes = $conPromocion->darVacantaseNueva($cod_empresa,0,8);
+$total=$conPromocion->cantidadOfertas3Empresa($cod_empresa);
+
+}
 
 
 
@@ -52,7 +63,20 @@ $listaVacantes = $conPromocion->darVacantase($cod_empresa);
 
 
         <div class="card card-default">
-            <div class="card-header card-header-border-bottom">
+
+
+                      <div class="card-header card-header">
+                <div class="col-8 ">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Ingrese Palabra Clave para filtro       "
+                            aria-label="Username" id="filtro" name="filtro">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="input-group">
+                        <input type="submit" class="btn btn-primary btn-default" value="Filtrar"></input>
+                    </div>
+                </div>
             </div>
             <?php
             foreach ($listaVacantes as $fila) {

@@ -20,7 +20,7 @@
     </div>
 
     <br><br>
-    <h3>Experiencia Profesional:</h3>
+    <h3>Experiencia Laboral:</h3>
     <br>
     <div class="sumaPro">
         <div class="buttons">
@@ -31,7 +31,7 @@
         </div>
         <br>
         <div class="elementPro" id="expLaborales">
-            <p>(0)Experiencias profesionales</p>
+            <p>(0)Experiencias laborales</p>
 
         </div>
         <br>
@@ -56,7 +56,7 @@ $(document).ready(function() {
         cambiar.innerHTML = "<p>(" + x + ")Experiencias academicas</p>";
 
 
-        $('#agregar').append('<div id="row' + x +
+        $('#agregar').append('<div id="row3' + x +
             '" class="sumaAca"> <div class="buttons"> </div> <br> <div class="elementAca"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Titulo del proyecto" aria-label="Username" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
             '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Materia" aria-label="Username" id="experienciaAcademica' +
@@ -73,8 +73,8 @@ $(document).ready(function() {
     $('#add2').click(function() {
         y++;
         cambiar = document.getElementById("expLaborales");
-        cambiar.innerHTML = "<p>(" + y + ")Experiencias profesionales</p>";
-        $('#agregar2').append('<div id="row2' + y +
+        cambiar.innerHTML = "<p>(" + y + ")Experiencias laborales</p>";
+        $('#agregar2').append('<div id="row4' + y +
             '" class="elementPro"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
             '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="experienciaProfesional' +
@@ -93,7 +93,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.btn_removeE1', function() {
         var button_id = $(this).attr("id");
-        $('#row' + button_id + '').remove();
+        $('#row3' + button_id + '').remove();
         x--;
         cambiar2 = document.getElementById("expAcademicas");
         cambiar2.innerHTML = "<p>(" + x + ")Experiencias academicas</p>";
@@ -101,7 +101,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.btn_removeE2', function() {
         var button_id = $(this).attr("id");
-        $('#row2' + button_id + '').remove();
+        $('#row4' + button_id + '').remove();
         y--;
         cambiar2 = document.getElementById("expLaborales");
         cambiar2.innerHTML = "<p>(" + y + ")Experiencias profesionales</p>";
