@@ -57,8 +57,10 @@ $(document).ready(function() {
         cambiar.innerHTML = "<p>(" + i + ")formaciones academicas</p>";
 
 
-        $('#agregarf1').append('<div id="row' + i +
-            '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control"  aria-label="Username" id="academica' +
+        $('#agregarf1').append('<div id="row1' + i +
+            '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input autocomplete="new-false" type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="academica' +
+            i + '[]" required name="academica' + i +
+            '[]"> </div><div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control"  aria-label="Username" id="academica' +
             i + '[]" required name="academica' + i +
             '[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="1"> Bachillerato </option><option value="2"> Tecnico profesional </option><option value="3"> Tecnologico</option><option value="4"> Profesional </option><option value="5"> Especializacion tecnica </option><option value="6"> Especializacion tecnologica </option><option value="7"> Especializacion profesional </option><option value="8"> Maestria </option><option value="9"> Doctorado </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Institucion" name="academica' +
             i + '[]"  required id="academica' + i +
@@ -92,7 +94,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.btn_removeF1', function() {
         var button_id = $(this).attr("id");
-        $('#row' + button_id + '').remove();
+        $('#row1' + button_id + '').remove();
         i--;
         cambiar = document.getElementById("formAca");
         cambiar.innerHTML = "<p>(" + i + ")formaciones academicas</p>";
