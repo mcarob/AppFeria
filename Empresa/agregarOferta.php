@@ -53,7 +53,7 @@ $fecha_actual = date("Y-m-d")
 
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil buscado</label>
-                                        <textarea type="text" class="form-control" id="perfil" value="" name="perfil"></textarea>
+                                        <textarea maxlength="1200" type="text" class="form-control" id="perfil" value="" name="perfil"></textarea>
                                         <span class="d-block mt-1"></span>
                                     </div>
                                     <div class="row mb-2">
@@ -121,7 +121,7 @@ $fecha_actual = date("Y-m-d")
                             </div>
                             <div class="form-group mb-4">
                                 <label for="des">Numero de vacantes</label>
-                                <input type="number" class="form-control" id="numVacantes" name="numVacantes" value=""></input>
+                                <input type="number" class="form-control" id="numVacantes" name="numVacantes"  min="1" pattern="^[0-9]+" value=""></input>
                             </div>
 
 
