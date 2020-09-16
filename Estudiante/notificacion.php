@@ -47,11 +47,11 @@ include ('Header.php');
                                 $user2->setUserxCod($key[1]);
                             ?>
                             <li>
-                                <a onclick="darNot('<?php echo $key[4] ?>',' <?php  echo $key[5] ?>','<?php $empresa->darEmpresaXCodigo($key[1])->getRazonSocial();?>')" class="media media-message">
+                                <a onclick="darNot('<?php echo $key[4] ?>',' <?php  echo $key[5] ?>','<?php echo $user2->darNombreUsuario();?>')" class="media media-message">
                                    
                                     <div class="media-body d-flex justify-content-between">
                                         <div class="message-contents">
-                                            <h4 class="title"> <?PHP $user2->setUser($key[1])->darNombreUsuario(); ?> </h4>
+                                            <h4 class="title"> <?PHP echo $user2->darNombreUsuario(); ?> </h4>
                                             <p class="last-msg"><?php echo $key[4] ?></p>
                                         </div>
 
@@ -75,7 +75,7 @@ include ('Header.php');
                         <div class="media media-chat align-items-center mb-0 media-chat-header" href="#">
                             <div class="media-body w-100">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h3 class="heading-title mb-0" id="nombre"><a href="#"></a></h3>
+                                    <h3 class="heading-title mb-0" id="nombre" name=""><a href="#"></a></h3>
                                     <div class="dropdown">
                                         <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                         </a>
@@ -119,7 +119,7 @@ include ('Header.php');
             fecha = document.getElementById('fec');
             nombre=document.getElementById('nombre');
             far.innerHTML=cod;
-            nombre=innerHTML=nombre2;
+            nombre.innerHTML=nombre2;
             fecha.innerHTML=fecha2; 
         }
 

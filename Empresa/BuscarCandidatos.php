@@ -157,7 +157,7 @@ include('menuEmpresa.php');
             </div>
             <div class="modal-body">
                 <form method="POST" id='not'>
-                <input type="hidden" id="desde" name="desde" value="<?php echo $empresa->getCodEmpresa() ?>">
+                <input type="hidden" id="desde" name="desde" value="<?php echo $empresa->getCodUsuario() ?>">
                     <div class="form-group">
                     <label for="exampleFormControlSelect1">Seleccione una opción</label>
                         <select class="form-control" id="select" name="select">
