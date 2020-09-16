@@ -29,7 +29,7 @@
 </head>
 </head>
 
-<body>
+<body style="background-image: url(assets/img/UEB.jpg); background-repeat: no-repeat; display: block; margin-left: auto; margin-right: auto; width: 100%; background-size: cover;">
 
     <!-- Add your content of header -->
     <header>
@@ -103,7 +103,7 @@
 
     </div>
 
-    <footer>
+    <footer style="background-color: white;">
         <div class="section1-container1 footer-container1">
             <div class="container">
                 <div class="row">
