@@ -19,6 +19,11 @@ private $hojaDeVida;
 		return $this->hojaDeVida->buscarHojaDeVida($codigo);
 	}
 
+	public function darIdHoja($codigoEstudiante)
+	{
+		$this->hojaDeVida=new HojaDeVidaDAO();
+		return $this->hojaDeVida->buscarIdHoja($codigoEstudiante);
+	}
 
 
 }

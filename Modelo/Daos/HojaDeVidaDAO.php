@@ -22,22 +22,20 @@ class HojaDeVidaDAO
     
 
     
-    public function darIdHoja()
+    public function buscarIdHoja($codigoEstudiante)
     {
-        $codigo="";
         try {
             $claseCon = new DB();
             $con = $claseCon->connect();
             $respuesta3="";
             $sentencia = $con->prepare("call agregarHojaVida(?,@res)");
-    
-            $sentencia->execute([10]);
-            $codigo = $con->query("SELECT @res as re12")->fetch();    
+            $sentencia->execute([$codigoEstudiante]);
+            $codigoHoja = $con->query("SELECT @res as re12")->fetch();    
         } catch (\Throwable $th){
             print("ERROR");
             print($th);
         }
-        return $codigo;
+        return $codigoHoja;
     }
 
     public function agregarHojaDeVida(HojaDeVida $hoja){

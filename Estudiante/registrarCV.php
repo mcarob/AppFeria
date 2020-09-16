@@ -52,6 +52,7 @@ include('Header.php');
 
                                     <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel"
                                         aria-labelledby="home3-tab">
+                                        <input type="hidden" id="codigoEstudiante" name="codigoEstudiante" value="<?php echo $estudiante->getCodEstudiante() ?>" />
 
                                         <?php include_once 'datosPersonalesCV.php'; ?>
 

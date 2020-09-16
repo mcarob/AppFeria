@@ -1,5 +1,4 @@
 <!--    esto es algo comentado--->
-
 <br>
 <div class="input-group">
     <div class="input-group-prepend">
@@ -8,7 +7,7 @@
         </span>
     </div>
     <input autocomplete="new-false" type="text" class="form-control" placeholder="Nombres" aria-label="Username"
-        id="nombre" name="nombre">
+        id="nombre" name="nombre" values= <?php echo($estudiante->getNombreEstudiante())?> readonly>
 </div>
 <div class="input-group">
     <div class="input-group-prepend">
@@ -17,7 +16,7 @@
         </span>
     </div>
     <input autocomplete="new-false" type="text" class="form-control" placeholder="Apellidos" aria-label="Username"
-        name="apellidos" id="apellidos">
+        name="apellidos" id="apellidos" values= <?php echo($estudiante->getApellidoEstudiante())?> readonly>
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -28,7 +27,8 @@
                 </span>
             </div>
             <input autocomplete="false" type="text" class="form-control" 
-                placeholder="Documento de identidad" aria-label="Username" id="cedula" name="cedula">
+                placeholder="Documento de identidad" aria-label="Username" id="cedula" name="cedula"
+                values= <?php echo($estudiante->getCedEstudiante())?> readonly>
         </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -98,7 +98,7 @@
         </span>
     </div>
     <input autocomplete="false" type="text" class="form-control" placeholder="Correo Electronico" aria-label="Username"
-        id="correo" name="correo">
+        id="correo" name="correo" values= <?php echo($estudiante->getCorreoEstudiante())?> readonly >
 </div>
 <br>
 <h3>Referencia No. 1:</h3>
