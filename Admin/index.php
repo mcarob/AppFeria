@@ -90,7 +90,8 @@ include('Header.php');
         <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="card widget-block p-4 rounded bg-warning border">
-                    <div class="card-block">
+
+            <div class="card-block">
                         <i class="mdi mdi-account-outline mr-4 text-white"></i>
                         <h4 class="text-white my-2"><?php foreach ($totalE as $k) {
                                                          ($k[0]);
