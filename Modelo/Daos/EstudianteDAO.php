@@ -120,5 +120,21 @@ class EstudianteDAO
 
     }
 
+
+    public function agregarNoti($cod_desde,$cod_para, $mensaje, $cod_select){
+        $sentencia=$this->con->prepare("INSERT INTO NOTIFICACION ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
+        VALUES (?,?,?,?,now())"); 
+        $respuesta=  $sentencia->execute([$cod_desde,$cod_para,$cod_select, $mensaje]);
+        return $respuesta;
+    }
+
+    public function darNotificacionxEst($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM NOTIFICACION WHERE NOTIFACION_PARA=" . $cod);
+        $sentencia->execute();
+        return $sentencia->fetchAll();
+    }
+
+
+
 }
 ?>

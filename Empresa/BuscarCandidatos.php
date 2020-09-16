@@ -94,7 +94,7 @@ include('menuEmpresa.php');
                                         echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[6] . "</td>");
                                         echo ("<td>" . $key[7] . "</td>");
-                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[0] . '"' . ")'" . ">Contactar</button></td>");
+                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[1] . '"' . ")'" . ">Contactar</button></td>");
 
 
                                     ?>
@@ -156,16 +156,17 @@ include('menuEmpresa.php');
 
             </div>
             <div class="modal-body">
-                <form method="POST" id='formAgregarOf'>
+                <form method="POST" id='not'>
+                <input type="hidden" id="desde" name="desde" value="<?php echo $empresa->getCodEmpresa() ?>">
                     <div class="form-group">
                     <label for="exampleFormControlSelect1">Seleccione una opción</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="select" name="select">
                             <?php
                                 if(count($for)==0){
                                     echo ('<option value="">No hay ofertas</option>');
                                 }else{
                                 foreach ($for as $key) {
-                                 echo ('<option value="">' . $key[13] . '</option>');
+                                 echo ('<option value="'.$key[0].'">' . $key[13] . '</option>');
                              }
                             }
                             ?>
@@ -178,7 +179,7 @@ include('menuEmpresa.php');
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Enviar</button>
+                <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal" onclick="notificar()">Enviar</button>
             </div>
         </div>
     </div>
@@ -189,7 +190,29 @@ include('menuEmpresa.php');
 <script>
     function mostrarModal1(valor) {
         $('#modall').modal('show');
+        variableCod = valor;
     }
+
+
+
+    function notificar() {
+            datos = $('#not').serialize();
+
+            $.ajax({
+                type: "POST",
+                data: datos,
+                url: 'gestionarCandidatos.php?action=' + "notificar&" + "codigo=" + variableCod,
+                success: function(r) {
+                    console.log(r); 
+                    if (r == 1) {
+                        window.location.href = "BuscarCandidatos.php";
+                    } else {
+
+                    }
+                }
+            });
+
+        }
 </script>
 
 
