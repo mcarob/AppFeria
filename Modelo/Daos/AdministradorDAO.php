@@ -59,6 +59,7 @@ class AdministradorDAO
         $res=$sentencia->execute();
         return $res;
     }
+    
 
 
 }

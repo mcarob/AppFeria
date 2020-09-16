@@ -19,13 +19,7 @@ class EstudianteDAO
         $this->con =$claseCon->connect();
     }
     
-    public function crearEstudiante( Estudiante $nuevoEstudiante)
-    {   
-        $sql = "INSERT INTO ESTUDIANTE VALUES (default ,'" . $nuevoEstudiante->getCedEstudiante() . "','" . $nuevoEstudiante->getCorreoEstudiante() . "', . 1 . ,'" . $nuevoEstudiante->getNombreEstudiante(). "','" . $nuevoEstudiante->getApellidoEstudiante(). "','" . $nuevoEstudiante->getCodProgamaAcademico(). "','" . $nuevoEstudiante->getSemestreEstudiante(). "','" . $nuevoEstudiante->getCorreoPersonal().")'";
-        $result =mysqli_query($this->con, $sql);
-        return mysqli_fetch_all($result);
-
-    }
+    
 
 
 
@@ -72,6 +66,30 @@ class EstudianteDAO
         $sentencia->execute([$correo]);
         $nrows = $sentencia->fetchAll();
 
+        return $nrows;
+    }
+
+
+    public function totalEstudiantesA(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantesActivos");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+        
+    }
+
+
+    public function totalEstudiantesI(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantesInactivos");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+    }
+
+    public function totalEstudiantes(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantes");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
         return $nrows;
     }
 

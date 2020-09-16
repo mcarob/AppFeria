@@ -25,6 +25,28 @@ class ControladorEstudiantes	{
 			$this->estudiantes=new EstudianteDAO();
 			return $this->estudiantes->devolverEstudiante($id);
 		}
+
+
+		public function darEstA()
+		{
+			$this->estudiantes = new EstudianteDAO();
+			return $this->estudiantes->totalEstudiantesA();
+		}
+
+		public function darEstI()
+		{
+			$this->estudiantes = new EstudianteDAO();
+			return $this->estudiantes->totalEstudiantesi();
+		}
+
+		public function darTotalEst()
+		{
+			$this->estudiantes = new EstudianteDAO();
+			return $this->estudiantes->totalEstudiantes();
+		}
+
+
+
 	}
 
 

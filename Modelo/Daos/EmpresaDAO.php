@@ -222,6 +222,29 @@ class EmpresaDAO extends DB
         return $res;
     }
 
+    public function totalEmpresasSV(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEmpresasSinValidar");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+        
+    }
+
+    public function totalEmpresasV(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEmpresasActivas");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+        
+    }
+
+    public function totalEmpresas(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEmpresasr");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+        
+    }
 
     public function darNotificacionxEmpresa($cod){
         $sentencia = $this->con->prepare("SELECT * FROM NOTIFICACION WHERE NOTIFACION_PARA=" . $cod);
