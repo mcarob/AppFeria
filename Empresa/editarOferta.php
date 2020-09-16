@@ -278,6 +278,11 @@ if (isset($_GET["action"])) {
                                                 echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
                                                 echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
                                                 echo '<option value="9:00 am - 6:00 pm" selected="true" >9:00 am - 6:00 pm</option>';
+                                            }else{
+                                                echo '<option value="6:00 am - 3:00 pm">6:00 am - 3:00 pm</option>';
+                                                echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
+                                                echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
+                                                echo '<option value="9:00 am - 6:00 pm" selected="true" >9:00 am - 6:00 pm</option>';
                                             }
                                             ?>
 

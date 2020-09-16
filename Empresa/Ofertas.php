@@ -20,21 +20,29 @@ $empresa->setUser($_SESSION['user']);
 $cod_empresa = $empresa->darCodigo();
 
 $listaVacantes=[];
-
-if (isset($_GET["pagina"])){
+$pase="";
+if(isset($_GET["search"])){
+    $pase='&search='.$_GET["search"];
+    $conPromocion = new ControladorPromocion();
+    if(isset($_GET["pagina"])){
+        $pagina=$_GET["pagina"];
+    }else{
+        $pagina=1;
+    }
+    $listaVacantes = $conPromocion->darVacantaseNuevaBuscar($cod_empresa,($pagina-1)*8,8,$_GET["search"]);
+    $total=$conPromocion->cantidadOfertas3EmpresaBuscar($cod_empresa,$_GET["search"]);
+}elseif (isset($_GET["pagina"])){
     $conPromocion = new ControladorPromocion();
     $listaVacantes = $conPromocion->darVacantaseNueva($cod_empresa,($_GET["pagina"]-1)*8,8);
     $total=$conPromocion->cantidadOfertas3Empresa($cod_empresa);
     $pagina=$_GET["pagina"];
-}else{
-    $conPromocion = new ControladorPromocion();
-$listaVacantes = $conPromocion->darVacantaseNueva($cod_empresa,0,8);
-$total=$conPromocion->cantidadOfertas3Empresa($cod_empresa);
-$pagina=1;
-
 }
-
-
+else{
+    $conPromocion = new ControladorPromocion();
+    $listaVacantes = $conPromocion->darVacantaseNueva($cod_empresa,0,8);
+    $total=$conPromocion->cantidadOfertas3Empresa($cod_empresa);
+    $pagina=1;
+}
 
 ?>
 
@@ -67,7 +75,7 @@ $pagina=1;
                 </div>
                 <div class="col-4">
                     <div class="input-group">
-                        <input type="submit" class="btn btn-primary btn-default" value="Filtrar"></input>
+                        <input type="submit" onclick="mandarFiltro()" class="btn btn-primary btn-default" value="Filtrar"></input>
                     </div>
                 </div>
             </div>
@@ -130,36 +138,35 @@ $pagina=1;
                             if($total<=8){
                             ?>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(1).'"'); ?>><?php echo (1);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(1).$pase.'"'); ?>><?php echo (1);  ?></a>
                         </li>
                         <?php   
                             }elseif ($total<=16){
                             ?>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(1).'"'); ?>><?php echo (1);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(1).$pase.'"'); ?>><?php echo (1);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(2).'"'); ?>><?php echo (2);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(2).$pase.'"'); ?>><?php echo (2);  ?></a>
                         </li>
                         <?php   
                             }elseif($total<=24){
                             ?>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(1).'"'); ?>><?php echo (1);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(1).$pase.'"'); ?>><?php echo (1);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(2).'"'); ?>><?php echo (2);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(2).$pase.'"'); ?>><?php echo (2);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(3).'"'); ?>><?php echo (3);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(3).$pase.'"'); ?>><?php echo (3);  ?></a>
                         </li>
                         <?php   
                             }else{
                                 if($pagina>1){
                                     ?>
                         <li class="page-item">
-                            <a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina-1).'"'); ?>
+                            <a class="page-link" <?php echo('href="ofertas.php?pagina='.($pagina-1).$pase.'"'); ?>
                                 aria-disabled="true">Anterior</a>
                         </li>
                         <?php
@@ -167,17 +174,16 @@ $pagina=1;
 
                                     ?>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(1).'"'); ?>><?php echo (1);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(1).$pase.'"'); ?>><?php echo (1);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(2).'"'); ?>><?php echo (2);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(2).$pase.'"'); ?>><?php echo (2);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.(3).'"'); ?>><?php echo (3);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.(3).$pase.'"'); ?>><?php echo (3);  ?></a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina+1).'"'); ?>
+                            <a class="page-link" <?php echo('href="ofertas.php?pagina='.($pagina+1).$pase.'"'); ?>
                                 aria-disabled="true">Siguiente</a>
                         </li>
                         <?php
@@ -188,29 +194,28 @@ $pagina=1;
                                     ?>
                         <!--  href="ofertas.php?action?v&pagina=v" -->
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina-2).'"'); ?>><?php echo ($pagina-2);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.($pagina-2).$pase.'"'); ?>><?php echo ($pagina-2);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina-1).'"'); ?>><?php echo ($pagina-1);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.($pagina-1).$pase.'"'); ?>><?php echo ($pagina-1);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina).'"'); ?>><?php echo ($pagina);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.($pagina).$pase.'"'); ?>><?php echo ($pagina);  ?></a>
                         </li>
                         <?php
                                 }else{
                                     ?>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina-1).'"'); ?>><?php echo ($pagina-1);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.($pagina-1).$pase.'"'); ?>><?php echo ($pagina-1);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina).'"'); ?>><?php echo ($pagina);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.($pagina).$pase.'"'); ?>><?php echo ($pagina);  ?></a>
                         </li>
                         <li class="page-item"><a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina+1).'"'); ?>><?php echo ($pagina+1);  ?></a>
+                                <?php echo('href="ofertas.php?pagina='.($pagina+1).$pase.'"'); ?>><?php echo ($pagina+1);  ?></a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link"
-                                <?php echo('href="ofertas.php?pagina='.($pagina+1).'"'); ?>
+                            <a class="page-link" <?php echo('href="ofertas.php?pagina='.($pagina+1).$pase.'"'); ?>
                                 aria-disabled="true">Siguiente</a>
                         </li>
                         <?php
@@ -251,5 +256,9 @@ function estado(cod) {
 
 function eliminar(cod) {
     window.location.href = 'gestionarOferta.php?action=' + "eliminar&" + "codigo=" + cod;
+}
+function mandarFiltro(){
+    x= document.getElementById("filtro").value;
+    window.location.href = "ofertas.php?search=" + x;
 }
 </script>
