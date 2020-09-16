@@ -47,7 +47,7 @@
       <div id="sidebar" class="sidebar sidebar-with-footer">
         <!-- Aplication Brand -->
         <div class="app-brand">
-          <a href="/index.html" title="Sleek Dashboard">
+          <a href="index.php" title="Sleek Dashboard">
             <span class="brand-name text-truncate">Universidad El Bosque</span>
           </a>
         </div>

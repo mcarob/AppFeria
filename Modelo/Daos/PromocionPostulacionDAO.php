@@ -95,6 +95,37 @@ class PromocionPostulacionDAO
         return $em;
     }
     
+     public function totalPostulacionesFORXempresa($cod){
+        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesFORXempresa where cod_empresa=".$cod);
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows; 
+    }
+
+
+
+    public function totalPostulacionesREXempresa($cod){
+        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesREXempresa where cod_empresa=".$cod);
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows; 
+    }
+
+
+    public function totalPostulacionesEPXempresa($cod){
+        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesEPXempresa where cod_empresa=".$cod);
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows; 
+    }
+
+
+    public function totalPostulacionesASXempresa($cod){
+        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesASXempresa where cod_empresa=".$cod);
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows; 
+    }
 
     public function totalPostulacionesA(){
         $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesActivas");
