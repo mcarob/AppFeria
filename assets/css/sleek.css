@@ -2051,12 +2051,12 @@ fieldset:disabled a.btn {
 
 .btn-warning {
   color: #212529;
-  background-color: #fec400;
-  border-color: #fec400; }
+  background-color: #0fa0b2;
+  border-color: #0fa0b2; }
   .btn-warning:hover {
     color: #212529;
-    background-color: #d8a600;
-    border-color: #cb9d00; }
+    background-color: #0fa0b2;
+    border-color: #0fa0b2; }
   .btn-warning:focus, .btn-warning.focus {
     color: #212529;
     background-color: #d8a600;

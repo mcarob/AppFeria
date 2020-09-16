@@ -53,7 +53,8 @@ $fecha_actual = date("Y-m-d")
 
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil buscado</label>
-                                        <textarea maxlength="1200" type="text" placeholder="Describa el perfil buscado (Max. 1200)" class="form-control" id="perfil" value="" name="perfil"></textarea>
+                                        
+                                        <textarea maxlength="100" type="text" placeholder="Describa el perfil buscado (Max. 100 caracteres)" class="form-control" id="perfil" value="" name="perfil"></textarea>
                                         <span class="d-block mt-1"></span>
                                     </div>
                                     <div class="row mb-2">
@@ -80,7 +81,7 @@ $fecha_actual = date("Y-m-d")
                                         </div>
 
 
-                                        <input type="hidden"  id="remuneracion" name="remuneracion" value="">
+                                        <input type="hidden" id="remuneracion" name="remuneracion" value="">
 
 
 
@@ -121,7 +122,7 @@ $fecha_actual = date("Y-m-d")
                             </div>
                             <div class="form-group mb-4">
                                 <label for="des">Numero de vacantes</label>
-                                <input type="number" class="form-control" id="numVacantes" name="numVacantes"  min="1" pattern="^[0-9]+" value=""></input>
+                                <input type="number" class="form-control" id="numVacantes" name="numVacantes" min="1" pattern="^[0-9]+" value=""></input>
                             </div>
 
 
@@ -220,8 +221,8 @@ $fecha_actual = date("Y-m-d")
 
                             <div class="form-group mb-4">
                                 <label for="des">Descripción</label>
-                                <textarea type="" class="form-control" placeholder="Si tiene una jordana diferente ecribala aqui"  id="descripcion" name="descripcion" value=""></textarea>
-                                <input type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value=<?php echo ($empresa->getCodEmpresa()) ?>>
+                                <textarea type="" class="form-control" placeholder="Describa la oferta (Max. 1200 caracteres)" id="descripcion" name="descripcion" value=""></textarea>
+                                <input maxlength="1200" type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value=<?php echo ($empresa->getCodEmpresa()) ?>>
                             </div>
 
 
@@ -262,24 +263,23 @@ $fecha_actual = date("Y-m-d")
     }
 
     function soloLetras(e) {
-    var key = e.keyCode || e.which,
-      tecla = String.fromCharCode(key).toLowerCase(),
-      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
-      especiales = [8, 37, 39, 46],
-      tecla_especial = false;
+        var key = e.keyCode || e.which,
+            tecla = String.fromCharCode(key).toLowerCase(),
+            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
+            especiales = [8, 37, 39, 46],
+            tecla_especial = false;
 
-    for (var i in especiales) {
-      if (key == especiales[i]) {
-        tecla_especial = true;
-        break;
-      }
-    }
+        for (var i in especiales) {
+            if (key == especiales[i]) {
+                tecla_especial = true;
+                break;
+            }
+        }
 
-    if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-      return false;
+        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+            return false;
+        }
     }
-    }
-    
 </script>
 
 <?php
