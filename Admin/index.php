@@ -40,20 +40,20 @@ include('Header.php');
     <div class="content">
         <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="card widget-block p-4 rounded bg-white border">
+                <div class="card widget-block p-4 rounded bg-white border">
                     <div class="card-block">
-                    <i class="mdi mdi-cart-outline text-warning mr-4"></i>
+                        <i class="mdi mdi-cart-outline text-warning mr-4"></i>
                         <h4 class="text-primary my-2"><?php foreach ($totalP as $k) {
-                                                        echo ($k[0]);
-                                                    } ?></h4>
-                        <p>Total Postulaciones</p>
+                                                            echo ($k[0]);
+                                                        } ?></h4>
+                        <p>Total         Postulaciones</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-white border">
                     <div class="card-block">
-                    <i class="mdi mdi-cart-outline text-warning mr-4"></i>
+                        <i class="mdi mdi-cart-outline text-danger mr-4"></i>
                         <h4 class="text-primary my-2"><?php foreach ($totalPI as $k) {
                                                             echo ($k[0]);
                                                         } ?></h4>
@@ -62,22 +62,22 @@ include('Header.php');
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="card widget-block p-4 rounded bg-warning border">
+                <div class="card widget-block p-4 rounded bg-white border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
-                        <h4 class="text-white my-2"><?php foreach ($totalPF as $k) {
-                                                        echo ($k[0]);
-                                                    } ?></h4>
+                        <i class="mdi mdi-cart-outline text-warning mr-4"></i>
+                        <h4 class="text-primary my-2"><?php foreach ($totalPF as $k) {
+                                                            echo ($k[0]);
+                                                        } ?></h4>
                         <p>Postulaciones Formalizadas</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="card widget-block p-4 rounded bg-warning border">
+            <div class="card widget-block p-4 rounded bg-white border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
-                        <h4 class="text-white my-2"><?php foreach ($totalPA as $k) {
+                    <i class="mdi mdi-cart-outline text-warning mr-4"></i>
+                        <h4 class="text-primary my-2">  <?php foreach ($totalPA as $k) {
                                                         echo ($k[0]);
                                                     } ?></h4>
                         <p>Postulaciones Activas</p>
@@ -111,7 +111,7 @@ include('Header.php');
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="card widget-block p-4 rounded bg-warning border">
+            <div class="card widget-block p-4 rounded bg-success border">
                     <div class="card-block">
                         <i class="mdi mdi-account-outline mr-4 text-white"></i>
                         <h4 class="text-white my-2"><?php foreach ($totalEI as $k) {
@@ -152,7 +152,7 @@ include('Header.php');
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="card widget-block p-4 rounded bg-warning border">
+            <div class="card widget-block p-4 rounded bg-success border">
                     <div class="card-block">
                         <i class="mdi mdi-account-outline mr-4 text-white"></i>
                         <h4 class="text-white my-2"><?php foreach ($totalEmpA as $k) {
