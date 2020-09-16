@@ -96,7 +96,35 @@ class PromocionPostulacionDAO
     }
     
 
-    
+    public function totalPostulacionesA(){
+        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesActivas");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+        
+    }
+
+    public function totalPostulacionesI(){
+        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesInactivas");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+        
+    }
+
+    public function totalPostulacionesFOR(){
+        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesFOR");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+        
+    }
+    public function totalPostulacionesChard(){
+        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesChard");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+    }
 
 
 }
