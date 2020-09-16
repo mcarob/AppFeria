@@ -36,12 +36,6 @@
 
 <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
 
-  <script>
-    NProgress.configure({
-      showSpinner: false
-    });
-    NProgress.start();
-  </script>
 
 
     <!--

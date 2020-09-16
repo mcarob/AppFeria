@@ -80,7 +80,7 @@ class PromocionLaboralDAO
             $em[] = $fila;  
         }
         return $em;
-    }
+    } 
     public function verOfertasNuevaBuscar($codigo,$desde,$hasta,$buscar){
         $buscar= str_replace(" ","%",$buscar);
         $buscar='%'.$buscar.'%';
