@@ -44,13 +44,14 @@ include ('Header.php');
 
                             <?php
                             foreach($lista as $key){
+                                $user2->setUserxCod($key[1]);
                             ?>
                             <li>
                                 <a onclick="darNot('<?php echo $key[4] ?>',' <?php  echo $key[5] ?>','<?php $empresa->darEmpresaXCodigo($key[1])->getRazonSocial();?>')" class="media media-message">
                                    
                                     <div class="media-body d-flex justify-content-between">
                                         <div class="message-contents">
-                                            <h4 class="title"> <?PHP $user2->setUser($key[1]); ?> </h4>
+                                            <h4 class="title"> <?PHP $user2->setUser($key[1])->darNombreUsuario(); ?> </h4>
                                             <p class="last-msg"><?php echo $key[4] ?></p>
                                         </div>
 
