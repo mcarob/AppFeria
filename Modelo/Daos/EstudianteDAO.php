@@ -19,13 +19,7 @@ class EstudianteDAO
         $this->con =$claseCon->connect();
     }
     
-    public function crearEstudiante( Estudiante $nuevoEstudiante)
-    {   
-        $sql = "INSERT INTO ESTUDIANTE VALUES (default ,'" . $nuevoEstudiante->getCedEstudiante() . "','" . $nuevoEstudiante->getCorreoEstudiante() . "', . 1 . ,'" . $nuevoEstudiante->getNombreEstudiante(). "','" . $nuevoEstudiante->getApellidoEstudiante(). "','" . $nuevoEstudiante->getCodProgamaAcademico(). "','" . $nuevoEstudiante->getSemestreEstudiante(). "','" . $nuevoEstudiante->getCorreoPersonal().")'";
-        $result =mysqli_query($this->con, $sql);
-        return mysqli_fetch_all($result);
-
-    }
+    
 
 
 
@@ -75,6 +69,30 @@ class EstudianteDAO
         return $nrows;
     }
 
+
+    public function totalEstudiantesA(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantesActivos");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+        
+    }
+
+
+    public function totalEstudiantesI(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantesInactivos");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+    }
+
+    public function totalEstudiantes(){
+        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantes");
+        $sentencia->execute();
+        $nrows = $sentencia->fetchAll();
+        return $nrows;
+    }
+
    
     public function registrarEstudiante($v){
         #cedula,correo,nombre,apellido,programa,semestre,contrasena,verificacion
@@ -101,6 +119,22 @@ class EstudianteDAO
         }
 
     }
+
+
+    public function agregarNoti($cod_desde,$cod_para, $mensaje, $cod_select){
+        $sentencia=$this->con->prepare("INSERT INTO NOTIFICACION ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
+        VALUES (?,?,?,?,now())"); 
+        $respuesta=  $sentencia->execute([$cod_desde,$cod_para,$cod_select, $mensaje]);
+        return $respuesta;
+    }
+
+    public function darNotificacionxEst($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM NOTIFICACION WHERE NOTIFACION_PARA=" . $cod);
+        $sentencia->execute();
+        return $sentencia->fetchAll();
+    }
+
+
 
 }
 ?>

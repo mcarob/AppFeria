@@ -54,6 +54,45 @@ class ControladorPostulacion{
 			$this->postulados = new PromocionPostulacionDAO();
 			return $this->postulados->practicantesXempresa($cod);
 		}
+
+		public function darPostA(){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->totalPostulacionesA();
+		}
+
+		public function darPostI(){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->totalPostulacionesI();
+		}
+
+		public function darPostFor(){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->totalPostulacionesFOR();
+			
+		}
+
+		public function darPost(){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->totalPostulacionesChard();
+		}
+
+		public function darPostAXE($cod){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->totalPostulacionesASXempresa($cod);
+		}
+		public function darPostIXE($cod){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->totalPostulacionesREXempresa($cod);
+		}
+		public function darPostEPXE($cod){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->totalPostulacionesEPXempresa($cod);
+		}
+		public function darPostFORXE($cod){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->totalPostulacionesFORXempresa($cod);
+		}
+		
 	
 	}
 

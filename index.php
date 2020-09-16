@@ -157,7 +157,7 @@
                                 <img class="img-responsive" src="./assets/images/imagen1.jpg" alt="First slide" style="max-width:100%;width:auto;height:auto;">
                             </div>
                             <div class="item">
-                                <img class="img-responsive" src="./assets/images/imagen2.jpg" alt="Second slide" style="max-width:100%;width:auto;height:auto;">
+                                <img class="img-responsive" src="./assets/img/UEB.jpg" alt="Second slide" style="max-width:100%;width:auto;height:auto;">
                             </div>
                             <div class="item">
                                 <img class="img-responsive" src="./assets/images/imagen3.jpg" alt="Third slide" style="max-width:100%;width:auto;height:auto;">

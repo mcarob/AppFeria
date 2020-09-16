@@ -46,6 +46,13 @@
 
           <div class="navbar-right ">
             <ul class="nav navbar-nav">
+
+            <li class="dropdown notifications-menu">
+              <a class="dropdown-toggle" href="notificacion.php">
+                <i class="mdi mdi-bell-outline"></i>
+              </a>
+            </li>
+            
               <li class="right-sidebar-in right-sidebar-2-menu">
                 <i class="mdi mdi-settings mdi-spin"></i>
               </li>

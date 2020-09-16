@@ -53,6 +53,18 @@ class ControladorEmpresa{
 			return $this->empresas->darNotificacionxEmpresa($cod);
 		}
 
+		public function darEmpresaA(){
+			$this->empresas = new EmpresaDAO();
+			return $this->empresas->totalEmpresasV();
+		}
+		public function darEmpresaI(){
+			$this->empresas = new EmpresaDAO();
+			return $this->empresas->totalEmpresasSV();
+		}
+		public function darEmpresa(){
+			$this->empresas = new EmpresaDAO();
+			return $this->empresas->totalEmpresas();
+		}
 	
 	}
 
