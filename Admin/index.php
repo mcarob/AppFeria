@@ -70,7 +70,7 @@ include('Header.php');
         </div>
 
         <br>
-        <br>
+       
 
         <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-3">
@@ -112,7 +112,7 @@ include('Header.php');
 
 
         <br>
-        <br>
+        
 
 
         <div class="row">
