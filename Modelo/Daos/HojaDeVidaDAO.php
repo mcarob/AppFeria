@@ -21,14 +21,31 @@ class HojaDeVidaDAO
     }
     
 
-
+    
+    public function darIdHoja()
+    {
+        $codigo="";
+        try {
+            $claseCon = new DB();
+            $con = $claseCon->connect();
+            $respuesta3="";
+            $sentencia = $con->prepare("call agregarHojaVida(?,@res)");
+    
+            $sentencia->execute([10]);
+            $codigo = $con->query("SELECT @res as re12")->fetch();    
+        } catch (\Throwable $th){
+            print("ERROR");
+            print($th);
+        }
+        return $codigo;
+    }
 
     public function agregarHojaDeVida(HojaDeVida $hoja){
         
-        $sql="insert into hoja_vida (COD_ESTUDIANTE, HOJA_CELULAR, HOJA_DIRECCION, HOJA_CIUDAD,
-        PERFIL_HOJA)
+        $sql="insert into hoja_vida (COD_ESTUDIANTE, HOJA_CELULAR, HOJA_DIRECCION, HOJA_CIUDAD,PERFIL_HOJA) 
         values 
         (?,?,?,?,?)";
+
         $respuesta=$this->con->prepare($sql)->execute([$hoja->getCodEstudiante(),$hoja->getHojaCelular(),
         $hoja->getHojaDireccion(),$hoja->getHojaCiudad(),$hoja->getPerfil()]);
         
