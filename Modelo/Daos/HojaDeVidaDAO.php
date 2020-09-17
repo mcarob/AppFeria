@@ -58,7 +58,7 @@ class HojaDeVidaDAO
 
     public function buscarHojaDeVida($cod){
         $sentencia = $this->con->prepare("SELECT * FROM hoja_vida WHERE COD_HOJA_VIDA=?" );
-        $sentencia->execute($cod);
+        $sentencia->execute([$cod]);
         while ($fila = $sentencia->fetch()) {
             $hoja = new HojaDeVida(
                 $fila[0],
@@ -73,7 +73,7 @@ class HojaDeVidaDAO
     }
     public function buscarHojaDeVida1($cod){
         $sentencia = $this->con->prepare("SELECT * FROM hoja_vida WHERE COD_HOJA_VIDA=?" );
-        $sentencia->execute($cod);
+        $sentencia->execute([$cod]);
         while ($fila = $sentencia->fetch()) {
             $hoja = new HojaDeVida(
                 $fila[0],

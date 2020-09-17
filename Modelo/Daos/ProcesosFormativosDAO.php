@@ -62,6 +62,13 @@ class ProcesosFormativosDAO
         return $em;
 
     }
+    public function pasarInformaciones($var){
+        $sql="SELECT  * FROM proceso_formativos where cod_hoja_vida=?";
+        $respuesta=$this->con->prepare($sql);
+        $respuesta->execute([$var]);
+        return $respuesta->fetchall();
+
+    }
 
 
 

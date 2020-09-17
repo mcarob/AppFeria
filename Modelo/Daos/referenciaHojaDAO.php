@@ -51,6 +51,13 @@ class ReferenciaHojaDAO
 
     }
 
+    public function pasarInformaciones($var){
+        $sql="SELECT  * FROM referencia_hoja where cod_hoja_vida=?";
+        $respuesta=$this->con->prepare($sql);
+        $respuesta->execute([$var]);
+        return $respuesta->fetchall();
+    }
+
 
 
 

@@ -87,7 +87,12 @@ class ExperienciaHojaDAO
         return $experiencia;
     }
 
-    
+    public function pasarInformaciones($var){
+        $sql="SELECT  * FROM experiencia_hoja where cod_hoja_vida=?";
+        $respuesta=$this->con->prepare($sql);
+        $respuesta->execute([$var]);
+        return $respuesta->fetchall();
+    }
 
 
     
