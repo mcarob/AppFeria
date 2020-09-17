@@ -21,8 +21,7 @@ class ExperienciaHojaDAO
     public function crearExperienciaHoja(ExperienciaHoja $nueva)
     {   
     
-        
-            $sql="INSERT into EXPERIENCIA_HOJA (COD_HOJA_VIDA,
+            $sql="INSERT into experiencia_hoja (COD_HOJA_VIDA,
             EXPERIENCIA_HOJA_CARGO,
             EXPERIENCIA_HOJA_EMPRESA,
             EXPERIENCIA_HOJA_DESDE,
