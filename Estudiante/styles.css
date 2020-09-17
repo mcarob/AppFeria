@@ -1,0 +1,183 @@
+@charset "utf-8";
+#contendp {
+	width: 595pt;
+}
+DIV #informacion,#informacion2,#informacion3,#informacion4,#informacion5,#informacion6,#informacion7{
+	border-radius: 12px;
+}
+DIV #contorno,#contorno2,#contorno3,#contorno4,#contorno5,#contorno6,#contorno7{
+	/* border: 1px solid #9E9E9E; */
+	border-radius: 9px;
+	}
+
+#titulohv {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 300%;
+	font-style: normal;
+	text-align: center;
+}
+#informacion {
+	float: right;
+	width: 100%;
+	border: thin solid #9E9E9E;
+	border-width: 1.5px;
+}
+#contorno {
+	background-color: #C8C8C8;
+	height: 40px;
+	color: white;
+	font-size: 25px;
+	width: 100%;
+	align-self: center;
+	margin: auto;
+	background: #0B7984;
+  
+}
+#datos{
+	width: 65%; 
+	float:left;
+	margin-left: 1%;
+}	
+#datos1{
+	float:left;
+	margin-left: 1%;
+	border: 0px solid #000000;
+	
+}
+#datos2{
+	float:left;
+	margin-left: 1%;
+	
+}
+#datos3{
+	float:left;
+	margin-left: 1%;
+	
+}
+#datos4{
+	float:left;
+	margin-left: 1%;
+	
+}
+#datos5{
+	float:left;
+	margin-left: 1%;
+	
+}
+#datos6{
+	float:left;
+	margin-left: 1%;
+	
+}
+#datos7{
+	float:left;
+	margin-left: 1%;
+	
+}
+
+#datos8{
+	float:left;
+	margin-left: 1%;
+	
+}
+
+#informacion2 {
+	float: right;
+	width: 100%;
+	border: thin solid #9E9E9E;
+	border-width: 1.5px;
+}
+#contorno2 {
+	background-color: #C8C8C8;
+	height: 40px;
+	color: white;
+	font-size: 25px;
+	width: 100%;
+	align-self: center;
+	margin: auto;
+        background: #0B7984;
+}
+#informacion3 {
+	float: right;
+	width: 100%;
+	border: thin solid #9E9E9E;
+	border-width: 1.5px;
+}
+#contorno3 {
+	background-color: #C8C8C8;
+	height: 40px;
+	color: white;
+	font-size: 25px;
+	width: 100%;
+	align-self: center;
+	margin: auto;
+        background: #0B7984;
+}
+#informacion4 {
+	float: right;
+	width: 100%;
+	border: thin solid #9E9E9E;
+	border-width: 1.5px;
+}
+#contorno4 {
+	background-color: #C8C8C8;
+	height: 40px;
+	color: white;
+	font-size: 25px;
+	width: 100%;
+	align-self: center;
+	margin: auto;
+        background: #0B7984;
+}
+#informacion5 {
+	float: right;
+	width: 100%;
+	border: thin solid #9E9E9E;
+	border-width: 1.5px;
+}
+#contorno5 {
+	background-color: #C8C8C8;
+	height: 40px;
+	color: white;
+	font-size: 25px;
+	width: 100%;
+	align-self: center;
+	margin: auto;
+        background: #0B7984;
+}
+#informacion6 {
+	float: right;
+	width: 100%;
+	border: thin solid #9E9E9E;
+	border-width: 1.5px;
+}
+#contorno6 {
+	background-color: #C8C8C8;
+	height: 40px;
+	color: white;
+	font-size: 25px;
+	width: 100%;
+	align-self: center;
+	margin: auto;
+        background: #0B7984;
+}
+#informacion7 {
+	float: right;
+	width: 100%;
+	border: thin solid #9E9E9E;
+	border-width: 1.5px;
+}
+#contorno7 {
+	background-color: #C8C8C8;
+	height: 40px;
+	color: white;
+	font-size: 25px;
+	width: 100%;
+	align-self: center;
+	margin: auto;
+        background: #0B7984;
+}
+
+
+
+

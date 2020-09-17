@@ -25,12 +25,12 @@ class HojaDeVidaDAO
     public function buscarIdHoja($codigoEstudiante)
     {
         try {
-            $sentencia = $con->prepare("call agregarHojaVida(?,@res)");
+            $sentencia = $this->con->prepare("call agregarHojaVida(?,@res)");
             $sentencia->execute([$codigoEstudiante]);
-            $codigoHoja = $con->query("SELECT @res as re12")->fetch();    
+            $row = $this->con->query("SELECT @res as re12")->fetch();  
+            $codigoHoja=$row['re12']; 
         } catch (\Throwable $th){
             print("ERROR");
-            print($th);
         }
         return $codigoHoja;
     }
@@ -71,7 +71,21 @@ class HojaDeVidaDAO
         }
         return $hoja;
     }
-
+    public function buscarHojaDeVida1($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM hoja_vida WHERE COD_HOJA_VIDA=?" );
+        $sentencia->execute($cod);
+        while ($fila = $sentencia->fetch()) {
+            $hoja = new HojaDeVida(
+                $fila[0],
+                $fila[1],
+                $fila[2],
+                $fila[3],
+                $fila[4],
+                $fila[5]
+            );
+        }
+        return $hoja;
+    }
     
 
 

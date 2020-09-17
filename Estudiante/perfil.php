@@ -17,8 +17,7 @@ $user->setUser($_SESSION['user']);
 $codigo= $user->darCodigo();
 $estudiante = $estudiante_dao->devolverEstudiante($codigo);
 
-?>
-<?php
+
 include('menuEstudiante.php');
 include('Header.php');
 ?>

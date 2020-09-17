@@ -44,7 +44,7 @@ if(isset($_SESSION['user'])){
 					if($tipo==1 || $tipo==4){
 						header('location: Admin/index.php');
 						}else if($tipo==2){
-						header('location: Estudiante/index.php');
+						header('location: Estudiante/ListaPostulaciones.php');
 						}else if($tipo==3){
 						header('location: Empresa/index.php');
 						}
@@ -57,12 +57,10 @@ if(isset($_SESSION['user'])){
 			}else{
 				$mostrarCodigo=true;
 				include_once 'ingresoF.php';
-				echo("entraaaaaar 37");
 			}
 			
 		}else{
 			echo($user->darEstado());
-			echo("entro en 41");
 		}
       
 

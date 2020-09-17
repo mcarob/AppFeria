@@ -155,8 +155,7 @@ function devolver() {
            data: datos,
            url: "RegistrarC.php",
            success: function(r) {
-       
-               console.log(r);
+
                if (r == 1) {
                     document.getElementById("formEstudianteR").reset();
                     toastr.options = {
@@ -176,7 +175,7 @@ function devolver() {
                     "showMethod": "fadeIn",
                     "hideMethod": "fadeOut"
                     }
-                    toastr["success"]("Se ha registrado satisfactoriamente su correo", "ERROR");
+                    toastr["success"]("Se ha registrado satisfactoriamente su correo", "¡Muy bien!");
 
                } else if (r == 3) {
                    toastr["warning"](r, "ERROR");
