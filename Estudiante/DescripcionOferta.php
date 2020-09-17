@@ -7,6 +7,7 @@ if (!isset($_SESSION['user'])) {
     header("location: ../index.php");
 }
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
@@ -17,6 +18,10 @@ $estudiante_dao = new EstudianteDAO();
 $user->setUser($_SESSION['user']);
 $codigo = $user->darCodigo();
 $estudiante = $estudiante_dao->devolverEstudiante($codigo);
+$empresa_dao = new EmpresaDAO();
+
+
+
 
 
 
@@ -43,9 +48,10 @@ $horarios = explode(';', $informacion[3]);
                 <div class="col-lg-4 col-xl-3">
                     <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                         <div class="card text-center widget-profile px-0 border-0">
-                            <div class="card-img mx-auto rounded-circle">
-                                <img src="../Imagenes/ecopetrol.jpg" width="100" alt="user image">
-                            </div>
+                            <?php   
+                                echo '<img  alt="Card image cap" class="card-img-top" width="150" height="150"  src="data:image/jpeg;base64,'.base64_encode( $empresa_dao->devolverEmpresa2($informacion[17])->getLogoEmpresa() ).'" />';
+                                ?>
+                           
                             <div class="card-body">
                                 <h4 class="py-2 text-dark"> <?php echo $informacion[10] ?> </h4>
 
