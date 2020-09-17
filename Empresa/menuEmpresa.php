@@ -37,10 +37,6 @@
 
 <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
 
-<?php 
-    $user = new Usuario();
-
-?>
 
     <!--
           ====================================
