@@ -20,126 +20,193 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades
 
 //--------------------------Primera parte del formulario------------------------------
 
-echo '---------> Informacion personal\n';
+echo '---------> Informacion personal';
 //Trae todos los datos necesarios para la tabla hoja_vida
 $datosPersonales=array(
-    //FALTA EL CODIGO HOJA DE VIDA
-    //FALTA TRAER EL COD ESTUDIANTE
+    $_POST["codigoEstudiante"],
     $_POST["telefono"],
     $_POST["direccion"],
     $_POST["ciudad"],
     $_POST["perfil"]
 );
-print_r($datosPersonales);
-echo '\n---------> Informacion refericias\n Referencia 1 \n';
+// print_r($datosPersonales);
+
+echo '---------> Informacion refericias\n Referencia 1 ';
+$controladorHoja=new ControladorHojaDeVida();
+$hoja=new HojaDeVida(0,$datosPersonales[0],$datosPersonales[1],$datosPersonales[2],$datosPersonales[3],$datosPersonales[4]);
+
+$codigoHoja=$controladorHoja->agregarHojaDeVida($hoja);
+
+echo($codigoHoja);
 
 
 
+
+
+$controladorReferencia=new ControladorReferenica();
 //Trae todos los datos necesarios para la tabla referencia_hoja
 $datosReferencia1=array(
-    //FALTA EL CODIGO HOJA DE VIDA
     $_POST["nombreR1"],
     $_POST["cargoR1"],
     $_POST["empresaR1"],
     $_POST["telefonoR1"],
     $_POST["correoR1"]
 );
-
 print_r($datosReferencia1);
+$lleno1=1;
+$contador1=0;
+foreach($datosReferencia1 as $lleno)
+{
+    if($lleno==null || $lleno=="")
+    {
+        $contador1++;
+        $lleno1=0;
+    }
+}
 
 
-echo '\n Referencia 2 \n';
+if($contador1==1 and ($datosReferencia1[2]=="" || $datosReferencia1[2]==null))
+{
+    $lleno1=1;
+}
+if($lleno1==1)
+{
+    $referencia1=new ReferenciaHoja(0,$codigoHoja,$datosReferencia1[0],$datosReferencia1[1],
+    $datosReferencia1[2],$datosReferencia1[3],$datosReferencia1[4]);
+    $controladorReferencia->insertarReferencia($referencia1);
+
+}
+
+
+
+
+echo 'Referencia 2 ';
 $datosReferencia2=array(
-    //FALTA EL CODIGO HOJA DE VIDA
     $_POST["nombreR2"],
     $_POST["cargoR2"],
     $_POST["empresaR2"],
     $_POST["telefonoR2"],
     $_POST["correoR2"]
 );
-print_r($datosReferencia2);
 
+$lleno2=1;
+$contador2=0;
+foreach($datosReferencia2 as $lleno)
+{
+    if($lleno==null || $lleno=="" )
+    {
+        $contador2++;
+        $lleno2=0;
+    }
+}
 
+if($contador2==1 and ($datosReferencia2[2]=="" || $datosReferencia2[2]==null))
+{
+    $lleno2=1;
+}
+if($lleno2==1)
+{
+    $referencia2=new ReferenciaHoja(0,$codigoHoja,$datosReferencia2[0],
+    $datosReferencia2[1],$datosReferencia2[2],$datosReferencia2[3],$datosReferencia2[4]);
+    
+    $controladorReferencia->insertarReferencia($referencia2);
+}
 
 
 
 //-----------------------Segunda parte del fomrulario-----------------------------
 
-echo '\n ---------> Informacion formaciones academicas\n ';
+echo ' ---------> Informacion formaciones academicas ';
+
 
 //Cantidad de formaciones academicas
 $numeroAcademicas=$_POST["numAcademica"];
 //Este arreglo contiene todas las formaciones academicas
-$arregloAcademicas=array();
-foreach(range(1,$numeroAcademicas) as $numero)
-{       
-    array_push($arregloAcademicas,$_POST["academica".$numero]);       
+if($numeroAcademicas!=0)
+{
+    $arregloAcademicas=array();
+    foreach(range(1,$numeroAcademicas) as $numero)
+    {       
+        array_push($arregloAcademicas,$_POST["academica".$numero]);       
+    }
+    print_r($arregloAcademicas);
+
+    $controladorAcademica=new ControladorAcademicaHoja();
+    for ($i=0; $i< sizeof($arregloAcademicas) ;$i++)
+    {
+        $infoA=$arregloAcademicas[$i];
+        $academica=new AcademicaHoja(0,$codigoHoja,$infoA[0],$infoA[2],$infoA[3],$infoA[4],$infoA[1]);
+        $controladorAcademica->insertarHojaAcademica($academica);
+    }
 }
-print_r($arregloAcademicas);
-echo '\n';
 
-
-echo '\n ---------> Informacion formaciones complementarias\n';
+ echo ' ---------> Informacion formaciones complementarias';
 
 //Cantidad de formaciones complementarias
 $numeroComplementarias=$_POST["numComplementaria"];
 //Este arreglo contiene todas las formaciones complementarias
-$arregloComplementarias=array();
-foreach(range(1,$numeroComplementarias) as $numero)
-{   
-   array_push($arregloComplementarias,$_POST["complementaria".$numero]);  
+if($numeroComplementarias!=0)
+{
+    $arregloComplementarias=array();
+    foreach(range(1,$numeroComplementarias) as $numero)
+    {   
+    array_push($arregloComplementarias,$_POST["complementaria".$numero]);  
+    }
+    print_r($arregloComplementarias);
+
+    $controladorComplementaria=new ControladorFormacionComp();
+    for ($i=0; $i< sizeof($arregloComplementarias) ;$i++)
+    {
+        $infoC=$arregloComplementarias[$i];
+        $complementaria=new FormacionComplementaria(0,$codigoHoja,$infoC[1],$infoC[0],$infoC[3],$infoC[2]);
+        $controladorComplementaria->agregarComplementaria($complementaria);
+    }
 }
-print_r($arregloComplementarias);
-echo '\n';
 
 
+// // //-----------------------Tercera parte del formulario-----------------------------
 
 
-//-----------------------Tercera parte del formulario-----------------------------
-
-echo '\n ---------> Informacion experiencias academicas\n ';
+echo ' ---------> Informacion experiencias academicas ';
 //Cantidad de experiencias academicas
 $numeroExperienciasAcademicas=$_POST["numExAcademicas"];
-//Este arreglo contiene todas las experiencias academicas
-$arregloExperienciasAcademicas=array();
-foreach(range(1,$numeroExperienciasAcademicas) as $numero)
-{   
-   array_push($arregloExperienciasAcademicas,$_POST["experienciaAcademica".$numero]);  
+// //Este arreglo contiene todas las experiencias academicas
+if($numeroExperienciasAcademicas!=0)
+{
+    $arregloExperienciasAcademicas=array();
+    foreach(range(1,$numeroExperienciasAcademicas) as $numero)
+    {   
+    array_push($arregloExperienciasAcademicas,$_POST["experienciaAcademica".$numero]);  
+    }
+    print_r($arregloExperienciasAcademicas);
+
+    $controladorFormativo=new ControladorProcesosFormativos();
+    for ($i=0; $i< sizeof($arregloExperienciasAcademicas) ;$i++)
+    {
+        $infoPF=$arregloExperienciasAcademicas[$i];
+        $formativo=new ProcesosFormativos(0,$codigoHoja,$infoPF[0],$infoPF[3],$infoPF[2],$infoPF[1]);
+        $controladorFormativo->insertarProcesoFormativo($formativo);
+    }
 }
-print_r($arregloExperienciasAcademicas);
-echo ' ---------> Informacion experiencias profesionales';
 
-
-
-//Cantidad de experiencias academicas
+echo ' ---------> Informacion experiencias laborales';
+// //Cantidad de experiencias academicas
 $numeroExperienciasProfesionales=$_POST["numExProfesionales"];
-//Este arreglo contiene todas las experiencias academicas
-$arregloExperienciasProfesionales=array();
-foreach(range(1,$numeroExperienciasProfesionales) as $numero)
-{   
-   array_push($arregloExperienciasProfesionales,$_POST["experienciaProfesional".$numero]);  
+// //Este arreglo contiene todas las experiencias academicas
+if($numeroExperienciasProfesionales!=0)
+{
+    $arregloExperienciasProfesionales=array();
+    foreach(range(1,$numeroExperienciasProfesionales) as $numero)
+    {   
+    array_push($arregloExperienciasProfesionales,$_POST["experienciaProfesional".$numero]);  
+    }
+    $controladorlaboral=new ControladorExperiencia();
+    for ($i=0; $i< sizeof($arregloExperienciasProfesionales) ;$i++)
+    {
+        $infoPL=$arregloExperienciasProfesionales[$i];
+        $laboral=new ExperienciaHoja(0,$codigoHoja,$infoPL[0],$infoPL[1],$infoPL[2],$infoPL[3],$infoPL[4]);
+        $controladorlaboral->agregarExperiencia($laboral);
+    }
 }
-
-print_r($arregloExperienciasProfesionales);
-echo '\n';
-  
-
-
-
-
-//  $academica=$_POST["numAcademica"];
-//  if($academica==0)
-//  {
-//      if(isset($_POST["academica"]))
-//      {
-//          $arreglo=$_POST["academica"];
-//      }    
-//  }else
-//  {     
-//  }
-
-
-
-
 
 ?>

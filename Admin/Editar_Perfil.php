@@ -17,24 +17,28 @@ $datos=array(
 
 $conUsuario=new ControladorUsuario();
 $validacion=$conUsuario->validarContra($datos[1],$_POST["conPassword1"]);
-$variable=3;
-if($_POST["newPassword"]==$_POST["conPassword"])
-{
-    $variable=1;
-}
-if(count($validacion)>0 and $variable==1)
+
+
+if(count($validacion)>0)
 {
 $conAdministrador= new ControladorAdministrador();
 $conUsuario=new ControladorUsuario();
 $administrador=new Administrador($datos[0],$datos[1],$datos[2],$datos[3],$datos[4]);
-echo($conAdministrador->actualizarAdministrador($administrador));
-echo($conUsuario->actualizarUsuario($datos[1],$_POST["conPassword"]));
 
-}else if($variable==3)
-{
-    echo("Las nueva coontraseña no coincide con la confirmacion");
-}
-else{
+if($_POST["newPassword"]!=null or $_POST["conPassword"]!=null)
+    {
+        if($_POST["newPassword"]==$_POST["conPassword"])
+        {
+            echo($conUsuario->actualizarUsuario($datos[1],$_POST["conPassword"]));
+        }else{
+            echo("La nueva contraseña no coincide con la confirmacion");
+        }
+    }
+
+echo($conAdministrador->actualizarAdministrador($administrador));
+
+
+}else{
     echo("ingrese por favor la contraseña actual para realizar cambios");
 }
 

@@ -147,7 +147,9 @@ include('Header.php');
             success: function(r) {
 
                 console.log(r);
-                if (r == 11) {
+                if (r == 1) {
+                    window.location.href = "index.php";
+                } if (r == 11) {
                     window.location.href = "index.php";
                 } else if (r == 3) {
                     toastr["success"](r, "ERROR");

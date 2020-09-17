@@ -51,6 +51,9 @@
 $(document).ready(function() {
 
     $('#add').click(function() {
+        if (x != 0) {
+            document.getElementById("AC" + x).disabled = true;
+        }
         x++;
         cambiar = document.getElementById("expAcademicas");
         cambiar.innerHTML = "<p>(" + x + ")Experiencias academicas</p>";
@@ -65,12 +68,15 @@ $(document).ready(function() {
             x + '[]" required name="experienciaAcademica' + x +
             '[]"> <option disabled="" selected="">Seleccionar periodo</option> <option value="Periodo 2015-1">Periodo 2015-1 </option> <option value="Periodo 2015-2">Periodo 2015-2 </option> <option value="Periodo 2016-1">Periodo 2016-1 </option> <option value="Periodo 2016-2">Periodo 2016-2 </option> <option value="Periodo 2017-1">Periodo 2017-1 </option> <option value="Periodo 2017-2">Periodo 2017-2 </option> <option value="Periodo 2018-1">Periodo 2018-1 </option> <option value="Periodo 2018-2">Periodo 2018-2 </option> <option value="Periodo 2019-1">Periodo 2019-1 </option> <option value="cl">Periodo 2019-2 </option> <option value="Periodo 2020-1">Periodo 2020-1 </option> <option value="cl">Periodo 2020-2 </option> </select> </div> </div> </div> <div class="form-group"> <textarea class="form-control" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
-            '[]" rows="5" style="resize: none;" placeholder="Describa del proyecto"></textarea> </div> </div><button type="button" name="remove" id="' +
+            '[]" rows="5" style="resize: none;" placeholder="Describa del proyecto"></textarea> </div> </div><button type="button" name="remove" id="AC' +
             x + '" class="btn btn-danger btn_removeE1">Remover</button>');
 
     });
 
     $('#add2').click(function() {
+        if (y != 0) {
+            document.getElementById("PR" + y).disabled = true;
+        }
         y++;
         cambiar = document.getElementById("expLaborales");
         cambiar.innerHTML = "<p>(" + y + ")Experiencias laborales</p>";
@@ -85,7 +91,7 @@ $(document).ready(function() {
             y + '[]" required name="experienciaProfesional' + y +
             '[]"> </div> </div> </div> <div class="form-group"> <textarea class="form-control" rows="5" style="resize: none;" placeholder="Describa el cargo" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
-            '[]"></textarea> </div><button type="button" name="remove" id="' + y +
+            '[]"></textarea> </div><button type="button" name="remove" id="PR' + y +
             '" class="btn btn-danger btn_removeE2">Remover</button><br><br>');
 
     });
@@ -93,18 +99,24 @@ $(document).ready(function() {
 
     $(document).on('click', '.btn_removeE1', function() {
         var button_id = $(this).attr("id");
-        $('#row3' + button_id + '').remove();
+        $('#row3' + x + '').remove();
         x--;
+        if (x >= 1) {
+            document.getElementById("AC" + x).disabled = false;
+        }
         cambiar2 = document.getElementById("expAcademicas");
         cambiar2.innerHTML = "<p>(" + x + ")Experiencias academicas</p>";
     });
 
     $(document).on('click', '.btn_removeE2', function() {
         var button_id = $(this).attr("id");
-        $('#row4' + button_id + '').remove();
+        $('#row4' + y + '').remove();
         y--;
+        if (y >= 1) {
+            document.getElementById("PR" + y).disabled = false;
+        }
         cambiar2 = document.getElementById("expLaborales");
-        cambiar2.innerHTML = "<p>(" + y + ")Experiencias profesionales</p>";
+        cambiar2.innerHTML = "<p>(" + y + ")Experiencias laborales</p>";
     });
 
 

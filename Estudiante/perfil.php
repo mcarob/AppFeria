@@ -155,6 +155,9 @@ function editarEstudiante() {
             console.log(r);
             if (r == 11) {
                 window.location.href = "index.php";
+            }else if(r == 1)
+            {
+                window.location.href = "index.php";
             } else if(r==3)
             {
                 toastr["success"](r, "ERROR");

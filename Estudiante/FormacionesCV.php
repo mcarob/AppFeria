@@ -2,12 +2,19 @@
 <div class="wizard-card ct-wizard-green">
 </div>
 <br>
-<h3>Perfil:</h3>
+
+
+<h3>Perfil: <button type="button" class="btn mb-1 btn-success btn-pill" data-container="body" data-toggle="popover"
+        data-placement="right"
+        data-content="Recuerde que en el perfil debe añair informacion como, idiomas, hobbies, caracteristicas personales.">?</button>
+</h3>
+
 <br>
 <div class="form-group">
     <textarea class="form-control" id="perfil" name="perfil" rows="5" style="resize: none;"
-        placeholder="Descripcción del perfil (max 1200)"></textarea>
+        placeholder="Descripcción del perfil (max 1200)" required></textarea>
 </div>
+
 <h3>Formacion Academica:</h3>
 <br>
 <div class="suma">
@@ -36,7 +43,7 @@
         <br><br>
     </div>
     <div class="elementCom" id="formLab">
-        <p>(0)formaciones laborales</p>
+        <p>(0)formaciones complementaria</p>
     </div>
     <div class="resultsCom" id="agregarf2">
     </div>
@@ -52,6 +59,9 @@
 $(document).ready(function() {
 
     $('#addf1').click(function() {
+        if (i != 0) {
+            document.getElementById("A" + i).disabled = true;
+        }
         i++;
         cambiar = document.getElementById("formAca");
         cambiar.innerHTML = "<p>(" + i + ")formaciones academicas</p>";
@@ -68,44 +78,56 @@ $(document).ready(function() {
             i + '[]" required name="academica' + i +
             '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" required id="academica' +
             i + '[]" required name="academica' + i +
-            '[]"> </div> </div><button type="button" name="remove" id="' +
+            '[]"> </div> </div><button type="button" name="remove" id="A' +
             i + '" class="btn btn-danger btn_removeF1">Remover</button><br>');
 
     });
 
+
     $('#addf2').click(function() {
+        if (j != 0) {
+            document.getElementById("L" + j).disabled = true;
+        }
+
         j++;
         cambiar = document.getElementById("formLab");
-        cambiar.innerHTML = "<p>(" + j + ")formaciones laborales</p>";
+        cambiar.innerHTML = "<p>(" + j + ")formaciones complementarias</p>";
         $('#agregarf2').append('<div id="row2' + j +
-            '" class="sumaCom"> <div class="buttons"> <br> </div> <div class="elementCom"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control" aria-label="Username" id="complementaria' +
-            j + '[]"  required name="complementaria' + j +
-            '[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="Seminario"> Seminario </option> <option value="Diplomado"> Diplomado </option> <option value="Curso"> Curso </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Nombre del curso" aria-label="Username" id="complementaria' +
-            j + '[]"  required name="complementaria' + j +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="complementaria' +
-            j + '[]"  required name="complementaria' + j +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="complementaria' +
+            '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input autocomplete="new-false" type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="complementaria' +
             j + '[]" required name="complementaria' + j +
-            '[]"> </div> </div><button type="button" name="remove" id="' +
-            j + '" class="btn btn-danger btn_removeF2">Remover</button>');
+            '[]"> </div><div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control"  aria-label="Username" id="complementaria' +
+            j + '[]" required name="complementaria' + j +
+            '[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="1"> Curso </option><option value="2"> Seminario </option><option value="3"> Taller</option><option value="4"> Diplomado </option><option value="5"> Certificacion </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Institucion" name="complementaria' +
+            j + '[]"  required id="complementaria' + j +
+            '[]" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Cantidad de horas</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input autocomplete="new-false" type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="complementaria' +
+            j + '[]" required name="complementaria' + j +
+            '[]"> </div> </div> </div> </div><button type="button" name="remove" id="L' +
+            j + '" class="btn btn-danger btn_removeF2">Remover</button><br>');
 
     });
 
 
     $(document).on('click', '.btn_removeF1', function() {
         var button_id = $(this).attr("id");
-        $('#row1' + button_id + '').remove();
+        $('#row1' + i + '').remove();
         i--;
+        if (i >= 1) {
+            document.getElementById("A" + i).disabled = false;
+        }
+
         cambiar = document.getElementById("formAca");
         cambiar.innerHTML = "<p>(" + i + ")formaciones academicas</p>";
     });
 
     $(document).on('click', '.btn_removeF2', function() {
         var button_id = $(this).attr("id");
-        $('#row2' + button_id + '').remove();
+        $('#row2' + j + '').remove();
         j--;
+        if (j >= 1) {
+            document.getElementById("L" + j).disabled = false;
+        }
         cambiar = document.getElementById("formLab");
-        cambiar.innerHTML = "<p>(" + j + ")formaciones laborales</p>";
+        cambiar.innerHTML = "<p>(" + j + ")formaciones complemetarias</p>";
     });
 
 

@@ -70,8 +70,8 @@
             <div class="row">
 
                 <div class="col-md-6">
-                    <h1>Feria de oportunidades</h1>
-                    <p> La XX Feria de Oportunidades Laborales de la Facultad de Ingeniería está dirigida a todos sus
+                    <h1 style="font-weight: bold;">Feria de oportunidades</h1>
+                    <p style="font-weight: bold;"> La XX Feria de Oportunidades Laborales de la Facultad de Ingeniería está dirigida a todos sus
                         estudiantes próximos a realizar prácticas profesionales y sus egresados; para brindarles
                         oportunidades laborales por parte de diferentes empresas que presentarán en dicho evento sus
                         necesidades y perfiles requeridos.

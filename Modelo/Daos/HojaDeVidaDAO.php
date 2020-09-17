@@ -22,34 +22,37 @@ class HojaDeVidaDAO
     
 
     
-    public function darIdHoja()
+    public function buscarIdHoja($codigoEstudiante)
     {
-        $codigo="";
         try {
-            $claseCon = new DB();
-            $con = $claseCon->connect();
-            $respuesta3="";
             $sentencia = $con->prepare("call agregarHojaVida(?,@res)");
-    
-            $sentencia->execute([10]);
-            $codigo = $con->query("SELECT @res as re12")->fetch();    
+            $sentencia->execute([$codigoEstudiante]);
+            $codigoHoja = $con->query("SELECT @res as re12")->fetch();    
         } catch (\Throwable $th){
             print("ERROR");
             print($th);
         }
-        return $codigo;
+        return $codigoHoja;
     }
+    
 
     public function agregarHojaDeVida(HojaDeVida $hoja){
         
-        $sql="insert into hoja_vida (COD_ESTUDIANTE, HOJA_CELULAR, HOJA_DIRECCION, HOJA_CIUDAD,PERFIL_HOJA) 
-        values 
-        (?,?,?,?,?)";
+        try {
+            $sentencia = $this->con->prepare("call agregarHojaVida(?,@res)");
+            $sentencia->execute([$hoja->getCodEstudiante()]);
+            $row = $this->con->query("SELECT @res as re12")->fetch();
+            $codigo=$row['re12'];
+            $sql=$this->con->prepare("update hoja_vida set HOJA_CELULAR=?, HOJA_DIRECCION=?, HOJA_CIUDAD=?,PERFIL_HOJA=? WHERE COD_HOJA_VIDA=?");
+            $respuesta=$sql->execute([$hoja->getHojaCelular(),$hoja->getHojaDireccion(),$hoja->getHojaCiudad(),$hoja->getPerfil(),$codigo]);
+            $sentencia2 = $this->con->prepare("call eliminarHojaVida(?)");
+            $sentencia2->execute([$codigo]);
+            } catch (\Throwable $th){
+                print_r($th);
+                return 0;
+            }
 
-        $respuesta=$this->con->prepare($sql)->execute([$hoja->getCodEstudiante(),$hoja->getHojaCelular(),
-        $hoja->getHojaDireccion(),$hoja->getHojaCiudad(),$hoja->getPerfil()]);
-        
-        return $respuesta;
+            return $codigo;
 
     }
 

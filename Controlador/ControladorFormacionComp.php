@@ -9,7 +9,7 @@ class ControladorFormacionComp{
 
 
 
-		public function agregar($formacionCom)
+		public function agregarComplementaria($formacionCom)
 		{
 			$this->formacion = new FormacionCompDAO();
 			return $this->formacion->agregarformacionCom($formacionCom);
