@@ -143,7 +143,8 @@ include('Header.php');
 
     function mandarHoja()
     {
-        window.location.href = "mostrarPDF.php?cod=<?php echo($estudiante->getCodEstudiante()) ?>";   
+        var win = window.open('mostrarPDF.php?cod=<?php echo($estudiante->getCodEstudiante()) ?>', '_blank');
+        win.focus();
     }
 
     </script>

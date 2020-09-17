@@ -48,7 +48,7 @@ function pasarformacion($var){
     $cacade= new AcademicaHojaDAO();
     $cantidad=$cacade->pasarInformaciones($var);
     $base="";
-    if(count($cantidad)<0){
+    if(count($cantidad)==0){
         return $base;
     }
     foreach ($cantidad as $f){
@@ -94,7 +94,7 @@ function pasarComplementaria($var){
 $cacade= new FormacionCompDAO();
 $cantidad=$cacade->pasarInformaciones($var);
 $base="";
-if(count($cantidad)<0){
+if(count($cantidad)==0){
     return $base;
 }
 foreach ($cantidad as $f){
@@ -135,7 +135,7 @@ function pasarExAcademica($var){
     $cacade= new ProcesosFormativosDAO();
     $cantidad=$cacade->pasarInformaciones($var);
     $base="";
-    if(count($cantidad)<0){
+    if(count($cantidad)==0){
         return $base;
     }
     foreach ($cantidad as $f){
@@ -175,7 +175,7 @@ function pasarExLabora($var){
     $cacade= new ExperienciaHojaDAO();
     $cantidad=$cacade->pasarInformaciones($var);
     $base="";
-    if(count($cantidad)<0){
+    if(count($cantidad)==0){
         return $base;
     }
     foreach ($cantidad as $f){
@@ -216,7 +216,7 @@ function pasarReferencias($var){
     $cacade= new ReferenciaHojaDAO();
     $cantidad=$cacade->pasarInformaciones($var);
     $base="";
-    if(count($cantidad)<0){
+    if(count($cantidad)==0){
         return $base;
     }
     foreach ($cantidad as $f){
