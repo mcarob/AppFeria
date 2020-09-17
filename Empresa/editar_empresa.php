@@ -47,9 +47,6 @@ if(count($validacion)>0)
         }else{
             echo("formato incorrecto");
         }  
-    }else if(!isset($_FILES["logo"])){
-        $conEmpresa=new ControladorEmpresa();
-        echo($conEmpresa->actualizarEmpresa($datos[0],$datos[1],$datos[2],$datos[3]));
     }
 }   
 else
