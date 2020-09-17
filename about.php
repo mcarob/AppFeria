@@ -80,7 +80,6 @@
             <h1>¿Por qué escoger El Bosque?</h1>
           </div>
           <p class="section-container-spacer">
-            con el conocimiento suficiente para aportar un cambio y apoyar al pais, además la Universidad El Bosque tiene muchos convenios con
             Porque la universidad y programas académicos son de alta calidad es decir forman personas y estudiantes excelentes,
             con el conocimiento suficiente para aportar un cambio y apoyar al país, además la Universidad El Bosque tiene muchos convenios con
             universidades del exterior para incentivar a los estudiantes a nunca dejar de aprender.
