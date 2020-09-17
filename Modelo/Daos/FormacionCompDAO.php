@@ -18,7 +18,7 @@ public function __construct()
 
 public function agregarformacionCom(FormacionComplementaria $formacion){
         
-    $sql="insert into procesos_formativos (COD_HOJA_VIDA,
+    $sql="insert into FORMACION_COMPLEMENTARIA (COD_HOJA_VIDA,
     COD_TIPO_FORMACION_COMPLEMENTARIA,
     TITULO_FORMACION_COMPLEMENTARIA,
     FECHA_FORMACION_COMPLEMENTARIA,

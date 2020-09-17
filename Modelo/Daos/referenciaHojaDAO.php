@@ -25,12 +25,13 @@ class ReferenciaHojaDAO
 
     public function agregarReferenciaHojaDeVida(ReferenciaHoja $referencia){
         
-        $sql="insert into hoja_vida (COD_HOJA_VIDA, REFERENCIA_NOMBRE, REFERENCIA_CARGO, REFERENCIA_EMPRESA,REFERENCIA_TELEFONO,
+        echo 'entra al dao';
+        
+        $sql="insert into referencia_hoja (COD_HOJA_VIDA, REFERENCIA_NOMBRE, REFERENCIA_CARGO, REFERENCIA_EMPRESA,REFERENCIA_TELEFONO,
         REFERENCIA_CORREO)
         values 
         (?,?,?,?,?,?)";
-        $respuesta=$this->con->prepare($sql)->execute([$referencia->getCodHojaVida(),
-        $referencia->getNombreReferencia(),$referencia->getCargoReferencia(),$referencia->getEmpresaReferencia(),
+        $respuesta=$this->con->prepare($sql)->execute([$referencia->getCodHojaVida(),$referencia->getNombreReferencia(),$referencia->getCargoReferencia(),$referencia->getEmpresaReferencia(),
         $referencia->getTelefonoReferencia(),$referencia->getCorreoReferencia()]);
         
         return $respuesta;
