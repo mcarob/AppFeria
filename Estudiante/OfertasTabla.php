@@ -6,10 +6,18 @@ if (!isset($_SESSION['user'])) {
 } else if (!$_SESSION['tipo'] == 2) {
     header("location: ../index.php");
 }
-
-
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
+$user = new Usuario();
+$empresa_dao = new EmpresaDAO();
+
+$user->setUser($_SESSION['user']);
+$codigo= $user->darCodigo();
+
+
 $pagina=0;
 $total=0;
 $listaVacantes=[];
@@ -79,8 +87,10 @@ include('Header.php');
                             <div class="card-header">
                                 Cupos Disponibles: <?php echo $fila[16] ?>
                             </div>
-                            <img class="card-img-top" src="../Imagenes/ecopetrol.jpg" width="130" height="130"
-                                alt="Card image cap">
+                            <?php   
+                                echo '<img  alt="Card image cap" class="card-img-top" width="150" height="150" src="data:image/jpeg;base64,'.base64_encode( $empresa_dao->devolverEmpresa2($fila[10])->getLogoEmpresa() ).'" lt="user image"/>';
+                                ?>
+                        
                             <div class="card-body">
                                 <h5 class="card-title text-primary"><?php echo $fila[13] ?></h5>
                                 <p class="card-text "><?php echo $fila[1] ?>

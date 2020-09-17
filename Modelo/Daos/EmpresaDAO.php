@@ -184,6 +184,19 @@ class EmpresaDAO extends DB
     }
 
 
+    public function devolverEmpresa2($codEmpresa)
+    {
+        $query = $this->con->prepare('SELECT * FROM empresa WHERE COD_EMPRESA=:user');
+        $query->execute(['user' => $codEmpresa]);
+        if ($query->rowCount()) {
+            foreach ($query as $kk) {
+                $empresa_devolver = new Empresa($kk['COD_EMPRESA'], $kk['NIT_EMPRESA'], $kk['RAZON_SOCIAL'], $kk['CAMARA_COMERCIO_PDF'], $kk['DESCRIPCCION_EMPRESA'], $kk['COD_USUARIO'], $kk['CONTACTO_EMPRESA'], $kk['LOGO_EMPRESA'], $kk['TELEFONO_EMPRESA'], $kk['CORREO_EMPRESA']);
+                return $empresa_devolver;
+            }
+        }
+    }
+
+
     public function darEmpresaXCodigo($cod)
     {
 
