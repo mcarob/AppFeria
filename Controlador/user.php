@@ -21,6 +21,7 @@ class Usuario extends DB{
     private $estado;
     private $verificacion;
     private $estado_empresa;
+    
 
     public function darEstado_empresa(){
         return $this->estado_empresa;

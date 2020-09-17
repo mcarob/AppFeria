@@ -21,6 +21,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorExperienciaHoja.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/ExperienciaHoja.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/pdf/mpdf/mpdf/vendor/autoload.php');
 
 session_start();
 if (!isset($_SESSION['user'])) {
@@ -29,10 +30,12 @@ if (!isset($_SESSION['user'])) {
 } else if (!$_SESSION['tipo'] == 2) {
     header("location: ../index.php");
 }
+   $esdao= new estudianteDAO();
+   $usercontrol= new Usuario();
+   $usercontrol->setUser($_SESSION['user']);
+   $codigoEst= $esdao->devolverEstudiante($usercontrol->darCodigo())->getCodEstudiante();
 
 
-
-    include_once ($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/pdf/mpdf/mpdf/vendor/autoload.php');
     $mpdf=new \Mpdf\Mpdf();
     $css=file_get_contents('styles.css');
     $mpdf->writeHTML($css,1);
