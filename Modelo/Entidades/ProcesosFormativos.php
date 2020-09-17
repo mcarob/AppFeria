@@ -16,8 +16,8 @@ class ProcesosFormativos{
     $this->codHojaVida=$codHojaVida;
     $this->pFormativoTitulo=$pFormativoTitulo;
 	$this->pFormativoDescripcion=$pFormativoDescripcion;
-	$this->$periodo=$periodo;
-	$this->$materia=$materia;
+	$this->periodo=$periodo;
+	$this->materia=$materia;
 
   }
   
