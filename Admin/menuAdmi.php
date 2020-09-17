@@ -135,7 +135,7 @@
             <li class="has-sub">
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables" aria-expanded="false" aria-controls="tables">
                 <i class="mdi mdi-table"></i>
-                <span class="nav-text">Estadisiticas</span> <b class="caret"></b>
+                <span class="nav-text">Estadísticas</span> <b class="caret"></b>
               </a>
               <ul class="collapse" id="tables" data-parent="#sidebar-menu">
                 <div class="sub-menu">
@@ -147,7 +147,7 @@
                   </li>
                   <li>
                     <a class="sidenav-item-link" href="GEmpresasPostuladas.php">
-                      <span class="nav-text">Empresas Mas Postuladas</span>
+                      <span class="nav-text">Empresas Más Postuladas</span>
 
                     </a>
                   </li>

@@ -48,11 +48,11 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
                     <ul class="nav navbar-nav navbar-right">
                     <li><a href="./index.php" title="" class="active">Inicio</a></li>
-                        <li><a href="./about.php" title="">Informacion</a></li>
+                        <li><a href="./about.php" title="">Información</a></li>
                         <li><a href="./Registrar.php" title="">Registrarme</a></li>
                         <li>
                             <p>
-                                <a href="paginaIngreso.php" class="btn btn-primary navbar-btn" title="">Iniciar sesion</a>
+                                <a href="paginaIngreso.php" class="btn btn-primary navbar-btn" title="">Iniciar sesión</a>
                             </p>
                         </li>
 
@@ -89,11 +89,11 @@
             <div class="row">
                 <div class="col-md-12 section-container-spacer">
                     <div class="text-center">
-                        <h2>¿Por que participar?</h2>
-                        <p> Con esta aplicacion podras agilizar el proceso para realizar tus practicas profesionales,
-                            ademas de que podras encontrar distintas empresas que estaran verificadas para darte la
+                        <h2>¿Por qué participar?</h2>
+                        <p> Con esta aplicación podrás agilizar el proceso para realizar tus prácticas profesionales,
+                            además de que podrás encontrar distintas empresas que estarán verificadas para darte la
                             tranquilidad de que
-                            estaras consultando vacantes de las mejores empresas. </p>
+                            estarás consultando vacantes de las mejores empresas. </p>
                     </div>
                 </div>
 
@@ -102,10 +102,10 @@
                         <i class="fa fa-comment-o fa-3x" aria-hidden="true"></i>
                     </div>
                     <div class="text-center">
-                        <h3>Comunicacion</h3>
+                        <h3>Comunicación</h3>
                     </div>
                     <div>
-                        <p>Pretendemos fortalecer la comunicacion entre nuestros estudiantes con las
+                        <p>Pretendemos fortalecer la comunicación entre nuestros estudiantes con las
                             empresas, usando la feria de oprotunidades como un medio para cumplir
                             con este objetivo.</p>
                     </div>
@@ -118,11 +118,11 @@
                         <h3>Funciones</h3>
                     </div>
                     <div>
-                        <p>Si eres una empresa, podras crear vacantes y seguir el proceso de eleccion de nuestros
+                        <p>Si eres una empresa, podrás crear vacantes y seguir el proceso de elección de nuestros
                             estudiantes
-                            pero si por el contrario eres un estudinate, podras registrarte y seguir el proceso para
+                            pero si por el contrario eres un estudiante, podrás registrarte y seguir el proceso para
                             llevar a cabo
-                            tus practicas profesionales en las mejores empresas.
+                            tus prácticas profesionales en las mejores empresas.
                         </p>
                     </div>
                 </div>
@@ -134,8 +134,8 @@
                         <h3>Notificaciones</h3>
                     </div>
                     <div>
-                        <p>Recibiras notificaciones sobre los diferentes procesos que estes llevando en la plataforma,
-                            entendiendo que con esto podras llevar un mejor seguimiento de tus procesos.
+                        <p>Recibirás notificaciones sobre los diferentes procesos que estes llevando en la plataforma,
+                            entendiendo que con esto podrás llevar un mejor seguimiento de tus procesos.
                         </p>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                         <h1>Facultad de ingenieria</h1>
                         <p></p>
                         <a href="https://www.unbosque.edu.co/ingenieria" title="" class="btn btn-primary btn-lg">Saber
-                            mas</a>
+                            más</a>
                     </div>
                 </div>
             </div>
@@ -203,7 +203,7 @@
                     <ul class="features">
                         <li>
                             <h3>Empresas</h3>
-                            <p>Las empresas pasaran por un proceso de aceptacion para poder participar en la feria
+                            <p>Las empresas pasaraá por un proceso de aceptación para poder participar en la feria
                                 para asi ofrecerle a nuestros estudiantes un proceso confiable.
                             </p>
                         </li>
@@ -219,7 +219,7 @@
                             <h3>Privacidad</h3>
                             <p>Los datos personales seran guardados de forma segura para que de esta forma las empresas
                                 como los estudiantes
-                                se sientan tranquilos al usar nuestra aplicacion.
+                                se sientan tranquilos al usar nuestra aplicación.
                             </p>
                         </li>
                     </ul>
