@@ -71,6 +71,10 @@ include('Header.php');
                                     style="background-color: #0B7984; border-color: #0B7984;" onclick="cargarHoja()">
                                     <font color="White">Guardar</font>
                                 </button>
+                                <button type="button" class="btn btn-warning "
+                                    style="background-color: #0B7984; border-color: #0B7984;" onclick="mandarHoja()">
+                                    <font color="White">Ver en pdf</font>
+                                </button>
                             </div>
                         </div>
 
@@ -136,6 +140,12 @@ include('Header.php');
         });
 
     }
+
+    function mandarHoja()
+    {
+        window.location.href = "mostrarPDF.php?cod=<?php echo($estudiante->getCodEstudiante()) ?>";   
+    }
+
     </script>
     <?php
 
