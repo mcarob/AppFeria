@@ -23,6 +23,9 @@ $empresa_dao = new EmpresaDAO();
 
 
 
+$postulacionesActivas=$estudiante_dao->desactivarPostulacion($estudiante->getCodEstudiante());
+
+
 
 
 include('menuEstudiante.php');
@@ -31,8 +34,13 @@ include('Header.php');
 
 if (isset($_GET["action"])) {
     $var = $_GET["action"];
+    $repetida=$estudiante_dao->validarPostulacion($var,$estudiante->getCodEstudiante());
+
     $informacion = $conPromocion->darInformacion($var);
+    $permitir=$repetida["repetidas"];
 }
+
+$total=$postulacionesActivas["activas"];
 
 
 $horarios = explode(';', $informacion[3]);
@@ -53,7 +61,7 @@ $horarios = explode(';', $informacion[3]);
                                 ?>
                            
                             <div class="card-body">
-                                <h4 class="py-2 text-dark"> <?php echo $informacion[10] ?> </h4>
+                                <h4 class="py-2 text-dark"> <?php  echo $informacion[10]?> </h4>
 
                             </div>
                         </div>
@@ -89,6 +97,7 @@ $horarios = explode(';', $informacion[3]);
                                         <div class="form-group mb-4">
                                             <label for="userName">Perfil buscado:</label>
                                             <span class="d-block mt-1"> <?php echo $informacion[1] ?> </span>
+                                            
 
                                         </div>
 
@@ -169,18 +178,27 @@ $horarios = explode(';', $informacion[3]);
                                             <?php
                                             }
                                             ?>
-
-
                                         </div>
 
 
 
 
-
-
-
                                         <div class="d-flex justify-content-end mt-5">
-                                            <button type="submit" class="btn btn-primary mb-2 btn-pill">Postularse</button>
+                                        <?php 
+                                        if($permitir>=1)
+                                        {
+                                            echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" disabled>Postularse</button>';
+                                        }else{
+                                            if($total>=5){      
+                                               echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" disabled>Postularse</button>';
+                                               }else{      
+                                               echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" >Postularse</button>';
+                                               }
+                                         }       
+                                        ?>  
+
+
+                                        <?php ?>  
                                         </div>
 
                                     </form>

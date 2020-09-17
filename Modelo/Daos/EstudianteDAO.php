@@ -134,7 +134,21 @@ class EstudianteDAO
         return $sentencia->fetchAll();
     }
 
+    public function desactivarPostulacion($cod)
+    {
+        $sentencia = $this->con->prepare("SELECT activas FROM estudiante_postulaciones_activas WHERE cod_estudiante=".$cod);
+        $sentencia->execute();
+        $cantidad=$sentencia->fetch();
+        return $cantidad;
+    }
 
+    public function validarPostulacion($vacante,$estudiante)
+    {
+        $sentencia = $this->con->prepare("SELECT COUNT(cod_promocion_laboral) AS repetidas FROM promocion_postulacion WHERE  cod_promocion_laboral=".$vacante." and cod_estudiante=".$estudiante);
+        $sentencia->execute();
+        $cantidad=$sentencia->fetch();
+        return $cantidad;
+    }
 
 }
 ?>
