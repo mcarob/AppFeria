@@ -45,6 +45,17 @@ class EstudianteDAO
             }
         }
     }
+    public function devolverEstudiantexcodEs($codigo_usuario){
+
+        $query=$this->con->prepare('SELECT * FROM estudiante WHERE COD_ESTUDIANTE=:user');
+        $query->execute(['user'=>$codigo_usuario]);
+        if($query->rowCount()){
+            foreach ($query as $kk) {
+                $estudiante_devolver = new Estudiante($kk['COD_ESTUDIANTE'],$kk['CED_ESTUDIANTE'],$kk['CORREO_ESTUDIANTE'],$kk['COD_USUARIO'],$kk['NOMBRE_ESTUDIANTE'],$kk['APELLIDO_ESTUDIANTE'],$kk['COD_PROGRAMA_ACADEMICO'],$kk['SEMESTRE_ESTUDIANTE']);
+                return $estudiante_devolver;
+            }
+        }
+    }
     
 
     public function editarPerfil(Estudiante $estudiante){
