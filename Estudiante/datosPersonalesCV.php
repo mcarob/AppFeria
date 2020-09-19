@@ -6,8 +6,8 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input autocomplete="new-false" type="text" class="form-control" placeholder="Nombres" aria-label="Username"
-        id="nombre" name="nombre" value= <?php echo($estudiante->getNombreEstudiante())?> readonly>
+    <input type="text" class="form-control" placeholder="Nombres" aria-label="Username" id="nombre" name="nombre"
+        value=<?php echo($estudiante->getNombreEstudiante())?> readonly>
 </div>
 <div class="input-group">
     <div class="input-group-prepend">
@@ -15,8 +15,8 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input autocomplete="new-false" type="text" class="form-control" placeholder="Apellidos" aria-label="Username"
-        name="apellidos" id="apellidos" value= <?php echo($estudiante->getApellidoEstudiante())?> readonly>
+    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Username" name="apellidos"
+        id="apellidos" value=<?php echo($estudiante->getApellidoEstudiante())?> readonly>
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -26,9 +26,8 @@
                     <i class="material-icons">assignment_ind</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control" 
-                placeholder="Documento de identidad" aria-label="Username" id="cedula" name="cedula"
-                value= <?php echo($estudiante->getCedEstudiante())?> readonly>
+            <input type="text" class="form-control" placeholder="Documento de identidad" aria-label="Username"
+                id="cedula" name="cedula" value=<?php echo($estudiante->getCedEstudiante())?> readonly>
         </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -38,8 +37,9 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control" placeholder="Teléfono" aria-label="Username"
-                id="telefono" name="telefono">
+            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefono"
+                name="telefono" pattern="(^[+]?[0-9]{7,15})"
+                title="El Formato de telefono puede comenzar con + o solo numeros (max 15)" required>
         </div>
     </div>
 </div>
@@ -51,9 +51,8 @@
                     <i class="material-icons">home</i>
                 </span>
             </div>
-            <select autocomplete="false" type="text" class="form-control" placeholder="" aria-label="Username"
-                id="ciudad" name="ciudad">
-                <option disabled="" selected="">Seleccione su ciudad</option>
+            <select type="text" class="form-control" placeholder="" aria-label="Username" id="ciudad" name="ciudad"
+                required>
                 <option value="bg"> Bogota </option>
                 <option value="md"> Medellin </option>
                 <option value="cl"> Cali </option>
@@ -85,8 +84,8 @@
                     <i class="material-icons">home</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control" placeholder="Direccion" aria-label="Username"
-                id="direccion" name="direccion">
+            <input type="text" class="form-control" placeholder="Direccion" aria-label="Username" id="direccion"
+                name="direccion" required>
         </div>
     </div>
 </div>
@@ -97,8 +96,8 @@
             <i class="material-icons">email</i>
         </span>
     </div>
-    <input autocomplete="false" type="text" class="form-control" placeholder="Correo Electronico" aria-label="Username"
-        id="correo" name="correo" value= <?php echo($estudiante->getCorreoEstudiante())?> readonly >
+    <input type="text" class="form-control" placeholder="Correo Electronico" aria-label="Username" id="correo"
+        name="correo" value=<?php echo($estudiante->getCorreoEstudiante())?> readonly>
 </div>
 <br>
 <h3>Referencia No. 1:</h3>
@@ -109,8 +108,8 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input autocomplete="new-false" type="text" class="form-control" placeholder="Nombre" aria-label="Username"
-        id="nombreR1" name="nombreR1" >
+    <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" id="nombreR1" name="nombreR1"
+        required>
 </div>
 
 <div class="input-group">
@@ -119,8 +118,8 @@
             <i class="material-icons">email</i>
         </span>
     </div>
-    <input autocomplete="new-false" type="text" class="form-control" placeholder="Correo" aria-label="Username"
-        id="correoR1" name="correoR1">
+    <input type="text" class="form-control" placeholder="Correo" aria-label="Username" id="correoR1" name="correoR1"
+        required>
 </div>
 
 <div class="input-group">
@@ -129,8 +128,8 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input autocomplete="new-false" type="text" class="form-control" placeholder="Empresa" aria-label="Username"
-        id="empresaR1" name="empresaR1">
+    <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="empresaR1" name="empresaR1"
+        required>
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -140,8 +139,8 @@
                     <i class="material-icons">assignment_ind</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control"  placeholder="Cargo"
-                aria-label="Username" id="cargoR1" name="cargoR1">
+            <input type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="cargoR1"
+                name="cargoR1" required>
         </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -151,8 +150,8 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control" placeholder="Teléfono" aria-label="Username"
-                id="telefonoR1" name="telefonoR1">
+            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
+                name="telefonoR1" required>
         </div>
     </div>
 
@@ -165,8 +164,8 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input autocomplete="new-false" type="text" class="form-control" placeholder="Nombre" aria-label="Username"
-        id="nombreR2" name="nombreR2">
+    <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" id="nombreR2" name="nombreR2"
+        required>
 </div>
 
 <div class="input-group">
@@ -175,8 +174,8 @@
             <i class="material-icons">email</i>
         </span>
     </div>
-    <input autocomplete="new-false" type="text" class="form-control" placeholder="Correo" aria-label="Username"
-        id="correoR2" name="correoR2">
+    <input type="text" class="form-control" placeholder="Correo" aria-label="Username" id="correoR2" name="correoR2"
+        required>
 </div>
 <div class="input-group">
     <div class="input-group-prepend">
@@ -184,8 +183,8 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input autocomplete="new-false" type="text" class="form-control" placeholder="Empresa" aria-label="Username"
-        id="empresaR2" name="empresaR2">
+    <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="empresaR2" name="empresaR2"
+        required>
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -195,8 +194,8 @@
                     <i class="material-icons">assignment_ind</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control" data-mask="999999999-9" placeholder="Cargo"
-                aria-label="Username" id="cargoR2" name="cargoR2">
+            <input type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="cargoR2"
+                name="cargoR2" required>
         </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -206,8 +205,8 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input autocomplete="false" type="text" class="form-control" placeholder="Teléfono" aria-label="Username"
-                id="telefonoR2" name="telefonoR2">
+            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
+                name="telefonoR2" required>
         </div>
     </div>
 </div>

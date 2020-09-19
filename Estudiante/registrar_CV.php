@@ -136,6 +136,7 @@ if($numeroAcademicas!=0)
     {
         $infoA=$arregloAcademicas[$i];
         $academica=new AcademicaHoja(0,$codigoHoja,$infoA[0],$infoA[2],$infoA[3],$infoA[4],$infoA[1]);
+        print_r($academica);
         $controladorAcademica->insertarHojaAcademica($academica);
     }
 }

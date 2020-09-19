@@ -26,7 +26,7 @@ include('Header.php');
 <body>
     <div class="content-wrapper">
         <div class="content">
-            <form id="datosHoja" name="datosHoja">
+            <form id="datosHoja" name="datosHoja" onsubmit=cargarHoja()>
                 <div class="row justify-content-center mt-5">
                     <div class="col-lg-8 col-sm-offset-1">
                         <div class="card card-default">
@@ -52,7 +52,8 @@ include('Header.php');
 
                                     <div class="tab-pane pt-3 fade show active" id="home3" role="tabpanel"
                                         aria-labelledby="home3-tab">
-                                        <input type="hidden" id="codigoEstudiante" name="codigoEstudiante" value="<?php echo $estudiante->getCodEstudiante() ?>" />
+                                        <input type="hidden" id="codigoEstudiante" name="codigoEstudiante"
+                                            value="<?php echo $estudiante->getCodEstudiante() ?>" />
 
                                         <?php include_once 'datosPersonalesCV.php'; ?>
 
@@ -67,11 +68,11 @@ include('Header.php');
                                         <?php include_once 'ExperienciasCV.php'; ?>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-warning "
-                                    style="background-color: #0B7984; border-color: #0B7984;" onclick="cargarHoja()">
-                                    <font color="White">Guardar</font>
+                                <button type="submit" class="btn btn-warning "
+                                    style="background-color: #0B7984; border-color: #0B7984;" id="enviar" name="enviar"> 
+                                    <font color="White">Guardar</font> 
                                 </button>
-                                <button type="button" class="btn btn-warning "
+                                <button type="submit" class="btn btn-warning "
                                     style="background-color: #0B7984; border-color: #0B7984;" onclick="mandarHoja()">
                                     <font color="White">Ver en pdf</font>
                                 </button>
@@ -88,14 +89,13 @@ include('Header.php');
 
     <script src="../assets/plugins/toastr/toastr.min.js"></script>
     <script>
-    
     //variables de formulario formaciones
     var i = 0; //Cant. fomarciones academicas
-    var j = 0;//Cant. fomarciones laborales
+    var j = 0; //Cant. fomarciones laborales
 
     //variables de formulario experiencias
-    var x=0;//Cant. exp academicas
-    var y=0;//Cant. exp profesionales
+    var x = 0; //Cant. exp academicas
+    var y = 0; //Cant. exp profesionales
 
     function cargarHoja() {
 
@@ -141,12 +141,40 @@ include('Header.php');
 
     }
 
-    function mandarHoja()
+    $('#enviar').click(function(){
+    var error = 0;
+    $(':input[required]', '#datosHoja').each(function()
     {
+        if($(this).val() == ''){       
+            $(this).css('border','2px solid red');
+            if(error == 0)
+            { 
+            $(this).focus();
+            var tab = $(this).closest('.tab-pane').attr('id');
+            $('#myTab a[href="#' + tab + '"]').tab('show');
+            }
+        error = 1;
+    }else{
+        $(this).css('border','none');
+    }
+
+    });
+    if(error == 1) {
+        
+        toastr["success"]("Por favor complete los campos solicitados", "ERROR");
+        return false;
+    } else {
+        cargarHoja();
+        return true;
+    }
+    });
+
+    
+
+    function mandarHoja() {
         var win = window.open('mostrarPDF.php?cod=<?php echo($estudiante->getCodEstudiante()) ?>', '_blank');
         win.focus();
     }
-
     </script>
     <?php
 

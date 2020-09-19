@@ -12,7 +12,7 @@
 <br>
 <div class="form-group">
     <textarea class="form-control" id="perfil" name="perfil" rows="5" style="resize: none;"
-        placeholder="Descripcción del perfil (max 1200)" required></textarea>
+        placeholder="Descripcción del perfil (max 1200)" ></textarea>
 </div>
 
 <h3>Formacion Academica:</h3>
@@ -68,15 +68,15 @@ $(document).ready(function() {
 
 
         $('#agregarf1').append('<div id="row1' + i +
-            '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input autocomplete="new-false" type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="academica' +
+            '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="academica' +
             i + '[]" required name="academica' + i +
-            '[]"> </div><div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control"  aria-label="Username" id="academica' +
+            '[]"> </div><div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select type="text" class="form-control"  aria-label="Username" id="academica' +
             i + '[]" required name="academica' + i +
-            '[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="1"> Bachillerato </option><option value="2"> Tecnico profesional </option><option value="3"> Tecnologico</option><option value="4"> Profesional </option><option value="5"> Especializacion tecnica </option><option value="6"> Especializacion tecnologica </option><option value="7"> Especializacion profesional </option><option value="8"> Maestria </option><option value="9"> Doctorado </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Institucion" name="academica' +
+            '[]"> <option value="1"> Bachillerato </option><option value="2"> Tecnico profesional </option><option value="3"> Tecnologico</option><option value="4"> Profesional </option><option value="5"> Especializacion tecnica </option><option value="6"> Especializacion tecnologica </option><option value="7"> Especializacion profesional </option><option value="8"> Maestria </option><option value="9"> Doctorado </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input type="text" class="form-control" placeholder="Institucion" name="academica' +
             i + '[]"  required id="academica' + i +
-            '[]" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input  required autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" id="academica' +
+            '[]" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input  required type="date" class="form-control" placeholder="" aria-label="Username" id="academica' +
             i + '[]" required name="academica' + i +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input autocomplete="false" type="date" class="form-control" placeholder="" aria-label="Username" required id="academica' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" required id="academica' +
             i + '[]" required name="academica' + i +
             '[]"> </div> </div><button type="button" name="remove" id="A' +
             i + '" class="btn btn-danger btn_removeF1">Remover</button><br>');
@@ -93,13 +93,13 @@ $(document).ready(function() {
         cambiar = document.getElementById("formLab");
         cambiar.innerHTML = "<p>(" + j + ")formaciones complementarias</p>";
         $('#agregarf2').append('<div id="row2' + j +
-            '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input autocomplete="new-false" type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="complementaria' +
+            '" class="suma"> <div class="buttons"> </div> <br> <div class="element"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="complementaria' +
             j + '[]" required name="complementaria' + j +
-            '[]"> </div><div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select autocomplete="false" type="text" class="form-control"  aria-label="Username" id="complementaria' +
+            '[]"> </div><div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select type="text" class="form-control"  aria-label="Username" id="complementaria' +
             j + '[]" required name="complementaria' + j +
-            '[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="1"> Curso </option><option value="2"> Seminario </option><option value="3"> Taller</option><option value="4"> Diplomado </option><option value="5"> Certificacion </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input autocomplete="false" type="text" class="form-control" placeholder="Institucion" name="complementaria' +
+            '[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="1"> Curso </option><option value="2"> Seminario </option><option value="3"> Taller</option><option value="4"> Diplomado </option><option value="5"> Certificacion </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input type="text" class="form-control" placeholder="Institucion" name="complementaria' +
             j + '[]"  required id="complementaria' + j +
-            '[]" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Cantidad de horas</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input autocomplete="new-false" type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="complementaria' +
+            '[]" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Cantidad de horas</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="complementaria' +
             j + '[]" required name="complementaria' + j +
             '[]"> </div> </div> </div> </div><button type="button" name="remove" id="L' +
             j + '" class="btn btn-danger btn_removeF2">Remover</button><br>');
