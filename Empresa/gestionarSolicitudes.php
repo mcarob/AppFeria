@@ -1,8 +1,9 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/controladorPostulaciones.php');
 
-$cPromocionLab = new ControladorPostulacion();
 
+$cPromocionLab = new ControladorPostulacion();
+$enviar = new enviarCorreo();
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {

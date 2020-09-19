@@ -2,6 +2,10 @@
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/PromocionPostulacion.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/conexion/db.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/EnviarCorreos.php');
+
+
 
 
 /**
@@ -11,11 +15,13 @@ class PromocionPostulacionDAO
 {
     
     private $con;
+    private $est;
 
     
     public function __construct()
     {
         $claseCon = new DB();
+
         $this->con =$claseCon->connect();
     }
     
@@ -66,14 +72,33 @@ class PromocionPostulacionDAO
     public function cambiarEstado($cod,$estado){
         $sentencia=$this->con->prepare("UPDATE promocion_postulacion set COD_ESTADO_PROCESO=".$estado." WHERE COD_PROMOCION_POSTULACION=".$cod);
         $respuesta=  $sentencia->execute();
+
+        $sentencia = $this->con->prepare("SELECT COD_ESTUDIANTE FROM postulacionesXempresa where COD_PROMOCION_POSTULACION=".$cod);
+        $sentencia->execute();
+        $em = $sentencia->fetch();
+
+        $sentencia3 = $this->con->prepare("SELECT TITULO_PROMOCION FROM postulacionesXempresa where COD_PROMOCION_POSTULACION=".$cod);
+        $sentencia3->execute();
+        $em2 = $sentencia3->fetch();    
+
+        $est = new EstudianteDAO();
+        $envio = new enviarCorreo();
+
+        $objeto=$est->devolverEstudiantexcodEs($em[0]);
+        $concat= $objeto->getNombreEstudiante()." ".$objeto->getApellidoEstudiante();
+        ($envio->enviarMensaje($concat, $objeto->getCorreoEstudiante(),"Cambio de estado","Desde la aplicación Feria de Oportunidades hemos registrado que se ha realizado 
+        un cambio de estado en la oferta con el nombre ".$em2[0]));
+
         return $respuesta;
     }
 
     public function editarMotivo($cod,$motivo, $select){
-        $sentencia=$this->con->prepare("UPDATE promocion_postulacion set COD_MOTIVO_RECHAZO=?,motivo_resultado=? WHERE COD_PROMOCION_POSTULACION=?"); 
-        $respuesta=  $sentencia->execute([$select, $motivo, $cod]);
-        return $respuesta;
+        $sentencia1=$this->con->prepare("UPDATE promocion_postulacion set COD_MOTIVO_RECHAZO=?,motivo_resultado=? WHERE COD_PROMOCION_POSTULACION=?"); 
+        $respuesta=  $sentencia1->execute([$select, $motivo, $cod]);
+       return $respuesta;
+
     }
+
     public function postulacionXempresa($cod_Empresa){
         $sentencia = $this->con->prepare("SELECT * FROM postulacionesXempresa where (COD_ESTADO_PROCESO=1 or COD_ESTADO_PROCESO=2 or COD_ESTADO_PROCESO=3) and cod_empresa=".$cod_Empresa);
         $sentencia->execute();
@@ -159,4 +184,3 @@ class PromocionPostulacionDAO
 
 
 }
-?>
