@@ -36,8 +36,7 @@
         <nav1 class="navbar1  navbar1-fixed-top navbar1-default">
             <div class="container1">
                 <div class="navbar1-header">
-                    <button type="button" class="navbar1-toggle1 uarr collapsed" data-toggle1="collapse"
-                        data-target="#navbar1-collapse-uarr">
+                    <button type="button" class="navbar1-toggle1 uarr collapsed" data-toggle1="collapse" data-target="#navbar1-collapse-uarr">
                         <span class="sr-only">toggle1 navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -90,30 +89,27 @@
                             <div class="row">
                                 <div class="form-group col-md-12 mb-4">
 
-                                    <input type="text" class="form-control input-lg" id="username" required
-                                        autocomplete="new-user" <?php  
-                                if(isset($userForm)){
-                                  echo("value='".$userForm."'");
-                                }
-                                ?> name="username" placeholder="Usuario">
+                                    <input type="text" class="form-control input-lg" id="username" required autocomplete="new-user" <?php
+                                                                                                                                    if (isset($userForm)) {
+                                                                                                                                        echo ("value='" . $userForm . "'");
+                                                                                                                                    }
+                                                                                                                                    ?> name="username" placeholder="Usuario">
                                 </div>
                                 <div class="form-group col-md-12 ">
-                                    <input type="password" class="form-control input-lg" id="password" required
-                                        autocomplete="new-password" <?php  
-                                if(isset($passForm)){
-                                  echo("value='".$passForm."'");
-                                }
-                                ?> name="password" placeholder="Contrase&ntilde;a">
+                                    <input type="password" class="form-control input-lg" id="password" required autocomplete="new-password" <?php
+                                                                                                                                            if (isset($passForm)) {
+                                                                                                                                                echo ("value='" . $passForm . "'");
+                                                                                                                                            }
+                                                                                                                                            ?> name="password" placeholder="Contrase&ntilde;a">
                                 </div>
 
-                                <?php  
-                                if(isset($mostrarCodigo)){
+                                <?php
+                                if (isset($mostrarCodigo)) {
 
                                 ?>
-                                <div class="form-group col-md-12 ">
-                                    <input type="password" class="form-control input-lg" id="verifi" name="verifi"
-                                        placeholder="Codigo Verificación" required>
-                                </div>
+                                    <div class="form-group col-md-12 ">
+                                        <input type="password" class="form-control input-lg" id="verifi" name="verifi" placeholder="Codigo Verificación" required>
+                                    </div>
                                 <?php
 
                                 }
@@ -125,18 +121,63 @@
                                         <div class="d-inline-block mr-3">
 
                                         </div>
-                                        <p><a class="text-blue" href="#">Olvidaste tu contrase&ntilde;a?</a></p>
+                                        <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                                ¿Olvidaste tu contraseña?
+                                            </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle">Cambiar contraseña</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <label for="">Ingresa tu correo institucinal:</label>
+                                                            <br>
+                                                            <input class="form-control input-lg" type="text" placeholder="ejemplo@unbosque.edu.co">
+                                                            <br>
+                                                            <button type="button" class="btn btn-primary">Enviar codigo</button>
+                                                            <br><br>
+
+                                                            <label for="">Ingrese el codigo de confirmacion:</label>
+                                                            <br>
+                                                            <input class="form-control input-lg" type="number">
+                                                            <br>
+                                                            <button type="button" class="btn btn-primary">Validar codigo</button>
+
+                                                            <br><br>
+                                                            <label for="">Ingrese su nueva contraseña:</label>
+                                                            <br>
+                                                            <input class="form-control input-lg" type="text">
+                                                            <br>
+                                                            <label for="">Confirme su nueva contraseña:</label>
+                                                            <br>
+                                                            <input class="form-control input-lg" type="text">
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Finalizar</button>
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </p>
                                     </div>
                                     <?php
 
-                  if (isset($errorEntrada)) {
-                    echo  $errorEntrada;
-                  }
-                  ?>
-                                    <button type="submit" class="btn btn-lg btn-primary btn-block mb-4"
-                                        name="submit">Ingresar</button>
+                                    if (isset($errorEntrada)) {
+                                        echo  $errorEntrada;
+                                    }
+                                    ?>
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block mb-4" name="submit">Ingresar</button>
                                     <p>No tienes una cuenta?
-                                        <a class="text-blue" href="registro.php">Registrate</a>
+                                        <a class="text-blue" href="Registrar.php">Registrate</a>
                                     </p>
                                 </div>
                             </div>
@@ -147,6 +188,7 @@
         </div>
 
     </div>
+
 
 
     <div>
@@ -160,23 +202,18 @@
                         <div class="col-md-4">
                             <h4>¡Conocenos!</h4>
                             <p>
-                                <a href="https://www.facebook.com/universidadelbosque/" target="_blank"
-                                    class="social-round-icon white-round-icon fa-icon" title="">
+                                <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://twitter.com/UElBosque" target="_blank"
-                                    class="social-round-icon white-round-icon fa-icon" title="">
+                                <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                                     <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.instagram.com/uelbosque/" target="_blank"
-                                    class="social-round-icon white-round-icon fa-icon" title="">
+                                <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                 </a>
                             </p>
-                            <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/"
-                                        class="link-like-text" title="Create website with free html template">Mashup
-                                        Template</a>/<a href="http://www.unsplash.com/" class="link-like-text"
-                                        title="Beautiful Free Images">Unsplash</a></small></p>
+                            <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup
+                                        Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>
                         </div>
 
                     </div>
@@ -187,9 +224,9 @@
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        navActivePage();
-    });
+        document.addEventListener("DOMContentLoaded", function(event) {
+            navActivePage();
+        });
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
@@ -225,22 +262,22 @@
 <script src="assets/plugins/toastr/toastr.min.js"></script>
 
 <script>
-$(document).ready(function() {
-    $("#logo").change(function() {
-        readURL(this);
+    $(document).ready(function() {
+        $("#logo").change(function() {
+            readURL(this);
+        });
     });
-});
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-        reader.onload = function(e) {
-            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+            reader.onload = function(e) {
+                $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+            }
+            reader.readAsDataURL(input.files[0]);
         }
-        reader.readAsDataURL(input.files[0]);
     }
-}
 </script>
 </body>
 
