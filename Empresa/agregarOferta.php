@@ -50,6 +50,18 @@ $fecha_actual = date("Y-m-d")
                         <hr class="w-100">
 
                     </div>
+
+                    <!-- <div class="card card-default">
+                        <div class="card-header card-header-border-bottom">
+                            <h2> Información</h2>
+                        </div>
+                        <div class="card-body">
+                            <button type="button" class="btn mb-1 btn-primary btn-pill" data-toggle="popover" title="Popover Title" data-content="Lorem ipsum dolor sit amet consectetur elit sed do.">P. Buscado</button>
+                            <button type="button" class="btn mb-1 btn-primary btn-pill" data-toggle="popover" title="Popover Title" data-content="Lorem ipsum dolor sit amet consectetur elit sed do.">Beneficios</button>
+                            <button type="button" class="btn mb-1 btn-primary btn-pill" data-toggle="popover" title="Popover Title" data-content="Lorem ipsum dolor sit amet consectetur elit sed do.">T. Oferta</button>
+                            <button type="button" class="btn mb-1 btn-primary btn-pill" data-toggle="popover" title="Popover Title" data-content="Lorem ipsum dolor sit amet consectetur elit sed do.">Descripción</button>
+                        </div>
+                    </div> -->
                 </div>
                 <div class="col-lg-8 col-xl-9">
 

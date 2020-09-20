@@ -11,12 +11,12 @@ if (!isset($_SESSION['user'])) {
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 include('menuEmpresa.php');
 include('Header.php');
-
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
 $empresa_dao = new EmpresaDAO();
 $codigo = $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
+
 
 $conPromocion = new ControladorPromocion();
 $horarios = "";
@@ -34,7 +34,7 @@ if (isset($_GET["action"])) {
 
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Agregar Ofertas</h1>
+            <h1>Editar Ofertas</h1>
 
 
 
@@ -175,7 +175,7 @@ if (isset($_GET["action"])) {
 
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil</label>
-                                        <input type="text" class="form-control" name="perfil" id="perfil" value="<?php echo ($informacion->getPromocionPerfil()) ?>">
+                                        <textarea type="text" class="form-control" name="perfil" id="perfil" rows="5"><?php echo ($informacion->getPromocionPerfil()) ?></textarea>
                                         <span class="d-block mt-1"></span>
                                     </div>
 
@@ -316,14 +316,14 @@ if (isset($_GET["action"])) {
 
                                     <div class="form-group mb-4">
                                         <label for="descripcion">Beneficios</label>
-                                        <input type="text" class="form-control" id="beneficios" name="beneficios" value=" <?php echo ($informacion->getPromocionBeneficios()) ?>" />
+                                        <input type="text" class="form-control" id="beneficios" name="beneficios" value="<?php echo ($informacion->getPromocionBeneficios()) ?>" />
                                     </div>
 
 
 
                                     <div class="form-group mb-4">
                                         <label for="descripcion">Descripción</label>
-                                        <textArea type="text" class="form-control" id="descripcion" name="descripcion"><?php echo ($informacion->getPromocionDescripcion()) ?></textArea>
+                                        <textArea type="text" class="form-control" id="descripcion"  rows="5" name="descripcion" ><?php echo ($informacion->getPromocionDescripcion()) ?></textArea>
                                     </div>
 
                                     <div class="d-flex justify-content-end mt-5">
