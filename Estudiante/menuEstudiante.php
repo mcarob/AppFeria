@@ -5,15 +5,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-        content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
+    <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
 
 
     <title>Feria Oportunidades</title>
 
     <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
     <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
     <!-- PLUGINS CSS STYLE -->
     <link href="../assets/plugins/nprogress/nprogress.css" rel="stylesheet" />
@@ -60,8 +58,7 @@
                 <!-- sidebar menu -->
                 <ul class="nav sidebar-inner" id="sidebar-menu">
                     <li class="has-sub">
-                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                            data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
+                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
                             <i class="mdi mdi-view-dashboard-outline"></i>
                             <span class="nav-text">Empresas</span> <b class="caret"></b>
                         </a>
@@ -87,8 +84,7 @@
 
 
                     <li class="has-sub">
-                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                            data-target="#icons" aria-expanded="false" aria-controls="icons">
+                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
                             <i class="mdi mdi-diamond-stone"></i>
                             <span class="nav-text">Vacantes</span> <b class="caret"></b>
                         </a>
@@ -110,8 +106,7 @@
                     </li>
 
                     <li class="has-sub">
-                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                            data-target="#tables" aria-expanded="false" aria-controls="tables">
+                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables" aria-expanded="false" aria-controls="tables">
                             <i class="mdi mdi-table"></i>
                             <span class="nav-text">Hoja de vida</span> <b class="caret"></b>
                         </a>
@@ -138,6 +133,18 @@
                 </ul>
 
             </div>
+            <div class="sidebar-footer">
+                <hr class="separator mb-0" />
+                <div class="sidebar-footer-content">
+                    <h6 class="text-uppercase">
+                        Manual Estudiante<span class="float-right"></span>
+                    </h6>
+                    <a class="sidenav-item-link" href="TotalPostulaciones.php">
+                        <span class="nav-text">Descargar</span>
+
+                    </a>
+                </div>
+            </div>
 
 
         </div>
@@ -147,47 +154,47 @@
 
 
 
-    
+
 
     <script src="../assets/plugins/nprogress/nprogress.js"></script>
-    
+
 
     <script src="../assets/plugins/jquery/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="../assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
     <script src="../assets/js/sleek.bundle.js"></script>
-    
 
-    
+
+
     <script src="../assets/plugins/jekyll-search.min.js"></script>
     <script src="../assets/plugins/daterangepicker/moment.min.js"></script>
     <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
-    
+
 
 
     <script>
-    jQuery(document).ready(function() {
-        jQuery('input[name="dateRange"]').daterangepicker({
-            autoUpdateInput: false,
-            singleDatePicker: true,
-            locale: {
-                cancelLabel: 'Clear'
-            }
+        jQuery(document).ready(function() {
+            jQuery('input[name="dateRange"]').daterangepicker({
+                autoUpdateInput: false,
+                singleDatePicker: true,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+            jQuery('input[name="dateRange"]').on('apply.daterangepicker', function(ev, picker) {
+                jQuery(this).val(picker.startDate.format('MM/DD/YYYY'));
+            });
+            jQuery('input[name="dateRange"]').on('cancel.daterangepicker', function(ev, picker) {
+                jQuery(this).val('');
+            });
         });
-        jQuery('input[name="dateRange"]').on('apply.daterangepicker', function(ev, picker) {
-            jQuery(this).val(picker.startDate.format('MM/DD/YYYY'));
-        });
-        jQuery('input[name="dateRange"]').on('cancel.daterangepicker', function(ev, picker) {
-            jQuery(this).val('');
-        });
-    });
     </script>
 
     <script>
-    NProgress.configure({
-        showSpinner: false
-    });
-    NProgress.start();
+        NProgress.configure({
+            showSpinner: false
+        });
+        NProgress.start();
     </script>
 </body>
 
