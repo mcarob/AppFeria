@@ -42,10 +42,10 @@ class ControladorEmpresa{
 			return $this->empresas->agregarNoti($cod_desde,$cod, $mensaje);
 		}
 
-		// public function registrarMotivo($cod,$mensaje){
-		// 	$this->empresas = new EmpresaDAO();
-		// 	return $this->empresas->agregarNoti($cod, $mensaje);
-		// }
+		public function rechazar($cod){
+		 	$this->empresas = new EmpresaDAO();
+		 	return $this->empresas->rechazar($cod);
+		}
 
 
 		public function notificacion($cod){

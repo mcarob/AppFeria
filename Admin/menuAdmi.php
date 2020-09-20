@@ -178,7 +178,49 @@
           </ul>
 
         </div>
+        <div class="sidebar-footer">
+        <hr class="separator mb-0" />
+        <div class="sidebar-footer-content">
+          <h6 class="text-uppercase">
+            Manual General<span class="float-right"></span>
+          </h6>
+          <a class="sidenav-item-link" href="TotalPostulaciones.php">
+            <span class="nav-text">Descargar</span>
 
+          </a>
+
+
+          <h6 class="text-uppercase">
+            Manual Administrador<span class="float-right"></span>
+          </h6>
+          <a class="sidenav-item-link" href="TotalPostulaciones.php">
+            <span class="nav-text">Descargar</span>
+
+          </a>
+
+
+
+          <h6 class="text-uppercase">
+            Manual Empresa<span class="float-right"></span>
+          </h6>
+          <a class="sidenav-item-link" href="TotalPostulaciones.php">
+            <span class="nav-text">Descargar</span>
+
+          </a>
+
+
+
+          <h6 class="text-uppercase">
+            Manual Estudiante<span class="float-right"></span>
+          </h6>
+          <a class="sidenav-item-link" href="TotalPostulaciones.php">
+            <span class="nav-text">Descargar</span>
+
+          </a>
+
+
+        </div>
+      </div>
 
       </div>
     </aside>

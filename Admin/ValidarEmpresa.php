@@ -89,7 +89,7 @@ include('menuAdmi.php')
                                         echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='abrirPDF(" . '"' . $key[0] . '"' . ")'>PDF</button>
                                                 </td>");
                                         echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='aceptar(" . '"' . $key[0] . '"' . ")'>Aceptar</button>
-                                        <button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[0] . '"' . ")'" . ">Rechazar</button></td>");
+                                        <button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='rechazar(" . '"' . $key[0] . '"' . ")'" . ">Rechazar</button></td>");
                                         echo ("<td><button type='submit' class='mb-1 btn btn-success' id='boton2'" . "onclick='mostrarModal23(" . '"' . $key[5] . '"' . ")'" . ">Contactar</button></td>");
                                    ?>
 
@@ -110,36 +110,7 @@ include('menuAdmi.php')
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalFormTitle">Registrar Motivo</h5>
-
-                </div>
-                <div class="modal-body">
-                    <form method="POST" id='formAgregarOf'>
-
-                        
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Motivo de la decisión: </label>
-                            <textarea type="text" class="form-control" name="motivo" id="motivo" aria-describedby="emailHelp"></textarea>
-                        </div>
-
-
-                        
-
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
-                    <button type="button" class="btn btn-primary btn-pill" onclick="rechazar()">Aceptar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
     <div class="modal fade" id="exampleModalForm1" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -185,12 +156,9 @@ include('menuAdmi.php')
         }
 
 
-        function rechazar() {
-            datos = $('#rechazo').serialize();
-
+        function rechazar(valor) {
+            variableCod = valor;
             $.ajax({
-                type: "POST",
-                data: datos,
                 url: 'gestionarEmpresas.php?action=' + "rechazar&" + "codigo=" + variableCod,
                 success: function(r) {
                     console.log(r);
@@ -249,7 +217,6 @@ include('menuAdmi.php')
 
     <script>
     function aceptar(cod) {
-        console.log(cod);
         window.location.href = 'aceptarEmpresa.php?action=' + cod;
     }
 

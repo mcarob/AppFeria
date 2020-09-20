@@ -11,6 +11,12 @@ if (!isset($_SESSION['user'])) {
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 include('menuEmpresa.php');
 include('Header.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
+$empresa_dao = new EmpresaDAO();
+$codigo = $user->darCodigo();
+$empresa = $empresa_dao->devolverEmpresa($codigo);
+
 
 $conPromocion = new ControladorPromocion();
 $horarios = "";
@@ -28,13 +34,29 @@ if (isset($_GET["action"])) {
 
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Agregar Ofertas</h1>
+            <h1>Editar Ofertas</h1>
 
 
 
         </div>
         <div class="bg-white border rounded">
+        <div class="row no-gutters">
+                <div class="col-lg-4 col-xl-3">
+                    <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
+                        <div class="card text-center widget-profile px-0 border-0">
+                            <?php
+                            echo '<img style="max-width:100%;width:auto;height:auto;" src="data:image/jpeg;base64,' . base64_encode($empresa->getLogoEmpresa()) . '" />';
+                            ?>
 
+                            <div class="card-body">
+                                <h4 class="py-2 text-dark"><?php echo ($empresa->getRazonSocial()) ?></h4>
+                            </div>
+                        </div>
+
+                        <hr class="w-100">
+
+                    </div>
+                </div>
             <div class="col-lg-8 col-xl-9">
                 <div class="profile-content-right py-5">
                     <ul class="nav nav-tabs px-3 px-xl-5 nav-style-border" id="myTab" role="tablist">
@@ -153,7 +175,7 @@ if (isset($_GET["action"])) {
 
                                     <div class="form-group mb-4">
                                         <label for="userName">Perfil</label>
-                                        <input type="text" class="form-control" name="perfil" id="perfil" value="<?php echo ($informacion->getPromocionPerfil()) ?>">
+                                        <textarea type="text" class="form-control" name="perfil" id="perfil" rows="5"><?php echo ($informacion->getPromocionPerfil()) ?></textarea>
                                         <span class="d-block mt-1"></span>
                                     </div>
 
@@ -294,14 +316,14 @@ if (isset($_GET["action"])) {
 
                                     <div class="form-group mb-4">
                                         <label for="descripcion">Beneficios</label>
-                                        <input type="text" class="form-control" id="beneficios" name="beneficios" value=" <?php echo ($informacion->getPromocionBeneficios()) ?>" />
+                                        <input type="text" class="form-control" id="beneficios" name="beneficios" value="<?php echo ($informacion->getPromocionBeneficios()) ?>" />
                                     </div>
 
 
 
                                     <div class="form-group mb-4">
                                         <label for="descripcion">Descripción</label>
-                                        <textArea type="text" class="form-control" id="descripcion" name="descripcion"><?php echo ($informacion->getPromocionDescripcion()) ?></textArea>
+                                        <textArea type="text" class="form-control" id="descripcion"  rows="5" name="descripcion" ><?php echo ($informacion->getPromocionDescripcion()) ?></textArea>
                                     </div>
 
                                     <div class="d-flex justify-content-end mt-5">
