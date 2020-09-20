@@ -12,6 +12,12 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/Co
 include('menuEmpresa.php');
 include('Header.php');
 
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
+$empresa_dao = new EmpresaDAO();
+$codigo = $user->darCodigo();
+$empresa = $empresa_dao->devolverEmpresa($codigo);
+
 $conPromocion = new ControladorPromocion();
 $horarios = "";
 if (isset($_GET["action"])) {
@@ -34,7 +40,23 @@ if (isset($_GET["action"])) {
 
         </div>
         <div class="bg-white border rounded">
+        <div class="row no-gutters">
+                <div class="col-lg-4 col-xl-3">
+                    <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
+                        <div class="card text-center widget-profile px-0 border-0">
+                            <?php
+                            echo '<img style="max-width:100%;width:auto;height:auto;" src="data:image/jpeg;base64,' . base64_encode($empresa->getLogoEmpresa()) . '" />';
+                            ?>
 
+                            <div class="card-body">
+                                <h4 class="py-2 text-dark"><?php echo ($empresa->getRazonSocial()) ?></h4>
+                            </div>
+                        </div>
+
+                        <hr class="w-100">
+
+                    </div>
+                </div>
             <div class="col-lg-8 col-xl-9">
                 <div class="profile-content-right py-5">
                     <ul class="nav nav-tabs px-3 px-xl-5 nav-style-border" id="myTab" role="tablist">
