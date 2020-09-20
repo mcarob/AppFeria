@@ -124,6 +124,12 @@ class EmpresaDAO extends DB
         $sentencia=$this->con->prepare("INSERT INTO NOTIFICACION ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
         VALUES (?,?,null,?,now())"); 
         $respuesta=  $sentencia->execute([$cod_Desde,$codPara,$mensaje]);
+
+        $envio = new enviarCorreo();
+        $objeto=$this->devolverEmpresa($codPara);
+        $concat= $objeto->getRazonSocial();
+        ($envio->enviarMensaje($concat, $objeto->getCorreoEmpresa(),"Cambio de estado","Desde la aplicación Feria de Oportunidades hemos registrado que tienes una
+        nueva notificación")); 
         return $respuesta;
     }
 

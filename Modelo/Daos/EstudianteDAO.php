@@ -2,6 +2,7 @@
 
 include_once ($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
 require_once ( $_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
+include_once ($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/EnviarCorreos.php');
 
  
 /**
@@ -136,6 +137,11 @@ class EstudianteDAO
         $sentencia=$this->con->prepare("INSERT INTO NOTIFICACION ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
         VALUES (?,?,?,?,now())"); 
         $respuesta=  $sentencia->execute([$cod_desde,$cod_para,$cod_select, $mensaje]);
+        $envio = new enviarCorreo();
+        $objeto=$this->devolverEstudiante($cod_para);
+        $concat= $objeto->getNombreEstudiante()." ".$objeto->getApellidoEstudiante();
+        ($envio->enviarMensaje($concat, $objeto->getCorreoEstudiante(),"Cambio de estado","Desde la aplicación Feria de Oportunidades hemos registrado que tienes una
+        nueva notificación"));
         return $respuesta;
     }
 
