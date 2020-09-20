@@ -15,9 +15,12 @@ include('Header.php');
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/Ciudades.php');
 $empresa_dao = new EmpresaDAO();
 $codigo = $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
+$ciudadesCon=new Ciudades();
+$departamentos=$ciudadesCon->darTodosDepartamentos();
 
 
 $fecha_actual = date("Y-m-d")
@@ -76,21 +79,25 @@ $fecha_actual = date("Y-m-d")
 
                             </div>
 
-                            <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                            <div class="tab-pane fade show active" id="settings" role="tabpanel"
+                                aria-labelledby="settings-tab">
                                 <div class="mt-5">
                                     <form id="formAgregarOf" method="POST" action="javascript: agregarOferta()">
 
                                         <div class="form-group mb-4">
                                             <label for="userName">Perfil buscado</label>
 
-                                            <textarea maxlength="100" type="text" placeholder="Describa el perfil buscado (Max. 100 caracteres)" class="form-control" id="perfil" value="" name="perfil"></textarea>
+                                            <textarea maxlength="100" type="text"
+                                                placeholder="Describa el perfil buscado (Max. 100 caracteres)"
+                                                class="form-control" id="perfil" value="" name="perfil"></textarea>
                                             <span class="d-block mt-1"></span>
                                         </div>
                                         <div class="row mb-2">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="firstName">Ciudad</label>
-                                                    <input type="text" class="form-control" id="ciudad" name="ciudad" value="">
+                                                    <label for="firstName">Perfil Estudiante</label>
+                                                    <input type="text" class="form-control" id="perfilest" name="perfilest"
+                                                        value="">
                                                 </div>
                                             </div>
 
@@ -98,43 +105,61 @@ $fecha_actual = date("Y-m-d")
                                                 <div class="form-group">
                                                     <label for="lastName">Fecha de la publicación
                                                     </label>
-                                                    <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" value="<?php echo ($fecha_actual) ?>" readonly>
+                                                    <input type="date" class="form-control" id="fechaPublicacion"
+                                                        name="fechaPublicacion" value="<?php echo ($fecha_actual) ?>"
+                                                        readonly>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="lastName">Fecha de inicio
                                                     </label>
-                                                    <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" value="">
+                                                    <input type="date" class="form-control" id="fechaInicio"
+                                                        name="fechaInicio" value="">
                                                 </div>
                                             </div>
-
-
                                             <input type="hidden" id="remuneracion" name="remuneracion" value="">
-
-
-
                                         </div>
 
                                         <div class="row mb-2">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="firstName">Cargo</label>
-                                                    <input type="text" class="form-control" id="cargo" name="cargo" value="">
+                                                    <label for="firstName"> Ubicación (Departamento)</label>
+                                                    <select class="form-control" name="departamento" id="depa-lista"
+                                                        onchange="getCity(this.value);">
+                                                        <option value="">Seleccione un Departamento</option>
+                                                        <?php
+                                                        foreach ($departamentos as $depar) {
+                                                      ?>
+                                                        <option value="<?php echo ($depar[0] ); ?>">
+                                                            <?php echo $depar[1]; ?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                    </select>
                                                 </div>
                                             </div>
-
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="firstName"> Ubicación (Ciudad)</label>
+                                                    <select name="ciudad" id="ciudad" class="form-control">
+                                                        <option>Seleccione una Ciudad</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="lastName">Beneficios extra
                                                     </label>
-                                                    <input type="" onkeypress="return soloLetras(event)" class="form-control" id="beneficioExtra" name="beneficioExtra" value="">
+                                                    <input type="" onkeypress="return soloLetras(event)"
+                                                        class="form-control" id="beneficioExtra" name="beneficioExtra"
+                                                        value="">
                                                     <br>
 
                                                 </div>
                                             </div>
-
-
                                         </div>
 
                                 </div>
@@ -151,7 +176,8 @@ $fecha_actual = date("Y-m-d")
                                 </div>
                                 <div class="form-group mb-4">
                                     <label for="des">Numero de vacantes</label>
-                                    <input type="number" class="form-control" id="numVacantes" name="numVacantes" min="1" pattern="^[0-9]+" value=""></input>
+                                    <input type="number" class="form-control" id="numVacantes" name="numVacantes"
+                                        min="1" pattern="^[0-9]+" value=""></input>
                                 </div>
 
 
@@ -181,7 +207,8 @@ $fecha_actual = date("Y-m-d")
                                     <div class="col-lg-6">
                                         <label class="control control-checkbox checkbox-success">Martes
 
-                                            <input type="checkbox" checked="" id="martes" name="martes" value="Martes" />
+                                            <input type="checkbox" checked="" id="martes" name="martes"
+                                                value="Martes" />
                                             <div class="control-indicator"></div>
                                         </label>
 
@@ -189,7 +216,8 @@ $fecha_actual = date("Y-m-d")
 
                                     <div class="col-lg-6">
                                         <label class="control control-checkbox checkbox-success">Miercoles
-                                            <input type="checkbox" checked="" id="miercoles" name="miercoles" value="Miercoles" />
+                                            <input type="checkbox" checked="" id="miercoles" name="miercoles"
+                                                value="Miercoles" />
                                             <div class="control-indicator"></div>
                                         </label>
 
@@ -197,7 +225,8 @@ $fecha_actual = date("Y-m-d")
 
                                     <div class="col-lg-6">
                                         <label class="control control-checkbox checkbox-success">Jueves
-                                            <input type="checkbox" checked="" id="jueves" name="jueves" value="Jueves" />
+                                            <input type="checkbox" checked="" id="jueves" name="jueves"
+                                                value="Jueves" />
                                             <div class="control-indicator"></div>
                                         </label>
 
@@ -206,7 +235,8 @@ $fecha_actual = date("Y-m-d")
 
                                     <div class="col-lg-6">
                                         <label class="control control-checkbox checkbox-success">Viernes
-                                            <input type="checkbox" checked="" id="viernes" name="viernes" value="Viernes" />
+                                            <input type="checkbox" checked="" id="viernes" name="viernes"
+                                                value="Viernes" />
                                             <div class="control-indicator"></div>
                                         </label>
 
@@ -215,7 +245,8 @@ $fecha_actual = date("Y-m-d")
 
                                     <div class="col-lg-6">
                                         <label class="control control-checkbox checkbox-success">Sabado
-                                            <input type="checkbox" checked="" id="sabado" name="sabado" value="Sabado" />
+                                            <input type="checkbox" checked="" id="sabado" name="sabado"
+                                                value="Sabado" />
                                             <div class="control-indicator"></div>
                                         </label>
 
@@ -224,7 +255,8 @@ $fecha_actual = date("Y-m-d")
 
                                     <div class="col-lg-6">
                                         <label class="control control-checkbox checkbox-success">Domingo
-                                            <input type="checkbox" checked="" id="domingo" name="domingo" value="Domingo" />
+                                            <input type="checkbox" checked="" id="domingo" name="domingo"
+                                                value="Domingo" />
                                             <div class="control-indicator"></div>
                                         </label>
 
@@ -250,8 +282,11 @@ $fecha_actual = date("Y-m-d")
 
                                 <div class="form-group mb-4">
                                     <label for="des">Descripción</label>
-                                    <textarea type="" class="form-control" placeholder="Describa la oferta (Max. 1200 caracteres)" id="descripcion" name="descripcion" value=""></textarea>
-                                    <input maxlength="1200" type="hidden" class="form-control" id="codEmpresa" name="codEmpresa" value=<?php echo ($empresa->getCodEmpresa()) ?>>
+                                    <textarea type="" class="form-control"
+                                        placeholder="Describa la oferta (Max. 1200 caracteres)" id="descripcion"
+                                        name="descripcion" value=""></textarea>
+                                    <input maxlength="1200" type="hidden" class="form-control" id="codEmpresa"
+                                        name="codEmpresa" value=<?php echo ($empresa->getCodEmpresa()) ?>>
                                 </div>
 
 
@@ -271,44 +306,59 @@ $fecha_actual = date("Y-m-d")
 </div>
 
 <script>
-    function agregarOferta() {
-        datos = $('#formAgregarOf').serialize();
+function agregarOferta() {
+    datos = $('#formAgregarOf').serialize();
 
-        $.ajax({
-            type: "POST",
-            data: datos,
-            url: "agregar_vacante.php",
-            success: function(r) {
+    $.ajax({
+        type: "POST",
+        data: datos,
+        url: "agregar_vacante.php",
+        success: function(r) {
 
-                console.log(r);
-                if (r == 1) {
+            console.log(r);
+            if (r == 1) {
 
-                    window.location.href = "Ofertas.php";
-                } else {
+                window.location.href = "Ofertas.php";
+            } else {
 
-                }
-            }
-        });
-    }
-
-    function soloLetras(e) {
-        var key = e.keyCode || e.which,
-            tecla = String.fromCharCode(key).toLowerCase(),
-            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
-            especiales = [8, 37, 39, 46],
-            tecla_especial = false;
-
-        for (var i in especiales) {
-            if (key == especiales[i]) {
-                tecla_especial = true;
-                break;
             }
         }
+    });
+}
 
-        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-            return false;
+function getCity(val) {
+    $.ajax({
+        type: "POST",
+        url: "ajaxCiudad.php",
+        data: 'departamento_id=' + val,
+        beforeSend: function() {
+            $("#ciudad").addClass("loader");
+        },
+        success: function(data) {
+            $("#ciudad").html(data);
+            $("#ciudad").removeClass("loader");
+        }
+    });
+}
+
+function soloLetras(e) {
+    var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
+
+    for (var i in especiales) {
+        if (key == especiales[i]) {
+            tecla_especial = true;
+            break;
         }
     }
+
+    if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+    }
+}
 </script>
 
 <?php
