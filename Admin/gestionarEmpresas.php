@@ -6,13 +6,9 @@ $cEmpresa= new ControladorEmpresa();
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
-        // case 'rechazar':
-        //     $datos=array(
-        //         $_POST["motivo"],
-        //         $_POST["select"]
-        //     );
-        //     echo ($cPromocionLab->registrarMotivo($_GET['codigo'], $datos[0], $datos[1]));
-        // break;
+         case 'rechazar':
+             echo ($cEmpresa->rechazar($_GET['codigo']));
+        break;
         case 'notificar':
             $datos=array(
                 $_POST["mensaje"],

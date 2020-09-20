@@ -114,11 +114,12 @@ class EmpresaDAO extends DB
         return $em;
     }
 
-    // public function registrarMotivo($cod,$mensaje){
-    // $sentencia=$this->con->prepare("UPDATE promocion_postulacion set COD_MOTIVO_RECHAZO=?,motivo_resultado=? WHERE COD_PROMOCION_POSTULACION=?"); 
-    // $respuesta=  $sentencia->execute([$cod, $mensaje]);
-    // return $respuesta;
-    // }
+     public function rechazar($cod){
+    
+     $usu = $this->darEmpresa($cod);
+     $sentencia=$this->con->prepare("UPDATE usuario set VALIDADO=3 WHERE COD_USUARIO=".$usu->getCodUsuario()); 
+     $sentencia->execute();
+    }
 
     public function agregarNoti($cod_Desde, $codPara,$mensaje){
         $sentencia=$this->con->prepare("INSERT INTO NOTIFICACION ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
@@ -145,7 +146,6 @@ class EmpresaDAO extends DB
 
     public function darEmpresa($cod)
     {
-
         $sentencia = $this->con->prepare("SELECT * FROM empresa WHERE COD_EMPRESA=" . $cod);
         $sentencia->execute();
         while ($fila = $sentencia->fetch()) {

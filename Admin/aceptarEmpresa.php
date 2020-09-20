@@ -10,7 +10,6 @@ if(isset($_GET["action"]))
     $var=$_GET["action"];
     echo $objeto->validarEmpresa($var);
     header("location:ValidarEmpresa.php");
-
 }
 
 

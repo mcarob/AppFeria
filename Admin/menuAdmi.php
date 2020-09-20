@@ -39,35 +39,35 @@
 
 
 
-  <!--
+    <!--
           ====================================
           â€”â€”â€” LEFT SIDEBAR WITH FOOTER
           =====================================
         -->
-  <aside class="left-sidebar bg-sidebar">
-    <div id="sidebar" class="sidebar sidebar-with-footer">
-      <!-- Aplication Brand -->
-      <div class="app-brand">
-        <a href="index.php" title="Sleek Dashboard">
-          <span class="brand-name text-truncate">Universidad El Bosque</span>
-        </a>
-      </div>
-      <!-- begin sidebar scrollbar -->
-      <div class="sidebar-scrollbar">
+    <aside class="left-sidebar bg-sidebar">
+      <div id="sidebar" class="sidebar sidebar-with-footer">
+        <!-- Aplication Brand -->
+        <div class="app-brand">
+          <a href="index.php" title="Sleek Dashboard">
+            <span class="brand-name text-truncate">Universidad El Bosque</span>
+          </a>
+        </div>
+        <!-- begin sidebar scrollbar -->
+        <div class="sidebar-scrollbar">
 
-        <!-- sidebar menu -->
-        <ul class="nav sidebar-inner" id="sidebar-menu">
-          <li class="has-sub">
-            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
-              <i class="mdi mdi-view-dashboard-outline"></i>
-              <span class="nav-text">Empresas</span> <b class="caret"></b>
-            </a>
-            <ul class="collapse" id="dashboard" data-parent="#sidebar-menu">
-              <div class="sub-menu">
+          <!-- sidebar menu -->
+          <ul class="nav sidebar-inner" id="sidebar-menu">
+            <li class="has-sub">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
+                <i class="mdi mdi-view-dashboard-outline"></i>
+                <span class="nav-text">Empresas</span> <b class="caret"></b>
+              </a>
+              <ul class="collapse" id="dashboard" data-parent="#sidebar-menu">
+                <div class="sub-menu">
 
-                <?php
-                if ($_SESSION['tipo'] == 1) {
-
+                <?php 
+                  if($_SESSION['tipo'] == 1 ){
+                    
                 ?>
                   <li>
                     <a class="sidenav-item-link" href="ValidarEmpresa.php">
@@ -75,119 +75,121 @@
 
                     </a>
                   </li>
-                <?php
-                }
-                ?>
+                  <?php   
+                                    }
+                  ?>
 
-                <li>
-                  <a class="sidenav-item-link" href="ListaEmpresas.php">
-                    <span class="nav-text">Listar Empresas</span>
-                  </a>
-                </li>
+                  <li>
+                    <a class="sidenav-item-link" href="ListaEmpresas.php">
+                      <span class="nav-text">Listar Empresas</span>
+                    </a>
+                  </li>
 
-              </div>
-            </ul>
-          </li>
-
-
+                </div>
+              </ul>
+            </li>
 
 
 
-
-
-
-
-          <li class="has-sub">
-            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="mdi mdi-diamond-stone"></i>
-              <span class="nav-text">Informes</span> <b class="caret"></b>
-            </a>
-            <ul class="collapse" id="icons" data-parent="#sidebar-menu">
-              <div class="sub-menu">
-                <li>
-                  <a class="sidenav-item-link" href="EstudiantesPlataforma.php">
-                    <span class="nav-text">Estudiantes en Plataforma</span>
-
-                  </a>
-                </li>
-                <li>
-                  <a class="sidenav-item-link" href="VacantesDisponibles.php">
-                    <span class="nav-text">Vacantes Disponibles</span>
-
-                  </a>
-                </li>
-                <li>
-                  <a class="sidenav-item-link" href="TotalPostulaciones.php">
-                    <span class="nav-text">Postulaciones Activas</span>
-
-                  </a>
-                </li>
-                <li>
-                  <a class="sidenav-item-link" href="HistorialPostulacion.php">
-                    <span class="nav-text">Historial Postulaciones</span>
-
-                  </a>
-                </li>
-              </div>
-            </ul>
-          </li>
-
-          <li class="has-sub">
-            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="mdi mdi-table"></i>
-              <span class="nav-text">Estadísticas</span> <b class="caret"></b>
-            </a>
-            <ul class="collapse" id="tables" data-parent="#sidebar-menu">
-              <div class="sub-menu">
-                <li>
-                  <a class="sidenav-item-link" href="GMotivos.php">
-                    <span class="nav-text">Mótivos más usados</span>
-
-                  </a>
-                </li>
-                <li>
-                  <a class="sidenav-item-link" href="GEmpresasPostuladas.php">
-                    <span class="nav-text">Empresas Más Postuladas</span>
-
-                  </a>
-                </li>
-                <li>
-                  <a class="sidenav-item-link" href="GPracticantesXempresa.php">
-                    <span class="nav-text">Practicantes por Empresa</span>
-
-                  </a>
-                </li>
-                <li>
-                  <a class="sidenav-item-link" href="GVacantesEstado.php">
-                    <span class="nav-text">Estado de las vacantes</span>
-
-                  </a>
-                </li>
-              </div>
-            </ul>
-          </li>
+            
 
 
 
 
 
+            <li class="has-sub">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
+                <i class="mdi mdi-diamond-stone"></i>
+                <span class="nav-text">Informes</span> <b class="caret"></b>
+              </a>
+              <ul class="collapse" id="icons" data-parent="#sidebar-menu">
+                <div class="sub-menu">
+                  <li>
+                    <a class="sidenav-item-link" href="EstudiantesPlataforma.php">
+                      <span class="nav-text">Estudiantes en Plataforma</span>
+
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="VacantesDisponibles.php">
+                      <span class="nav-text">Vacantes Disponibles</span>
+
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="TotalPostulaciones.php">
+                      <span class="nav-text">Postulaciones Activas</span>
+
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="HistorialPostulacion.php">
+                      <span class="nav-text">Historial Postulaciones</span>
+
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="has-sub">
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables" aria-expanded="false" aria-controls="tables">
+                <i class="mdi mdi-table"></i>
+                <span class="nav-text">Estadísticas</span> <b class="caret"></b>
+              </a>
+              <ul class="collapse" id="tables" data-parent="#sidebar-menu">
+                <div class="sub-menu">
+                  <li>
+                    <a class="sidenav-item-link" href="GMotivos.php">
+                      <span class="nav-text">Mótivos más usados</span>
+
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="GEmpresasPostuladas.php">
+                      <span class="nav-text">Empresas Más Postuladas</span>
+
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="GPracticantesXempresa.php">
+                      <span class="nav-text">Practicantes por Empresa</span>
+
+                    </a>
+                  </li>
+                  <li>
+                    <a class="sidenav-item-link" href="GVacantesEstado.php">
+                      <span class="nav-text">Estado de las vacantes</span>
+
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
 
 
 
 
-        </ul>
 
-      </div>
-      <div class="sidebar-footer">
+            
+
+
+
+          </ul>
+
+        </div>
+        <div class="sidebar-footer">
         <hr class="separator mb-0" />
         <div class="sidebar-footer-content">
           <h6 class="text-uppercase">
-            Manual general<span class="float-right"></span>
+            Manual General<span class="float-right"></span>
           </h6>
           <a class="sidenav-item-link" href="TotalPostulaciones.php">
             <span class="nav-text">Descargar</span>
 
           </a>
+
+
           <h6 class="text-uppercase">
             Manual Administrador<span class="float-right"></span>
           </h6>
@@ -195,13 +197,9 @@
             <span class="nav-text">Descargar</span>
 
           </a>
-          <h6 class="text-uppercase">
-            Manual Empleado<span class="float-right"></span>
-          </h6>
-          <a class="sidenav-item-link" href="TotalPostulaciones.php">
-            <span class="nav-text">Descargar</span>
 
-          </a>
+
+
           <h6 class="text-uppercase">
             Manual Empresa<span class="float-right"></span>
           </h6>
@@ -209,18 +207,29 @@
             <span class="nav-text">Descargar</span>
 
           </a>
+
+
+
+          <h6 class="text-uppercase">
+            Manual Estudiante<span class="float-right"></span>
+          </h6>
+          <a class="sidenav-item-link" href="TotalPostulaciones.php">
+            <span class="nav-text">Descargar</span>
+
+          </a>
+
+
         </div>
       </div>
-    </div>
 
-    </div>
-  </aside>
-
+      </div>
+    </aside>
 
 
 
 
-
+      
+    
 
 
   <script src="../assets/plugins/jquery/jquery.min.js"></script>
