@@ -1,72 +1,32 @@
-<?php
+<?php   
 session_start();
-if (!isset($_SESSION['user'])) {
 
-    header("location: ../index.php");
-} else if (!($_SESSION['tipo'] == 3)) {
-    header("location: ../index.php");
-}
-
-
-include('menuEmpresa.php');
-include('Header.php');
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
-include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
-include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorEmpresa.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 
 $empresa = new Usuario();
 $empresa->setUser($_SESSION['user']);
-$cod_empresa = $empresa->darCodigoEmpresa();
-$controlEmpresa= new ControladorEmpresa();
-$blob=($controlEmpresa->darBlob($cod_empresa))[0];
+$cod_empresa = $empresa->darCodigo();
 $listaVacantes = [];
 $pase = "";
-if (isset($_GET["search"])) {
-    $pase = '&search=' . $_GET["search"];
+if (isset($_GET["pagina"])) {
     $conPromocion = new ControladorPromocion();
-    if (isset($_GET["pagina"])) {
-        $pagina = $_GET["pagina"];
-    } else {
-        $pagina = 1;
-    }
-    $listaVacantes = $conPromocion->darVacantaseNuevaBuscar($cod_empresa, ($pagina - 1) * 8, 8, $_GET["search"]);
-    $total = $conPromocion->cantidadOfertas3EmpresaBuscar($cod_empresa, $_GET["search"]);
-} elseif (isset($_GET["pagina"])) {
-    $conPromocion = new ControladorPromocion();
-    $listaVacantes = $conPromocion->verOfertas3($cod_empresa, ($_GET["pagina"] - 1) * 8, 8);
+    $listaVacantes = $conPromocion->darVacantaseNueva($cod_empresa, ($_GET["pagina"] - 1) * 8, 8);
     $total = $conPromocion->cantidadOfertas3Empresa($cod_empresa);
     $pagina = $_GET["pagina"];
 } else {
     $conPromocion = new ControladorPromocion();
-    $listaVacantes = $conPromocion->verOfertas3($cod_empresa, 0, 8);
+    $listaVacantes = $conPromocion->darVacantaseNueva($cod_empresa, 0, 8);
     $total = $conPromocion->cantidadOfertas3Empresa($cod_empresa);
     $pagina = 1;
 }
-
 ?>
 
 
-<div class="content-wrapper">
-    <div class="content">
-        <div class="breadcrumb-wrapper">
-            <h1>Ofertas laborales</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb p-0">
-                    <li class="breadcrumb-item">
-                        <a href="index.PHP">
-                            <span class="mdi mdi-home"></span>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        Administrar Ofertas
-                    </li>
-                </ol>
-            </nav>
-        </div>
 
-        <div class="card card-default">
+
+<div class="card card-default">
             <div class="card-header card-header">
                 <div class="col-8 ">
                     <div class="input-group">
@@ -99,7 +59,7 @@ if (isset($_GET["search"])) {
                         <div class="card">
 
                             <?php
-                            echo '<img  alt="Card image cap" class="card-img-top" width="150" height="150" src="data:image/jpeg;base64,' . base64_encode($blob) . '" lt="user image"/>';
+                            echo '<img  alt="Card image cap" class="card-img-top" width="150" height="150" src="../Imagenes/ecopetrol.jpg" lt="user image"/>';
                             ?>
 
                             <div class="card-body">
@@ -221,34 +181,3 @@ if (isset($_GET["search"])) {
                 </nav>
             </div>
         </div>
-    </div>
-</div>
-
-
-
-
-
-
-</div>
-<?php
-include('Footer.php')
-?>
-
-<script>
-    function darInformacion(cod_vacante) {
-        window.location.href = "editarOferta.php?action=" + cod_vacante;
-    }
-
-    function estado(cod) {
-        window.location.href = 'gestionarOferta.php?action=' + "cambiar&" + "codigo=" + cod;
-    }
-
-    function eliminar(cod) {
-        window.location.href = 'gestionarOferta.php?action=' + "eliminar&" + "codigo=" + cod;
-    }
-
-    function mandarFiltro() {
-        x = document.getElementById("filtro").value;
-        window.location.href = "ofertas.php?search=" + x;
-    }
-</script>

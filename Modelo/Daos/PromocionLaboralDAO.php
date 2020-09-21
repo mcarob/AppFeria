@@ -57,7 +57,6 @@ class PromocionLaboralDAO
            $em[] = $fila;  
        }*/
        return $row;
-
     }
 
 
@@ -126,47 +125,35 @@ class PromocionLaboralDAO
     }
 
     public function cantidadOfertas3($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1 and cod_empresa =? and disponible>0"); 
+        $sentencia = $this->con->prepare("SELECT COUNT(*) FROM  listar_promociones_disponibilidad WHERE promocion_estado=1 and cod_empresa =? and disponible>0"); 
         $sentencia->execute([$cod]);
-        $em = array();
-         while ($fila = $sentencia->fetch()) {
-            $em[] = $fila;  
-        }
-        return count($em);
+        $total=$sentencia->fetch();
+        return ($total[0]);
     }
     
     public function cantidadOfertasNueva($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3"); 
+        $sentencia = $this->con->prepare("SELECT COUNT(*) FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3"); 
         $sentencia->execute([$cod]);
-        $em = array();
-         while ($fila = $sentencia->fetch()) {
-            $em[] = $fila;  
-        }
-        return count($em);
+        $total=$sentencia->fetch();
+        return ($total[0]);
 
     }
     public function cantidadOfertasNuevaBuscar($cod,$buscar){
         $buscar= str_replace(" ","%",$buscar);
         $buscar='%'.$buscar.'%';
-        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3
+        $sentencia = $this->con->prepare("SELECT COUNT(*) FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3
                     AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))"); 
        $sentencia->execute([$cod,$buscar,$buscar]);
-        $em = array();
-         while ($fila = $sentencia->fetch()) {
-            $em[] = $fila;  
-        }
-        return count($em);
+       $total=$sentencia->fetch();
+       return ($total[0]);
 
     }
 
     public function cantidadOfertas4(){
-        $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1  and disponible>0"); 
+        $sentencia = $this->con->prepare("SELECT COUNT(*) FROM  listar_promociones_disponibilidad WHERE promocion_estado=1  and disponible>0"); 
         $sentencia->execute();
-        $em = array();
-         while ($fila = $sentencia->fetch()) {
-            $em[] = $fila;  
-        }
-        return count($em);
+        $total=$sentencia->fetch();
+        return ($total[0]);
     }
 
 
@@ -188,7 +175,7 @@ class PromocionLaboralDAO
         COD_EMPRESA, PROMOCION_FECHA, PROMOCION_CIUDAD, TITULO_PROMOCION, LIMITE_VACANTES, PROMOCION_ESTADO)
         values 
         (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        $respuesta=$this->con->prepare($sql)->execute([$oferta->getPromocionPerfil(),null,$oferta->getPromocionHorario(),$oferta->getPromocionCompensacion(),$oferta->getPromocionRangoCompensacion(),
+        $respuesta=$this->con->prepare($sql)->execute([$oferta->getPromocionPerfil(),$oferta->getPromocionConocimientoBase(),$oferta->getPromocionHorario(),$oferta->getPromocionCompensacion(),$oferta->getPromocionRangoCompensacion(),
         $oferta->getPromocionBeneficios(),$oferta->getPromocionCargoFuncion(),$oferta->getPromocionInicio(),$oferta->getPromocionDescripcion()
         ,$oferta->getCodEmpresa(),$oferta->getPromocionFecha(),$oferta->getPromocionCiudad(),$oferta->getTituloPromocion(),$oferta->getLimiteVacantes(),1]);
         

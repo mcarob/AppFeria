@@ -12,6 +12,11 @@ class ControladorEmpresa{
 			return $this->empresas->vistaEmpresas();
 		}
 
+		public function darBlob($cod_empresa){
+			$this->empresas = new EmpresaDAO();
+			return $this->empresas->darBlobxCodigo($cod_empresa);
+		}
+
 		public function darListaEmpresasInscritas()
 		{
 			$this->empresas = new EmpresaDAO();

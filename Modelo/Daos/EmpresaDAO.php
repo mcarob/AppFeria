@@ -176,6 +176,14 @@ class EmpresaDAO extends DB
             }
         }
     }
+    public function darBlobxCodigo($cod_empresa){
+        $query = $this->con->prepare('select LOGO_EMPRESA from empresa WHERE COD_EMPRESA=?');
+        $query->execute([$cod_empresa]);
+        if ($query->rowCount()) {
+            return $query->fetch();
+            }
+        
+    }
 
     public function devolverEmpresa($codigo_usuario)
     {

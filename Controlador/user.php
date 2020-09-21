@@ -21,6 +21,12 @@ class Usuario extends DB{
     private $estado;
     private $verificacion;
     private $estado_empresa;
+    private $codigoEmpresa;
+
+
+    public function darCodigoEmpresa(){
+        return $this->codigoEmpresa;
+    }
     
 
     public function darEstado_empresa(){
@@ -113,6 +119,7 @@ class Usuario extends DB{
                         $this->nombreUsuario=$kk['RAZON_SOCIAL'];
                         $this->correo=$kk['CORREO_CONTACTO'];
                         $this->contacto_empresa=$kk['NOM_CONTACTO']." ".$kk['APELLIDO_CONTACTO'];
+                        $this->codigoEmpresa=$kk['COD_EMPRESA'];
                     }
                 }
             }

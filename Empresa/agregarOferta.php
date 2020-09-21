@@ -16,11 +16,15 @@ include('Header.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/Ciudades.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ListasDesplegables.php');
 $empresa_dao = new EmpresaDAO();
 $codigo = $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
 $ciudadesCon=new Ciudades();
 $departamentos=$ciudadesCon->darTodosDepartamentos();
+$listas= new ListasDesplegables();
+$listaCarreras=$listas->darListaCarrera();
+
 
 
 $fecha_actual = date("Y-m-d")
@@ -94,10 +98,21 @@ $fecha_actual = date("Y-m-d")
                                         </div>
                                         <div class="row mb-2">
                                             <div class="col-lg-6">
-                                                <div class="form-group">
+                                            <div class="form-group">
                                                     <label for="firstName">Perfil Estudiante</label>
-                                                    <input type="text" class="form-control" id="perfilest" name="perfilest"
-                                                        value="">
+                                                    <select class="form-control"id="perfilest"
+                                                        name="perfilest"
+                                                        onchange="getCity(this.value);">
+                                                        <option value="0">Indiferente Al Perfil</option>
+                                                        <?php
+                                                        foreach ($listaCarreras as $carre) {
+                                                      ?>
+                                                        <option value="<?php echo ($carre[0] ); ?>">
+                                                            <?php echo $carre[1]; ?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -116,6 +131,13 @@ $fecha_actual = date("Y-m-d")
                                                     </label>
                                                     <input type="date" class="form-control" id="fechaInicio"
                                                         name="fechaInicio" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="firstName">Cargo</label>
+                                                    <input type="text" class="form-control" id="cargo"
+                                                        name="cargo" value="">
                                                 </div>
                                             </div>
                                             <input type="hidden" id="remuneracion" name="remuneracion" value="">
@@ -148,25 +170,25 @@ $fecha_actual = date("Y-m-d")
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row mb-2">
-                                            <div class="col-lg-6">
+                                        <div class="form-group mb-4">
                                                 <div class="form-group">
                                                     <label for="lastName">Beneficios extra
                                                     </label>
-                                                    <input type="" onkeypress="return soloLetras(event)"
-                                                        class="form-control" id="beneficioExtra" name="beneficioExtra"
-                                                        value="">
+                                                    <textarea type="" class="form-control"
+                                                        placeholder="Describa los beneficios que tendran sus practicantes"
+                                                        id="beneficioExtra" name="beneficioExtra"
+                                                        
+                                                        value=""></textarea>
                                                     <br>
 
                                                 </div>
-                                            </div>
+
                                         </div>
 
                                 </div>
                                 <div class="form-group mb-4">
                                     <label for="des">Rango Remuneracion</label>
                                     <select name="ranRemuneracion" id="ranRemuneracion" class="form-control">
-                                        <option value="">Seleccione una opcion</option>
                                         <option value="Sin remuneracion">Sin remuneracion</option>
                                         <option value="0 - 1 Salarios mínimos">1 Salario mínimos</option>
                                         <option value="1 - 2 Salarios mínimos">1 - 2 Salarios mínimos</option>

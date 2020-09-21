@@ -38,16 +38,17 @@ $datos=array(
     $_POST["descripcion"],
     $_POST["codEmpresa"],
     $_POST["fechaPublicacion"],
-    $_POST["ciudad-lista"],    
+    $_POST["ciudad"],    
     $_POST["titulo"],
     $_POST["numVacantes"],
+    $_POST["perfilest"]
     
     
 );
 
 #conocimiento base es la posición que se require ing de sistemas ing ambiental etc...
 $controlador = new ControladorPromocion();
-$promocion=new PromocionLaboral(0,$datos[0],null,
+$promocion=new PromocionLaboral(0,$datos[0],$datos[12],
                                  $horarios,0,
                                  $datos[2],$datos[3],$datos[4],
                                  $datos[5],$datos[6],$datos[7],
