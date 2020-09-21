@@ -36,7 +36,7 @@
         <nav1 class="navbar1  navbar1-fixed-top navbar1-default">
             <div class="container1">
                 <div class="navbar1-header">
-                    <button type="button" class="navbar1-toggle1 uarr collapsed" data-toggle1="collapse" data-target="#navbar1-collapse-uarr">
+                <button type="button" class="navbar1-toggle uarr collapsed" data-toggle="collapse" data-target="#navbar1-collapse-uarr">
                         <span class="sr-only">toggle1 navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>

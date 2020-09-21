@@ -23,28 +23,24 @@ $controlEmpresa= new ControladorEmpresa();
 $blob=($controlEmpresa->darBlob($cod_empresa))[0];
 $listaVacantes = [];
 $pase = "";
-if (isset($_GET["search"])) {
-    $pase = '&search=' . $_GET["search"];
-    $conPromocion = new ControladorPromocion();
-    if (isset($_GET["pagina"])) {
-        $pagina = $_GET["pagina"];
-    } else {
-        $pagina = 1;
-    }
-    $listaVacantes = $conPromocion->darVacantaseNuevaBuscar($cod_empresa, ($pagina - 1) * 8, 8, $_GET["search"]);
-    $total = $conPromocion->cantidadOfertas3EmpresaBuscar($cod_empresa, $_GET["search"]);
-} elseif (isset($_GET["pagina"])) {
-    $conPromocion = new ControladorPromocion();
-    $listaVacantes = $conPromocion->verOfertas3($cod_empresa, ($_GET["pagina"] - 1) * 8, 8);
-    $total = $conPromocion->cantidadOfertas3Empresa($cod_empresa);
+
+
+if (isset($_GET["pagina"])) {
     $pagina = $_GET["pagina"];
 } else {
-    $conPromocion = new ControladorPromocion();
-    $listaVacantes = $conPromocion->verOfertas3($cod_empresa, 0, 8);
-    $total = $conPromocion->cantidadOfertas3Empresa($cod_empresa);
     $pagina = 1;
 }
 
+if (isset($_GET["search"])) {
+    $pase = '&search=' . $_GET["search"];
+    $conPromocion = new ControladorPromocion();
+    $listaVacantes = $conPromocion->OfertasEmpresaPalabra($cod_empresa, ($pagina - 1) * 8, 8, $_GET["search"]);
+    $total = $conPromocion->cantidadOfertasEmpresaPalabra($cod_empresa, $_GET["search"]);
+} else {
+    $conPromocion = new ControladorPromocion();
+    $listaVacantes = $conPromocion->OfertasEmpresaSinFiltro($cod_empresa, ($pagina - 1) * 8, 8);
+    $total = $conPromocion->cantidadOfertasEmpresaSinFiltro($cod_empresa);
+} 
 ?>
 
 
@@ -108,8 +104,6 @@ if (isset($_GET["search"])) {
                                 </p>
                             </div>
                             <div class="card-footer text-muted px-3 ">
-                                <div class="row no-gutters">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
                                         <?php
                                         if ($fila[15] == 1) {
                                             echo ("<td><button type='button' class='btn btn-outline-primary' onclick='estado(" . '"' . $fila[0] . '"' . ")'>
@@ -123,9 +117,7 @@ if (isset($_GET["search"])) {
 
                                         <button type="button" class="btn btn-outline-primary" onclick="eliminar(<?php echo $fila[0] ?>)">Eliminar</button>
                                         <button type="button" class="btn btn-outline-primary" onclick="darInformacion(<?php echo $fila[0] ?>)">Editar</button>
-                                    </div>
 
-                                </div>
                             </div>
 
 

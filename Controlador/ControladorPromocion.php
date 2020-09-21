@@ -13,11 +13,12 @@ public function darListaPromociones()
 	$this->promociones=new PromocionLaboralDAO();
 	return $this->promociones->vistaPromocionLaboral();
 }
-public function darListaPromociones2($base,$cantidad)
-{
-	$this->promociones=new PromocionLaboralDAO();
-	return $this->promociones->vistaPromocionLaboral2($base,$cantidad);
-}
+
+
+
+
+
+
 public function darInformacion($pCodigo)
 {
 	$this->promociones=new PromocionLaboralDAO();
@@ -33,6 +34,101 @@ public function darVacantase($pCodigo)
 	return $this->promociones->verOfertas($codigo);
 }
 
+
+
+//filtro Sin
+public function ofertassinFiltroEstudiante($base,$cantidad)
+{
+	$this->promociones=new PromocionLaboralDAO();
+	return $this->promociones->ofertassinFiltroEstudiante($base,$cantidad);
+}
+
+public function cantidadofertasSinFiltro(){
+
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadofertasSinFiltro();
+}
+// filtro con 
+
+public function ofertasConFiltroEstudiante($empresa,$base,$cantidad)
+{
+	$this->promociones=new PromocionLaboralDAO();
+	return $this->promociones->ofertasConFiltroEstudiante($empresa,$base,$cantidad);
+}
+
+public function cantidadofertasConFiltro($empresa){
+
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadofertasConFiltro($empresa);
+}
+	
+
+# filtros sin
+public function ofertasFiltroPalabraSinEmpresaEstudiante($desde,$hasta,$buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->ofertasFiltroPalabraSinEmpresaEstudiante($desde,$hasta,$buscar);
+	
+}
+public function cantidadofertasFiltroPalabraSinEmpresaEstudiante($buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadofertasFiltroPalabraSinEmpresaEstudiante($buscar);
+}
+
+# filtros Con
+public function ofertasFiltroPalabraConEmpresaEstudiante($emp,$desde,$hasta,$buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->ofertasFiltroPalabraConEmpresaEstudiante($emp,$desde,$hasta,$buscar);
+	
+}
+public function cantidadofertasFiltroPalabraConEmpresaEstudiante($emp,$buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadofertasFiltroPalabraConEmpresaEstudiante($emp,$buscar);
+}
+
+
+# filtros sin
+public function ofertasFiltroCiudadSinEmpresaEstudiante($desde,$hasta,$buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->ofertasFiltroCiudadSinEmpresaEstudiante($desde,$hasta,$buscar);
+	
+}
+public function cantidadofertasFiltroCiudadSinEmpresaEstudiante($buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadofertasFiltroCiudadSinEmpresaEstudiante($buscar);
+}
+# filtros con
+public function ofertasFiltroCiudadConEmpresaEstudiante($emp,$desde,$hasta,$buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->ofertasFiltroCiudadConEmpresaEstudiante($emp,$desde,$hasta,$buscar);
+	
+}
+public function cantidadofertasFiltroCiudadConEmpresaEstudiante($emp,$buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadofertasFiltroCiudadConEmpresaEstudiante($emp,$buscar);
+}
+// filtros sin
+public function ofertasFiltroCiudadPalabraSinEmpresaEstudiante($desde,$hasta,$buscar,$ciudad){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->ofertasFiltroCiudadPalabraSinEmpresaEstudiante($desde,$hasta,$buscar,$ciudad);
+
+}
+public function cantidadofertasFiltroCiudadPalabraSinEmpresaEstudiante($buscar,$ciudad){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadofertasFiltroCiudadPalabraSinEmpresaEstudiante($buscar,$ciudad);
+
+}
+// filtros con
+public function ofertasFiltroCiudadPalabraConEmpresaEstudiante($emp,$desde,$hasta,$buscar,$ciudad){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->ofertasFiltroCiudadPalabraConEmpresaEstudiante($emp,$desde,$hasta,$buscar,$ciudad);
+
+}
+public function cantidadofertasFiltroCiudadPalabraConEmpresaEstudiante($emp,$buscar,$ciudad){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadofertasFiltroCiudadPalabraConEmpresaEstudiante($emp,$buscar,$ciudad);
+
+}
+
 public function darVacantaseNueva($pCodigo,$desde,$hasta)
 {
 	$empresa_DAO=new EmpresaDAO();
@@ -41,21 +137,24 @@ public function darVacantaseNueva($pCodigo,$desde,$hasta)
 	return $this->promociones->verOfertasNueva($codigo,$desde,$hasta);
 }
 
-public function darVacantaseNuevaBuscar($pCodigo,$desde,$hasta,$buscar){
+public function OfertasEmpresaPalabra($pCodigo,$desde,$hasta,$buscar){
 	$this->promociones = new PromocionLaboralDAO();
-	return $this->promociones->verOfertasNuevaBuscar($pCodigo,$desde,$hasta,$buscar);
-}
-public function cantidadOfertas3EmpresaBuscar($cod,$buscar){
-	$this->promociones = new PromocionLaboralDAO();
-	return $this->promociones->cantidadOfertasNuevaBuscar($cod,$buscar);
-}
-public function cantidadOfertas3Empresa($cod){
-	$this->promociones = new PromocionLaboralDAO();
-	return $this->promociones->cantidadOfertasNueva($cod);
-	
-
+	return $this->promociones->OfertasEmpresaPalabra($pCodigo,$desde,$hasta,$buscar);
 }
 
+
+public function cantidadOfertasEmpresaPalabra($cod,$buscar){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadOfertasEmpresaPalabra($cod,$buscar);
+}
+public function OfertasEmpresaSinFiltro($cod,$desde,$hasta){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->OfertasEmpresaSinFiltro($cod,$desde,$hasta);
+}
+public function cantidadOfertasEmpresaSinFiltro($empresa){
+	$this->promociones = new PromocionLaboralDAO();
+	return $this->promociones->cantidadOfertasEmpresaSinFiltro($empresa);
+}
 
 public function verOfertas($cod){
 
@@ -70,26 +169,7 @@ public function verOfertas2($cod){
 	return $this->promociones->verOfertas2($cod);
 
 }
-public function verOfertas3($cod,$base,$cantidad){
 
-	$this->promociones = new PromocionLaboralDAO();
-	return $this->promociones->verOfertas3($cod,$base,$cantidad);
-
-}
-public function cantidadOfertas3($cod){
-
-	$this->promociones = new PromocionLaboralDAO();
-	return $this->promociones->cantidadOfertas3($cod);
-	
-
-}
-
-public function cantidadOfertas4(){
-
-	$this->promociones = new PromocionLaboralDAO();
-	return $this->promociones->cantidadOfertas4();
-}
-	
 
 public function agregarPromocion($promocion)
 {

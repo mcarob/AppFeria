@@ -80,7 +80,7 @@ class PromocionLaboralDAO
         }
         return $em;
     } 
-    public function verOfertasNuevaBuscar($codigo,$desde,$hasta,$buscar){
+    public function OfertasEmpresaPalabra($codigo,$desde,$hasta,$buscar){
         $buscar= str_replace(" ","%",$buscar);
         $buscar='%'.$buscar.'%';
         $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3
@@ -94,7 +94,176 @@ class PromocionLaboralDAO
         return $em;
     }
 
-    // Metodo para mostrar las ofertas activas buscando por el codigo de empresa
+    public function OfertasEmpresaSinFiltro($codigo,$desde,$hasta){
+        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3
+                                             LIMIT ?, ?"); 
+        $sentencia->execute([$codigo,$desde,$hasta]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        }
+        return $em;
+    }
+
+
+    // muestra las ofertas que tienen filtro de palabra sin empresa 
+    public function ofertasFiltroPalabraSinEmpresaEstudiante($desde,$hasta,$buscar){
+        $buscar= str_replace(" ","%",$buscar);
+        $buscar='%'.$buscar.'%';
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE   PROMOCION_ESTADO=1
+                    AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))
+                                             LIMIT ?, ?"); 
+        $sentencia->execute([$buscar,$buscar,$desde,$hasta]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        } 
+        return $em;
+    }
+    // cantidad de ofertas que tienen filtro de palabra sin empresa 
+    public function cantidadofertasFiltroPalabraSinEmpresaEstudiante($buscar){
+        $buscar= str_replace(" ","%",$buscar);
+        $buscar='%'.$buscar.'%';
+        $sentencia = $this->con->prepare("SELECT COUNT(*) FROM listar_promociones_disponibilidad WHERE   PROMOCION_ESTADO=1
+                    AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))"); 
+        $sentencia->execute([$buscar,$buscar]);
+        $respuesta=$sentencia->fetch();
+        return $respuesta[0];
+    }
+
+    // Muestras las ofertas con filtro de cidad sin empresa 
+    
+    public function ofertasFiltroCiudadSinEmpresaEstudiante($desde,$hasta,$buscar){
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE   PROMOCION_ESTADO=1
+                    AND (COD_CIUDAD=?)
+                                             LIMIT ?, ?"); 
+        $sentencia->execute([$buscar,$desde,$hasta]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        } 
+        return $em;
+    }
+    public function cantidadofertasFiltroCiudadSinEmpresaEstudiante($buscar){
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE   PROMOCION_ESTADO=1
+                    AND (COD_CIUDAD=?)"); 
+        $sentencia->execute([$buscar]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        } 
+        return $em;
+    }
+
+    // muestra las ofertas con el filtro de ciudad y de palabra 
+
+    public function ofertasFiltroCiudadPalabraSinEmpresaEstudiante($desde,$hasta,$buscar,$ciudad){
+        $buscar= str_replace(" ","%",$buscar);
+        $buscar='%'.$buscar.'%';
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE   PROMOCION_ESTADO=1
+                    AND (COD_CIUDAD=?) AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))
+                                             LIMIT ?, ?"); 
+        $sentencia->execute([$ciudad,$buscar,$buscar,$desde,$hasta]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        } 
+        return $em;
+    }
+    // cantidad de ofertas que tienen filtro de palabra sin empresa 
+    public function cantidadofertasFiltroCiudadPalabraSinEmpresaEstudiante($buscar,$ciudad){
+        $buscar= str_replace(" ","%",$buscar);
+        $buscar='%'.$buscar.'%';
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE   PROMOCION_ESTADO=1
+                    AND (COD_CIUDAD=?) AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))"); 
+        $sentencia->execute([$ciudad,$buscar,$buscar]);
+        $respuesta=$sentencia->fetch();
+        return $respuesta[0];
+    }
+
+
+
+    // muestra las ofertas con filtro de palabra con empresa 
+    public function ofertasFiltroPalabraConEmpresaEstudiante($codigo,$desde,$hasta,$buscar){
+        $buscar= str_replace(" ","%",$buscar);
+        $buscar='%'.$buscar.'%';
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE cod_empresa =?  and PROMOCION_ESTADO=1
+                    AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))
+                                             LIMIT ?, ?"); 
+        $sentencia->execute([$codigo,$buscar,$buscar,$desde,$hasta]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        }
+        return $em;
+    }
+    public function cantidadofertasFiltroPalabraConEmpresaEstudiante($codigo,$buscar){
+        $buscar= str_replace(" ","%",$buscar);
+        $buscar='%'.$buscar.'%';
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE cod_empresa =?  and PROMOCION_ESTADO=1
+                    AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))
+                                             "); 
+        $sentencia->execute([$codigo,$buscar,$buscar]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        }
+        return $em;
+    }
+
+    public function ofertasFiltroCiudadConEmpresaEstudiante($cod_empresa,$desde,$hasta,$buscar){
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE COD_EMPRESA=? AND   PROMOCION_ESTADO=1
+                    AND (COD_CIUDAD=?)
+                                             LIMIT ?, ?"); 
+        $sentencia->execute([$cod_empresa,$buscar,$desde,$hasta]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        } 
+        return $em;
+    }
+    public function cantidadofertasFiltroCiudadConEmpresaEstudiante($cod_empresa,$buscar){
+        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE   COD_EMPRESA=? AND  PROMOCION_ESTADO=1
+                    AND (COD_CIUDAD=?)"); 
+        $sentencia->execute([$cod_empresa,$buscar]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;  
+        } 
+        return $em;
+    }
+
+  // ofertas que tienen filtro de palabra y ciudad con  empresa 
+
+  public function ofertasFiltroCiudadPalabraConEmpresaEstudiante($empresa,$desde,$hasta,$buscar,$ciudad){
+    $buscar= str_replace(" ","%",$buscar);
+    $buscar='%'.$buscar.'%';
+    $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE  
+                   COD_EMPRESA=? AND   PROMOCION_ESTADO=1
+                AND (COD_CIUDAD=?) AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))
+                                         LIMIT ?, ?"); 
+    $sentencia->execute($empresa,[$ciudad,$buscar,$buscar,$desde,$hasta]);
+    $em = array();
+     while ($fila = $sentencia->fetch()) {
+        $em[] = $fila;  
+    } 
+    return $em;
+}
+// cantidad de ofertas que tienen filtro de palabra y ciudad con  empresa 
+public function cantidadofertasFiltroCiudadPalabraConEmpresaEstudiante($empresa, $buscar,$ciudad){
+    $buscar= str_replace(" ","%",$buscar);
+    $buscar='%'.$buscar.'%';
+    $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE  
+                   COD_EMPRESA=? AND   PROMOCION_ESTADO=1
+                AND (COD_CIUDAD=?) AND ((PROMOCION_PERFIL LIKE ? OR TITULO_PROMOCION LIKE ? ))"); 
+    $sentencia->execute($empresa,[$ciudad,$buscar,$buscar]);
+    $respuesta=$sentencia->fetch();
+    return $respuesta[0];
+}
+
+
+
+    
     public function verOfertas2($pCodigo){
         $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE promocion_estado=1 and cod_empresa =:empresa"); 
         $sentencia->execute(['empresa'=>$pCodigo]);
@@ -114,7 +283,7 @@ class PromocionLaboralDAO
         }
         return $em;
     }
-    public function vistaPromocionLaboral2($base,$cantidad){
+    public function ofertassinFiltroEstudiante($base,$cantidad){
         $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1  and disponible>0 LIMIT ?, ?"); 
         $sentencia->execute([$base,$cantidad]);
         $em = array();
@@ -123,22 +292,26 @@ class PromocionLaboralDAO
         }
         return $em;
     }
-
-    public function cantidadOfertas3($cod){
-        $sentencia = $this->con->prepare("SELECT COUNT(*) FROM  listar_promociones_disponibilidad WHERE promocion_estado=1 and cod_empresa =? and disponible>0"); 
-        $sentencia->execute([$cod]);
-        $total=$sentencia->fetch();
-        return ($total[0]);
+    public function ofertasConFiltroEstudiante($empresa,$base,$cantidad){
+        $sentencia = $this->con->prepare("SELECT * FROM  listar_promociones_disponibilidad WHERE promocion_estado=1 
+                                            and COD_EMPRESA=?
+                                             and disponible>0 LIMIT ?, ?"); 
+        $sentencia->execute([$empresa,$base,$cantidad]);
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;
+        }
+        return $em;
     }
+
     
-    public function cantidadOfertasNueva($cod){
+    public function cantidadOfertasEmpresaSinFiltro($cod){
         $sentencia = $this->con->prepare("SELECT COUNT(*) FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3"); 
         $sentencia->execute([$cod]);
         $total=$sentencia->fetch();
         return ($total[0]);
-
     }
-    public function cantidadOfertasNuevaBuscar($cod,$buscar){
+    public function cantidadOfertasEmpresaPalabra($cod,$buscar){
         $buscar= str_replace(" ","%",$buscar);
         $buscar='%'.$buscar.'%';
         $sentencia = $this->con->prepare("SELECT COUNT(*) FROM promocion_laboral WHERE cod_empresa =?  and PROMOCION_ESTADO!=3
@@ -149,9 +322,16 @@ class PromocionLaboralDAO
 
     }
 
-    public function cantidadOfertas4(){
+    public function cantidadofertasSinFiltro(){
         $sentencia = $this->con->prepare("SELECT COUNT(*) FROM  listar_promociones_disponibilidad WHERE promocion_estado=1  and disponible>0"); 
         $sentencia->execute();
+        $total=$sentencia->fetch();
+        return ($total[0]);
+    }
+    public function cantidadofertasConFiltro($empresa){
+        $sentencia = $this->con->prepare("SELECT COUNT(*) FROM  listar_promociones_disponibilidad WHERE promocion_estado=1
+                                        AND COD_EMPRESA=? and disponible>0"); 
+        $sentencia->execute([$empresa]);
         $total=$sentencia->fetch();
         return ($total[0]);
     }

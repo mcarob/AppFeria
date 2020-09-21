@@ -127,7 +127,7 @@ include('menuEstudiante.php')
 
     <script>
         function ver(cod) {
-            window.location.href = 'OfertasTabla.php?action='+cod;
+            window.location.href = 'postulaciones.php?action='+cod;
         }
     </script>
 

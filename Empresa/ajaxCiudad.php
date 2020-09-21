@@ -7,7 +7,7 @@ if (! empty($_POST["departamento_id"])) {
     $controlCiudad = new Ciudades();
     $cityResult = $controlCiudad->darciudadesxEstado($stateId);
     ?>
-<option>Select City</option>
+<option>Selecccione una Ciudad</option>
 <?php
 foreach ($cityResult as $city) {
         ?>

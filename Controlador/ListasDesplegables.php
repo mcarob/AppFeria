@@ -21,4 +21,10 @@ class ListasDesplegables extends DB{
         return $query->fetchAll();
     }
 
+    public function darCiudadesActivasPromocion(){
+        $query=$this->connect()->prepare('SELECT * FROM lista_ciudad_laboral');
+        $query->execute();
+        return $query->fetchAll();
+    }
+
 }
