@@ -47,7 +47,7 @@ include ('Header.php');
                                 $user2->setUserxCod($key[1]);
                             ?>
                             <li>
-                                <a onclick="darNot('<?php echo $key[4] ?>',' <?php  echo $key[5] ?>','<?php echo $user2->darNombreUsuario();?>')" class="media media-message">
+                                <a onclick="darNot('<?php echo $key[4] ?>',' <?php  echo $key[5] ?>','<?php echo ($user2->darNombreUsuario());?>','<?php echo $key[3] ?>')" class="media media-message">
                                    
                                     <div class="media-body d-flex justify-content-between">
                                         <div class="message-contents">
@@ -114,11 +114,12 @@ include ('Header.php');
 
 <script>
 
-        function darNot(cod, fecha2, nombre2){
+        function darNot(cod, fecha2, nombre2,id_oferta){
             far = document.getElementById('mensaje');
             fecha = document.getElementById('fec');
             nombre=document.getElementById('nombre');
-            far.innerHTML=cod;
+            url="   href='DescripcionOferta.php?action="+id_oferta+"'";
+            far.innerHTML=cod+"<a"+url+"> <br> Saber Mas de la Oferta </a>";
             nombre.innerHTML=nombre2;
             fecha.innerHTML=fecha2; 
         }
