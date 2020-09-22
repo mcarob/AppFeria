@@ -282,7 +282,7 @@ $valor='
             <table width="100%">
                 <tr>
                     <td width="50%"><b>Nombres y Apellidos</b></td>
-                    <td>'. $codigoEst->getNombreEstudiante() .'</td>
+                    <td>'. $codigoEst->getNombreEstudiante() ." ".$codigoEst->getApellidoEstudiante().'</td>
                 </tr>
                 <tr>
                     <td width="50%"><b>Dirección</b></td>

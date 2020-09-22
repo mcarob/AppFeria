@@ -71,8 +71,28 @@ if(isset($_SESSION['user'])){
 
 
  	
+}else if(isset($_POST['correoOlvidar'])){
+	if($user->existeCorreo($_POST['correoOlvidar'])){
+		$user->setUser($_POST['correoOlvidar']);
+		$respuestaCorreoR=$user->mandarCorreoRecuperacion($_POST['correoOlvidar']);
+		
+		if($respuestaCorreoR==1){
+			$mostrarDialogo=True;
+			$codigoEnviado="Se ha enviado un codigo a su correo, por favor no cierre este dialogo.";
+			include_once 'ingresoF.php';
+		}else{
+			$mostrarDialogo=True;
+			$errorCorreoRecuperacion=$respuestaCorreoR;
+			include_once 'ingresoF.php';
+		}
+	}else{
+		$mostrarDialogo=True;
+		$errorCorreo="No existe el correo en Nuestra Base de Datos";
+		include_once 'ingresoF.php';
+	}
+
 }else{
-    include_once 'ingresoF.php';
+	include_once 'ingresoF.php';
 }
 
 

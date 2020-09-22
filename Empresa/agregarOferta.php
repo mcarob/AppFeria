@@ -103,7 +103,7 @@ $fecha_actual = date("Y-m-d")
                                                     <select class="form-control"id="perfilest"
                                                         name="perfilest"
                                                         onchange="getCity(this.value);">
-                                                        <option value="0">Indiferente Al Perfil</option>
+                                                        <option value="6">Indiferente Al Perfil</option>
                                                         <?php
                                                         foreach ($listaCarreras as $carre) {
                                                       ?>
