@@ -136,7 +136,7 @@ class Usuario extends DB{
             return 0;
         }
     }
-    public function mandarCorreoRecuperacion($usuario){
+    public function mandarCorreoRecuperacion($usuario,$correo){
         $classEnviar= new enviarCorreo();
         $codigo=intval(rand(0,9).rand(0,9).rand(0,9).rand(0,9));
         $md5Codigo=md5($codigo);
@@ -144,23 +144,31 @@ class Usuario extends DB{
         para quqe puedas volver a ingresar a la aplicación, recuerda que si no completas este proceso, tendrás que volver a pedir un codigo de verificación.";
         if($this->tipoUsuario==1 ||  $this->tipoUsuario=4){
 
-            $r1=$classEnviar->enviarMensaje($this->nombreUsuario,$usuario,'Recuperación de Contraseña Oportunidades El Bosque',$mensaje);
+            $r1=$classEnviar->enviarMensaje($this->nombreUsuario,$correo,'Recuperación de Contraseña Oportunidades El Bosque',$mensaje);
         }else if( $this->tipoUsuario==2){
 
-            $r1=$classEnviar->enviarMensaje($this->nombreUsuario,$usuario,'Recuperación de Contraseña Oportunidades El Bosque',$mensaje);
+            $r1=$classEnviar->enviarMensaje($this->nombreUsuario,$correo,'Recuperación de Contraseña Oportunidades El Bosque',$mensaje);
         }else{
 
-            $r1=$classEnviar->enviarMensaje($this->nombreUsuario,$usuario,'Recuperación de Contraseña Oportunidades El Bosque',$mensaje);
+            $r1=$classEnviar->enviarMensaje($this->nombreUsuario,$correo,'Recuperación de Contraseña Oportunidades El Bosque',$mensaje);
         }
         if($r1){
-            $query=$this->connect()->prepare('UPDATE usuario SET CODIGO_VERIFICACION=? WHERE USER_USUARIO=?');
+            $query=$this->connect()->prepare('UPDATE usuario SET CODIGO_VERIFICACION=? WHERE COD_USUARIO=?');
             $query->execute([$md5Codigo,$this->codigo]);
+            echo("<script> console.log('se esta enviando con el codigo '+".$usuario."') </script>");
             return 1;
         }else{
             return "hubo unos problemas, por favor vuelve a intentar mas tarde, trabajamos para arreglar el inconveniente";
         }
 
 
+    }
+    public function validarCorreoContraOlv($user,$codigo){
+        $query=$this->connect()->prepare('SELECT * FROM usuario WHERE USER_USUARIO=? AND CODIGO_VERIFICACION=?');
+        $query->execute([$user,md5($codigo)]);
+        if($query->rowCount()){
+            return 1;
+        }return 0;
     }
 
     public function setUserxCod($usuario){

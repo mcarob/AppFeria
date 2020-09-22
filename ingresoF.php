@@ -213,6 +213,9 @@
 
                             <?php  if(!(isset($codigoEnviado) or  isset($ingresarNuevaContra))){
                                 ?>
+                                <?php if((isset($errorCorreo))){
+                                    echo("<label >".$errorCorreo."</label>");
+                                }  ?>
                             <label for="">Ingresa El correo de Registro:</label>
                             <br>
                             <input class="form-control input-lg" type="text" placeholder="ejemplo@unbosque.edu.co"
@@ -225,10 +228,17 @@
                             } ?>
                             <?php  if(isset($codigoEnviado)){
                                 ?>
-                                <label for=""> <?php echo($codigoEnviado); ?></label>
+                                <?php if((isset($errorCodigoConf))){
+                                    echo("<label >".$errorCodigoConf."</label>");
+                                }else{
+                                    ?>
+                                     <label for=""> <?php echo($codigoEnviado); ?></label>
+                                    <?php
+                                }  ?>
                             <label for="">Ingrese el codigo de confirmacion:</label>
                             <br>
-                            <input class="form-control input-lg" type="number">
+                            <input class="form-control input-lg" type="hidden" id="correoConf" name="correoConf" value="<?php echo ($correoE); ?>">
+                            <input class="form-control input-lg" type="number" id="confirmacionCambio" name="confirmacionCambio" required>
                             <br>
                             <button type="submit" class="btn btn-primary">Validar
                                 Codigo</button>
@@ -237,14 +247,16 @@
                             <?php  if(isset($ingresarNuevaContra)){
                                 ?>
                             <br>
-                            <label for=""> <?php ?></label>
+                            <?php if((isset($errorContraconfir))){
+                                    echo("<label >".$errorContraconfir."</label>");
+                                }  ?>
                             <label for="">Ingrese su nueva contraseña:</label>
                             <br>
-                            <input class="form-control input-lg" type="text">
+                            <input class="form-control input-lg" type="text" id="contrasena1con" name="contrasena1con" required>
                             <br>
                             <label for="">Confirme su nueva contraseña:</label>
                             <br>
-                            <input class="form-control input-lg" type="text">
+                            <input class="form-control input-lg" type="text" id="contrasena2con" name="contrasena2con" required>
                             <button type="submit" class="btn btn-primary" >Cambiar
                                 Contraseña</button>
                             <?php
