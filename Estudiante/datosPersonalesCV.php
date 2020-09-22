@@ -15,8 +15,8 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Username" name="apellidos"
-        id="apellidos" value=<?php echo($estudiante->getApellidoEstudiante())?> readonly>
+    <input type="text" class="form-control"  name="apellidos"
+        id="apellidos" value = "<?php echo($estudiante->getApellidoEstudiante())?>" readonly>
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
