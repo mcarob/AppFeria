@@ -179,7 +179,7 @@
           <h6 class="text-uppercase">
             Manual Empresa<span class="float-right"></span>
           </h6>
-          <a class="sidenav-item-link" href="TotalPostulaciones.php">
+          <a class="sidenav-item-link" onclick="abrirPDF()">
             <span class="nav-text">Descargar</span>
 
           </a>
@@ -219,8 +219,15 @@
         jQuery(this).val('');
       });
     });
-  </script>
 
+  </script>
+<script>
+    function abrirPDF() {
+      var win = window.open('../Admin/AbrirManual.php?action=empresa');
+      win.focus();
+
+    }
+</script>
 
 
 
