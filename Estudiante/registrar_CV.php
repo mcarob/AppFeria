@@ -29,15 +29,13 @@ $datosPersonales=array(
     $_POST["ciudad"],
     $_POST["perfil"]
 );
-// print_r($datosPersonales);
+
 
 
 $controladorHoja=new ControladorHojaDeVida();
 $hoja=new HojaDeVida(0,$datosPersonales[0],$datosPersonales[1],$datosPersonales[2],$datosPersonales[3],$datosPersonales[4]);
 
 $codigoHoja=$controladorHoja->agregarHojaDeVida($hoja);
-
-echo($codigoHoja);
 
 
 
@@ -136,7 +134,7 @@ if($numeroAcademicas!=0)
     {
         $infoA=$arregloAcademicas[$i];
         $academica=new AcademicaHoja(0,$codigoHoja,$infoA[0],$infoA[2],$infoA[3],$infoA[4],$infoA[1]);
-        print_r($academica);
+        
         $controladorAcademica->insertarHojaAcademica($academica);
     }
 }

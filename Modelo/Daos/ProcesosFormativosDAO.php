@@ -54,7 +54,7 @@ class ProcesosFormativosDAO
     public function buscarProcesos($codigoHoja){
         
         $sentencia = $this->con->prepare("SELECT * FROM proceso_formativos WHERE cod_hoja_vida=?");
-        $sentencia->execute($codigoHoja);
+        $sentencia->execute([$codigoHoja]);
         $em = array();
         while ($fila = $sentencia->fetch()) {
             $em[] = $fila;

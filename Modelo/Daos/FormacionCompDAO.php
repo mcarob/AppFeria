@@ -52,20 +52,15 @@ public function EditarformacionCom(FormacionComplementaria $formacion){
 
 
     public function darFormacionCompxHoja($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM procesos_formativos WHERE COD_HOJA_VIDA=" . $cod);
-        $sentencia->execute();
+        $sentencia = $this->con->prepare("SELECT * FROM FORMACION_COMPLEMENTARIA WHERE cod_hoja_vida=?");
+        $sentencia->execute([$cod]);
+        $em = array();
         while ($fila = $sentencia->fetch()) {
-            $formativos = new FormacionComplementaria(
-                $fila[0],
-                $fila[1],
-                $fila[2],
-                $fila[3],
-                $fila[4],
-                $fila[5]
-            );
+            $em[] = $fila;
         }
-        return $formativos;
+        return $em;
     }
+
     public function pasarInformaciones($var){
         $sql="SELECT  * FROM complementaria_tipo_formacion where cod_hoja_vida=?";
         $respuesta=$this->con->prepare($sql);

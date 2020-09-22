@@ -57,6 +57,15 @@ class AcademicaHojaDAO
         return $respuesta->fetchall();
 
     }
-
+    public function buscarAcademica($cod)
+    {
+        $sentencia = $this->con->prepare("SELECT * FROM academica_hoja  WHERE cod_hoja_vida=?");
+        $sentencia->execute([$cod]);
+        $em = array();
+        while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;
+        }
+        return $em;
+    }
 }
 ?>

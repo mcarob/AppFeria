@@ -114,13 +114,13 @@
                             <div class="sub-menu">
                                 <li>
                                     <a class="sidenav-item-link" href="registrarCV.php">
-                                        <span class="nav-text">Actualizar Hoja de Vida</span>
+                                        <span class="nav-text">Crear Hoja de Vida</span>
 
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="sidenav-item-link" href="graficos.php">
-                                        <span class="nav-text">Visualizar Hoja de Vida</span>
+                                    <a class="sidenav-item-link" href="actualizarCV.php">
+                                        <span class="nav-text">Actualizar Hoja de Vida</span>
 
                                     </a>
                                 </li>
@@ -139,7 +139,7 @@
                     <h6 class="text-uppercase">
                         Manual Estudiante<span class="float-right"></span>
                     </h6>
-                    <a class="sidenav-item-link" href="TotalPostulaciones.php">
+                    <a class="sidenav-item-link" onclick="abrirPDFes()">
                         <span class="nav-text">Descargar</span>
 
                     </a>
@@ -188,6 +188,12 @@
                 jQuery(this).val('');
             });
         });
+
+        function abrirPDFes() {
+      var win = window.open('../Admin/AbrirManual.php?action=es');
+      win.focus();
+
+    }
     </script>
 
     <script>

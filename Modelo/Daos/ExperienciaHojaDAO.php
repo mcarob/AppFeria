@@ -71,20 +71,13 @@ class ExperienciaHojaDAO
     }
 
     public function darExperienciaXHoja($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM EXPERIENCIA_HOJA WHERE COD_HOJA_VIDA=" . $cod);
-        $sentencia->execute();
+        $sentencia = $this->con->prepare("SELECT * FROM experiencia_hoja WHERE cod_hoja_vida=?");
+        $sentencia->execute([$cod]);
+        $em = array();
         while ($fila = $sentencia->fetch()) {
-            $experiencia = new ExperienciaHoja(
-                $fila[0],
-                $fila[1],
-                $fila[2],
-                $fila[3],
-                $fila[4],
-                $fila[5],
-                $fila[6]
-            );
+            $em[] = $fila;
         }
-        return $experiencia;
+        return $em;
     }
 
     public function pasarInformaciones($var){

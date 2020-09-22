@@ -182,5 +182,14 @@ class PromocionPostulacionDAO
         return $nrows;
     }
 
+    public function buscarNomCiudad($cod)
+    {
+        
+        $sentencia = $this->con->prepare("SELECT  * FROM CIUDAD WHERE COD_CIUDAD=?");
+        $sentencia->execute([$cod]);
+        $nrows = $sentencia->fetch();
+        return $nrows; 
+
+    }
 
 }

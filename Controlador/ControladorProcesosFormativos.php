@@ -20,11 +20,11 @@ private $procesos;
 		return $this->procesos->editarProcesos($formativos);
 	}
 
-public function darProcesos($codigoHoja)
-{
-	$this->procesos=new ReferenciaHojaDAO();
-	return $this->procesos->buscarProcesos($codigoHoja);
-}
+	public function darProcesos($codigoHoja)
+	{
+		$this->procesos=new ProcesosFormativosDAO();
+		return $this->procesos->buscarProcesos($codigoHoja);
+	}
 
 }
 
