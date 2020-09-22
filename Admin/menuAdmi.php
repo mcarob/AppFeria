@@ -163,6 +163,19 @@
 
                     </a>
                   </li>
+                  <li>
+                    <a class="sidenav-item-link" href="GPerfilMasBuscado.php">
+                      <span class="nav-text">Perfil más buscados</span>
+
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="sidenav-item-link" href="GOfertasXCiudad.php">
+                      <span class="nav-text">Ofertas por ubicación</span>
+
+                    </a>
+                  </li>
                 </div>
               </ul>
             </li>
@@ -178,7 +191,7 @@
           </ul>
 
         </div>
-        <div class="sidebar-footer">
+        <!-- <div class="sidebar-footer">
         <hr class="separator mb-0" />
         <div class="sidebar-footer-content">
           <h6 class="text-uppercase">
@@ -220,7 +233,7 @@
 
 
         </div>
-      </div>
+      </div> -->
 
       </div>
     </aside>
