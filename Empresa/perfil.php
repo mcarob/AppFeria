@@ -141,9 +141,7 @@ include('Header.php');
                                             <label for="conPassword">Descripción</label>
                                             <textarea type="" class="form-control" id="descripcionEmpresa"
                                                 name="descripcionEmpresa" cols="40" rows="9"
-                                                value="<?php echo($empresa->getDescripcionEmpresa()) ?>"
-                                                maxlength="1200" required>
-                                            </textarea>
+                                                maxlength="1200" required><?php echo($empresa->getDescripcionEmpresa()) ?></textarea>
                                         </div>
 
                                         <div class="d-flex justify-content-end mt-5">
