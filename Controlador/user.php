@@ -160,9 +160,8 @@ class Usuario extends DB{
         }else{
             return "hubo unos problemas, por favor vuelve a intentar mas tarde, trabajamos para arreglar el inconveniente";
         }
-
-
     }
+    
     public function validarCorreoContraOlv($user,$codigo){
         $query=$this->connect()->prepare('SELECT * FROM usuario WHERE USER_USUARIO=? AND CODIGO_VERIFICACION=?');
         $query->execute([$user,md5($codigo)]);
@@ -171,6 +170,13 @@ class Usuario extends DB{
         }return 0;
     }
 
+    public function modificarContraActualizar($codigo,$contra){
+        $md5Codigo = md5($contra);
+        $query=$this->connect()->prepare('UPDATE usuario SET CONTRA_USUARIO=? WHERE COD_USUARIO=?');
+        $query->execute([$md5Codigo,$codigo]);
+
+
+    }
     public function setUserxCod($usuario){
         $query=$this->connect()->prepare('SELECT * FROM usuario WHERE COD_USUARIO=:user');
         $query->execute(['user'=>$usuario]);

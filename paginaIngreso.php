@@ -107,10 +107,12 @@ if(isset($_SESSION['user'])){
 	}
 	include_once 'ingresoF.php';
 }else if(isset($_POST['contrasena1con'])){
-	if(isset($_POST['contrasena1con'])==isset($_POST['contrasena2con'])){
-		
-		$userSession->setCurrentUser($userForm);
-		$user->setUser($userForm);
+	if($_POST['contrasena1con']==$_POST['contrasena2con']){
+		$user->setUser($_POST['correoConf']);
+		$user->modificarContraActualizar($user->darCodigo(),$_POST['contrasena1con']);
+		$user->darIngreso($_POST['correoConf'],md5($_POST['contrasena1con']));
+		$user->setUser($_POST['correoConf']);
+		$userSession->setCurrentUser($_POST['correoConf']);
 		$tipo=$user->getTipoUsuario();
 		$userSession->setTipoUsuario($tipo);
 		if($tipo==1 || $tipo==4){
@@ -120,8 +122,8 @@ if(isset($_SESSION['user'])){
 			}else if($tipo==3){
 				header('location: Empresa/index.php');
 			}
-
 	}else{
+		$correoE=$_POST['correoConf'];
 		$mostrarDialogo=True;
 		$errorContraconfir="Las contraseñas deben ser iguales, por favor intente nuevamente";
 		$ingresarNuevaContra=true;

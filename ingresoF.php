@@ -252,11 +252,12 @@
                                 }  ?>
                             <label for="">Ingrese su nueva contraseña:</label>
                             <br>
-                            <input class="form-control input-lg" type="text" id="contrasena1con" name="contrasena1con" required>
+                            <input class="form-control input-lg" type="hidden" id="correoConf" name="correoConf" value="<?php echo ($correoE); ?>">
+                            <input class="form-control input-lg" type="password" id="contrasena1con" name="contrasena1con" required>
                             <br>
                             <label for="">Confirme su nueva contraseña:</label>
                             <br>
-                            <input class="form-control input-lg" type="text" id="contrasena2con" name="contrasena2con" required>
+                            <input class="form-control input-lg" type="password" id="contrasena2con" name="contrasena2con" required>
                             <button type="submit" class="btn btn-primary" >Cambiar
                                 Contraseña</button>
                             <?php
