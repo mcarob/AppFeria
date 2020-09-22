@@ -1,6 +1,6 @@
 <head>
 	<!-- Load plotly.js into the DOM -->
-	<script src="librerias/plotly-latest.min.js"></script>
+	<script src="librerias/plotly-latest1.min.js"></script>
 </head>
 
 <body>
