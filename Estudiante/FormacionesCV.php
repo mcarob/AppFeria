@@ -79,7 +79,7 @@ $(document).ready(function() {
             '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" required id="academica' +
             i + '[]" required name="academica' + i +
             '[]"> </div> </div><button type="button" name="remove" id="A' +
-            i + '" class="btn btn-danger btn_removeF1">Remover</button><br>');
+            i + '" class="btn btn-danger btn_removeF1">Remover</button><br></div></div></div>');
 
     });
 
@@ -102,7 +102,7 @@ $(document).ready(function() {
             '[]" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Cantidad de horas</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="complementaria' +
             j + '[]" required name="complementaria' + j +
             '[]"> </div> </div> </div> </div><button type="button" name="remove" id="L' +
-            j + '" class="btn btn-danger btn_removeF2">Remover</button><br>');
+            j + '" class="btn btn-danger btn_removeF2">Remover</button><br></div>');
 
     });
 

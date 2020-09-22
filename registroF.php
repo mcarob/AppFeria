@@ -155,8 +155,6 @@
                     <div class="row">
                         <div class="col-md-4">
                             <h4>About us</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor
-                            </p>
                         </div>
 
                         <div class="col-md-4">

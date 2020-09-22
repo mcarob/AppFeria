@@ -42,7 +42,7 @@ class ReferenciaHojaDAO
     public function buscarReferenciaHojaDeVida($codigoHoja){
         
         $sentencia = $this->con->prepare("SELECT * FROM referencia_hoja WHERE cod_hoja_vida=?");
-        $sentencia->execute($codigoHoja);
+        $sentencia->execute([$codigoHoja]);
         $em = array();
         while ($fila = $sentencia->fetch()) {
             $em[] = $fila;
@@ -57,9 +57,6 @@ class ReferenciaHojaDAO
         $respuesta->execute([$var]);
         return $respuesta->fetchall();
     }
-
-
-
-
+    
 }
 ?>
