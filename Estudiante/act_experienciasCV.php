@@ -149,13 +149,15 @@
                  </div><button type="button" name="remove" id="PR<?php echo($y+1)?>"
                      class="btn btn-danger btn_removeE2">Remover</button><br><br>
              </div>
+
+
+             <?php } ?>
          </div>
      </div>
 
-     <?php } ?>
 
-     </div>
-     </div>
+
+
 
      <input type="hidden" id="numExAcademicas" name="numExAcademicas" value="">
      <input type="hidden" id="numExProfesionales" name="numExProfesionales" value="">
