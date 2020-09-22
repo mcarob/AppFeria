@@ -69,7 +69,7 @@ $(document).ready(function() {
             '[]"> <option disabled="" selected="">Seleccionar periodo</option> <option value="Periodo 2015-1">Periodo 2015-1 </option> <option value="Periodo 2015-2">Periodo 2015-2 </option> <option value="Periodo 2016-1">Periodo 2016-1 </option> <option value="Periodo 2016-2">Periodo 2016-2 </option> <option value="Periodo 2017-1">Periodo 2017-1 </option> <option value="Periodo 2017-2">Periodo 2017-2 </option> <option value="Periodo 2018-1">Periodo 2018-1 </option> <option value="Periodo 2018-2">Periodo 2018-2 </option> <option value="Periodo 2019-1">Periodo 2019-1 </option> <option value="cl">Periodo 2019-2 </option> <option value="Periodo 2020-1">Periodo 2020-1 </option> <option value="cl">Periodo 2020-2 </option> </select> </div> </div> </div> <div class="form-group"> <textarea class="form-control" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
             '[]" rows="5" style="resize: none;" placeholder="Describa del proyecto"></textarea> </div> </div><button type="button" name="remove" id="AC' +
-            x + '" class="btn btn-danger btn_removeE1">Remover</button>');
+            x + '" class="btn btn-danger btn_removeE1">Remover</button></div></div></div>');
 
     });
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
             '[]"> </div> </div> </div> <div class="form-group"> <textarea class="form-control" rows="5" style="resize: none;" placeholder="Describa el cargo" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
             '[]"></textarea> </div><button type="button" name="remove" id="PR' + y +
-            '" class="btn btn-danger btn_removeE2">Remover</button><br><br>');
+            '" class="btn btn-danger btn_removeE2">Remover</button><br><br></div></div></div>');
 
     });
 

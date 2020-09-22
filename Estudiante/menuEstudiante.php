@@ -114,13 +114,13 @@
                             <div class="sub-menu">
                                 <li>
                                     <a class="sidenav-item-link" href="registrarCV.php">
-                                        <span class="nav-text">Actualizar Hoja de Vida</span>
+                                        <span class="nav-text">Crear Hoja de Vida</span>
 
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="sidenav-item-link" href="graficos.php">
-                                        <span class="nav-text">Visualizar Hoja de Vida</span>
+                                    <a class="sidenav-item-link" href="actualizarCV.php">
+                                        <span class="nav-text">Actualizar Hoja de Vida</span>
 
                                     </a>
                                 </li>

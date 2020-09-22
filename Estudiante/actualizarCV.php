@@ -1,4 +1,10 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorHojaVida.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorReferencia.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorFormacionComp.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorAcademicaHoja.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorProcesosFormativos.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorExperienciaHoja.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
@@ -16,6 +22,38 @@ $user->setUser($_SESSION['user']);
 $codigo = $user->darCodigo();
 $estudiante = $estudiante_dao->devolverEstudiante($codigo);
 
+$controladorHoja=new ControladorHojaDeVida();
+$idHoja=$controladorHoja->darIdHoja($estudiante->getCodEstudiante());
+$datosPersonales=$controladorHoja->darHojaEstudiante($estudiante->getCodEstudiante());
+
+$controladorReferencia=new ControladorReferenica();
+$datosReferencia=$controladorReferencia->darReferencia($idHoja);
+if(sizeof($datosReferencia)==2)
+{
+    $referencia1=$datosReferencia[0];
+    $referencia2=$datosReferencia[1];
+}if(sizeof($datosReferencia)==1)
+{
+    $referencia1=$datosReferencia[0];
+}
+
+$controladorAcademica=new ControladorAcademicaHoja();
+$formacionesAcademicas=$controladorAcademica->darHojaAcademica($idHoja);
+$cantidadAcademicas=sizeof($formacionesAcademicas);
+
+
+$controladorComplementaria=new ControladorFormacionComp();
+$formacionesComplementarias=$controladorComplementaria->darFormacionCompxCOD($idHoja);
+$cantidadComplementarias=sizeof($formacionesComplementarias);
+
+$controladorExpAcademica=new ControladorProcesosFormativos();
+$experienciasAcademicas=$controladorExpAcademica->darProcesos($idHoja);
+$cantidadExpAcademicas=sizeof($experienciasAcademicas);
+
+
+$controladorExpLaboral=new ControladorExperiencia();
+$experienciasLaborales=$controladorExpLaboral->darExperiencia($idHoja);
+$cantidadExpLaborales=sizeof($experienciasLaborales);
 
 include('menuEstudiante.php');
 include('Header.php');
@@ -55,27 +93,28 @@ include('Header.php');
                                         <input type="hidden" id="codigoEstudiante" name="codigoEstudiante"
                                             value="<?php echo $estudiante->getCodEstudiante() ?>" />
 
-                                        <?php include_once 'datosPersonalesCV.php'; ?>
+                                        <?php include_once 'act_datosPersonalesCV.php'; ?>
 
                                         <!--  fin del primer tab-->
                                     </div>
                                     <div class="tab-pane pt-3 fade" id="profile3" role="tabpanel"
                                         aria-labelledby="profile3-tab">
-                                        <?php include_once 'FormacionesCV.php'; ?>
+                                        <?php include_once 'act_formacionesCV.php'; ?>
                                     </div>
                                     <div class="tab-pane pt-3 fade" id="profile4" role="tabpanel"
                                         aria-labelledby="profile3-tab">
-                                        <?php include_once 'ExperienciasCV.php'; ?>
+                                        <?php include_once 'act_ExperienciasCV.php'; ?>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-warning "
                                     style="background-color: #0B7984; border-color: #0B7984;" id="enviar" name="enviar">
                                     <font color="White">Guardar</font>
                                 </button>
-                                <button type="submit" class="btn btn-warning "
+                                <button type="button" class="btn btn-warning "
                                     style="background-color: #0B7984; border-color: #0B7984;" onclick="mandarHoja()">
                                     <font color="White">Ver en pdf</font>
                                 </button>
+
                             </div>
                         </div>
 
@@ -90,12 +129,12 @@ include('Header.php');
     <script src="../assets/plugins/toastr/toastr.min.js"></script>
     <script>
     //variables de formulario formaciones
-    var i = 0; //Cant. fomarciones academicas
-    var j = 0; //Cant. fomarciones laborales
+    var i = <?php echo($cantidadAcademicas) ?> ; //Cant. fomarciones academicas
+    var j = <?php echo($cantidadComplementarias) ?> ; //Cant. fomarciones laborales
 
     //variables de formulario experiencias
-    var x = 0; //Cant. exp academicas
-    var y = 0; //Cant. exp profesionales
+    var x = <?php echo($cantidadExpAcademicas) ?> ; //Cant. exp academicas
+    var y = <?php echo($cantidadExpLaborales) ?> ; //Cant. exp profesionales
 
     function cargarHoja() {
 
@@ -125,15 +164,14 @@ include('Header.php');
             data: datos,
             url: "registrar_CV.php",
             success: function(r) {
-
                 console.log(r);
                 if (r == 11) {
-                    window.location.href = "index.php";
+
                 } else if (r == 3) {
-                    toastr["success"](r, "ERROR");
+                    toastr["success"](r, "Actualizado");
                 } else {
 
-                    toastr["success"](r, "ERROR");
+                    toastr["success"](r, "ALERTA");
 
                 }
             }
