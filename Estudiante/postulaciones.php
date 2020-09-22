@@ -209,7 +209,7 @@ include('Header.php');
             ?>
                 </div>
             </div>
-            <div class="card-footer text-muted">
+            <div class="card-footer text" style="background-color: white;" >
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">

@@ -6,7 +6,7 @@
 
 <h3>Perfil: <button type="button" class="btn mb-1 btn-success btn-pill" data-container="body" data-toggle="popover"
         data-placement="right"
-        data-content="Recuerde que en el perfil debe añair informacion como, idiomas, hobbies, caracteristicas personales.">?</button>
+        data-content="Recuerde que en el perfil debe añadir informacion como, idiomas, hobbies, caracteristicas personales.">?</button>
 </h3>
 
 <br>
