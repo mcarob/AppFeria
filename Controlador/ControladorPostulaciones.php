@@ -8,7 +8,11 @@ class ControladorPostulacion{
 
 
 
-
+		public function darNombreCiudad($cod)
+		{
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->buscarNomCiudad($cod);
+		}
 		public function darListaPostulacionesxEst($cod)
 		{
 			$this->postulados = new PromocionPostulacionDAO();

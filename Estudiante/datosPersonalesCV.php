@@ -7,7 +7,7 @@
         </span>
     </div>
     <input type="text" class="form-control" placeholder="Nombres" aria-label="Username" id="nombre" name="nombre"
-        value=<?php echo($estudiante->getNombreEstudiante())?> readonly>
+        value="<?php echo($estudiante->getNombreEstudiante())?>" readonly>
 </div>
 <div class="input-group">
     <div class="input-group-prepend">
@@ -27,7 +27,7 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Documento de identidad" aria-label="Username"
-                id="cedula" name="cedula" value=<?php echo($estudiante->getCedEstudiante())?> readonly>
+                id="cedula" name="cedula" value="<?php echo($estudiante->getCedEstudiante())?>" readonly>
         </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -97,7 +97,7 @@
         </span>
     </div>
     <input type="text" class="form-control" placeholder="Correo Electronico" aria-label="Username" id="correo"
-        name="correo" value=<?php echo($estudiante->getCorreoEstudiante())?> readonly>
+        name="correo" value="<?php echo($estudiante->getCorreoEstudiante())?>" readonly>
 </div>
 <br>
 <h3>Referencia No. 1:</h3>
@@ -108,8 +108,7 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" id="nombreR1" name="nombreR1"
-        required>
+    <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" id="nombreR1" name="nombreR1">
 </div>
 
 <div class="input-group">
@@ -118,8 +117,7 @@
             <i class="material-icons">email</i>
         </span>
     </div>
-    <input type="text" class="form-control" placeholder="Correo" aria-label="Username" id="correoR1" name="correoR1"
-        required>
+    <input type="text" class="form-control" placeholder="Correo" aria-label="Username" id="correoR1" name="correoR1">
 </div>
 
 <div class="input-group">
@@ -128,8 +126,7 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="empresaR1" name="empresaR1"
-        required>
+    <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="empresaR1" name="empresaR1">
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -140,7 +137,7 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="cargoR1"
-                name="cargoR1" required>
+                name="cargoR1">
         </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -151,7 +148,7 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
-                name="telefonoR1" required>
+                name="telefonoR1">
         </div>
     </div>
 
@@ -164,8 +161,7 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" id="nombreR2" name="nombreR2"
-        required>
+    <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" id="nombreR2" name="nombreR2">
 </div>
 
 <div class="input-group">
@@ -174,8 +170,7 @@
             <i class="material-icons">email</i>
         </span>
     </div>
-    <input type="text" class="form-control" placeholder="Correo" aria-label="Username" id="correoR2" name="correoR2"
-        required>
+    <input type="text" class="form-control" placeholder="Correo" aria-label="Username" id="correoR2" name="correoR2">
 </div>
 <div class="input-group">
     <div class="input-group-prepend">
@@ -183,8 +178,7 @@
             <i class="material-icons">face</i>
         </span>
     </div>
-    <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="empresaR2" name="empresaR2"
-        required>
+    <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="empresaR2" name="empresaR2">
 </div>
 <div class="row no-gutters">
     <div class="col-md-6 mb-3">
@@ -195,7 +189,7 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="cargoR2"
-                name="cargoR2" required>
+                name="cargoR2">
         </div>
     </div>
     <div class="col-md-6 mb-3">
@@ -206,7 +200,7 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
-                name="telefonoR2" required>
+                name="telefonoR2">
         </div>
     </div>
 </div>

@@ -13,6 +13,13 @@ public function insertarHojaAcademica(AcademicaHoja $academica)
 	return $this->hojaAcademica->agregarHojaAcademica($academica);
 }
 
+public function darHojaAcademica($cod)
+{
+	$this->hojaAcademica=new AcademicaHojaDAO();
+	return $this->hojaAcademica->buscarAcademica($cod);
+}
+
+
 
 
 }

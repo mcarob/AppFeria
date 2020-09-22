@@ -42,7 +42,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-white border">
                     <div class="card-block">
-                        <i class="mdi mdi-cart-outline text-warning mr-4"></i>
+                    <i class="material-icons" style="color: #29cc97; font-size: 30px;">folder_shared</i>
                         <h4 class="text-primary my-2"><?php foreach ($totalP as $k) {
                                                             echo ($k[0]);
                                                         } ?></h4>
@@ -53,7 +53,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-white border">
                     <div class="card-block">
-                        <i class="mdi mdi-cart-outline text-danger mr-4"></i>
+                    <i class="material-icons" style="color: #0B7984; font-size: 30px;">folder_shared</i>
                         <h4 class="text-primary my-2"><?php foreach ($totalPI as $k) {
                                                             echo ($k[0]);
                                                         } ?></h4>
@@ -64,7 +64,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-white border">
                     <div class="card-block">
-                        <i class="mdi mdi-cart-outline text-warning mr-4"></i>
+                    <i class="material-icons" style="color: #fe5461; font-size: 30px;">folder_shared</i>
                         <h4 class="text-primary my-2"><?php foreach ($totalPF as $k) {
                                                             echo ($k[0]);
                                                         } ?></h4>
@@ -76,7 +76,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-white border">
                     <div class="card-block">
-                        <i class="mdi mdi-cart-outline text-warning mr-4"></i>
+                    <i class="material-icons" style="color: #fec400; font-size: 30px;">folder_shared</i>
                         <h4 class="text-primary my-2"> <?php foreach ($totalPA as $k) {
                                                         echo ($k[0]);
                                                     } ?></h4>
@@ -92,7 +92,7 @@ include('Header.php');
                 <div class="card widget-block p-4 rounded bg-warning border">
 
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">perm_identity</i>
                         <h4 class="text-white my-2"><?php foreach ($totalE as $k) {
                                                          ($k[0]);
                                                     } ?></h4>
@@ -103,7 +103,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-danger border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">perm_identity</i>
                         <h4 class="text-white my-2"><?php foreach ($totalE as $k) {
                                                         echo ($k[0]);
                                                     } ?></h4>
@@ -114,7 +114,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-primary border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">perm_identity</i>
                         <h4 class="text-white my-2"><?php foreach ($totalEA as $k) {
                                                         echo ($k[0]);
                                                     } ?></h4>
@@ -125,7 +125,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-success border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">perm_identity</i>
                         <h4 class="text-white my-2"><?php foreach ($totalEI as $k) {
                                                         echo ($k[0]);
                                                     } ?></h4>
@@ -146,7 +146,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-warning border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">business</i>
                         <h4 class="text-white my-2"><?php foreach ($totalEmp as $k) {
                                                          ($k[0]);
                                                     } ?></h4>
@@ -157,7 +157,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-danger border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">business</i>
                         <h4 class="text-white my-2"><?php foreach ($totalEmp as $k) {
                                                         echo ($k[0]);
                                                     } ?></h4>
@@ -168,7 +168,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-primary border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">business</i>
                         <h4 class="text-white my-2"><?php foreach ($totalEmpI as $k) {
                                                         echo ($k[0]);
                                                     } ?></h4>
@@ -179,7 +179,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-success border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">business</i>
                         <h4 class="text-white my-2"><?php foreach ($totalEmpA as $k) {
                                                         echo ($k[0]);
                                                     } ?></h4>

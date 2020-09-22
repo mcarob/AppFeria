@@ -59,7 +59,7 @@ $datosY = json_encode($valoresY);
 		},
 		bargap: 0.05
 	};
+	var config = {responsive: true};
 	
-
-	Plotly.newPlot('graficaBarras33', data, layout);
+	Plotly.newPlot('graficaBarras33', data, layout,config);
 </script>   

@@ -110,11 +110,11 @@ class EstudianteDAO
         #cedula,correo,nombre,apellido,programa,semestre,contrasena,verificacion
         $classEnviar= new enviarCorreo();
         $codigo=intval(rand(0,9).rand(0,9).rand(0,9).rand(0,9));
+        $md5Codigo=md5($codigo);
         $mensaje='Muchas gracias por registrarse en la aplicación de "Feria de Oportunidades Universidad El Bosque", para continar con el proceso de inscripcción, por favor ingrese a la aplicación con su correo electronico, 
          para su primer ingreso, debera ingresar el codigo de verificacion que esta a continuación :  '.$codigo. " podrás acceder a toda la funciones, te recomendamos que eches un ojo a la hoja de vida, para que así todas las
-         empresas registradas en la aplicación puedan ver tu perfil.
-         Muchas Gracias";
-        $md5Codigo=md5($codigo);
+         empresas registradas en la aplicación puedan ver tu perfil.";
+
         $sentencia = $this->con->prepare("CALL agregar_estudiante(?, ?, ?, ?, ?, ?, ?, ?)");
         $r=$sentencia->execute([$v[0],$v[1],$v[2],$v[3],$v[4],$v[5],$v[6],$md5Codigo]);  
         if($r==1){

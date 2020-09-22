@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
 
 ?>
 <script src="librerias/jquery-3.3.1.min.js"></script>
-<script src="librerias/plotly-latest.min.js"></script>
+<script src="librerias/plotly-latest1.min.js"></script>
 
 
 <?php
@@ -49,7 +49,8 @@ include('menuAdmi.php');
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#barrasE').load('barrasPXE.php');
+                $('#barrasE').load('barrasPXE.php'
+                );
             });
         </script>
 

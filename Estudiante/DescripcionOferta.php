@@ -11,6 +11,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/Empr
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPostulaciones.php');
 
 $conPromocion = new ControladorPromocion();
 $user = new Usuario();
@@ -24,9 +25,6 @@ $empresa_dao = new EmpresaDAO();
 
 
 $postulacionesActivas=$estudiante_dao->desactivarPostulacion($estudiante->getCodEstudiante());
-
-
-
 
 include('menuEstudiante.php');
 include('Header.php');
@@ -44,6 +42,10 @@ $total=$postulacionesActivas["activas"];
 
 
 $horarios = explode(';', $informacion[3]);
+
+$controladorPromocion=new ControladorPostulacion();
+$ciudad=$controladorPromocion->darNombreCiudad($informacion[12]);
+
 ?>
 
 
@@ -109,6 +111,7 @@ $horarios = explode(';', $informacion[3]);
                                                                                     echo "Sin remuneración";
                                                                                 } else {
                                                                                     echo $informacion[5];
+                                                                                    
                                                                                 }
                                                                                 ?></span>
                                                 </div>
@@ -118,7 +121,7 @@ $horarios = explode(';', $informacion[3]);
                                                 <div class="form-group">
                                                     <label for="lastName">Ciudad
                                                     </label>
-                                                    <span class="d-block mt-1"> <?php echo $informacion[12] ?> </span>
+                                                    <span class="d-block mt-1"> <?php echo $ciudad['NOM_CIUDAD'] ?> </span>
                                                 </div>
                                             </div>
 

@@ -29,14 +29,16 @@
 </head>
 </head>
 
-<body style="background-image: url(assets/img/UEB.jpg); background-repeat: no-repeat; display: block; margin-left: auto; margin-right: auto; width: 100%; background-size: cover;">
+<body
+    style="background-image: url(assets/img/UEB.jpg); background-repeat: no-repeat; display: block; margin-left: auto; margin-right: auto; width: 100%; background-size: cover;">
 
     <!-- Add your content of header -->
     <header>
         <nav1 class="navbar1  navbar1-fixed-top navbar1-default">
             <div class="container1">
                 <div class="navbar1-header">
-                <button type="button" class="navbar1-toggle uarr collapsed" data-toggle="collapse" data-target="#navbar1-collapse-uarr">
+                    <button type="button" class="navbar1-toggle uarr collapsed" data-toggle="collapse"
+                        data-target="#navbar1-collapse-uarr">
                         <span class="sr-only">toggle1 navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -56,7 +58,8 @@
                         <li><a href="./Registrar.php" title="">Registrarme</a></li>
                         <li>
                             <p>
-                                <a href="paginaIngreso.php" class="btn btn-primary navbar1-btn" title="">Iniciar sesion</a>
+                                <a href="paginaIngreso.php" class="btn btn-primary navbar1-btn" title="">Iniciar
+                                    sesion</a>
                             </p>
                         </li>
                     </ul>
@@ -89,27 +92,34 @@
                             <div class="row">
                                 <div class="form-group col-md-12 mb-4">
 
-                                    <input type="text" class="form-control input-lg" id="username" required autocomplete="new-user" <?php
+                                    <input type="text" class="form-control input-lg" id="username" required
+                                        autocomplete="new-user"
+                                        <?php
                                                                                                                                     if (isset($userForm)) {
                                                                                                                                         echo ("value='" . $userForm . "'");
                                                                                                                                     }
-                                                                                                                                    ?> name="username" placeholder="Usuario">
+                                                                                                                                    ?>
+                                        name="username" placeholder="Usuario">
                                 </div>
                                 <div class="form-group col-md-12 ">
-                                    <input type="password" class="form-control input-lg" id="password" required autocomplete="new-password" <?php
+                                    <input type="password" class="form-control input-lg" id="password" required
+                                        autocomplete="new-password"
+                                        <?php
                                                                                                                                             if (isset($passForm)) {
                                                                                                                                                 echo ("value='" . $passForm . "'");
                                                                                                                                             }
-                                                                                                                                            ?> name="password" placeholder="Contrase&ntilde;a">
+                                                                                                                                            ?>
+                                        name="password" placeholder="Contrase&ntilde;a">
                                 </div>
 
                                 <?php
                                 if (isset($mostrarCodigo)) {
 
                                 ?>
-                                    <div class="form-group col-md-12 ">
-                                        <input type="password" class="form-control input-lg" id="verifi" name="verifi" placeholder="Codigo Verificación" required>
-                                    </div>
+                                <div class="form-group col-md-12 ">
+                                    <input type="password" class="form-control input-lg" id="verifi" name="verifi"
+                                        placeholder="Codigo Verificación" required>
+                                </div>
                                 <?php
 
                                 }
@@ -119,75 +129,32 @@
                                 <div class="col-md-12">
                                     <div class="d-flex my-2 justify-content-between">
                                         <div class="d-inline-block mr-3">
+                                            <p><button type="button" class="btn btn-light" data-toggle="modal"
+                                                    data-target="#exampleModalCenter"
+                                                    style="background-color: #ffffff;">
+                                                    ¿Olvidaste tu contraseña?
+                                                </button>
 
                                         </div>
-                                        <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                                ¿Olvidaste tu contraseña?
-                                            </button>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLongTitle">Cambiar contraseña</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <label for="">Ingresa tu correo institucinal:</label>
-                                                            <br>
-                                                            <input class="form-control input-lg" type="text" placeholder="ejemplo@unbosque.edu.co">
-                                                            <br>
-                                                            <button type="button" class="btn btn-primary">Enviar codigo</button>
-                                                            <br><br>
-
-                                                            <label for="">Ingrese el codigo de confirmacion:</label>
-                                                            <br>
-                                                            <input class="form-control input-lg" type="number">
-                                                            <br>
-                                                            <button type="button" class="btn btn-primary">Validar codigo</button>
-
-                                                            <br><br>
-                                                            <label for="">Ingrese su nueva contraseña:</label>
-                                                            <br>
-                                                            <input class="form-control input-lg" type="text">
-                                                            <br>
-                                                            <label for="">Confirme su nueva contraseña:</label>
-                                                            <br>
-                                                            <input class="form-control input-lg" type="text">
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Finalizar</button>
-                                                            
-                                                           
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </p>
                                     </div>
-                                    <?php
+                                    </p>
+                                </div>
+                                <?php
 
                                     if (isset($errorEntrada)) {
                                         echo  $errorEntrada;
                                     }
                                     ?>
-                                    <button type="submit" class="btn btn-lg btn-primary btn-block mb-4" name="submit">Ingresar</button>
-                                    <p>No tienes una cuenta?
-                                        <a class="text-blue" href="Registrar.php">Registrate</a>
-                                    </p>
-                                </div>
+                                <button type="submit" class="btn btn-lg btn-primary btn-block mb-4"
+                                    name="submit">Ingresar</button>
                             </div>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
-
     </div>
+
 
 
 
@@ -202,18 +169,23 @@
                         <div class="col-md-4">
                             <h4>¡Conocenos!</h4>
                             <p>
-                                <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                                <a href="https://www.facebook.com/universidadelbosque/" target="_blank"
+                                    class="social-round-icon white-round-icon fa-icon" title="">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://twitter.com/UElBosque" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                                <a href="https://twitter.com/UElBosque" target="_blank"
+                                    class="social-round-icon white-round-icon fa-icon" title="">
                                     <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.instagram.com/uelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                                <a href="https://www.instagram.com/uelbosque/" target="_blank"
+                                    class="social-round-icon white-round-icon fa-icon" title="">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                 </a>
                             </p>
-                            <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup
-                                        Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>
+                            <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/"
+                                        class="link-like-text" title="Create website with free html template">Mashup
+                                        Template</a>/<a href="http://www.unsplash.com/" class="link-like-text"
+                                        title="Beautiful Free Images">Unsplash</a></small></p>
                         </div>
 
                     </div>
@@ -222,31 +194,90 @@
 
         </footer>
     </div>
+  
+  
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cambiar
+                        contraseña</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="" method="POST">
+                    <div class="modal-body">
+                        <div id="cambiarContenido">
+
+                            <?php  if(!(isset($codigoEnviado) or  isset($ingresarNuevaContra))){
+                                ?>
+                                <?php if((isset($errorCorreo))){
+                                    echo("<label >".$errorCorreo."</label>");
+                                }  ?>
+                            <label for="">Ingresa El correo de Registro:</label>
+                            <br>
+                            <input class="form-control input-lg" type="text" placeholder="ejemplo@unbosque.edu.co"
+                                pattern="^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(.[A-Za-z0-9]+)(.[A-Za-z]{2,})$"
+                                title="No Cumple con el Formato de Correo Electrónico" id="correoOlvidar" name="correoOlvidar"  required>
+                            <br>
+                            <button type="submit" class="btn btn-primary" >Enviar codigo de
+                                Confirmación</button>
+                            <?php
+                            } ?>
+                            <?php  if(isset($codigoEnviado)){
+                                ?>
+                                <?php if((isset($errorCodigoConf))){
+                                    echo("<label >".$errorCodigoConf."</label>");
+                                }else{
+                                    ?>
+                                     <label for=""> <?php echo($codigoEnviado); ?></label>
+                                    <?php
+                                }  ?>
+                            <label for="">Ingrese el codigo de confirmacion:</label>
+                            <br>
+                            <input class="form-control input-lg" type="hidden" id="correoConf" name="correoConf" value="<?php echo ($correoE); ?>">
+                            <input class="form-control input-lg" type="number" id="confirmacionCambio" name="confirmacionCambio" required>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Validar
+                                Codigo</button>
+                            <?php
+                            } ?>
+                            <?php  if(isset($ingresarNuevaContra)){
+                                ?>
+                            <br>
+                            <?php if((isset($errorContraconfir))){
+                                    echo("<label >".$errorContraconfir."</label>");
+                                }  ?>
+                            <label for="">Ingrese su nueva contraseña:</label>
+                            <br>
+                            <input class="form-control input-lg" type="text" id="contrasena1con" name="contrasena1con" required>
+                            <br>
+                            <label for="">Confirme su nueva contraseña:</label>
+                            <br>
+                            <input class="form-control input-lg" type="text" id="contrasena2con" name="contrasena2con" required>
+                            <button type="submit" class="btn btn-primary" >Cambiar
+                                Contraseña</button>
+                            <?php
+                            } ?>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            navActivePage();
-        });
+    document.addEventListener("DOMContentLoaded", function(event) {
+        navActivePage();
+    });
     </script>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
-
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview');
-</script>
-
--->
-    <!-- Google maps  -->
-    <!-- end Google Maps -->
-
-
 
     <script type="text/javascript" src="assets/srcindex/main.41beeca9.js"></script>
 </body>
@@ -262,23 +293,52 @@
 <script src="assets/plugins/toastr/toastr.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-        $("#logo").change(function() {
-            readURL(this);
-        });
+$(document).ready(function() {
+    $("#logo").change(function() {
+        readURL(this);
     });
+});
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-            reader.onload = function(e) {
-                $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
-            }
-            reader.readAsDataURL(input.files[0]);
+        reader.onload = function(e) {
+            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
         }
+        reader.readAsDataURL(input.files[0]);
     }
+}
 </script>
+<script>
+function mostrar() {
+    $("#exampleModalCenter").modal("show")
+};
+</script>
+
+
+<?php  if((isset($mostrarDialogo))){
+                                ?>
+<!-- // php cuadno este ready -->
+<script>
+$(document).ready(function() {
+    mostrar();
+});
+</script>
+<?php 
+ }
+?>
+<?php  if((isset($errorCorreoRecuperacion))){
+                                ?>
+<!-- // php cuadno este ready -->
+<script>
+$(document).ready(function() {
+    toastr["alert"](<?php echo($errorCorreoRecuperacion) ?>, "Disculpas");
+});
+</script>
+<?php 
+ }
+?>
 </body>
 
 </html>

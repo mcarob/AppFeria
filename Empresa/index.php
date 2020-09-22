@@ -41,7 +41,7 @@ include('Header.php');
                 <div class="card widget-block p-4 rounded bg-warning border">
 
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">event</i>
                         <h4 class="text-white my-2"><?php foreach ($posA as $k) {
                                                         echo ($k[1]);
                                                     } ?></h4>
@@ -52,7 +52,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-danger border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">event_busy</i>
                         <h4 class="text-white my-2"><?php foreach ($posR as $k) {
                                                         echo ($k[1]);
                                                     } ?></h4>
@@ -63,7 +63,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-primary border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">event_note</i>
                         <h4 class="text-white my-2"><?php foreach ($posEP as $k) {
                                                         echo ($k[1]);
                                                     } ?></h4>
@@ -74,7 +74,7 @@ include('Header.php');
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="card widget-block p-4 rounded bg-success border">
                     <div class="card-block">
-                        <i class="mdi mdi-account-outline mr-4 text-white"></i>
+                    <i class="material-icons" style="color: white; font-size: 30px;">event_available</i>
                         <h4 class="text-white my-2"><?php foreach ($posFOR as $k) {
                                                         echo ($k[1]);
                                                     } ?></h4>

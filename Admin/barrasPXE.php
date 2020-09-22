@@ -20,7 +20,8 @@ $datosX = json_encode($valoresX);
 $datosY = json_encode($valoresY);
 ?>
 
-<div id="graficaEmpresas"></div>
+<div id="graficaEmpresas">
+</div>
 
 <script type="text/javascript">
 	function crearCadenaBarras(json) {
@@ -61,5 +62,7 @@ $datosY = json_encode($valoresY);
 		bargap: 0.05
 	};
 
-	Plotly.newPlot('graficaEmpresas', data, layout);
+	var config = {responsive: true};
+
+	Plotly.newPlot('graficaEmpresas', data, layout,config);
 </script>

@@ -71,6 +71,9 @@ class HojaDeVidaDAO
         }
         return $hoja;
     }
+
+
+    
     public function buscarHojaDeVida1($cod){
         $sentencia = $this->con->prepare("SELECT * FROM hoja_vida WHERE COD_HOJA_VIDA=?" );
         $sentencia->execute([$cod]);
@@ -87,7 +90,18 @@ class HojaDeVidaDAO
         return $hoja;
     }
     
+    public function buscarHojaDeVidaXestudiante($cod){
+        $query=$this->con->prepare('SELECT * FROM hoja_vida WHERE COD_ESTUDIANTE=:estudiante');
+        $query->execute(['estudiante'=>$cod]);
+        if($query->rowCount()){
+            foreach ($query as $kk) {
+                $hoja = new HojaDeVida($kk['COD_HOJA_VIDA'],$kk['COD_ESTUDIANTE'],$kk['HOJA_CELULAR'],$kk['HOJA_DIRECCION'],$kk['HOJA_CIUDAD'],$kk['PERFIL_HOJA']);
+                return $hoja;
+            }
+        }
+    }
 
+    
 
 }
 ?>
