@@ -165,7 +165,7 @@
                 </li>
                 <li>
                   <a class="sidenav-item-link" href="GPerfilMasBuscado.php">
-                    <span class="nav-text">Perfil más buscados</span>
+                    <span class="nav-text">Perfil más buscado</span>
 
                   </a>
                 </li>

@@ -24,7 +24,7 @@ include('menuAdmi.php');
         <div class="col-sm-12">
 				<div class="card card-default">
 					<div class="card-header justify-content-center">
-						<h2 class="text-center">Empresas más postuladas</h2>
+						<h2 class="text-center">Carrera más solicitada</h2>
 					</div>
 					<div class="card-body">
                     <div id="cargaPB"></div>
@@ -32,6 +32,17 @@ include('menuAdmi.php');
 				</div>
 			</div>
 
+
+            <div class="col-sm-12">
+				<div class="card card-default">
+					<div class="card-header justify-content-center">
+						<h2 class="text-center">Facultad más solicitada</h2>
+					</div>
+					<div class="card-body">
+                    <div id="cargaPB1"></div>
+                </div>
+				</div>
+			</div>
 
         </div>
 
@@ -50,7 +61,7 @@ include('menuAdmi.php');
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#cargaPB').load('CargaPB.php');
-                $('#cargaBarras').load('barras.php');
+                $('#cargaPB1').load('CargaPLXF.php');
             });
         </script>
 

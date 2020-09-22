@@ -3,7 +3,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 $claseCon = new DB();
 $con = $claseCon->connect();
-$sentencia = $con->prepare("SELECT * from totalOfertasXdep");
+$sentencia = $con->prepare("SELECT * from perfilesXlaboralesXfac");
 $sentencia->execute();
 $valoresY = array();
 $valoresX = array();
@@ -20,7 +20,7 @@ $datosX = json_encode($valoresX);
 $datosY = json_encode($valoresY);
 ?>
 
-<div id="graficaBarras33"></div>
+<div id="graficaBarras1"></div>
 
 <script type="text/javascript">
 	function crearCadenaBarras(json) {
@@ -61,5 +61,5 @@ $datosY = json_encode($valoresY);
 	};
 	
 
-	Plotly.newPlot('graficaBarras33', data, layout);
+	Plotly.newPlot('graficaBarras1', data, layout);
 </script>   
