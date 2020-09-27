@@ -94,7 +94,8 @@ include('menuEmpresa.php');
                                         echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[6] . "</td>");
                                         echo ("<td>" . $key[7] . "</td>");
-                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[1] . '"' . ")'" . ">Contactar</button></td>");
+                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[1] . '"' . ")'" . ">Contactar</button>
+                                        <button type='submit' class='mb-1 btn btn-success' id='boton2'" . "onclick='mostrarModal2(" . '"' . $key[0] . '"' . ")'" . ">Legalizar</button></td>");
 
 
                                     ?>
@@ -157,17 +158,19 @@ include('menuEmpresa.php');
             </div>
             <div class="modal-body">
                 <form method="POST" id='not'>
-                <input type="hidden" id="desde" name="desde" value="<?php echo $empresa->getCodUsuario() ?>">
+                    <input type="hidden" id="desde" name="desde" value="<?php echo $empresa->getCodUsuario() ?>">
                     <div class="form-group">
-                    <label for="exampleFormControlSelect1">Seleccione una opción</label>
+                        <label for="exampleFormControlSelect1">Seleccione una opción</label>
                         <select class="form-control" id="select" name="select">
+                        <option value="0">No quiero especificar una oferta</option>
+                        <option value="1">Otro</option>
                             <?php
-                                if(count($for)==0){
-                                    echo ('<option value="">No hay ofertas</option>');
-                                }else{
+                            if (count($for) == 0) {
+                                echo ('<option value="">No hay ofertas</option>');
+                            } else {
                                 foreach ($for as $key) {
-                                 echo ('<option value="'.$key[0].'">' . $key[13] . '</option>');
-                             }
+                                    echo ('<option value="' . $key[0] . '">' . $key[13] . '</option>');
+                                }
                             }
                             ?>
                         </select>
@@ -186,6 +189,31 @@ include('menuEmpresa.php');
 </div>
 
 
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+            </div>
+            <div class="modal-body">
+                <form method="POST" id='legalizar'>
+                    <div class="form-group" style="text-align: center;width:90%">
+                        <label for="exampleFormControlSelect1">
+                            <h3>¿Estas seguro de la legalización?</h3>
+                        </label>
+                    </div>
+                    <div  style="text-align: center;width:90%">
+                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success btn-pill" data-dismiss="modal" onclick="legalizar()">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
 
 <script>
     function mostrarModal1(valor) {
@@ -193,26 +221,51 @@ include('menuEmpresa.php');
         variableCod = valor;
     }
 
+    function mostrarModal2(valor) {
+        $('#modal2').modal('show');
+        variableCod = valor;
+    }
+
 
 
     function notificar() {
-            datos = $('#not').serialize();
+        datos = $('#not').serialize();
 
-            $.ajax({
-                type: "POST",
-                data: datos,
-                url: 'gestionarCandidatos.php?action=' + "notificar&" + "codigo=" + variableCod,
-                success: function(r) {
-                    console.log(r); 
-                    if (r == 1) {
-                        window.location.href = "BuscarCandidatos.php";
-                    } else {
+        $.ajax({
+            type: "POST",
+            data: datos,
+            url: 'gestionarCandidatos.php?action=' + "notificar&" + "codigo=" + variableCod,
+            success: function(r) {
+                console.log(r);
+                if (r == 1) {
+                    window.location.href = "BuscarCandidatos.php";
+                } else {
 
-                    }
                 }
-            });
+            }
+        });
 
-        }
+    }
+
+
+    function legalizar() {
+        datos = $('#legalizar').serialize();
+
+        $.ajax({
+            type: "POST",
+            data: datos,
+            url: 'legalizar.php?action='+ variableCod,
+            success: function(r) {
+                console.log(r);
+                if (r == 1) {
+                    // window.location.href = "BuscarCandidatos.php";
+                } else {
+
+                }
+            }
+        });
+
+    }
 </script>
 
 
