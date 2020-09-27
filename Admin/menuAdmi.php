@@ -141,7 +141,7 @@
               <div class="sub-menu">
                 <li>
                   <a class="sidenav-item-link" href="GMotivos.php">
-                    <span class="nav-text">Mótivos más usados</span>
+                    <span class="nav-text">Mótivos más seleccionados</span>
 
                   </a>
                 </li>

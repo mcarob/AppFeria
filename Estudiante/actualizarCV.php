@@ -103,7 +103,7 @@ include('Header.php');
                                     </div>
                                     <div class="tab-pane pt-3 fade" id="profile4" role="tabpanel"
                                         aria-labelledby="profile3-tab">
-                                        <?php include_once 'act_ExperienciasCV.php'; ?>
+                                        <?php include_once 'act_experienciasCV.php'; ?>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-warning "

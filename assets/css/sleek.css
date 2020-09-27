@@ -9983,7 +9983,8 @@ code {
 .content-wrapper {
   display: flex;
   flex: 1 1 auto;
-  flex-direction: column; }
+  flex-direction: column; 
+  background-color: white;}
 
 /* Content */
 .content {

@@ -12,7 +12,7 @@ if(isset($_SESSION['user'])){
 		if($tipo==1 || $tipo==4){
 		header('location: Admin/index.php');
 		}else if($tipo==2){
-        header('location: Estudiante/index.php');
+        header('location: Estudiante/postulaciones.php');
 		}else if($tipo==3){
             header('location: Empresa/index.php');
 		}
@@ -29,7 +29,7 @@ if(isset($_SESSION['user'])){
 			if($tipo==1 || $tipo==4){
 				header('location: Admin/index.php');
 				}else if($tipo==2){
-				header('location: Estudiante/index.php');
+				header('location: Estudiante/postulaciones.php');
 				}else if($tipo==3){
 					header('location: Empresa/index.php');
 				}
@@ -74,15 +74,16 @@ if(isset($_SESSION['user'])){
 }else if(isset($_POST['correoOlvidar'])){
 	if($user->existeCorreo($_POST['correoOlvidar'])){
 		$user->setUser($_POST['correoOlvidar']);
-		$respuestaCorreoR=$user->mandarCorreoRecuperacion($_POST['correoOlvidar']);
+		$respuestaCorreoR=$user->mandarCorreoRecuperacion($user->darCodigo(),$_POST['correoOlvidar']);
 		
 		if($respuestaCorreoR==1){
 			$mostrarDialogo=True;
+			$correoE=$_POST['correoOlvidar'];
 			$codigoEnviado="Se ha enviado un codigo a su correo, por favor no cierre este dialogo.";
 			include_once 'ingresoF.php';
 		}else{
 			$mostrarDialogo=True;
-			$errorCorreoRecuperacion=$respuestaCorreoR;
+			$errorCorreo=$respuestaCorreoR;
 			include_once 'ingresoF.php';
 		}
 	}else{
@@ -91,7 +92,47 @@ if(isset($_SESSION['user'])){
 		include_once 'ingresoF.php';
 	}
 
-}else{
+}else if(isset($_POST['confirmacionCambio'])){
+	$correoE=$_POST['correoConf'];
+	$respuestaconfiCodigo=$user->validarCorreoContraOlv($correoE,$_POST['confirmacionCambio']);
+	if($respuestaconfiCodigo==1){
+		$correoE=$_POST['correoConf'];
+		$ingresarNuevaContra=true;
+		$mostrarDialogo=True;
+	}else{
+		$correoE=$_POST['correoConf'];
+		$errorCodigoConf="Hay un Error en la validación del codigo, confirme el codigo";
+		$mostrarDialogo=True;
+		$codigoEnviado=True;
+	}
+	include_once 'ingresoF.php';
+}else if(isset($_POST['contrasena1con'])){
+	if($_POST['contrasena1con']==$_POST['contrasena2con']){
+		$user->setUser($_POST['correoConf']);
+		$user->modificarContraActualizar($user->darCodigo(),$_POST['contrasena1con']);
+		$user->darIngreso($_POST['correoConf'],md5($_POST['contrasena1con']));
+		$user->setUser($_POST['correoConf']);
+		$userSession->setCurrentUser($_POST['correoConf']);
+		$tipo=$user->getTipoUsuario();
+		$userSession->setTipoUsuario($tipo);
+		if($tipo==1 || $tipo==4){
+			header('location: Admin/index.php');
+			}else if($tipo==2){
+			header('location: Estudiante/postulaciones.php');
+			}else if($tipo==3){
+				header('location: Empresa/index.php');
+			}
+	}else{
+		$correoE=$_POST['correoConf'];
+		$mostrarDialogo=True;
+		$errorContraconfir="Las contraseñas deben ser iguales, por favor intente nuevamente";
+		$ingresarNuevaContra=true;
+		include_once 'ingresoF.php';
+
+	}
+
+}else
+	{
 	include_once 'ingresoF.php';
 }
 
