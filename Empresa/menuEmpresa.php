@@ -179,7 +179,7 @@
           <h6 class="text-uppercase">
             Manual Empresa<span class="float-right"></span>
           </h6>
-          <a class="sidenav-item-link" onclick="abrirPDF()">
+          <a class="sidenav-item-link" onclick="abrirPDFempresa()">
             <span class="nav-text">Descargar</span>
 
           </a>
@@ -222,7 +222,7 @@
 
   </script>
 <script>
-    function abrirPDF() {
+    function abrirPDFempresa() {
       var win = window.open('../Admin/AbrirManual.php?action=empresa');
       win.focus();
 
