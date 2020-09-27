@@ -12,11 +12,10 @@ class PDF extends FPDF
 // Cabecera de página
 function Header()
 {
-    ob_end_clean();
 
 
     // Logo
-	$this->Image('../../Imagenes/ecopetrol.jpg', 138 , 10, 80 , 20, 'JPG');
+	$this->Image('../../Imagenes/logo.png', 138 , 10, 80 , 20, 'PNG');
     // Arial bold 15
     $this->SetFont('Arial','B',18);
     // Movernos a la derecha    

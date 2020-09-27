@@ -12,7 +12,6 @@ class PDF extends FPDF
 // Cabecera de página
 function Header()
 {
-    ob_end_clean();
 
 
     // Logo
