@@ -105,6 +105,10 @@ include('menuEmpresa.php')
                                             echo ("<td> <button type='button' class='mb-1 btn btn-success' onclick='formalizar(" . '"' . $key[0] . '"' . ")'>Formalizar</button>
                                             <button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[0] . '"' . ")'" . ">Rechazar</button></td>");
                                         }
+                                        if ($key["COD_ESTADO_PROCESO"] == "7") {
+                                            echo ("<td> 
+                                            <button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[0] . '"' . ")'" . ">Cancelar</button></td>");
+                                        }
 
                                         $cod_postulacion = $key[0];
 

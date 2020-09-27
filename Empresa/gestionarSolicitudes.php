@@ -34,17 +34,32 @@ if (isset($_GET['action'])) {
             
         break;
         case 'formalizar':
-            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],5);
+            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],7);
             if($r){
                 header("location:AdminSolicitudes.php");
            }else{
             echo ($r);
            }
         break;
-            
+        case 'aceptarO':
+            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],5);
+             if($r){
+                 header("location:../Estudiante/ListaPostulaciones.php");
+            }else{
+             echo ($r);
+            }
+         break;
+
+         case 'rechazarO':
+            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],8);
+             if($r){
+                 header("location:../Estudiante/ListaPostulaciones.php");
+            }else{
+             echo ($r);
+            }
+         break;
+        
           
     }
 
 }
-
-?>

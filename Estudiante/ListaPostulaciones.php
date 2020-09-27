@@ -93,7 +93,45 @@ include('menuEstudiante.php')
                                         echo ("<td>" . $key[4] . "</td>");
                                         echo ("<td>" . $key[9] . "</td>");
                                         echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[7] . "</span></td>");
-                                        echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button></td>");
+                                        if ($key["COD_ESTADO_PROCESO"] == "1") {
+                                            echo ("<td>
+                                            <button type='submit' disabled class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button>                                                 
+                                            </td> ");
+                                        }
+                                        if ($key["COD_ESTADO_PROCESO"] == "2") {
+                                            echo ("<td>
+                                            <button type='submit' disabled class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button>                                                 
+                                            </td> ");
+                                        }
+                                        if ($key["COD_ESTADO_PROCESO"] == "3") {
+                                            echo ("<td>
+                                            <button type='submit' disabled class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button>                                                 
+                                            </td> ");
+                                        }
+                                        if ($key["COD_ESTADO_PROCESO"] == "4") {
+                                            echo ("<td>
+                                                 <button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button>                                                 
+                                                 </td> ");
+                                        }
+                                        if ($key["COD_ESTADO_PROCESO"] == "5") {
+                                            echo ("<td>
+                                                 <button type='submit' class='mb-1 btn btn-danger' disabled id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button>                                                 
+                                                 </td> ");
+                                        }
+                                        if ($key["COD_ESTADO_PROCESO"] == "6") {
+                                            echo ("<td>
+                                                 <button type='submit' class='mb-1 btn btn-danger' disabled id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button>                                                 
+                                                 </td> ");
+                                        }
+                                        if ($key["COD_ESTADO_PROCESO"] == "7") {
+                                            echo ("<td><button type='button' class='mb-1 btn btn-primary' disable onclick='aceptar(" . '"' . $key['COD_PROMOCION_POSTULACION'] . '"' . ")'>
+                                            <i class='mdi mdi-star-outline mr-1'></i>Aceptar</button>
+                                            <button type='button' class='mb-1 btn btn-danger'  onclick='rechazar(" . '"' . $key['COD_PROMOCION_POSTULACION'] . '"' . ")'>
+                                            Rechazar</button>
+                                            </td> ");
+                                        }
+
+                                       // echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button></td>");
 
 
                                     ?>
@@ -179,6 +217,15 @@ include('menuEstudiante.php')
         elemento=document.getElementById("des").innerHTML=des ;
 
     }
+
+    function aceptar(cod) {
+            window.location.href = '../Empresa/gestionarSolicitudes.php?action=' + "aceptarO&" + "codigo=" + cod;
+        }
+
+        function rechazar(cod) {
+            window.location.href = '../Empresa/gestionarSolicitudes.php?action=' + "rechazarO&" + "codigo=" + cod;
+        }
+
 </script>
 
 
