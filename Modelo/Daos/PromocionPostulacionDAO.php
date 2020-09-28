@@ -1,6 +1,7 @@
 <?php
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/PromocionPostulacion.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Legalizar.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/conexion/db.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/EnviarCorreos.php');
@@ -35,8 +36,20 @@ class PromocionPostulacionDAO
         $oferta->getHojaVida(),$oferta->getMotivo()]);
         
         return $respuesta;
-
+        
     }
+
+
+    public function agregarLel(Legalizar $datos){
+        $sql="insert into LEGALIZACION (COD_EMPRESA, COD_ESTUDIANTE, FECHA_LEGALIZACION,
+        COD_CIDAD)
+        values 
+        (?,?,now(),?)";
+        $respuesta=$this->con->prepare($sql)->execute([$datos->getCodEmpresa(),$datos->getCodEstudiante(),$datos->getCodCiudad()]);
+        
+        return $respuesta;
+    }
+
 
     // Lista de empresas con el usuario activo
     public function ListaDePostulaciones($cod){

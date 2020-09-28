@@ -13,6 +13,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/us
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/Ciudades.php');
 
 
 
@@ -22,7 +23,8 @@ $user->setUser($_SESSION['user']);
 $codigo = $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
 $controlador = new ControladorPromocion();
-
+$ciudadesCon = new Ciudades();
+$departamentos = $ciudadesCon->darTodosDepartamentos();
 
 $for = $controlador->verOfertas2($empresa->getCodEmpresa());
 
@@ -162,8 +164,8 @@ include('menuEmpresa.php');
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Seleccione una opción</label>
                         <select class="form-control" id="select" name="select">
-                        <option value="0">No quiero especificar una oferta</option>
-                        <option value="1">Otro</option>
+                            <option value="0">No quiero especificar una oferta</option>
+                            <option value="1">Otro</option>
                             <?php
                             if (count($for) == 0) {
                                 echo ('<option value="">No hay ofertas</option>');
@@ -197,19 +199,54 @@ include('menuEmpresa.php');
             </div>
             <div class="modal-body">
                 <form method="POST" id='legalizar'>
+
+                    <input type="hidden" value="<?php echo $empresa->getCodEmpresa()?>" name="cod_empresa" id="cod_empresa">
                     <div class="form-group" style="text-align: center;width:90%">
                         <label for="exampleFormControlSelect1">
                             <h3>¿Estas seguro de la legalización?</h3>
                         </label>
                     </div>
-                    <div  style="text-align: center;width:90%">
-                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success btn-pill" data-dismiss="modal" onclick="legalizar()">Aceptar</button>
+                    <div class="form-group" style="text-align: center;width:90%">
+                        <label for="trolSelect1">
+                            <label for="mensaje">Seleccione la ciudad</label>
+                        </label>
+                    </div>
+                    <div class="form-group" >
+                        <div class="row mb-2">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="firstName"> Ubicación (Departamento)</label>
+                                    <select class="form-control" name="depa" id="depa" onchange="getCity(this.value);">
+                                        <option value="">Seleccione un Departamento</option>
+                                        <?php
+                                        foreach ($departamentos as $depar) {
+                                        ?>
+                                            <option value="<?php echo ($depar[0]); ?>">
+                                                <?php echo $depar[1]; ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="firstName"> Ubicación (Ciudad)</label>
+                                    <select name="ciudad" id="ciudad" class="form-control">
+                                        <option>Seleccione una Ciudad</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center;width:90%">
+                        <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-success btn-pill" data-dismiss="modal" onclick="legalizar()">Aceptar</button>
                     </div>
                 </form>
             </div>
 
-            
+
         </div>
     </div>
 </div>
@@ -247,6 +284,21 @@ include('menuEmpresa.php');
 
     }
 
+    function getCity(val) {
+        $.ajax({
+            type: "POST",
+            url: "ajaxCiudad.php",
+            data: 'departamento_id=' + val,
+            beforeSend: function() {
+                $("#ciudad").addClass("loader");
+            },
+            success: function(data) {
+                $("#ciudad").html(data);
+                $("#ciudad").removeClass("loader");
+            }
+        });
+    }
+
 
     function legalizar() {
         datos = $('#legalizar').serialize();
@@ -254,7 +306,7 @@ include('menuEmpresa.php');
         $.ajax({
             type: "POST",
             data: datos,
-            url: 'legalizar.php?action='+ variableCod,
+            url: 'legalizar.php?action=' + variableCod,
             success: function(r) {
                 console.log(r);
                 if (r == 1) {

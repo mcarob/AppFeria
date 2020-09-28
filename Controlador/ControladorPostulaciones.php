@@ -24,6 +24,11 @@ class ControladorPostulacion{
             $this->postulados = new PromocionPostulacionDAO();
 			return $this->postulados->agregarPost($Postulacion);
 		}
+		public function agregarLegalizacion($legal)
+		{
+            $this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->agregarLel($legal);
+		}
 
 		public function darListaPostulacionesTotal()
 		{
