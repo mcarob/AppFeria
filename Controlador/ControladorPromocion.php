@@ -15,9 +15,17 @@ public function darListaPromociones()
 }
 
 
+public function darCompensacion($var)
+{
+	$this->promociones=new PromocionLaboralDAO();
+	return $this->promociones->compensacion($var);
+}
 
-
-
+public function darCiudad($var)
+{
+	$this->promociones=new PromocionLaboralDAO();
+	return $this->promociones->ciudad($var);
+}
 
 public function darInformacion($pCodigo)
 {

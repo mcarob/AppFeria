@@ -22,7 +22,21 @@ class PromocionLaboralDAO
     
    
 
+    public function ciudad($var)
+    {
+        $sql="SELECT  NOM_CIUDAD FROM CIUDAD where COD_CIUDAD=?";
+        $respuesta=$this->con->prepare($sql);
+        $respuesta->execute([$var]);
+        return $respuesta->fetch();
+    }
 
+    public function compensacion($var)
+    {
+        $sql="SELECT PROMOCION_RANGO_COMPENSACION FROM promocion_laboral where COD_PROMOCION_LABORAL=?";
+        $respuesta=$this->con->prepare($sql);
+        $respuesta->execute([$var]);
+        return $respuesta->fetch();
+    }
 
     public function totalVacantesActivas(){
         $sentencia = $this->con->prepare("SELECT * FROM vacantes_disponibles");

@@ -70,12 +70,14 @@ include('menuAdmi.php')
                                 <tbody>
                                     <?php
                                     foreach ($lista as $key) {
+                                        $compensacion=$objeto->darCompensacion($key[0]);
+                                        $ciudad=$objeto->darCiudad($key[2]);
                                         echo ("<tr>");
                                         echo ("<td>" . $key[1] . "</td>");
-                                        echo ("<td>" . $key[2] . "</td>");
+                                        echo ("<td>" . $ciudad['NOM_CIUDAD'] . "</td>");
                                         echo ("<td>" . $key[3] . "</td>");
                                         echo ("<td>" . $key[4] . "</td>");
-                                        echo ("<td>" . $key[5] . "</td>");
+                                        echo ("<td>" . $compensacion['PROMOCION_RANGO_COMPENSACION'] . "</td>");
                                     ?>
 
 
