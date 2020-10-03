@@ -26,7 +26,7 @@ class EstudianteDAO
 
     // Lista de estudiantes con el usuario activo
     public function vistaEstudiantes(){
-        $sentencia = $this->con->prepare("SELECT * FROM vistaEstudiantes where estado_usuario=1");
+        $sentencia = $this->con->prepare("SELECT * FROM vistaestudiantes where estado_usuario=1");
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {
@@ -134,7 +134,7 @@ class EstudianteDAO
 
 
     public function agregarNoti($cod_desde,$cod_para, $mensaje, $cod_select){
-        $sentencia=$this->con->prepare("INSERT INTO NOTIFICACION ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
+        $sentencia=$this->con->prepare("INSERT INTO notificacion ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
         VALUES (?,?,?,?,now())"); 
         $respuesta=  $sentencia->execute([$cod_desde,$cod_para,$cod_select, $mensaje]);
         $envio = new enviarCorreo();
@@ -146,7 +146,7 @@ class EstudianteDAO
     }
 
     public function darNotificacionxEst($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM NOTIFICACION WHERE NOTIFACION_PARA=" . $cod);
+        $sentencia = $this->con->prepare("SELECT * FROM notificacion WHERE NOTIFACION_PARA=" . $cod);
         $sentencia->execute();
         return $sentencia->fetchAll();
     }

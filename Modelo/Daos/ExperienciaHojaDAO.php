@@ -52,7 +52,7 @@ class ExperienciaHojaDAO
     {   
     
         
-            $sql="UPDATE EXPERIENCIA_HOJA SET (
+            $sql="UPDATE experiencia_hoja SET (
             EXPERIENCIA_HOJA_CARGO,
             EXPERIENCIA_HOJA_EMPRESA,
             EXPERIENCIA_HOJA_DESDE,

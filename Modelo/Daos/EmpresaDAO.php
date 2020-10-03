@@ -105,7 +105,7 @@ class EmpresaDAO extends DB
 
     public function vistaEmpresasInscritas()
     {
-        $sentencia = $this->con->prepare("SELECT * FROM vistaEmpresasInscritas ");
+        $sentencia = $this->con->prepare("SELECT * FROM vistaempresasinscritas ");
         $sentencia->execute();
         $em = array();
         while ($fila = $sentencia->fetch()) {
@@ -122,7 +122,7 @@ class EmpresaDAO extends DB
     }
 
     public function agregarNoti($cod_Desde, $codPara,$mensaje){
-        $sentencia=$this->con->prepare("INSERT INTO NOTIFICACION ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
+        $sentencia=$this->con->prepare("INSERT INTO notificacion ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
         VALUES (?,?,null,?,now())"); 
         $respuesta=  $sentencia->execute([$cod_Desde,$codPara,$mensaje]);
 

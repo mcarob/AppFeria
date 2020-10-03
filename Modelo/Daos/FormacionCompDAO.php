@@ -18,7 +18,7 @@ public function __construct()
 
 public function agregarformacionCom(FormacionComplementaria $formacion){
         
-    $sql="insert into FORMACION_COMPLEMENTARIA (COD_HOJA_VIDA,
+    $sql="insert into formacion_complementaria (COD_HOJA_VIDA,
     COD_TIPO_FORMACION_COMPLEMENTARIA,
     TITULO_FORMACION_COMPLEMENTARIA,
     FECHA_FORMACION_COMPLEMENTARIA,
@@ -52,7 +52,7 @@ public function EditarformacionCom(FormacionComplementaria $formacion){
 
 
     public function darFormacionCompxHoja($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM FORMACION_COMPLEMENTARIA WHERE cod_hoja_vida=?");
+        $sentencia = $this->con->prepare("SELECT * FROM formacion_complementaria WHERE cod_hoja_vida=?");
         $sentencia->execute([$cod]);
         $em = array();
         while ($fila = $sentencia->fetch()) {

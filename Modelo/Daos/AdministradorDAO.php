@@ -20,7 +20,7 @@ class AdministradorDAO
     
     public function crearAdministrador( Administrador $nuevoAdministrador)
     {   
-        $sql = "INSERT INTO ADMINISTRADOR VALUES (default , 2 '". "','" . $nuevoAdministrador->getNomAdministrador() . "','". $nuevoAdministrador->getApellidoAdministrador(). "','" . $nuevoAdministrador->getCorreoAdministrador().")'";
+        $sql = "INSERT INTO administrador VALUES (default , 2 '". "','" . $nuevoAdministrador->getNomAdministrador() . "','". $nuevoAdministrador->getApellidoAdministrador(). "','" . $nuevoAdministrador->getCorreoAdministrador().")'";
        
         
 
