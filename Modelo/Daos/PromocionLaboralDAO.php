@@ -159,14 +159,11 @@ class PromocionLaboralDAO
         return $em;
     }
     public function cantidadofertasFiltroCiudadSinEmpresaEstudiante($buscar){
-        $sentencia = $this->con->prepare("SELECT * FROM listar_promociones_disponibilidad WHERE   PROMOCION_ESTADO=1
+        $sentencia = $this->con->prepare("SELECT COUNT(*) FROM listar_promociones_disponibilidad WHERE   PROMOCION_ESTADO=1
                     AND (COD_CIUDAD=?)"); 
         $sentencia->execute([$buscar]);
-        $em = array();
-         while ($fila = $sentencia->fetch()) {
-            $em[] = $fila;  
-        } 
-        return $em;
+        $respuesta=$sentencia->fetch();
+        return $respuesta[0];
     }
 
     // muestra las ofertas con el filtro de ciudad y de palabra 
