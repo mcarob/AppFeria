@@ -20,7 +20,7 @@ class IdiomasHojaDAO
     
     public function crearIdiomaHoja( IdiomasHoja $nuevoIdioma)
     {   
-        $sql = "INSERT INTO IDIOMAS_HOJA VALUES (default ,'" . $nuevoIdioma->getCodHojaVida() . "','" . $nuevoIdioma->getNomIdioma() ."', $nuevoIdioma->getNivelRango())";
+        $sql = "INSERT INTO idiomas_hoja VALUES (default ,'" . $nuevoIdioma->getCodHojaVida() . "','" . $nuevoIdioma->getNomIdioma() ."', $nuevoIdioma->getNivelRango())";
         $result =pg_query($this->con, $sql);
         return pg_fetch_all($result);
 
@@ -28,7 +28,7 @@ class IdiomasHojaDAO
 
 
     public function ModificarIdiomas($cod_idioma_hoja, $nombre, $rango){
-        $sql = "UPDATE IDIOMAS_HOJA SET IDIOMAS_HOJA_IDIOMA='".$nombre."' and COD_NIVEL_RANGO=$rango WHERE COD_CARRO= $cod_idioma_hoja";
+        $sql = "UPDATE idiomas_hoja SET IDIOMAS_HOJA_IDIOMA='".$nombre."' and COD_NIVEL_RANGO=$rango WHERE COD_CARRO= $cod_idioma_hoja";
         $result =pg_query($this->con, $sql);
         return pg_fetch_all($result);
     }

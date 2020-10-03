@@ -20,7 +20,7 @@ class UsuarioDAO
     
     public function crearUsuario(Usuario $nuevo)
     {   
-        $sql = "INSERT INTO USUARIO VALUES (default ,'" . $nuevo->getNomUsuario() . "','" . $nuevo->getClave() . "','" . $nuevo->getValidado() . "','" . $nuevo->getFechaCreacion() . "','" . $nuevo->getTipoUsuario() . "','" . $nuevo->getEstadoUsuario()."')";
+        $sql = "INSERT INTO usuario VALUES (default ,'" . $nuevo->getNomUsuario() . "','" . $nuevo->getClave() . "','" . $nuevo->getValidado() . "','" . $nuevo->getFechaCreacion() . "','" . $nuevo->getTipoUsuario() . "','" . $nuevo->getEstadoUsuario()."')";
         $result =mysqli_query($this->con, $sql);
         return mysqli_fetch_all($result);
 

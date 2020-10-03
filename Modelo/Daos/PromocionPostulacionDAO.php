@@ -41,7 +41,7 @@ class PromocionPostulacionDAO
 
 
     public function agregarLel(Legalizar $datos){
-        $sql="insert into LEGALIZACION (COD_EMPRESA, COD_ESTUDIANTE, FECHA_LEGALIZACION,
+        $sql="insert into legalizacion (COD_EMPRESA, COD_ESTUDIANTE, FECHA_LEGALIZACION,
         COD_CIDAD)
         values 
         (?,?,now(),?)";

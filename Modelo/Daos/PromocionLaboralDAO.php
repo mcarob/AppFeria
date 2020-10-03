@@ -23,7 +23,7 @@ class PromocionLaboralDAO
 
     public function ciudad($var)
     {
-        $sql="SELECT  NOM_CIUDAD FROM CIUDAD where COD_CIUDAD=?";
+        $sql="SELECT  NOM_CIUDAD FROM ciudad where COD_CIUDAD=?";
         $respuesta=$this->con->prepare($sql);
         $respuesta->execute([$var]);
         return $respuesta->fetch();
