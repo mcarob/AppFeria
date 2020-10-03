@@ -83,7 +83,7 @@ class EstudianteDAO
 
 
     public function totalEstudiantesA(){
-        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantesActivos");
+        $sentencia = $this->con->prepare("SELECT  * from totalestudiantesactivos");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;
@@ -92,14 +92,14 @@ class EstudianteDAO
 
 
     public function totalEstudiantesI(){
-        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantesInactivos");
+        $sentencia = $this->con->prepare("SELECT  * from totalestudiantesinactivos");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;
     }
 
     public function totalEstudiantes(){
-        $sentencia = $this->con->prepare("SELECT  * from totalEstudiantes");
+        $sentencia = $this->con->prepare("SELECT  * from totalestudiantes");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;

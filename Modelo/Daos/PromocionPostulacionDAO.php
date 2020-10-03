@@ -166,7 +166,7 @@ class PromocionPostulacionDAO
     }
 
     public function totalPostulacionesA(){
-        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesActivas");
+        $sentencia = $this->con->prepare("SELECT  * from totalpostulacionesactivas");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;
@@ -174,7 +174,7 @@ class PromocionPostulacionDAO
     }
 
     public function totalPostulacionesI(){
-        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesInactivas");
+        $sentencia = $this->con->prepare("SELECT  * from totalpostulacionesinactivas");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;
@@ -182,14 +182,14 @@ class PromocionPostulacionDAO
     }
 
     public function totalPostulacionesFOR(){
-        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesFOR");
+        $sentencia = $this->con->prepare("SELECT  * from totalpostulacionesfor");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;
         
     }
     public function totalPostulacionesChard(){
-        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesChard");
+        $sentencia = $this->con->prepare("SELECT  * from totalpostulacioneschard");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;

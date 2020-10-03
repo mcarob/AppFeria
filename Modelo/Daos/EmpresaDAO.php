@@ -251,7 +251,7 @@ class EmpresaDAO extends DB
     }
 
     public function totalEmpresasSV(){
-        $sentencia = $this->con->prepare("SELECT  * from totalEmpresasSinValidar");
+        $sentencia = $this->con->prepare("SELECT  * from totalempresassinvalidar");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;
@@ -259,7 +259,7 @@ class EmpresaDAO extends DB
     }
 
     public function totalEmpresasV(){
-        $sentencia = $this->con->prepare("SELECT  * from totalEmpresasActivas");
+        $sentencia = $this->con->prepare("SELECT  * from totalempresasactivas");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;
@@ -267,7 +267,7 @@ class EmpresaDAO extends DB
     }
 
     public function totalEmpresas(){
-        $sentencia = $this->con->prepare("SELECT  * from totalEmpresasr");
+        $sentencia = $this->con->prepare("SELECT  * from totalempresasr");
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows;
@@ -275,7 +275,7 @@ class EmpresaDAO extends DB
     }
 
     public function darNotificacionxEmpresa($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM NOTIFICACION WHERE NOTIFACION_PARA=" . $cod);
+        $sentencia = $this->con->prepare("SELECT * FROM notificacion WHERE NOTIFACION_PARA=" . $cod);
         $sentencia->execute();
         return $sentencia->fetchAll();
         }

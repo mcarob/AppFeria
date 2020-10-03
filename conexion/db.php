@@ -7,7 +7,8 @@ class DB{
     private $charset;
 
     public function __construct(){
-        $this->host     = 'feriadb.cwof09saidik.us-east-1.rds.amazonaws.com:3306';
+        #$this->host     = 'feriadb.cwof09saidik.us-east-1.rds.amazonaws.com:3306';
+        $this->host     = 'ferialaboral.crdrstm5rahm.us-east-2.rds.amazonaws.com';
         $this->db       = 'feria_db';
         $this->user     = 'usuarioferiadb';
         $this->password = "3057900368";
@@ -15,7 +16,6 @@ class DB{
     }
 
     function connect(){
-    
         try{
             
             $connection = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=" . $this->charset;
@@ -31,6 +31,5 @@ class DB{
             print_r('Error connection: ' . $e->getMessage());
         }   
     }
-
 }
 ?>
