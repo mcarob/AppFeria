@@ -152,10 +152,9 @@ include('Header.php');
 
                         console.log(r);
                         if (r == 1) {
+                            toastr["success"]('Actualizando perfil...', "NOTIFICACIÓN");
                             window.location.href = "index.php";
-                        } else if (r == 11) {
-                            window.location.href = "index.php";
-                        } else if (r == 3) {
+                        }else if (r == 3) {
                             toastr["success"](r, "ERROR");
                         } else {
 

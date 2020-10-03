@@ -19,8 +19,7 @@ class PromocionLaboralDAO
         $claseCon = new DB();
         $this->con =$claseCon->connect();
     }
-    
-   
+
 
     public function ciudad($var)
     {

@@ -67,7 +67,7 @@ class EstudianteDAO
         NOMBRE_ESTUDIANTE='".$estudiante->getNombreEstudiante()."',
         APELLIDO_ESTUDIANTE='".$estudiante->getApellidoEstudiante()."',
         COD_PROGRAMA_ACADEMICO=".$estudiante->getCodProgamaAcademico().",
-        SEMESTRE_ESTUDIANTE=".$estudiante->getSemestreEstudiante()."
+        SEMESTRE_ESTUDIANTE='".$estudiante->getSemestreEstudiante()."' 
         WHERE COD_ESTUDIANTE =".$estudiante->getCodEstudiante());
 
         $res=$sentencia->execute();
