@@ -9,7 +9,7 @@ private $referencia;
 
 public function insertarReferencia(ReferenciaHoja $referencias)
 {
-	echo "entra al controlador";
+	
 	$this->referencia=new ReferenciaHojaDAO();
 	return $this->referencia->agregarReferenciaHojaDeVida($referencias);
 }

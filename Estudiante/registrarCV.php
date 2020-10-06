@@ -133,8 +133,7 @@ include('Header.php');
                 } else if (r == 3) {
                     toastr["success"](r, "ERROR");
                 } else {
-                    toastr["success"]('Guardando hoja de vida...', "NOTIFICACIÓN");
-                    window.location.href = "index.php";
+                    toastr["success"](r, "ALERTA");
                 }
             }
         });

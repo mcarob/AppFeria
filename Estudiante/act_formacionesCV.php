@@ -134,11 +134,11 @@
                         </div>
                         <div class="input-group">
                             <div class="input-group-prepend"> <span class="input-group-text"> <i
-                                        class="material-icons">assignment_ind</i> </span> </div> <select type="text"
-                                class="form-control" aria-label="Username" id="complementaria<?php echo($j+1)?>[]"
-                                required name="complementaria<?php echo($j+1)?>[]"
+                                        class="material-icons">assignment_ind</i> </span> </div> <select 
+                                type="text" class="form-control" aria-label="Username"
+                                id="complementaria<?php echo($j+1)?>[]" required
+                                name="complementaria<?php echo($j+1)?>[]"
                                 value="<?php echo($complementaria['COD_TIPO_FORMACION_COMPLEMENTARIA']) ?>">
-                                <option disabled="" selected="">Seleccionar tipo de formacion</option>
                                 <option value="1"> Curso </option>
                                 <option value="2"> Seminario </option>
                                 <option value="3"> Taller</option>
@@ -161,7 +161,7 @@
                         <div class="input-group">
                             <div class="input-group-prepend"> <span class="input-group-text"> <i
                                         class="material-icons">face</i> </span> </div> <input type="text"
-                                class="form-control" placeholder="Titulo" aria-label="Username"
+                                class="form-control" placeholder="Horas" aria-label="Username"
                                 id="complementaria<?php echo($j+1)?>[]" required
                                 name="complementaria<?php echo($j+1)?>[]"
                                 value="<?php echo($complementaria['FECHA_FORMACION_COMPLEMENTARIA']) ?>">
@@ -227,7 +227,7 @@ $(document).ready(function() {
             j + '[]" required name="complementaria' + j +
             '[]"> </div><div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select type="text" class="form-control"  aria-label="Username" id="complementaria' +
             j + '[]" required name="complementaria' + j +
-            '[]"> <option disabled="" selected="" >Seleccionar tipo de formacion</option> <option value="1"> Curso </option><option value="2"> Seminario </option><option value="3"> Taller</option><option value="4"> Diplomado </option><option value="5"> Certificacion </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input type="text" class="form-control" placeholder="Institucion" name="complementaria' +
+            '[]"> <option value="1"> Curso </option><option value="2"> Seminario </option><option value="3"> Taller</option><option value="4"> Diplomado </option><option value="5"> Certificacion </option> </select> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input type="text" class="form-control" placeholder="Institucion" name="complementaria' +
             j + '[]"  required id="complementaria' + j +
             '[]" aria-label="Username"> </div> </div> <div class="col-md-6 mb-3"> <h5>Cantidad de horas</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">face</i> </span> </div> <input type="text" class="form-control" placeholder="Titulo" aria-label="Username" id="complementaria' +
             j + '[]" required name="complementaria' + j +
