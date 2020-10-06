@@ -28,46 +28,46 @@ $datosT = json_encode($valorT);
 <div id="graficaBarras"></div>
 
 <script type="text/javascript">
-	function crearCadenaBarras(json) {
-		var parsed = JSON.parse(json);
-		var arr = [];
-		for (var x in parsed) {
-			arr.push(parsed[x]);
-		}
-		return arr;
-	}
+function crearCadenaBarras(json) {
+    var parsed = JSON.parse(json);
+    var arr = [];
+    for (var x in parsed) {
+        arr.push(parsed[x]);
+    }
+    return arr;
+}
 </script>
 
 <script type="text/javascript">
-	datosX = crearCadenaBarras('<?php echo $datosX; ?>');
-	datosY = crearCadenaBarras('<?php echo $datosY; ?>');
-	datosT = crearCadenaBarras('<?php echo $datosT; ?>')
-	var data = [{
-		x: datosX,
-  y: datosY,
-  type: 'bar',
-  text: datosT,
-  marker: {
-	color: 'rgb(158,202,225)',
-  line: {
-				color: 'rgb(8,48,107)',
-				width: 1.5
-			}
-  }
+datosX = crearCadenaBarras('<?php echo $datosX; ?>');
+datosY = crearCadenaBarras('<?php echo $datosY; ?>');
+datosT = crearCadenaBarras('<?php echo $datosT; ?>')
+var data = [{
+    x: datosX,
+    y: datosY,
+    type: 'bar',
+    text: datosT,
+    marker: {
+        color: 'rgb(158,202,225)',
+        line: {
+            color: 'rgb(8,48,107)',
+            width: 1.5
+        }
+    }
 
-  
-	}];
-	
 
-	var layout = {
-		showlegend: false,
+}];
 
-		font: {
-			family: 'Raleway, sans-serif'
-		},
-		bargap: 0.05
-	};
-	
-	var config = {responsive: true};
-	Plotly.newPlot('graficaBarras', data, layout,config);
+
+var layout = {
+    showlegend: false,
+
+    font: {
+        family: 'Raleway, sans-serif'
+    },
+    bargap: 0.05
+};
+
+var config = {responsive: true};
+Plotly.newPlot('graficaBarras', data, layout, config);
 </script>

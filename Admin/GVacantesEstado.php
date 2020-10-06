@@ -54,7 +54,7 @@ include('menuAdmi.php');
             });
         </script>
 
-        <script src="../    assets/js/sleek.bundle.js"></script>
+        <script src="../assets/js/sleek.bundle.js"></script>
 
         <?php
 

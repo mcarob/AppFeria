@@ -60,6 +60,6 @@ $datosY = json_encode($valoresY);
 		bargap: 0.05
 	};
 	
-
-	Plotly.newPlot('graficaBarras', data, layout);
+	var config = {responsive: true};
+	Plotly.newPlot('graficaBarras', data, layout,config);
 </script>

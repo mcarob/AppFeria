@@ -65,9 +65,9 @@ while ($ver = $sentencia->fetch()) {
 		bargap: 0.05
 	};
 
-
+	var config = {responsive: true};
 	
 		var data = [trace1];
 
-		Plotly.newPlot('graficaLineal', data, layout);
+		Plotly.newPlot('graficaLineal', data, layout,config);
 	</script>
