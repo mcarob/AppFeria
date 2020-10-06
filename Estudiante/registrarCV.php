@@ -180,6 +180,7 @@ include('Header.php');
         if(Date.parse(fechafinal) < Date.parse(fechainicial)){
             alert("La fecha final debe ser mayor a la fecha inicial");
         }
+    }
     </script>
     <?php
 
