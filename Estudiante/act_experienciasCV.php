@@ -145,7 +145,7 @@
                  </div>
                  <div class="form-group"> <textarea class="form-control" rows="5" style="resize: none;"
                          placeholder="Describa el cargo" id="experienciaProfesional<?php echo($y+1)?>[]" required
-                         name="experienciaProfesional<?php echo($y+1)?>[]"><?php echo($experienciaLaboral['EXPERIENCIA_HOJA_HASTA']) ?></textarea>
+                         name="experienciaProfesional<?php echo($y+1)?>[]"><?php echo($experienciaLaboral['EXPERIENCIA_HOJA_DESCRIPCCION']) ?></textarea>
                  </div><button type="button" name="remove" id="PR<?php echo($y+1)?>"
                      class="btn btn-danger btn_removeE2">Remover</button><br><br>
              </div>

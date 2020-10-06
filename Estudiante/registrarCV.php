@@ -126,15 +126,14 @@ include('Header.php');
             url: "registrar_CV.php",
             success: function(r) {
 
-                console.log(r);
-                if (r == 11) {
+                
+                if (r == 1) {
+                    toastr["success"]('Guardando hoja de vida...', "NOTIFICACIÓN");
                     window.location.href = "index.php";
                 } else if (r == 3) {
                     toastr["success"](r, "ERROR");
                 } else {
-
                     toastr["success"](r, "ERROR");
-
                 }
             }
         });

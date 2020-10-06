@@ -24,9 +24,6 @@ class ReferenciaHojaDAO
 
 
     public function agregarReferenciaHojaDeVida(ReferenciaHoja $referencia){
-        
-        echo 'entra al dao';
-        
         $sql="insert into referencia_hoja (COD_HOJA_VIDA, REFERENCIA_NOMBRE, REFERENCIA_CARGO, REFERENCIA_EMPRESA,REFERENCIA_TELEFONO,
         REFERENCIA_CORREO)
         values 

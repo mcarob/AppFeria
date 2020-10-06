@@ -35,7 +35,7 @@ $datosPersonales=array(
 $controladorHoja=new ControladorHojaDeVida();
 $hoja=new HojaDeVida(0,$datosPersonales[0],$datosPersonales[1],$datosPersonales[2],$datosPersonales[3],$datosPersonales[4]);
 
-$codigoHoja=$controladorHoja->agregarHojaDeVida($hoja);
+echo($codigoHoja=$controladorHoja->agregarHojaDeVida($hoja));
 
 
 
