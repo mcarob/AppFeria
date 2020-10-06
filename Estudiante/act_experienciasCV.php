@@ -58,9 +58,9 @@
                                      <option value="Periodo 2018-1">Periodo 2018-1 </option>
                                      <option value="Periodo 2018-2">Periodo 2018-2 </option>
                                      <option value="Periodo 2019-1">Periodo 2019-1 </option>
-                                     <option value="cl">Periodo 2019-2 </option>
+                                     <option value="Periodo 2019-2">Periodo 2019-2 </option>
                                      <option value="Periodo 2020-1">Periodo 2020-1 </option>
-                                     <option value="cl">Periodo 2020-2 </option>
+                                     <option value="Periodo 2020-2">Periodo 2020-2 </option>
                                  </select>
                              </div>
                          </div>

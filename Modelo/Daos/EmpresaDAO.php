@@ -33,7 +33,7 @@ class EmpresaDAO extends DB
     // Lista de empresas con el usuario activo
     public function vistaEmpresas()
     {
-        $sentencia = $this->con->prepare("SELECT * FROM listaEmpresas2 where estado_usuario=1");
+        $sentencia = $this->con->prepare("SELECT * FROM listaempresas2 where estado_usuario=1");
         $sentencia->execute();
         $em = array();
         while ($fila = $sentencia->fetch()) {

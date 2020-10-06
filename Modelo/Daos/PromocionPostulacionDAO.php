@@ -53,7 +53,7 @@ class PromocionPostulacionDAO
 
     // Lista de empresas con el usuario activo
     public function ListaDePostulaciones($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM vistaPostulaciones WHERE cod_estudiante =".$cod);
+        $sentencia = $this->con->prepare("SELECT * FROM vistapostulaciones WHERE cod_estudiante =".$cod);
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {
@@ -198,7 +198,7 @@ class PromocionPostulacionDAO
     public function buscarNomCiudad($cod)
     {
         
-        $sentencia = $this->con->prepare("SELECT  * FROM CIUDAD WHERE COD_CIUDAD=?");
+        $sentencia = $this->con->prepare("SELECT  * FROM ciudad WHERE COD_CIUDAD=?");
         $sentencia->execute([$cod]);
         $nrows = $sentencia->fetch();
         return $nrows; 

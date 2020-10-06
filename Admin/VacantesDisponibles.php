@@ -63,6 +63,7 @@ include('menuAdmi.php')
                                         <th>Fecha</th>
                                         <th>Limite de vacantes</th>
                                         <th>Compensación</th>
+                                        <th>Empresa</th>
                                 
                                     </tr>
                                 </thead>
@@ -72,10 +73,11 @@ include('menuAdmi.php')
                                     foreach ($lista as $key) {
                                         echo ("<tr>");
                                         echo ("<td>" . $key[1] . "</td>");
-                                        echo ("<td>" . $objeto->darCiudad($key[2])[0] . "</td>");
+                                        echo ("<td>" . $key[2] . "</td>");
                                         echo ("<td>" . $key[3] . "</td>");
                                         echo ("<td>" . $key[4] . "</td>");
                                         echo ("<td>" . $key[5] . "</td>");
+                                        echo ("<td>" . $key[6] . "</td>");
                                     ?>
 
 

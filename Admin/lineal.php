@@ -4,7 +4,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 $claseCon = new DB();
 $con =$claseCon->connect();
-$sentencia = $con->prepare("SELECT * from graficoEmpresasMasPostuladas");
+$sentencia = $con->prepare("SELECT * from graficoempresasmaspostuladas");
 $sentencia->execute();
 $valoresY = array();
 $valoresX = array();

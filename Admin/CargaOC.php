@@ -3,7 +3,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 $claseCon = new DB();
 $con = $claseCon->connect();
-$sentencia = $con->prepare("SELECT * from totalOfertasxCiudad");
+$sentencia = $con->prepare("SELECT * from totalofertasxciudad");
 $sentencia->execute();
 $valoresY = array();
 $valoresX = array();

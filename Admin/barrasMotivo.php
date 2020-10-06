@@ -3,7 +3,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
 $claseCon = new DB();
 $con = $claseCon->connect();
-$sentencia = $con->prepare("SELECT * from GMotivosVotados WHERE COD_MOTIVO_RECHAZO!=9");
+$sentencia = $con->prepare("SELECT * from gmotivosvotados WHERE COD_MOTIVO_RECHAZO!=9");
 $sentencia->execute();
 
 $valoresY = array();
