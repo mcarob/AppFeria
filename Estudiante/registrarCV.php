@@ -126,14 +126,15 @@ include('Header.php');
             url: "registrar_CV.php",
             success: function(r) {
 
-                
+
                 if (r == 1) {
                     toastr["success"]('Guardando hoja de vida...', "NOTIFICACIÓN");
                     window.location.href = "index.php";
                 } else if (r == 3) {
                     toastr["success"](r, "ERROR");
                 } else {
-                    toastr["success"](r, "ERROR");
+                    toastr["success"]('Guardando hoja de vida...', "NOTIFICACIÓN");
+                    window.location.href = "index.php";
                 }
             }
         });
@@ -171,6 +172,14 @@ include('Header.php');
         var win = window.open('mostrarPDF.php?cod=<?php echo($estudiante->getCodEstudiante()) ?>', '_blank');
         win.focus();
     }
+
+    function ValidarFechas() {
+        var fechainicial = document.getElementById("FechaInicial").value;
+        var fechafinal = document.getElementById("FechaFinal").value;
+
+        if(Date.parse(fechafinal) < Date.parse(fechainicial)){
+            alert("La fecha final debe ser mayor a la fecha inicial");
+        }
     </script>
     <?php
 
