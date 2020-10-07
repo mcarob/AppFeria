@@ -57,12 +57,7 @@ include('Header.php');
                         </ul>
                         <div class="tab-content px-3 px-xl-5" id="myTabContent">
                             <div class="tab-pane fade" id="timeline" role="tabpanel" aria-labelledby="timeline-tab">
-
-
-
-
                             </div>
-
 
                             <div class="tab-pane fade show active" id="settings" role="tabpanel"
                                 aria-labelledby="settings-tab">
@@ -81,6 +76,16 @@ include('Header.php');
                                                         for="coverImage">Seleccione el logo de su empresa...</label>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
+                                                </br></br>
+                                                <?php if($user->darEstado_empresa()==2){?>
+                                                    <div class="custom-file mb-1">
+                                                        <input type="file" class="custom-file-input" id="camaracomercioE" name="camaracomercioE"
+                                                        aria-describedby="inputGroupFileAddon01">
+                                                        <label class="custom-file-label" for="camaracomercio" name="camaracomercio" id="nombreccomercio">Subir
+                                                        Camara de Comercio</label>
+                                                    <div class="invalid-feedback"></div>
+                                                    </div>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                         <div class="row mb-2">

@@ -39,6 +39,12 @@ class ControladorEmpresa{
 			$resultado_empresa=$empresa_DAO->editarEmpresaSinLogo($codigo,$nombre,$telefono,$descripcion);
 			return $resultado_empresa;
 		}
+
+		public function actualizarEmpresaSoloCamara($codigo,$nombre,$telefono,$descripcion,$camara){
+			$empresa_DAO=new EmpresaDAO();
+			$resultado_empresa=$empresa_DAO->editarEmpresaConCamara($codigo,$nombre,$telefono,$descripcion,$camara);
+			return $resultado_empresa;
+		}
 		
 
 		public function darBlobCamara($cod){

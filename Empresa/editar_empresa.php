@@ -14,9 +14,10 @@ $datos=array(
 $conUsuario=new ControladorUsuario();
 $validacion=$conUsuario->validarContra($_POST["codUsuario"],$_POST["conPassword1"]);
 
-
+print_r($_FILES["camaracomercioE"]);
 if(count($validacion)>0)
 {    
+    //actualizar cuando trae un logo
     if($_FILES["logo"]["size"]!=0)
     {
         if (((($_FILES['logo']['type']) == 'image/png') || (($_FILES['logo']['type']) == 'image/jpeg'))) 
@@ -48,11 +49,45 @@ if(count($validacion)>0)
             echo("El formato del logo insertado es incorrecto");
             
         }
-    }else if($_FILES["logo"]["size"]==0)
+    }
+    //actualizar cuando no trae logo ni pdf
+    else if($_FILES["logo"]["size"]==0 and $_FILES["camaracomercioE"]["size"]==0)
+    {
+        $conEmpresa=new ControladorEmpresa();
+        echo($conEmpresa->actualizarEmpresaSinLogo($datos[0],$datos[1],$datos[2],$datos[3]));
+    }//actualizar en caso de que ya este verificada y no trae logo
+    else if($_FILES["logo"]["size"]==0)
     {
         $conEmpresa=new ControladorEmpresa();
         echo($conEmpresa->actualizarEmpresaSinLogo($datos[0],$datos[1],$datos[2],$datos[3]));
     }
+    //actualizar solo con camara de comercio y sin logo
+    else if (isset($_FILES['camaracomercioE'])) {
+        if (($_FILES['camaracomercioE']['type']) == 'application/pdf') 
+        {    
+                try {
+                    $datacomercio = $_FILES['camaracomercioE']['tmp_name'];
+                    if (($datacomercio == null)) 
+                    {
+                        echo ("Error al cargar el archivo Camara de comercio ");
+                    } else 
+                    {
+                        $archicomercio = file_get_contents($datacomercio);
+                    }
+                } catch (Exception $e) {
+                    echo ("Error el archivo de la camara de comercio, verificar");
+                }
+            
+                if (isset($archicomercio))
+                {
+                
+                $conEmpresa=new ControladorEmpresa();
+                echo($conEmpresa->actualizarEmpresaSoloCamara($datos[0],$datos[1],$datos[2],$datos[3],$archicomercio));
+                }
+
+        }
+    }
+    
     
 }   
 else
