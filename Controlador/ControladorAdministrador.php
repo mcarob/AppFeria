@@ -15,12 +15,12 @@ public function actualizarPromocion($pPromocion)
 	return $this->promociones->editarVacante($pPromocion);
 }
 
-public function darAdministrador($pCodigo)
-{
-	$administrador_DAO=new AdministradorDAO();
-	$administrador=$administrador_DAO->darAdministradorXCodigo($pCodigo);
-	return $administrador;
-}
+// public function darAdministrador($pCodigo)
+// {
+// 	$administrador_DAO=new AdministradorDAO();
+// 	$administrador=$administrador_DAO->darAdministradorXCodigo($pCodigo);
+// 	return $administrador;
+// }
 
 public function actualizarAdministrador(Administrador $administrador)
 {
