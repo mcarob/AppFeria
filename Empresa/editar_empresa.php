@@ -71,9 +71,13 @@ if(count($validacion)>0)
             
                 if (isset($archicomercio))
                 {
-                
+                $comercio = ($_FILES['camaracomercioE']['tmp_name']);
+                $pname = rand(1000,10000)."-".$_FILES["camaracomercioE"]["name"];
+                $tname = $_FILES["camaracomercioE"]["tmp_name"];
+                $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/archivos/camaraComercio';
+                $seMovio=move_uploaded_file($tname, $uploads_dir.'/'.$pname);
                 $conEmpresa=new ControladorEmpresa();
-                echo($conEmpresa->actualizarEmpresaSoloCamara($datos[0],$datos[1],$datos[2],$datos[3],$archicomercio));
+                echo($conEmpresa->actualizarEmpresaSoloCamara($datos[0],$datos[1],$datos[2],$datos[3],$pname));
                 }
 
         }else{
@@ -105,8 +109,13 @@ if(count($validacion)>0)
             
                 if (isset($archicomercio) and isset($archilogo))
                 {
+                    $comercio = ($_FILES['camaracomercioE']['tmp_name']);
+                    $pname = rand(1000,10000)."-".$_FILES["camaracomercioE"]["name"];
+                    $tname = $_FILES["camaracomercioE"]["tmp_name"];
+                    $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/archivos/camaraComercio';
+                    $seMovio=move_uploaded_file($tname, $uploads_dir.'/'.$pname);
                     $conEmpresa=new ControladorEmpresa();
-                    echo($conEmpresa->actualizarEmpresaCamaraYLogo($datos[0],$datos[1],$datos[2],$datos[3],$archicomercio,$archilogo));
+                    echo($conEmpresa->actualizarEmpresaCamaraYLogo($datos[0],$datos[1],$datos[2],$datos[3],$pname,$archilogo));
                 }
 
         }else{
