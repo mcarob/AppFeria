@@ -7,7 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
-
+  <?php
+  
+  $user = new Usuario();
+  $user->setUser($_SESSION['user']);
+  ?>
 
   <title>Empresa</title>
 
@@ -74,15 +78,12 @@
                 </div>
               </ul>
             </li>
+<?php   
 
+if($user->darEstado_empresa()==1){
 
-
-            
-
-
-
-
-
+?>
+          
             <li class="has-sub">
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
                 <i class="mdi mdi-diamond-stone"></i>
@@ -140,7 +141,10 @@
             </li>
 
 
+<?php   
 
+}
+?>
 
 
             <!-- <li class="has-sub">
