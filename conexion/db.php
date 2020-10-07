@@ -9,7 +9,7 @@ class DB{
     public function __construct(){
         #$this->host     = 'feriadb.cwof09saidik.us-east-1.rds.amazonaws.com:3306';
         $this->host     = 'ferialaboral.crdrstm5rahm.us-east-2.rds.amazonaws.com';
-        $this->db       = 'feria_db';
+        $this->db       = 'feria1_db';
         $this->user     = 'usuarioferiadb';
         $this->password = "3057900368";
         $this->charset  = 'utf8mb4';
