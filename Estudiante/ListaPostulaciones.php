@@ -130,6 +130,11 @@ include('menuEstudiante.php')
                                             Rechazar</button>
                                             </td> ");
                                         }
+                                        if ($key["COD_ESTADO_PROCESO"] == "8") {
+                                            echo ("<td>
+                                                 <button type='submit' class='mb-1 btn btn-danger' disabled id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button>                                                 
+                                                 </td> ");
+                                        }
 
                                        // echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'"."onclick='mostrarModal(".'"'.$key[10].'",'.'"'.$key[8].'"'.")'". ">Motivo</button></td>");
 

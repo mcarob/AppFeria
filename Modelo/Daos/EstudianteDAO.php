@@ -146,7 +146,7 @@ class EstudianteDAO
     }
 
     public function darNotificacionxEst($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM notificacion WHERE NOTIFACION_PARA=" . $cod);
+        $sentencia = $this->con->prepare("SELECT * FROM notificacion WHERE NOTIFACION_PARA=".$cod." ORDER BY FECHA_ENVIO DESC;");
         $sentencia->execute();
         return $sentencia->fetchAll();
     }
