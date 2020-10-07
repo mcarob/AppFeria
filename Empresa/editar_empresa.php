@@ -17,7 +17,7 @@ $validacion=$conUsuario->validarContra($_POST["codUsuario"],$_POST["conPassword1
 
 if(count($validacion)>0)
 {    
-    if(isset($_FILES["logo"]))
+    if($_FILES["logo"]["size"]!=0)
     {
         if (((($_FILES['logo']['type']) == 'image/png') || (($_FILES['logo']['type']) == 'image/jpeg'))) 
         {
@@ -46,12 +46,14 @@ if(count($validacion)>0)
                 }
         }else{
             echo("El formato del logo insertado es incorrecto");
-        }  
-    }
-    else{        
+            
+        }
+    }else if($_FILES["logo"]["size"]==0)
+    {
         $conEmpresa=new ControladorEmpresa();
         echo($conEmpresa->actualizarEmpresaSinLogo($datos[0],$datos[1],$datos[2],$datos[3]));
     }
+    
 }   
 else
 {

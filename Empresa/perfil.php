@@ -78,8 +78,7 @@ include('Header.php');
                                                 <div class="custom-file mb-1">
                                                     <input type="file" class="custom-file-input" id="logo" name="logo" >
                                                     <label id="labelLogo" class="custom-file-label"
-                                                        for="coverImage">Seleccione un
-                                                        archivo...</label>
+                                                        for="coverImage">Seleccione el logo de su empresa...</label>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
