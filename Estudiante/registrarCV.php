@@ -119,21 +119,21 @@ include('Header.php');
         datos = $('#datosHoja').serialize();
 
 
-
         $.ajax({
             type: "POST",
             data: datos,
             url: "registrar_CV.php",
             success: function(r) {
-
-
+                
                 if (r == 1) {
                     toastr["success"]('Guardando hoja de vida...', "NOTIFICACIÓN");
-                    window.location.href = "index.php";
+                    window.location.href = "actualizarCV.php";
                 } else if (r == 3) {
                     toastr["success"](r, "ERROR");
                 } else {
+
                     toastr["success"](r, "ALERTA");
+
                 }
             }
         });
@@ -179,6 +179,23 @@ include('Header.php');
         if(Date.parse(fechafinal) < Date.parse(fechainicial)){
             alert("La fecha final debe ser mayor a la fecha inicial");
         }
+    }
+
+
+
+    function getCity(val) {
+    $.ajax({
+        type: "POST",
+        url: "ajaxCiudad.php",
+        data: 'departamento_id=' + val,
+        beforeSend: function() {
+            $("#ciudad").addClass("loader");
+        },
+        success: function(data) {
+            $("#ciudad").html(data);
+            $("#ciudad").removeClass("loader");
+        }
+    });
     }
     </script>
     <?php

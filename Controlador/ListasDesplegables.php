@@ -27,4 +27,18 @@ class ListasDesplegables extends DB{
         return $query->fetchAll();
     }
 
+    public function darListaFormacion()
+    {
+        $query=$this->connect()->prepare('SELECT * FROM tipo_formacion');
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    public function darListaCompelemtaria()
+    {
+        $query=$this->connect()->prepare('SELECT * FROM tipo_formacion_complementaria');
+        $query->execute();
+        return $query->fetchAll();
+    }
+
 }

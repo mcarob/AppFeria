@@ -11,7 +11,7 @@ if (! empty($_POST["departamento_id"])) {
 <?php
 foreach ($cityResult as $city) {
         ?>
-<option value="<?php echo $city[0]; ?>"><?php echo $city[1]; ?></option>
+<option value="<?php echo $city[1]; ?>"><?php echo $city[1]; ?></option>
 <?php
     }
 }

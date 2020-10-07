@@ -46,20 +46,24 @@
                                              class="material-icons">assignment_ind</i> </span> </div> <select
                                      type="text" class="form-control" aria-label="Username"
                                      id="experienciaAcademica<?php echo($x+1)?>[]" required
-                                     name="experienciaAcademica<?php echo($x+1)?>[]"
-                                     value="<?php echo($experienciaAcademica['PERIODO_ACADEMICO']) ?>">
+                                     name="experienciaAcademica<?php echo($x+1)?>[]">
+                                     <option  selected value="<?php echo ($experienciaAcademica['PERIODO_ACADEMICO']); ?>"><?php echo ($experienciaAcademica['PERIODO_ACADEMICO']); ?></option>
                                      <option value="Periodo 2015-1">Periodo 2015-1 </option>
                                      <option value="Periodo 2015-2">Periodo 2015-2 </option>
-                                     <option value="Periodo 2016-1">Periodo 2016-1 </option>
+                                     <option value="Periodo 2016-1">Periodo 2016-1 </option> 
                                      <option value="Periodo 2016-2">Periodo 2016-2 </option>
-                                     <option value="Periodo 2017-1">Periodo 2017-1 </option>
+                                     <option value="Periodo 2017-1">Periodo 2017-1 </option> 
                                      <option value="Periodo 2017-2">Periodo 2017-2 </option>
                                      <option value="Periodo 2018-1">Periodo 2018-1 </option>
                                      <option value="Periodo 2018-2">Periodo 2018-2 </option>
                                      <option value="Periodo 2019-1">Periodo 2019-1 </option>
                                      <option value="Periodo 2019-2">Periodo 2019-2 </option>
-                                     <option value="Periodo 2020-1">Periodo 2020-1 </option>
+                                     <option value="Periodo 2020-1">Periodo 2020-1 </option> 
                                      <option value="Periodo 2020-2">Periodo 2020-2 </option>
+                                    
+
+
+                                   
                                  </select>
                              </div>
                          </div>

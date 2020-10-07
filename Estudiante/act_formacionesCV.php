@@ -1,4 +1,12 @@
 <!--    esto es algo comentado--->
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ListasDesplegables.php');
+
+$controladorListas=new ListasDesplegables();
+$listaFormacion=$controladorListas->darListaFormacion();
+$listaComple=$controladorListas->darListaCompelemtaria();
+
+?>
 <div class="wizard-card ct-wizard-green">
 </div>
 <br>
@@ -47,16 +55,26 @@
                                         class="material-icons">assignment_ind</i> </span> </div> <select type="text"
                                 class="form-control" aria-label="Username" id="academica<?php echo($i+1)?>[]" required
                                 name="academica<?php echo($i+1)?>[]"
-                                value="<?php echo($academica['COD_TIPO_FORMACION']) ?>">
-                                <option value="1"> Bachillerato </option>
-                                <option value="2"> Tecnico profesional </option>
-                                <option value="3"> Tecnologico</option>
-                                <option value="4"> Profesional </option>
-                                <option value="5"> Especializacion tecnica </option>
-                                <option value="6"> Especializacion tecnologica </option>
-                                <option value="7"> Especializacion profesional </option>
-                                <option value="8"> Maestria </option>
-                                <option value="9"> Doctorado </option>
+                                >
+                                <?php
+                    foreach ($listaFormacion as $city) {
+
+                        if($city[0]==$academica['COD_TIPO_FORMACION']){
+                            ?>
+                   <option  selected value="<?php echo $city[0]; ?>"><?php echo ($city[1]); ?></option>
+
+                            <?php
+
+                        }else{
+
+                        
+                    ?>
+                            <option value="<?php echo $city[0]; ?>"><?php echo ($city[1]);?></option>
+                            <?php
+                }    
+                }
+                    
+                    ?>                                
                             </select>
                         </div>
                     </div>
@@ -137,13 +155,26 @@
                                         class="material-icons">assignment_ind</i> </span> </div> <select 
                                 type="text" class="form-control" aria-label="Username"
                                 id="complementaria<?php echo($j+1)?>[]" required
-                                name="complementaria<?php echo($j+1)?>[]"
-                                value="<?php echo($complementaria['COD_TIPO_FORMACION_COMPLEMENTARIA']) ?>">
-                                <option value="1"> Curso </option>
-                                <option value="2"> Seminario </option>
-                                <option value="3"> Taller</option>
-                                <option value="4"> Diplomado </option>
-                                <option value="5"> Certificacion </option>
+                                name="complementaria<?php echo($j+1)?>[]">
+                                <?php
+                    foreach ($listaComple as $city) {
+
+                        if($city[0]==$complementaria['COD_TIPO_FORMACION_COMPLEMENTARIA']){
+                            ?>
+                   <option  selected value="<?php echo $city[0]; ?>"><?php echo ($city[1]); ?></option>
+
+                            <?php
+
+                        }else{
+
+                        
+                    ?>
+                            <option value="<?php echo $city[0]; ?>"><?php echo ($city[1]);?></option>
+                            <?php
+                }    
+                }
+                    
+                    ?>                     
                             </select>
                         </div>
                     </div>

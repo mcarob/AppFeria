@@ -164,10 +164,10 @@ include('Header.php');
             data: datos,
             url: "registrar_CV.php",
             success: function(r) {
-                console.log(r);
+                
                 if (r == 1) {
                     toastr["success"]('Actualizando hoja de vida...', "NOTIFICACIÓN");
-                    window.location.href = "index.php";
+                    window.location.href = "actualizarCV.php";
                 } else if (r == 3) {
                     toastr["success"](r, "ERROR");
                 } else {
@@ -211,6 +211,24 @@ include('Header.php');
         var win = window.open('mostrarPDF.php?cod=<?php echo($estudiante->getCodEstudiante()) ?>', '_blank');
         win.focus();
     }
+
+
+    function getCity(val) {
+    $.ajax({
+        type: "POST",
+        url: "ajaxCiudad.php",
+        data: 'departamento_id=' + val,
+        beforeSend: function() {
+            $("#ciudad").addClass("loader");
+        },
+        success: function(data) {
+            $("#ciudad").html(data);
+            $("#ciudad").removeClass("loader");
+        }
+    });
+    }
+
+
     </script>
     <?php
 

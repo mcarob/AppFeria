@@ -33,10 +33,17 @@ class Ciudades extends DB{
         $query->execute([$cod]);
         return $query->fetch();
     }
+    public function darciudadxnom($nom){
+        $query=$this->connect()->prepare('SELECT * FROM ciudad WHERE NOM_CIUDAD=?');
+        $query->execute([$nom]);
+        return $query->fetch();
+    }
 
     public function darDepartamentoXciudad($codCidudad){
         $query=$this->connect()->prepare('SELECT * FROM departamento WHERE COD_DEPARTAMENTO=?');
         $query->execute([$codCidudad]);
         return $query->fetch();
     }
+
+   
 }
