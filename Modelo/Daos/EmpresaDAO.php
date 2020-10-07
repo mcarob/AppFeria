@@ -93,7 +93,7 @@ class EmpresaDAO extends DB
         return $res;
     }
 
-    public function editarEmpresaSinLogo($codigo,$nombre,$telefono,$descripcion)
+    public function editarEmpresaSinLogoYCamara($codigo,$nombre,$telefono,$descripcion)
     {       
         $sentencia = $this->con->prepare("UPDATE empresa SET 
         RAZON_SOCIAL=?,
@@ -115,6 +115,20 @@ class EmpresaDAO extends DB
         WHERE COD_EMPRESA =?");
 
         $res=$sentencia->execute([$nombre,$telefono,$descripcion,$camara,$codigo]);
+        return $res;
+    }
+
+    public function editarEmpresaConCamaraYLogo($codigo,$nombre,$telefono,$descripcion,$camara,$logo)
+    {       
+        $sentencia = $this->con->prepare("UPDATE empresa SET 
+        RAZON_SOCIAL=?,
+        TELEFONO_EMPRESA=?,
+        DESCRIPCCION_EMPRESA=?,
+        CAMARA_COMERCIO_PDF=?,
+        LOGO_EMPRESA=?
+        WHERE COD_EMPRESA =?");
+
+        $res=$sentencia->execute([$nombre,$telefono,$descripcion,$camara,$logo,$codigo]);
         return $res;
     }
 

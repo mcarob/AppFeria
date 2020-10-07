@@ -34,9 +34,9 @@ class ControladorEmpresa{
 			return $resultado_empresa;
 			
 		}
-		public function actualizarEmpresaSinLogo($codigo,$nombre,$telefono,$descripcion){
+		public function actualizarEmpresaSinLogoYCamara($codigo,$nombre,$telefono,$descripcion){
 			$empresa_DAO=new EmpresaDAO();
-			$resultado_empresa=$empresa_DAO->editarEmpresaSinLogo($codigo,$nombre,$telefono,$descripcion);
+			$resultado_empresa=$empresa_DAO->editarEmpresaSinLogoYCamara($codigo,$nombre,$telefono,$descripcion);
 			return $resultado_empresa;
 		}
 
@@ -46,6 +46,12 @@ class ControladorEmpresa{
 			return $resultado_empresa;
 		}
 		
+
+		public function actualizarEmpresaCamaraYLogo($codigo,$nombre,$telefono,$descripcion,$camara,$logo){
+			$empresa_DAO=new EmpresaDAO();
+			$resultado_empresa=$empresa_DAO->editarEmpresaConCamaraYLogo($codigo,$nombre,$telefono,$descripcion,$camara,$logo);
+			return $resultado_empresa;
+		}
 
 		public function darBlobCamara($cod){
 			$empresa_DAO=new EmpresaDAO();

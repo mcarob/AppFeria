@@ -79,7 +79,7 @@ include('Header.php');
                                                 </br></br>
                                                 
                                                 <div class="custom-file mb-1" <?php if($user->darEstado_empresa()==1){echo ("style='display: none;'");}?>>
-                                                    <input  class="custom-file-input" id="camaracomercioE" 
+                                                    <input type="file" class="custom-file-input" id="camaracomercioE" 
                                                         name="camaracomercioE" aria-describedby="inputGroupFileAddon01">
                                                     <label class="custom-file-label" for="camaracomercio"
                                                         name="camaracomercio" id="nombreccomercio">Subir
