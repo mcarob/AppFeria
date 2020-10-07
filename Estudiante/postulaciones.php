@@ -171,7 +171,7 @@ include('Header.php');
 
                 }
                 ?>
-                <div class="row px-3 py-2">
+                
                     <?php
             foreach ($listaPromociones as $fila) {
 
@@ -207,7 +207,7 @@ include('Header.php');
                     <?php
             }
             ?>
-                </div>
+             
             </div>
             <div class="card-footer text" style="background-color: white;" >
                 <nav aria-label="Page navigation example">
