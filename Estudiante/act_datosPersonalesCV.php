@@ -38,7 +38,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefono"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefono"
                 name="telefono" pattern="(^[+]?[0-9]{7,15})"
                 title="El Formato de telefono puede comenzar con + o solo numeros (max 15)" required value=<?php echo($datosPersonales->getHojaCelular())?>>
         </div>
@@ -152,7 +152,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
                 name="telefonoR1" value="<?php echo($referencia1['REFERENCIA_TELEFONO'])?>">
         </div>
     </div>
@@ -204,7 +204,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
                 name="telefonoR2" value="<?php echo($referencia2['REFERENCIA_TELEFONO'])?>">
         </div>
     </div>
@@ -261,7 +261,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
                 name="telefonoR1" value="<?php echo($referencia1['REFERENCIA_TELEFONO'])?>">
         </div>
     </div>
@@ -313,7 +313,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
                 name="telefonoR2">
         </div>
     </div>
@@ -369,7 +369,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
                 name="telefonoR1">
         </div>
     </div>
@@ -421,7 +421,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
                 name="telefonoR2">
         </div>
     </div>

@@ -37,9 +37,8 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefono"
-                name="telefono" pattern="(^[+]?[0-9]{7,15})"
-                title="El Formato de telefono puede comenzar con + o solo numeros (max 15)" required>
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefono"
+                name="telefono" required>
         </div>
     </div>
 </div>
@@ -147,7 +146,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR1"
                 name="telefonoR1">
         </div>
     </div>
@@ -199,7 +198,7 @@
                     <i class="material-icons">phone</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
+            <input type="number" class="form-control" placeholder="Teléfono" aria-label="Username" id="telefonoR2"
                 name="telefonoR2">
         </div>
     </div>

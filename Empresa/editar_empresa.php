@@ -48,6 +48,12 @@ if(count($validacion)>0)
             echo("formato incorrecto");
         }  
     }
+
+    if(isset($_FILES["logo"])==null)
+    {        
+        $conEmpresa=new ControladorEmpresa();
+        echo($conEmpresa->actualizarEmpresaSinLogo($datos[0],$datos[1],$datos[2],$datos[3]));
+    }
 }   
 else
 {

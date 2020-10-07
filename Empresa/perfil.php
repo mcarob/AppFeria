@@ -177,15 +177,12 @@ include('Header.php');
             contentType: false,
             success: function(r) {
 
-                console.log(r);
+                
 
                 if (r == 1) {
+                    toastr["success"]('Actualizando perfil...', "NOTIFICACIÓN");
                     window.location.href = "index.php";
-
-                }if (r == 11) {
-                    window.location.href = "index.php";
-
-                } else {
+                }else {
                     toastr["success"](r, "ERROR");
                 }
             }

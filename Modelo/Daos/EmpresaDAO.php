@@ -93,6 +93,17 @@ class EmpresaDAO extends DB
         return $res;
     }
 
+    public function editarEmpresaSinLogo($codigo,$nombre,$telefono,$descripcion)
+    {       
+        $sentencia = $this->con->prepare("UPDATE empresa SET 
+        RAZON_SOCIAL=?,
+        TELEFONO_EMPRESA=?,
+        DESCRIPCCION_EMPRESA=?
+        WHERE COD_EMPRESA =?");
+
+        $res=$sentencia->execute([$nombre,$telefono,$descripcion,$codigo]);
+        return $res;
+    }
 
     public function buscarEmpresaxNit($variable)
     {
@@ -249,6 +260,7 @@ class EmpresaDAO extends DB
         $res = $sentencia->execute();
         return $res;
     }
+    
 
     public function totalEmpresasSV(){
         $sentencia = $this->con->prepare("SELECT  * from totalempresassinvalidar");
