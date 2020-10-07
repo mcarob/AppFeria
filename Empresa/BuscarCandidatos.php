@@ -82,7 +82,9 @@ include('menuEmpresa.php');
                                         <th>Correo</th>
                                         <th>Carrera</th>
                                         <th>Semestre</th>
+                                        <th>Hoja de Vida</th>
                                         <th>Acción </th>
+                                        <th class="never"></th>
                                     </tr>
                                 </thead>
 
@@ -96,9 +98,14 @@ include('menuEmpresa.php');
                                         echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[6] . "</td>");
                                         echo ("<td>" . $key[7] . "</td>");
+                                        if($key[9]==""){
+                                            echo ("<td>" . "<button type='submit' class='mb-1 btn btn-info' id='boton1'" . "onclick='cargarHoja(" . '"' . $key[0] . '"' . ")'" . " disabled >No Disponible</button>" . "</td>");
+                                        }else{
+                                            echo ("<td>" . "<button type='submit' class='mb-1 btn btn-info' id='boton1'" . "onclick='cargarHoja(" . '"' . $key[0] . '"' . ")'" . ">Visualizar</button>" . "</td>");
+                                        }
                                         echo ("<td><button type='submit' class='mb-1 btn btn-danger' id='boton1'" . "onclick='mostrarModal1(" . '"' . $key[1] . '"' . ")'" . ">Contactar</button>
                                         <button type='submit' class='mb-1 btn btn-success' id='boton2'" . "onclick='mostrarModal2(" . '"' . $key[0] . '"' . ")'" . ">Legalizar</button></td>");
-
+                                        echo ("<td >" . $key[9] . "</td>");
 
                                     ?>
 
@@ -164,12 +171,12 @@ include('menuEmpresa.php');
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Seleccione una opción</label>
                         <select class="form-control" id="select" name="select">
-                            <option value="0">No quiero especificar una oferta</option>
-                            <option value="1">Otro</option>
                             <?php
                             if (count($for) == 0) {
                                 echo ('<option value="">No hay ofertas</option>');
                             } else {
+                                print('<option value="0">No quiero especificar una oferta</option>
+                                <option value="1">Otro</option>');
                                 foreach ($for as $key) {
                                     echo ('<option value="' . $key[0] . '">' . $key[13] . '</option>');
                                 }
@@ -262,7 +269,10 @@ include('menuEmpresa.php');
         $('#modal2').modal('show');
         variableCod = valor;
     }
-
+    function cargarHoja(cod){
+        var win = window.open('abrirHojaVida.php?idHoja='+cod, '_blank');
+        win.focus();
+    }
 
 
     function notificar() {
