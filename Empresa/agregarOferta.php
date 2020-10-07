@@ -9,14 +9,15 @@ if (!isset($_SESSION['user'])) {
 
 
 
-
-include('menuEmpresa.php');
-include('Header.php');
-
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/Ciudades.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ListasDesplegables.php');
+
+include('menuEmpresa.php');
+include('Header.php');
+
 $empresa_dao = new EmpresaDAO();
 $codigo = $user->darCodigo();
 $empresa = $empresa_dao->devolverEmpresa($codigo);

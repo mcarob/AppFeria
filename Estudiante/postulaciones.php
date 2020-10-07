@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])) {
 } else if (!($_SESSION['tipo'] == 2)) {
     header("location: ../index.php");
 }
-
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorPromocion.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/EmpresaDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/Empresa.php');
@@ -171,7 +171,7 @@ include('Header.php');
 
                 }
                 ?>
-                
+                <div class="row">
                     <?php
             foreach ($listaPromociones as $fila) {
 
@@ -207,7 +207,7 @@ include('Header.php');
                     <?php
             }
             ?>
-             
+                </div>
             </div>
             <div class="card-footer text" style="background-color: white;" >
                 <nav aria-label="Page navigation example">
