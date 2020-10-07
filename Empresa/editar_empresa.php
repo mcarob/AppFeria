@@ -14,7 +14,7 @@ $datos=array(
 $conUsuario=new ControladorUsuario();
 $validacion=$conUsuario->validarContra($_POST["codUsuario"],$_POST["conPassword1"]);
 
-print_r($_FILES["camaracomercioE"]);
+
 if(count($validacion)>0)
 {    
     //actualizar cuando trae un logo
@@ -85,6 +85,9 @@ if(count($validacion)>0)
                 echo($conEmpresa->actualizarEmpresaSoloCamara($datos[0],$datos[1],$datos[2],$datos[3],$archicomercio));
                 }
 
+        }else{
+            echo("El formato de la camara de comercio es incorrecto");
+            
         }
     }
     

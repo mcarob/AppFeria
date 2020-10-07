@@ -71,20 +71,21 @@ include('Header.php');
                                             </label>
                                             <div class="col-sm-8 col-lg-10">
                                                 <div class="custom-file mb-1">
-                                                    <input type="file" class="custom-file-input" id="logo" name="logo" >
+                                                    <input type="file" class="custom-file-input" id="logo" name="logo">
                                                     <label id="labelLogo" class="custom-file-label"
                                                         for="coverImage">Seleccione el logo de su empresa...</label>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 </br></br>
                                                 <?php if($user->darEstado_empresa()==2){?>
-                                                    <div class="custom-file mb-1">
-                                                        <input type="file" class="custom-file-input" id="camaracomercioE" name="camaracomercioE"
-                                                        aria-describedby="inputGroupFileAddon01">
-                                                        <label class="custom-file-label" for="camaracomercio" name="camaracomercio" id="nombreccomercio">Subir
+                                                <div class="custom-file mb-1">
+                                                    <input type="file" class="custom-file-input" id="camaracomercioE"
+                                                        name="camaracomercioE" aria-describedby="inputGroupFileAddon01">
+                                                    <label class="custom-file-label" for="camaracomercio"
+                                                        name="camaracomercio" id="nombreccomercio">Subir
                                                         Camara de Comercio</label>
                                                     <div class="invalid-feedback"></div>
-                                                    </div>
+                                                </div>
                                                 <?php } ?>
                                             </div>
                                         </div>
@@ -195,6 +196,12 @@ include('Header.php');
     }
     </script>
 
+    <script>
+    document.getElementById('camaracomercioE').onchange = function() {
+        document.getElementById("nombreccomercio").innerHTML = this.value.replace(/C:\\fakepath\\/i, '');
+    };
+    </script>
+    
     <script>
     document.getElementById('logo').onchange = function() {
         document.getElementById("labelLogo").innerHTML = this.value.replace(/C:\\fakepath\\/i, '');
