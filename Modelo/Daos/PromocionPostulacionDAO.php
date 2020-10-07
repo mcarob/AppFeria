@@ -86,11 +86,11 @@ class PromocionPostulacionDAO
         $sentencia=$this->con->prepare("UPDATE promocion_postulacion set COD_ESTADO_PROCESO=".$estado." WHERE COD_PROMOCION_POSTULACION=".$cod);
         $respuesta=  $sentencia->execute();
 
-        $sentencia = $this->con->prepare("SELECT COD_ESTUDIANTE FROM postulacionesXempresa where COD_PROMOCION_POSTULACION=".$cod);
+        $sentencia = $this->con->prepare("SELECT COD_ESTUDIANTE FROM postulacionesxempresa where COD_PROMOCION_POSTULACION=".$cod);
         $sentencia->execute();
         $em = $sentencia->fetch();
 
-        $sentencia3 = $this->con->prepare("SELECT TITULO_PROMOCION FROM postulacionesXempresa where COD_PROMOCION_POSTULACION=".$cod);
+        $sentencia3 = $this->con->prepare("SELECT TITULO_PROMOCION FROM postulacionesxempresa where COD_PROMOCION_POSTULACION=".$cod);
         $sentencia3->execute();
         $em2 = $sentencia3->fetch();    
 
@@ -113,7 +113,7 @@ class PromocionPostulacionDAO
     }
 
     public function postulacionXempresa($cod_Empresa){
-        $sentencia = $this->con->prepare("SELECT * FROM postulacionesXempresa where (COD_ESTADO_PROCESO=1 or COD_ESTADO_PROCESO=2 or COD_ESTADO_PROCESO=3 or COD_ESTADO_PROCESO=7) and cod_empresa=".$cod_Empresa);
+        $sentencia = $this->con->prepare("SELECT * FROM postulacionesxempresa where (COD_ESTADO_PROCESO=1 or COD_ESTADO_PROCESO=2 or COD_ESTADO_PROCESO=3 or COD_ESTADO_PROCESO=7) and cod_empresa=".$cod_Empresa);
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {
@@ -124,7 +124,7 @@ class PromocionPostulacionDAO
 
 
     public function practicantesXempresa($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM practicantesXempresa where  COD_ESTADO_PROCESO = 5 and cod_empresa=".$cod);
+        $sentencia = $this->con->prepare("SELECT * FROM practicantesxempresa where  COD_ESTADO_PROCESO = 5 and cod_empresa=".$cod);
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {
@@ -134,7 +134,7 @@ class PromocionPostulacionDAO
     }
     
      public function totalPostulacionesFORXempresa($cod){
-        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesFORXempresa where cod_empresa=".$cod);
+        $sentencia = $this->con->prepare("SELECT  * from totalpostulacionesforxempresa where cod_empresa=".$cod);
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows; 
@@ -143,7 +143,7 @@ class PromocionPostulacionDAO
 
 
     public function totalPostulacionesREXempresa($cod){
-        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesREXempresa where cod_empresa=".$cod);
+        $sentencia = $this->con->prepare("SELECT  * from totalpostulacionesrexempresa where cod_empresa=".$cod);
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows; 
@@ -151,7 +151,7 @@ class PromocionPostulacionDAO
 
 
     public function totalPostulacionesEPXempresa($cod){
-        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesEPXempresa where cod_empresa=".$cod);
+        $sentencia = $this->con->prepare("SELECT  * from totalpostulacionesepxempresa where cod_empresa=".$cod);
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows; 
@@ -159,7 +159,7 @@ class PromocionPostulacionDAO
 
 
     public function totalPostulacionesASXempresa($cod){
-        $sentencia = $this->con->prepare("SELECT  * from totalPostulacionesASXempresa where cod_empresa=".$cod);
+        $sentencia = $this->con->prepare("SELECT  * from totalpostulacionesasxempresa where cod_empresa=".$cod);
         $sentencia->execute();
         $nrows = $sentencia->fetchAll();
         return $nrows; 
