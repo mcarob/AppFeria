@@ -45,11 +45,11 @@ if(count($validacion)>0)
                 echo($conEmpresa->actualizarEmpresa($datos[0],$datos[1],$datos[2],$datos[3],$archilogo));
                 }
         }else{
-            echo("formato incorrecto");
+            echo("El formato del logo insertado es incorrecto");
         }  
     }
 
-    if(isset($_FILES["logo"])==null)
+    else if(!isset($_FILES["logo"]))
     {        
         $conEmpresa=new ControladorEmpresa();
         echo($conEmpresa->actualizarEmpresaSinLogo($datos[0],$datos[1],$datos[2],$datos[3]));
