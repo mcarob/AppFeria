@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <?php
+  include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/user.php');
+  $user = new Usuario();
+  $user->setUser($_SESSION['user']);
+  ?>
 
 <head>
   <meta charset="utf-8" />
@@ -7,11 +12,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
-  <?php
-  
-  $user = new Usuario();
-  $user->setUser($_SESSION['user']);
-  ?>
 
   <title>Empresa</title>
 

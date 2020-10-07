@@ -313,26 +313,37 @@ if (isset($_GET["action"])) {
                                                     echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
                                                     echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
                                                     echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
+                                                    echo '<option value="Otro" >Otro</option>';
+
                                                 } else if (strpos($informacion->getPromocionHorario(), '7:00 am - 4:00 pm') !== false) {
                                                     echo '<option value="6:00 am - 3:00 pm"  >6:00 am - 3:00 pm</option>';
                                                     echo '<option value="7:00 am - 4:00 pm" selected="true">7:00 am - 4:00 pm</option>';
                                                     echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
                                                     echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
+                                                    echo '<option value="Otro" >Otro</option>';
+
                                                 } else if (strpos($informacion->getPromocionHorario(), '8:00 am - 5:00 pm') !== false) {
                                                     echo '<option value="6:00 am - 3:00 pm" >6:00 am - 3:00 pm</option>';
                                                     echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
                                                     echo '<option value="8:00 am - 5:00 pm"  selected="true" >8:00 am - 5:00 pm</option>';
                                                     echo '<option value="9:00 am - 6:00 pm" >9:00 am - 6:00 pm</option>';
+                                                    echo '<option value="Otro" >Otro</option>';
+
                                                 } else if (strpos($informacion->getPromocionHorario(), '9:00 am - 6:00 pm') !== false) {
                                                     echo '<option value="6:00 am - 3:00 pm">6:00 am - 3:00 pm</option>';
                                                     echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
                                                     echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
                                                     echo '<option value="9:00 am - 6:00 pm" selected="true" >9:00 am - 6:00 pm</option>';
+                                                    echo '<option value="Otro" >Otro</option>';
+                                                
+
                                                 } else {
                                                     echo '<option value="6:00 am - 3:00 pm">6:00 am - 3:00 pm</option>';
                                                     echo '<option value="7:00 am - 4:00 pm" >7:00 am - 4:00 pm</option>';
                                                     echo '<option value="8:00 am - 5:00 pm" >8:00 am - 5:00 pm</option>';
-                                                    echo '<option value="9:00 am - 6:00 pm" selected="true" >9:00 am - 6:00 pm</option>';
+                                                    echo '<option value="9:00 am - 6:00 pm"  >9:00 am - 6:00 pm</option>';
+                                                    echo '<option value="Otro" selected="true" >Otro</option>';
+
                                                 }
                                                 ?>
 
@@ -356,7 +367,7 @@ if (isset($_GET["action"])) {
 
                                         <div class="d-flex justify-content-end mt-5">
 
-                                            <input type='submit' value='ENVIAR' class="btn btn-primary mb-2 btn-pill" />
+                                            <input type='submit' value='EDITAR' class="btn btn-primary mb-2 btn-pill" />
                                         </div>
 
                                     </form>

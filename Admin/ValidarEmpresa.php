@@ -125,7 +125,7 @@ include('menuAdmi.php')
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mensaje: </label>
-                            <textarea type="text" class="form-control" name="mensaje" id="mensaje" aria-describedby="emailHelp"></textarea>
+                            <textarea type="text" class="form-control" name="mensaje" id="mensaje" aria-describedby="emailHelp" required="TRUE" maxlength="120"></textarea>
                         </div>
 
 
@@ -135,7 +135,7 @@ include('menuAdmi.php')
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
-                    <button type="button" class="btn btn-primary btn-pill" onclick="notificar()">Aceptar</button>
+                    <button type="submit" class="btn btn-primary btn-pill" data-dismiss="modal" onclick="notificar()">Aceptar</button>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@ include('menuAdmi.php')
                 success: function(r) {
                     console.log(r); 
                     if (r == 1) {
-                        window.location.href = "ValidarEmpresa.php";
+                        //window.location.href = "ValidarEmpresa.php";
                     } else {
 
                     }
