@@ -101,7 +101,7 @@
 
           <p>
             La Universidad El Bosque cuenta con espacios para que los estudiantes puedan aprender y divertirse de la mejor manera, como lo son los diferentes
-            espacios de recreación, laboratorios, salas de reuniones, centros de computo, un gimnasio y una biblioteca fantastica.
+            espacios de recreación, laboratorios, salas de reuniones, centros de cómputo, un gimnasio y una biblioteca fantástica.
           </p>
           <small class="signature pull-right">UEB</small>
         </div>

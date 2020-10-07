@@ -77,7 +77,7 @@
                         necesidades y perfiles requeridos.
                         La Feria se desarrolla desde las 2:00 p. m. hasta las 7:00 p. m. y es de entrada libre.
                     </p>
-                    <a href="./about.php" title="" class="btn btn-lg btn-primary">Saber mas</a>
+                    <a href="./about.php" title="" class="btn btn-lg btn-primary">Saber más</a>
                 </div>
 
             </div>
@@ -106,7 +106,7 @@
                     </div>
                     <div>
                         <p>Pretendemos fortalecer la comunicación entre nuestros estudiantes con las
-                            empresas, usando la feria de oprotunidades como un medio para cumplir
+                            empresas, usando la feria de oportunidades como un medio para cumplir
                             con este objetivo.</p>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                         <h3>Notificaciones</h3>
                     </div>
                     <div>
-                        <p>Recibirás notificaciones sobre los diferentes procesos que estes llevando en la plataforma,
+                        <p>Recibirás notificaciones sobre los diferentes procesos que estés llevando en la plataforma,
                             entendiendo que con esto podrás llevar un mejor seguimiento de tus procesos.
                         </p>
                     </div>
@@ -203,7 +203,7 @@
                     <ul class="features">
                         <li>
                             <h3>Empresas</h3>
-                            <p>Las empresas pasaraá por un proceso de aceptación para poder participar en la feria
+                            <p>Las empresas pasarán por un proceso de aceptación para poder participar en la feria
                                 para asi ofrecerle a nuestros estudiantes un proceso confiable.
                             </p>
                         </li>
