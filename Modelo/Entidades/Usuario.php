@@ -25,12 +25,6 @@ class Usuario{
 
     }
 
-
-
-  
-
-
-
 	function getCodUsuario() { 
  		return $this->codUsuario; 
 	} 

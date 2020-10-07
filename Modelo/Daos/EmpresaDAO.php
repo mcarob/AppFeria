@@ -105,6 +105,20 @@ class EmpresaDAO extends DB
         return $res;
     }
 
+    public function editarEmpresaConCamara($codigo,$nombre,$telefono,$descripcion,$camara)
+    {       
+        $sentencia = $this->con->prepare("UPDATE empresa SET 
+        RAZON_SOCIAL=?,
+        TELEFONO_EMPRESA=?,
+        DESCRIPCCION_EMPRESA=?,
+        CAMARA_COMERCIO_PDF=?
+        WHERE COD_EMPRESA =?");
+
+        $res=$sentencia->execute([$nombre,$telefono,$descripcion,$camara,$codigo]);
+        return $res;
+    }
+
+
     public function buscarEmpresaxNit($variable)
     {
         $sentencia = $this->con->prepare("select count(*) from empresa,usuario where nit_empresa=? and empresa.COD_USUARIO=usuario.COD_USUARIO and usuario.VALIDADO=1");
