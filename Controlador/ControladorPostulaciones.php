@@ -19,6 +19,13 @@ class ControladorPostulacion{
 			return $this->postulados->ListaDePostulaciones($cod);
 		}
 
+		public function darListaPostulacionesxpost($cod)
+		{
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->ListaDePostulacionesXcodPost($cod);
+			
+		}
+
 		public function agregarPostulacion($Postulacion)
 		{
             $this->postulados = new PromocionPostulacionDAO();
@@ -49,6 +56,11 @@ class ControladorPostulacion{
 			return $this->postulados->postulacionXempresa($cod);
 		}
 		
+
+		public function legalizarC($estudiante_codigo,$cod_postulacion1 ,$codempre,$codciu){
+			$this->postulados = new PromocionPostulacionDAO();
+			return $this->postulados->legalizar($estudiante_codigo,$cod_postulacion1 ,$codempre,$codciu);
+		}
 		public function cambiarEstado($cod,$estado){
 			$this->postulados = new PromocionPostulacionDAO();
 			return $this->postulados->cambiarEstado($cod,$estado);

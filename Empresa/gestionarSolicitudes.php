@@ -1,8 +1,11 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/controladorPostulaciones.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/controladorPromocion.php');
 
 
 $cPromocionLab = new ControladorPostulacion();
+$cPromocionLaboral = new ControladorPromocion();
+
 $enviar = new enviarCorreo();
 
 if (isset($_GET['action'])) {
@@ -42,7 +45,16 @@ if (isset($_GET['action'])) {
            }
         break;
         case 'aceptarO':
-            $r=$cPromocionLab->cambiarEstado($_GET['codigo'],5);
+            $codPost = $_GET['codigo'];
+            $object = $cPromocionLab->darListaPostulacionesxpost($codPost);
+            
+            $laboralOb = $cPromocionLaboral->darOferta($object[0][1]);
+            $codEmpresa = $laboralOb->getCodEmpresa();
+            $codCiudad = $laboralOb->getPromocionCiudad();
+            $codEst = $object[0][2];
+
+            $r=$cPromocionLab->legalizarC($codEst,$codPost, $codEmpresa,$codCiudad);
+            
              if($r){
                  header("location:../Estudiante/ListaPostulaciones.php");
             }else{

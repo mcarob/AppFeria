@@ -62,6 +62,16 @@ class PromocionPostulacionDAO
         return $em;
     }
 
+    public function ListaDePostulacionesXcodPost($cod){
+        $sentencia = $this->con->prepare("SELECT * FROM promocion_postulacion WHERE COD_PROMOCION_POSTULACION =".$cod);
+        $sentencia->execute();
+        $em = array();
+         while ($fila = $sentencia->fetch()) {
+            $em[] = $fila;
+        }
+        return $em;
+    }
+
     public function totalPostulaciones(){
         $sentencia = $this->con->prepare("SELECT * FROM postulaciones_activas1");
         $sentencia->execute();
@@ -102,6 +112,12 @@ class PromocionPostulacionDAO
         ($envio->enviarMensaje($concat, $objeto->getCorreoEstudiante(),"Cambio de estado","Desde la aplicación Feria de Oportunidades hemos registrado que se ha realizado 
         un cambio de estado en la oferta con el nombre ".$em2[0]));
 
+        return $respuesta;
+    }
+
+    public function legalizar($estudiante_codigo,$cod_postulacion1 ,$codempre,$codciu){
+        $sentencia=$this->con->prepare("call legalizar_estudiante(?,?,?,?)" );
+        $respuesta=  $sentencia->execute([$estudiante_codigo, $cod_postulacion1, $codempre, $codciu]);
         return $respuesta;
     }
 
