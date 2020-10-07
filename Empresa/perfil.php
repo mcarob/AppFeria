@@ -76,8 +76,9 @@ include('Header.php');
                                             </label>
                                             <div class="col-sm-8 col-lg-10">
                                                 <div class="custom-file mb-1">
-                                                    <input type="file" class="custom-file-input" id="logo" name="logo">
-                                                    <label id="labelLogo" class="custom-file-label" for="coverImage">Seleccione un
+                                                    <input type="file" class="custom-file-input" id="logo" name="logo" >
+                                                    <label id="labelLogo" class="custom-file-label"
+                                                        for="coverImage">Seleccione un
                                                         archivo...</label>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
@@ -91,8 +92,7 @@ include('Header.php');
                                                         id="razonSocial"
                                                         value="<?php echo($empresa->getRazonSocial()) ?>" required>
                                                     <input type="hidden" class="form-control" name="codUsuario"
-                                                        id="codUsuario"
-                                                        value="<?php echo($codigo) ?>">
+                                                        id="codUsuario" value="<?php echo($codigo) ?>">
                                                 </div>
                                             </div>
 
@@ -126,8 +126,9 @@ include('Header.php');
                                         <div class="form-group mb-4">
                                             <label for="email">Telefono</label>
                                             <input type="text" class="form-control" name="telefonEmpresa"
-                                                id="telefonEmpresa" value="<?php echo($empresa->getTelefonEmpresa()) ?>"
-                                                required>
+                                                id="telefonEmpresa" maxlength="15" pattern="(^[+]?[0-9]{7,15})"
+                                                title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
+                                                value="<?php echo($empresa->getTelefonEmpresa()) ?>" required>
                                         </div>
 
 
@@ -140,8 +141,8 @@ include('Header.php');
                                         <div class="form-group mb-4">
                                             <label for="conPassword">Descripción</label>
                                             <textarea type="" class="form-control" id="descripcionEmpresa"
-                                                name="descripcionEmpresa" cols="40" rows="9"
-                                                maxlength="1200" required><?php echo($empresa->getDescripcionEmpresa()) ?></textarea>
+                                                name="descripcionEmpresa" cols="40" rows="9" maxlength="1200"
+                                                required><?php echo($empresa->getDescripcionEmpresa()) ?></textarea>
                                         </div>
 
                                         <div class="d-flex justify-content-end mt-5">
@@ -177,12 +178,12 @@ include('Header.php');
             contentType: false,
             success: function(r) {
 
-                
+
 
                 if (r == 1) {
                     toastr["success"]('Actualizando perfil...', "NOTIFICACIÓN");
                     window.location.href = "index.php";
-                }else {
+                } else {
                     toastr["success"](r, "ERROR");
                 }
             }
@@ -190,8 +191,8 @@ include('Header.php');
     }
     </script>
 
-<script>
-document.getElementById('logo').onchange = function() {
-    document.getElementById("labelLogo").innerHTML = this.value.replace(/C:\\fakepath\\/i, '');
-};
-</script>
+    <script>
+    document.getElementById('logo').onchange = function() {
+        document.getElementById("labelLogo").innerHTML = this.value.replace(/C:\\fakepath\\/i, '');
+    };
+    </script>
