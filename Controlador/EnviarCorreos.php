@@ -14,7 +14,7 @@ class enviarCorreo{
     public function enviarMensaje($nombre,$para,$asunto,$mensaje){
         try {
             $mail = new PHPMailer(true);
-            #$mail->isSMTP();
+            $mail->isSMTP();
             $mail->Host='smtp.gmail.com';
             $mail->Port=587;
             $mail->SMTPAuth=true;
