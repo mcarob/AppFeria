@@ -61,8 +61,8 @@ if (isset($_POST["REM"])) {
                                     $_POST['emailE'],
                                     $_POST['nomC'],
                                     $_POST['apeC'],
-                                    $_POST['cargoC'],
                                     $_POST['telC'],
+                                    $_POST['cargoC'],
                                     $_POST['emailC'],
                                     $_POST['emailE'],
                                     $passmd5

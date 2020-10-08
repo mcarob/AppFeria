@@ -21,13 +21,10 @@ $nombreContacto = $contactoEmpresa_dao->devolverNombreContacto($codigo);
 $empresa_dao = new EmpresaDAO();
 $empresa = $empresa_dao->devolverEmpresa($codigo);
 
-?>
-
-
-<?php
 
 include('menuEmpresa.php');
 include('Header.php');
+
 ?>
 <link href="../assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
 
@@ -90,25 +87,27 @@ include('Header.php');
                                             </div>
 
                                             <div class="form-group mb-4">
-                                                <label for="userName">Nombre de usuario</label>
+                                                <label for="userName">Correo empresarial</label>
                                                 <input type="text" class="form-control" id="userName" value="<?php echo (($_SESSION['user']))  ?>" readonly></input>
 
                                                 <span class="d-block mt-1"></span>
                                             </div>
 
-                                            <div class="form-group mb-4">
-                                                <label for="email">Correo</label>
-                                                <input type="email" class="form-control" name="correoContacto" id="correoContacto" value="<?php echo ($contactoEmpresa->getCorreoContacto()) ?>" readonly>
-                                            </div>
 
                                             <div class="form-group mb-4">
                                                 <label for="telefono">Teléfono</label>
-                                                <input type="number" class="form-control" name="telefonoContacto" id="telefonoContacto" value="<?php echo ($contactoEmpresa->getTelefonoContacto()) ?>">
+                                                <input type="text" class="form-control" name="telefonoContacto" id="telefonoContacto" value="<?php echo ($contactoEmpresa->getTelefonoContacto())?>"
+                                                maxlength="15" pattern="(^[+]?[0-9]{7,15})" title="El Formato de telefono puede comenzar con + o solo numeros (max 15)">
                                             </div>
 
                                             <div class="form-group mb-4">
                                                 <label for="cargo">Cargo</label>
-                                                <input type="text" class="form-control" name="cargoContacto" id="cargoContacto" value="<?php echo ($contactoEmpresa->getCargoContacto()) ?>" readonly>
+                                                <input type="text" class="form-control" name="cargoContacto" id="cargoContacto" value="<?php echo ($contactoEmpresa->getCargoContacto()) ?>">
+                                            </div>
+
+                                            <div class="form-group mb-4">
+                                                <label for="email">Correo contacto</label>
+                                                <input type="email" class="form-control" name="correoContacto" id="correoContacto" value="<?php echo ($contactoEmpresa->getCorreoContacto()) ?>">
                                             </div>
 
                                             <div class="form-group mb-4">
