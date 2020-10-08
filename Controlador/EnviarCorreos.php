@@ -14,7 +14,7 @@ class enviarCorreo{
     public function enviarMensaje($nombre,$para,$asunto,$mensaje){
         try {
             $mail = new PHPMailer(true);
-            //$mail->isSMTP();
+            #$mail->isSMTP();
             $mail->Host='smtp.gmail.com';
             $mail->Port=587;
             $mail->SMTPAuth=true;
@@ -296,6 +296,7 @@ class enviarCorreo{
         return 1;
     }
           }  catch (Exception $e) {
+              print_r($e);
             return 0;
           }
         
@@ -303,7 +304,7 @@ class enviarCorreo{
     }
     public function enviarMensajeF($nombre,$para,$asunto,$mensaje){
         $mail = new PHPMailer(true);
-        //$mail->isSMTP();
+        #$mail->isSMTP();
         $mail->Host='smtp.gmail.com';
         $mail->Port=587;
         $mail->SMTPAuth=true;

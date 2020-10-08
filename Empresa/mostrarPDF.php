@@ -1,6 +1,12 @@
 <?php
-
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/pdf/mpdf/mpdf/vendor/autoload.php');
+session_start();
+if (!isset($_SESSION['user'])) {
+    
+    header("location: ../index.php");
+} else if (!$_SESSION['tipo'] == 2) {
+    header("location: ../index.php");
+}
+ob_start();
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
@@ -10,7 +16,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/Cont
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/HojaDeVida.php');
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorReferencia.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/ReferenciaHoja.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/referenciaHoja.php');
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/AcademicaHojaDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/AcademicaHoja.php');
@@ -26,13 +32,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Daos/refe
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/ControladorExperienciaHoja.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Modelo/Entidades/ExperienciaHoja.php');
 
-session_start();
-if (!isset($_SESSION['user'])) {
-    
-    header("location: ../index.php");
-} else if (!$_SESSION['tipo'] == 2) {
-    header("location: ../index.php");
-}
 
 
 
@@ -363,12 +362,12 @@ $valor='
 </html>
 ';
 
-
-
+ob_end_flush();
+include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/pdf/mpdf/mpdf/vendor/autoload.php');
 $mpdf=new \Mpdf\Mpdf();
 $css=file_get_contents('styles.css');
 $mpdf->writeHTML($css,1);
-$html=file_get_contents("hojadevida.php");
 $mpdf->writeHTML($valor);
 $mpdf->Output('reporte.pdf','I');
+
 ?>
