@@ -14,7 +14,7 @@ class enviarCorreo{
     public function enviarMensaje($nombre,$para,$asunto,$mensaje){
         try {
             $mail = new PHPMailer(true);
-            $mail->isSMTP();
+            //$mail->isSMTP();
             $mail->Host='smtp.gmail.com';
             $mail->Port=587;
             $mail->SMTPAuth=true;
@@ -30,13 +30,13 @@ class enviarCorreo{
             $mail->Password='feria1234';
             $mail->CharSet = 'UTF-8';
             $ruta=$_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/assets/img/logo1.png';
-            $ruta2=$_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/assets/img/Calidad.png';
+            $ruta2=$_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/assets/img/Calidad.PNG';
             $mail->setFrom('proyectoferia20202@gmail.com','Feria Laboral Universidad El Bosque');
             $mail->addAddress($para);
             $mail->subject=$asunto;
             $mail->isHTML(true);
             $mail->AddEmbeddedImage($ruta, 'my-photo', 'logo.png'); 
-            $mail->AddEmbeddedImage($ruta2, 'my-photo-1', 'Calidad.png'); 
+            $mail->AddEmbeddedImage($ruta2, 'my-photo-1', 'Calidad.PNG'); 
             
             
             
@@ -303,7 +303,7 @@ class enviarCorreo{
     }
     public function enviarMensajeF($nombre,$para,$asunto,$mensaje){
         $mail = new PHPMailer(true);
-        $mail->isSMTP();
+        //$mail->isSMTP();
         $mail->Host='smtp.gmail.com';
         $mail->Port=587;
         $mail->SMTPAuth=true;
@@ -315,7 +315,8 @@ class enviarCorreo{
         $mail->addAddress($para);
         $mail->subject=$asunto;
         $mail->isHTML(true);
-        $mail->AddEmbeddedImage('AppFeria/assets/img/logo1.png', 'my-photo', 'logo.png'); 
+        $ruta=$_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/assets/img/logo1.png';
+        $mail->AddEmbeddedImage($ruta, 'my-photo', 'logo.png'); 
         $mail->Body='
                     <div style="display:flex;
                     align-items:center;

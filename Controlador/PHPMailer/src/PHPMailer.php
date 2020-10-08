@@ -1713,7 +1713,7 @@ class PHPMailer
      */
     protected static function isShellSafe($string)
     {
-        // Future-proof
+       /*  // Future-proof
         if (escapeshellcmd($string) !== $string
             || !in_array(escapeshellarg($string), ["'$string'", "\"$string\""])
         ) {
@@ -1733,7 +1733,7 @@ class PHPMailer
             }
         }
 
-        return true;
+        return true; */
     }
 
     /**
