@@ -1,6 +1,4 @@
 <?php
-
-
 class HojaDeVida{
   private $codHojaVida;
   private $codEstudiante;
@@ -72,4 +70,3 @@ class HojaDeVida{
 
 }
 ?>
-  
