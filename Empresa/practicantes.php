@@ -69,10 +69,9 @@ include('Header.php');
                                         <th>Nombres</th>
                                         <th>Correo</th>
                                         <th>Cédula</th>
-                                        <th>F.Postulación</th>
-                                        <th>F.Inicio</th>
+                                        <th>Fecha Legalización</th>
                                         <th>Ciudad</th>
-                                        <th>Estado</th>
+                                        
                                     </tr>
                                 </thead>
 
@@ -84,10 +83,8 @@ include('Header.php');
                                         echo ("<td>" . $key[1] . "</td>");
                                         echo ("<td>" . $key[2] . "</td>");
                                         echo ("<td>" . $key[3] . "</td>");
-                                        echo ("<td>" . $key[6] . "</td>");
-                                        echo ("<td>" . $key[5] . "</td>");
                                         echo ("<td>" . $key[4] . "</td>");
-                                        echo ("<td><span class='mb-2 mr-2 badge badge-success'>" . $key[7] . "</span></td>");
+                                        echo ("<td>" . $key[5] . "</td>");
                                     ?>
 
 

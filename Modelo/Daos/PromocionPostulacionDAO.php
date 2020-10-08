@@ -140,7 +140,7 @@ class PromocionPostulacionDAO
 
 
     public function practicantesXempresa($cod){
-        $sentencia = $this->con->prepare("SELECT * FROM practicantesxempresa where  COD_ESTADO_PROCESO = 5 and cod_empresa=".$cod);
+        $sentencia = $this->con->prepare("SELECT * FROM formalizados_vista where COD_EMPRESA=".$cod);
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {
