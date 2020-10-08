@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("location: ../index.php");
+} else if (!$_SESSION['tipo'] == 2) {
+    header("location: ../index.php");
+}
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorHojaVida.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorReferencia.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorFormacionComp.php');
@@ -8,13 +14,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/ProyectoFeria/AppFeria/Controlador/Cont
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/user.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Daos/EstudianteDAO.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Modelo/Entidades/Estudiante.php');
-session_start();
-if (!isset($_SESSION['user'])) {
-
-    header("location: ../index.php");
-} else if (!$_SESSION['tipo'] == 2) {
-    header("location: ../index.php");
-}
 
 $user = new Usuario();
 $estudiante_dao = new EstudianteDAO();
