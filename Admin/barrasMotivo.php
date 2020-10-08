@@ -1,6 +1,6 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Conexion/db.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/conexion/db.php');
 $claseCon = new DB();
 $con = $claseCon->connect();
 $sentencia = $con->prepare("SELECT * from gmotivosvotados WHERE COD_MOTIVO_RECHAZO!=9");
