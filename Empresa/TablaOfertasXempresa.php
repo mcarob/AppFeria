@@ -91,13 +91,13 @@ include('Header.php');
                                     <?php
                                     foreach ($lista as $key) {
                                         echo ("<tr>");
-                                        echo ("<td>" . $key[13] . "</td>");
-                                        echo ("<td>" . $key[11] . "</td>");
+                                        echo ("<td>" . $key[0] . "</td>");
+                                        echo ("<td>" . $key[2] . "</td>");
+                                        echo ("<td>" . $key[3] . "</td>");
                                         echo ("<td>" . $key[8] . "</td>");
-                                        echo ("<td>" . $key[5] . "</td>");
-                                        echo ("<td>" . $key[14] . "</td>");
-                                        echo ("<td>" . $key[12] . "</td>");
-                                        if($key[15]==1){
+                                        echo ("<td>" . $key[4] . "</td>");
+                                        echo ("<td>" . $key[6] . "</td>");
+                                        if($key[5]==1){
                                             echo ("<td><span class='mb-2 mr-2 badge badge-success'>Activo</span></td>");
                                         }else{
                                             echo ("<td><span class='mb-2 mr-2 badge badge-success'>Inactivo</span></td>");

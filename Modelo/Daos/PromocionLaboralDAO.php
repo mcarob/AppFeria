@@ -348,7 +348,7 @@ public function cantidadofertasFiltroCiudadPalabraConEmpresaEstudiante($empresa,
 
 
     public function ofertasActivasEinactivas($pCodigo){
-        $sentencia = $this->con->prepare("SELECT * FROM promocion_laboral WHERE promocion_estado!=3 and cod_empresa =:empresa"); 
+        $sentencia = $this->con->prepare("SELECT * FROM ofertasxempresaxcod WHERE promocion_estado!=3 and cod_empresa =:empresa"); 
         $sentencia->execute(['empresa'=>$pCodigo]);
         $em = array();
          while ($fila = $sentencia->fetch()) {

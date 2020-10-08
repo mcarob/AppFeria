@@ -33,7 +33,7 @@ class enviarCorreo{
             $ruta2=$_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/assets/img/Calidad.PNG';
             $mail->setFrom('proyectoferia20202@gmail.com','Feria Laboral Universidad El Bosque');
             $mail->addAddress($para);
-            $mail->subject=$asunto;
+            $mail->subject="FERIA DE OPORTUNIDADES UEB";
             $mail->isHTML(true);
             $mail->AddEmbeddedImage($ruta, 'my-photo', 'logo.png'); 
             $mail->AddEmbeddedImage($ruta2, 'my-photo-1', 'Calidad.PNG'); 
