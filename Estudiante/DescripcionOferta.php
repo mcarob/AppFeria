@@ -22,9 +22,14 @@ $estudiante = $estudiante_dao->devolverEstudiante($codigo);
 $empresa_dao = new EmpresaDAO();
 
 
-
-
 $postulacionesActivas=$estudiante_dao->desactivarPostulacion($estudiante->getCodEstudiante());
+
+$conEstudiante=new ControladorEstudiantes();
+$formalizado=0;
+if(count($conEstudiante->verFormalizado($estudiante->getCodEstudiante()))>=1)
+{
+    $formalizado=1;
+}
 
 include('menuEstudiante.php');
 include('Header.php');
@@ -192,11 +197,12 @@ $ciudad=$controladorPromocion->darNombreCiudad($informacion[12]);
                                         {
                                             echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" disabled>Postularse</button>';
                                         }else{
-                                            if($total>=5){      
+                                            if($total>=5 or $formalizado==1){      
                                                echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" disabled>Postularse</button>';
                                                }else{      
                                                echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" >Postularse</button>';
                                                }
+                                            
                                          }       
                                         ?>  
 

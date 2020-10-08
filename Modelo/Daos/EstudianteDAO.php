@@ -132,6 +132,12 @@ class EstudianteDAO
 
     }
 
+    public function verFormalizado($cod)
+    {
+        $sentencia = $this->con->prepare("SELECT * FROM legalizacion WHERE COD_ESTUDIANTE=".$cod);
+        $sentencia->execute();
+        return $sentencia->fetch();
+    }
 
     public function agregarNoti($cod_desde,$cod_para, $mensaje, $cod_select){
         $sentencia=$this->con->prepare("INSERT INTO notificacion ( NOTIFACION_DESDE, NOTIFACION_PARA, PROMOCION_PERFIL, MENSAJE_NOTIFICACION, FECHA_ENVIO) 
