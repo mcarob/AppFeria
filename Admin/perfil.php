@@ -124,7 +124,8 @@ include('Header.php');
                                         <div class="form-group mb-4">
                                             <label for="newPassword">Contraseña nueva</label>
                                             <input type="password" class="form-control" id="newPassword"
-                                                name="newPassword" value="">
+                                                name="newPassword" value="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                                                title="El formato de la contraseña debe ser contener al menos 1 mayúscula, 1 minúscula y 1 numero min 6 caracteres ">
                                         </div>
 
                                         <div class="form-group mb-4">
