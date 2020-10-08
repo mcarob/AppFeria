@@ -1,18 +1,14 @@
 <?php
-
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/conexion/db.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Admin/FPDF/fpdf.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/Controlador/ControladorEstudiantes.php');
 $objeto = new ControladorEstudiantes();
 $lista = $objeto->darListaEstudianteActivos();
-
 class PDF extends FPDF
 {
 // Cabecera de página
 function Header()
 {
-
-
     // Logo
 	$this->Image('../../Imagenes/logo.png', 138 , 10, 80 , 20, 'PNG');
     // Arial bold 15
@@ -23,9 +19,6 @@ function Header()
 	$this->Cell(215,65,utf8_decode('Esudiantes en la plataforma'),0,0,'C');
     // Salto de línea
     $this->Ln(42);
-
-   
-
 }
 
 // Pie de página
@@ -70,4 +63,5 @@ foreach ($lista as $sql2) {
     $no++;
     }
     $pdf->Output('D','Estudiantes.pdf',false);
+
 ?>
