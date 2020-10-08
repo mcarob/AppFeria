@@ -7,7 +7,7 @@ $cEmpresa= new ControladorEmpresa();
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
          case 'rechazar':
-             echo ($cEmpresa->rechazar($_GET['codigo']));
+        echo ($cEmpresa->rechazar($_GET['codigo']));
         break;
         case 'notificar':
             $datos=array(
@@ -22,5 +22,3 @@ if (isset($_GET['action'])) {
     }
 
 }
-
-?>

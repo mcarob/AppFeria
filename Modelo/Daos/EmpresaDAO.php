@@ -154,10 +154,9 @@ class EmpresaDAO extends DB
     }
 
      public function rechazar($cod){
-    
      $usu = $this->darEmpresa($cod);
      $sentencia=$this->con->prepare("UPDATE usuario set VALIDADO=3 WHERE COD_USUARIO=".$usu->getCodUsuario()); 
-     $sentencia->execute();
+     return $sentencia->execute();
     }
 
     public function agregarNoti($cod_Desde, $codPara,$mensaje){
