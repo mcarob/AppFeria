@@ -104,7 +104,7 @@ if($user->darEstado_empresa()==1){
                     </a>
                   </li>
                   <li>
-                    <a class="sidenav-item-link" href="ofertas.php">
+                    <a class="sidenav-item-link" href="Ofertas.php">
                       <span class="nav-text">Administrar Ofertas</span>
                     </a>
                   </li>
