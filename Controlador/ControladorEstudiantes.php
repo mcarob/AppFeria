@@ -9,6 +9,11 @@ class ControladorEstudiantes	{
 
 
 
+		public function verFormalizado($cod)
+		{
+			$this->estudiantes = new EstudianteDAO();
+			return $this->estudiantes->verFormalizado($cod);
+		}
 
 		public function darListaEstudianteActivos()
 		{
