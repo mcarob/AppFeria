@@ -177,7 +177,6 @@ class EmpresaDAO extends DB
     public function validar($cod)
     {
         $usu = $this->darEmpresa($cod);
-        print($usu->getCodEmpresa());
         $sentencia = $this->con->prepare("UPDATE usuario SET VALIDADO=1 WHERE COD_USUARIO=" . $usu->getCodUsuario());
         $varr = $sentencia->execute();
     }
