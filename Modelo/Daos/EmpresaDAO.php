@@ -153,7 +153,7 @@ class EmpresaDAO extends DB
         return $em;
     }
 
-     public function rechazar($cod){
+     public function rechazar($cod){            
      $usu = $this->darEmpresa($cod);
      $sentencia=$this->con->prepare("UPDATE usuario set VALIDADO=3 WHERE COD_USUARIO=".$usu->getCodUsuario()); 
      return $sentencia->execute();
