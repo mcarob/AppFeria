@@ -59,10 +59,10 @@ include('menuAdmi.php')
                                 <thead>
                                     <tr>
                                         <th>Nombre Empresa</th>
-                                        <th>Nombre estudiante</th>
-                                        <th>Cédula estudiante</th>
+                                        <th>Nombre Estudiante</th>
+                                        <th>Cédula Estudiante</th>
                                         <th>Carrera</th>
-                                        <th>Titulo promoción</th>
+                                        <th>Titulo Promoción</th>
                                         <th>Estado</th>
                                     </tr>
                                 </thead>

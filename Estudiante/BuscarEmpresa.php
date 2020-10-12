@@ -61,10 +61,10 @@ include('menuEstudiante.php')
                                 <thead>
                                     <tr>
                                         <th>Nombre Empresa</th>
-                                        <th>Telefono empresa</th>
-                                        <th>Nombre contacto</th>
-                                        <th>Apellido contacto</th>
-                                        <th>Telefono Contacto</th>
+                                        <th>Teléfono Empresa</th>
+                                        <th>Nombre Contacto</th>
+                                        <th>Apellido Contacto</th>
+                                        <th>Teléfono Contacto</th>
                                         <th>Correo</th>
                                         <th>Acción</th>
 

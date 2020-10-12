@@ -24,7 +24,7 @@ include('menuAdmi.php');
         <div class="col-sm-12">
 				<div class="card card-default">
 					<div class="card-header justify-content-center">
-						<h2 class="text-center">Empresas con más practicantes</h2>
+						<h2 class="text-center">Empresas Con Más Practicantes</h2>
 					</div>
 					<div class="card-body">
                     <div id="barrasE"></div>

@@ -90,7 +90,7 @@ $fecha_actual = date("Y-m-d")
                                     <form id="formAgregarOf" method="POST" action="javascript: agregarOferta()">
 
                                         <div class="form-group mb-4">
-                                            <label for="userName">Perfil buscado</label>
+                                            <label for="userName">Perfil Buscado</label>
 
                                             <textarea maxlength="100" type="text"
                                                 placeholder="Describa el perfil buscado (Max. 100 caracteres)"
@@ -119,7 +119,7 @@ $fecha_actual = date("Y-m-d")
 
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="lastName">Fecha de la publicación
+                                                    <label for="lastName">Fecha de la Publicación
                                                     </label>
                                                     <input type="date" class="form-control" id="fechaPublicacion"
                                                         name="fechaPublicacion" value="<?php echo ($fecha_actual) ?>"
@@ -128,7 +128,7 @@ $fecha_actual = date("Y-m-d")
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="lastName">Fecha de inicio
+                                                    <label for="lastName">Fecha de Inicio
                                                     </label>
                                                     <input type="date" class="form-control" id="fechaInicio"
                                                         name="fechaInicio" value="">
@@ -173,7 +173,7 @@ $fecha_actual = date("Y-m-d")
                                         </div>
                                         <div class="form-group mb-4">
                                                 <div class="form-group">
-                                                    <label for="lastName">Beneficios extra
+                                                    <label for="lastName">Beneficios Extras
                                                     </label>
                                                     <textarea type="" class="form-control"
                                                         placeholder="Describa los beneficios que tendran sus practicantes"
@@ -188,17 +188,17 @@ $fecha_actual = date("Y-m-d")
 
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label for="des">Rango Remuneracion</label>
+                                    <label for="des">Rango Remuneración</label>
                                     <select name="ranRemuneracion" id="ranRemuneracion" class="form-control">
-                                        <option value="Sin remuneracion">Sin remuneracion</option>
-                                        <option value="0 - 1 Salarios mínimos">1 Salario mínimos</option>
-                                        <option value="1 - 2 Salarios mínimos">1 - 2 Salarios mínimos</option>
-                                        <option value="2 o más Salarios mínimos">2 o más Salarios mínimos</option>
+                                        <option value="Sin remuneracion">Sin Remuneración</option>
+                                        <option value="0 - 1 Salarios mínimos">1 Salario Mínimos</option>
+                                        <option value="1 - 2 Salarios mínimos">1 - 2 Salarios Mínimos</option>
+                                        <option value="2 o más Salarios mínimos">2 o Más Salarios Mínimos</option>
 
                                     </select>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label for="des">Numero de vacantes</label>
+                                    <label for="des">Numero de Vacantes</label>
                                     <input type="number" class="form-control" id="numVacantes" name="numVacantes"
                                         min="1" pattern="^[0-9]+" value=""></input>
                                 </div>
@@ -206,7 +206,7 @@ $fecha_actual = date("Y-m-d")
 
 
                                 <div class="form-group mb-4">
-                                    <label for="des">Titulo de la oferta</label>
+                                    <label for="des">Título de la Oferta</label>
                                     <input type="text" class="form-control" id="titulo" name="titulo" value=""></input>
                                 </div>
 
@@ -238,7 +238,7 @@ $fecha_actual = date("Y-m-d")
                                     </div>
 
                                     <div class="col-lg-6">
-                                        <label class="control control-checkbox checkbox-success">Miercoles
+                                        <label class="control control-checkbox checkbox-success">Miércoles
                                             <input type="checkbox" checked="" id="miercoles" name="miercoles"
                                                 value="Miercoles" />
                                             <div class="control-indicator"></div>
@@ -267,7 +267,7 @@ $fecha_actual = date("Y-m-d")
 
 
                                     <div class="col-lg-6">
-                                        <label class="control control-checkbox checkbox-success">Sabado
+                                        <label class="control control-checkbox checkbox-success">Sábado
                                             <input type="checkbox" checked="" id="sabado" name="sabado"
                                                 value="Sabado" />
                                             <div class="control-indicator"></div>
@@ -291,7 +291,7 @@ $fecha_actual = date("Y-m-d")
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Seleccione la jornada</label>
+                                    <label for="exampleFormControlSelect1">Seleccione la Jornada</label>
                                     <select class="form-control" id="hora" name="hora">
                                         <option value="6:00 am - 3:00 pm">6:00 am - 3:00 pm</option>
                                         <option value="7:00 am - 4:00 pm">7:00 am - 4:00 pm</option>

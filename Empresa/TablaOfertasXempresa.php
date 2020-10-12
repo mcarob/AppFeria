@@ -53,7 +53,7 @@ include('Header.php');
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        Tabla de ofertas
+                        Tabla de Ofertas
                     </li>
                 </ol>
             </nav>
@@ -75,9 +75,9 @@ include('Header.php');
                             <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Titulo de oferta</th>
-                                        <th>Fecha de oferta</th>
-                                        <th>Fecha de inicio</th>
+                                        <th>Título de Oferta</th>
+                                        <th>Fecha de Oferta</th>
+                                        <th>Fecha de Inicio</th>
                                         <th>Rango de Compensación</th>
                                         <th>Vacantes</th>
                                         <th>Ciudad</th>

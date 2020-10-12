@@ -24,7 +24,7 @@ include('menuAdmi.php');
         <div class="col-sm-12">
 				<div class="card card-default">
 					<div class="card-header justify-content-center">
-						<h2 class="text-center">Estado de las vacantes</h2>
+						<h2 class="text-center">Estado De Las Vacantes</h2>
 					</div>
 					<div class="card-body">
                     <div id="cargaBarras"></div>

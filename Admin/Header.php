@@ -74,7 +74,7 @@
           
 
                   <li class="dropdown-footer">
-                    <a href="../cerrarSesion.php"> <i class="mdi mdi-logout"></i> Cerrar sesion </a>
+                    <a href="../cerrarSesion.php"> <i class="mdi mdi-logout"></i> Cerrar Sesion </a>
                   </li>
                 </ul>
               </li>

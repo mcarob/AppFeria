@@ -30,7 +30,7 @@ include('menuAdmi.php')
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Total de vacantes</h1>
+            <h1>Total De Vacantes</h1>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
@@ -42,7 +42,7 @@ include('menuAdmi.php')
                     <li class="breadcrumb-item">
                         Informes
                     </li>
-                    <li class="breadcrumb-item" aria-current="page">Vacantes disponibles</li>
+                    <li class="breadcrumb-item" aria-current="page">Vacantes Disponibles</li>
                 </ol>
             </nav>
 
@@ -58,10 +58,10 @@ include('menuAdmi.php')
                             <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Titulo vacante</th>
+                                        <th>Titulo Vacante</th>
                                         <th>Ciudad</th>
                                         <th>Fecha</th>
-                                        <th>Limite de vacantes</th>
+                                        <th>Límite De Vacantes</th>
                                         <th>Compensación</th>
                                         <th>Empresa</th>
                                 

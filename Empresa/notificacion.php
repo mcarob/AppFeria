@@ -32,7 +32,7 @@ include ('Header.php');
                     <div class="chat-left-side">
 
                         <form class="chat-search">
-                           <h4> <label  value="Notificaciones recibidas">Notificaciones recibidas</label></h4>
+                           <h4> <label  value="Notificaciones recibidas">Notificaciones Recibidas</label></h4>
                         </form>
 
                         <ul class="list-unstyled border-top mb-0" id="chat-left-content">

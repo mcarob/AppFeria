@@ -38,12 +38,12 @@ if(count($validacion)>0)
         echo($conUsuario->actualizarUsuario($_POST["codUsuario"],$_POST["conPassword"]));
         
         }else{
-        echo("La nueva contraseña no coincide con la confirmacion");
+        echo("La nueva contraseña no coincide con la de confirmación");
         }
     }
 
 }else{
-    echo("ingrese por favor la contraseña actual para realizar cambios");
+    echo("Ingrese por favor la contraseña actual para realizar cambios");
 }
 
 

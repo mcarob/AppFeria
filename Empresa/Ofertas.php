@@ -47,7 +47,7 @@ if (isset($_GET["search"])) {
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Ofertas laborales</h1>
+            <h1>Ofertas Laborales</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
                     <li class="breadcrumb-item">

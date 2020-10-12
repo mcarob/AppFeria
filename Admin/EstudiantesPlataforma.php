@@ -42,7 +42,7 @@ $lista = $objeto->darListaEstudianteActivos();
                     <li class="breadcrumb-item">
                         Informes
                     </li>
-                    <li class="breadcrumb-item" aria-current="page">Estudiantes en la plataforma</li>
+                    <li class="breadcrumb-item" aria-current="page">Estudiantes en la Plataforma</li>
                 </ol>
             </nav>
 

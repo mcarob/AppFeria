@@ -2,7 +2,7 @@
 
 
 
-     <h3>Experiencia Academica:</h3>
+     <h3>Experiencia Académica:</h3>
      <br>
      <div class="sumaAca">
          <div class="buttons">
@@ -12,7 +12,7 @@
          </div>
          <br>
          <div class="elementAca" id="expAcademicas">
-             <p>(<?php echo($cantidadExpAcademicas) ?>)Experiencias Academicas</p>
+             <p>(<?php echo($cantidadExpAcademicas) ?>)Experiencias Académicas</p>
          </div>
          <div class="resultsAca" id="agregar">
              <?php for($x=0; $x<$cantidadExpAcademicas; $x++){$experienciaAcademica=$experienciasAcademicas[$x];?>
@@ -23,7 +23,7 @@
                          <div class="col-md-6 mb-3">
                              <div class="input-group">
                                  <div class="input-group-prepend"> <span class="input-group-text"> <i
-                                             class="material-icons">assignment_ind</i> </span> </div> <input type="text"
+                                             class="material-icons">class</i> </span> </div> <input type="text"
                                      class="form-control" placeholder="Titulo del proyecto" aria-label="Username"
                                      id="experienciaAcademica<?php echo($x+1)?>[]" required
                                      value="<?php echo($experienciaAcademica['PROCESO_FORMATIVO_TITULO']) ?>"
@@ -33,7 +33,7 @@
                          <div class="col-md-6 mb-3">
                              <div class="input-group">
                                  <div class="input-group-prepend"> <span class="input-group-text"> <i
-                                             class="material-icons">phone</i> </span> </div> <input type="text"
+                                             class="material-icons">class</i> </span> </div> <input type="text"
                                      class="form-control" placeholder="Materia" aria-label="Username"
                                      id="experienciaAcademica<?php echo($x+1)?>[]" required
                                      value="<?php echo($experienciaAcademica['MATERIA_ACADEMICA']) ?>"
@@ -43,7 +43,7 @@
                          <div class="col-md-6 mb-3">
                              <div class="input-group">
                                  <div class="input-group-prepend"> <span class="input-group-text"> <i
-                                             class="material-icons">assignment_ind</i> </span> </div> <select
+                                             class="material-icons">date_range</i> </span> </div> <select
                                      type="text" class="form-control" aria-label="Username"
                                      id="experienciaAcademica<?php echo($x+1)?>[]" required
                                      name="experienciaAcademica<?php echo($x+1)?>[]">
@@ -94,7 +94,7 @@
          </div>
          <br>
          <div class="elementPro" id="expLaborales">
-             <p>(<?php echo($cantidadExpLaborales) ?>)Experiencias laborales</p>
+             <p>(<?php echo($cantidadExpLaborales) ?>)Experiencias Laborales</p>
 
          </div>
          <br>
@@ -106,7 +106,7 @@
                      <div class="col-md-6 mb-3">
                          <div class="input-group">
                              <div class="input-group-prepend"> <span class="input-group-text"> <i
-                                         class="material-icons">assignment_ind</i> </span> </div> <input type="text"
+                                         class="material-icons">work</i> </span> </div> <input type="text"
                                  class="form-control" placeholder="Cargo" aria-label="Username"
                                  id="experienciaProfesional<?php echo($y+1)?>[]" required
                                  value="<?php echo($experienciaLaboral['EXPERIENCIA_HOJA_CARGO']) ?>"
@@ -116,7 +116,7 @@
                      <div class="col-md-6 mb-3">
                          <div class="input-group">
                              <div class="input-group-prepend"> <span class="input-group-text"> <i
-                                         class="material-icons">phone</i> </span> </div> <input type="text"
+                                         class="material-icons">class</i> </span> </div> <input type="text"
                                  class="form-control" placeholder="Empresa" aria-label="Username"
                                  value="<?php echo($experienciaLaboral['EXPERIENCIA_HOJA_EMPRESA']) ?>"
                                  id="experienciaProfesional<?php echo($y+1)?>[]" required
@@ -124,10 +124,10 @@
                          </div>
                      </div>
                      <div class="col-md-6 mb-3">
-                         <h5>Fecha de inicio</h5> <br>
+                         <h5>Fecha de Inicio</h5> <br>
                          <div class="input-group">
                              <div class="input-group-prepend"> <span class="input-group-text"> <i
-                                         class="material-icons">assignment_ind</i> </span> </div> <input type="date"
+                                         class="material-icons">date_range</i> </span> </div> <input type="date"
                                  class="form-control" placeholder="" aria-label="Username"
                                  value="<?php echo($experienciaLaboral['EXPERIENCIA_HOJA_DESDE']) ?>"
                                  id="experienciaProfesional<?php echo($y+1)?>[]" required
@@ -135,10 +135,10 @@
                          </div>
                      </div>
                      <div class="col-md-6 mb-3">
-                         <h5>Fecha de finalizacion</h5> <br>
+                         <h5>Fecha de Finalización</h5> <br>
                          <div class="input-group">
                              <div class="input-group-prepend"> <span class="input-group-text"> <i
-                                         class="material-icons">assignment_ind</i> </span> </div> <input type="date"
+                                         class="material-icons">date_range</i> </span> </div> <input type="date"
                                  class="form-control" placeholder="" aria-label="Username"
                                  value="<?php echo($experienciaLaboral['EXPERIENCIA_HOJA_HASTA']) ?>"
                                  id="experienciaProfesional<?php echo($y+1)?>[]" required
@@ -178,15 +178,15 @@ $(document).ready(function() {
         }
         x++;
         cambiar = document.getElementById("expAcademicas");
-        cambiar.innerHTML = "<p>(" + x + ")Experiencias academicas</p>";
+        cambiar.innerHTML = "<p>(" + x + ")Experiencias Académicas</p>";
 
 
         $('#agregar').append('<div id="row3' + x +
-            '" class="sumaAca"> <div class="buttons"> </div> <br> <div class="elementAca"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="text" class="form-control" placeholder="Titulo del proyecto" aria-label="Username" id="experienciaAcademica' +
+            '" class="sumaAca"> <div class="buttons"> </div> <br> <div class="elementAca"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">class</i> </span> </div> <input type="text" class="form-control" placeholder="Titulo del proyecto" aria-label="Username" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input type="text" class="form-control" placeholder="Materia" aria-label="Username" id="experienciaAcademica' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">class</i> </span> </div> <input type="text" class="form-control" placeholder="Materia" aria-label="Username" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select type="text" class="form-control" aria-label="Username" id="experienciaAcademica' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">date_range</i> </span> </div> <select type="text" class="form-control" aria-label="Username" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
             '[]"> <option value="Periodo 2015-1">Periodo 2015-1 </option> <option value="Periodo 2015-2">Periodo 2015-2 </option> <option value="Periodo 2016-1">Periodo 2016-1 </option> <option value="Periodo 2016-2">Periodo 2016-2 </option> <option value="Periodo 2017-1">Periodo 2017-1 </option> <option value="Periodo 2017-2">Periodo 2017-2 </option> <option value="Periodo 2018-1">Periodo 2018-1 </option> <option value="Periodo 2018-2">Periodo 2018-2 </option> <option value="Periodo 2019-1">Periodo 2019-1 </option> <option value="cl">Periodo 2019-2 </option> <option value="Periodo 2020-1">Periodo 2020-1 </option> <option value="Periodo 2020-2">Periodo 2020-2 </option> </select> </div> </div> </div> <div class="form-group"> <textarea class="form-control" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
@@ -201,15 +201,15 @@ $(document).ready(function() {
         }
         y++;
         cambiar = document.getElementById("expLaborales");
-        cambiar.innerHTML = "<p>(" + y + ")Experiencias laborales</p>";
+        cambiar.innerHTML = "<p>(" + y + ")Experiencias Laborales</p>";
         $('#agregar2').append('<div id="row4' + y +
-            '" class="elementPro"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="experienciaProfesional' +
+            '" class="elementPro"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">work</i> </span> </div> <input type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="experienciaProfesional' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">account_balance</i> </span> </div> <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" id="experienciaProfesional' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de Inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">date_range</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" id="experienciaProfesional' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de Finalización</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">date_range</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
             '[]"> </div> </div> </div> <div class="form-group"> <textarea class="form-control" rows="5" style="resize: none;" placeholder="Describa el cargo" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +

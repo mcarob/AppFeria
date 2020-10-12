@@ -40,7 +40,7 @@ include('menuEstudiante.php')
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Postulaciones hechas</h1>
+            <h1>Postulaciones Hechas</h1>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
@@ -73,9 +73,9 @@ include('menuEstudiante.php')
                             <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Nombre empresa</th>
-                                        <th>Titulo Oferta</th>
-                                        <th>Correo contacto</th>
+                                        <th>Nombre Empresa</th>
+                                        <th>Título Oferta</th>
+                                        <th>Correo Contacto</th>
                                         <th>Compensación</th>
                                         <th>Estado</th>
                                         <th>Acción</th>

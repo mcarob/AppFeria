@@ -93,7 +93,7 @@ $departamentos=$ciudadesCon->darTodosDepartamentos();
                     <i class="material-icons">home</i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Direccion" aria-label="Username" id="direccion"
+            <input type="text" class="form-control" placeholder="Dirección" aria-label="Username" id="direccion"
                 name="direccion" required>
         </div>
     </div>

@@ -52,7 +52,7 @@
                         <li><a href="./Registrar.php" title="">Registrarme</a></li>
                         <li>
                             <p>
-                                <a href="paginaIngreso.php" class="btn btn-primary navbar-btn" title="">Iniciar sesión</a>
+                                <a href="paginaIngreso.php" class="btn btn-primary navbar-btn" title="">Iniciar Sesión</a>
                             </p>
                         </li>
 
@@ -182,7 +182,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="text-center">
-                        <h1>Facultad de ingenieria</h1>
+                        <h1>Facultad de Ingeniería</h1>
                         <p></p>
                         <a href="https://www.unbosque.edu.co/ingenieria" title="" class="btn btn-primary btn-lg">Saber
                             más</a>

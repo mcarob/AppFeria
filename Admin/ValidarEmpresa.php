@@ -39,7 +39,7 @@ include('menuAdmi.php')
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Empresas inscritas</h1>
+            <h1>Empresas Inscritas</h1>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
@@ -51,7 +51,7 @@ include('menuAdmi.php')
                     <li class="breadcrumb-item">
                         Empresas
                     </li>
-                    <li class="breadcrumb-item" aria-current="page">Autorizar registros</li>
+                    <li class="breadcrumb-item" aria-current="page">Autorizar Registros</li>
                 </ol>
             </nav>
 
@@ -69,9 +69,9 @@ include('menuAdmi.php')
                                     <tr>
                                         <th>Nombre Empresa</th>
                                         <th>NIT</th>
-                                        <th>Telefono</th>
+                                        <th>Teléfono</th>
                                         <th>Correo</th>
-                                        <th>Camara Comercio</th>
+                                        <th>Cámara De Comercio</th>
                                         <th>Acción</th>
                                         <th>Acción</th>
 

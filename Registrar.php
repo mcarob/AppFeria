@@ -56,7 +56,7 @@
                         <li><a href="./Registrar.php" title="">Registrarme</a></li>
                         <li>
                             <p>
-                                <a href="paginaIngreso.php" class="btn btn-primary navbar1-btn" title="">Iniciar sesion</a>
+                                <a href="paginaIngreso.php" class="btn btn-primary navbar1-btn" title="">Iniciar Sesión</a>
                             </p>
                         </li>
                     </ul>
@@ -111,7 +111,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h4>¡Conocenos!</h4>
+                        <h4>¡Conócenos!</h4>
                         <p>
                             <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>

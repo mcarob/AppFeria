@@ -47,7 +47,7 @@
             <li><a href="./Registrar.php" title="">Registrarme</a></li>
             <li>
               <p>
-                <a href="./paginaIngreso.php" class="btn btn-primary navbar-btn" title="">Iniciar sesión</a>
+                <a href="./paginaIngreso.php" class="btn btn-primary navbar-btn" title="">Iniciar Sesión</a>
               </p>
             </li>
           </ul>
@@ -80,7 +80,7 @@
             <h1>¿Por qué escoger El Bosque?</h1>
           </div>
           <p class="section-container-spacer">
-            Porque la universidad y programas académicos son de alta calidad es decir forman personas y estudiantes excelentes,
+            Porque la universidad y programas académicos son de alta calidad, es decir, forman personas y estudiantes excelentes,
             con el conocimiento suficiente para aportar un cambio y apoyar al país, además la Universidad El Bosque tiene muchos convenios con
             universidades del exterior para incentivar a los estudiantes a nunca dejar de aprender.
 
@@ -132,7 +132,7 @@
           </div>
 
           <div class="col-md-4">
-            <h4>¡Conocenos!</h4>
+            <h4>¡Conócenos!</h4>
             <p>
               <a href="https://www.facebook.com/universidadelbosque/" target="_blank" class="social-round-icon white-round-icon fa-icon" title="">
                 <i class="fa fa-facebook" aria-hidden="true"></i>

@@ -37,7 +37,7 @@
                         <i class="material-icons">group</i>
                     </span>
                 </div>
-                <input autocomplete="off" type="text" class="form-control" placeholder="Cedula" aria-label="Username"      id="cedulaES" name="cedulaES" required minlength="6"
+                <input autocomplete="off" type="text" class="form-control" placeholder="Cédula" aria-label="Username"      id="cedulaES" name="cedulaES" required minlength="6"
                 maxlength="15" 
                 >
             </div>
@@ -54,7 +54,7 @@
                     id="telES" name="telES"
                     aria-label="Username"
                     maxlength="15" 
-                    placeholder="Telefono o Celular"
+                    placeholder="Teléfono o Celular"
                     title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
                     required>
             </div>
@@ -67,9 +67,9 @@
                 <i class="material-icons">email</i>
             </span>
         </div>
-        <input type="text" autocomplete="off" class="form-control" placeholder="Correo Electronico"
+        <input type="text" autocomplete="off" class="form-control" placeholder="Correo Electrónico"
             aria-label="Username" style="display:none;">
-        <input type="text" autocomplete="off" class="form-control" placeholder="Correo Electronico" id="correoES" name="correoES"
+        <input type="text" autocomplete="off" class="form-control" placeholder="Correo Electrónico" id="correoES" name="correoES"
         pattern="^[A-Za-z]+$"
             title="No Cumple con el Formato, no debe contener caracteres especiales ni números" maxlength="30"  required
 

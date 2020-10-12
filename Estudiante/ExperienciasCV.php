@@ -12,7 +12,7 @@
         </div>
         <br>
         <div class="elementAca" id="expAcademicas">
-            <p>(0)Experiencias Academicas</p>
+            <p>(0)Experiencias Académicas</p>
         </div>
         <div class="resultsAca" id="agregar">
 
@@ -31,7 +31,7 @@
         </div>
         <br>
         <div class="elementPro" id="expLaborales">
-            <p>(0)Experiencias laborales</p>
+            <p>(0)Experiencias Laborales</p>
 
         </div>
         <br>
@@ -56,15 +56,15 @@ $(document).ready(function() {
         }
         x++;
         cambiar = document.getElementById("expAcademicas");
-        cambiar.innerHTML = "<p>(" + x + ")Experiencias academicas</p>";
+        cambiar.innerHTML = "<p>(" + x + ")Experiencias Académicas</p>";
 
 
         $('#agregar').append('<div id="row3' + x +
-            '" class="sumaAca"> <div class="buttons"> </div> <br> <div class="elementAca"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="text" class="form-control" placeholder="Titulo del proyecto" aria-label="Username" id="experienciaAcademica' +
+            '" class="sumaAca"> <div class="buttons"> </div> <br> <div class="elementAca"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">class</i> </span> </div> <input type="text" class="form-control" placeholder="Título del proyecto" aria-label="Username" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input type="text" class="form-control" placeholder="Materia" aria-label="Username" id="experienciaAcademica' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">class</i> </span> </div> <input type="text" class="form-control" placeholder="Materia" aria-label="Username" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <select type="text" class="form-control" aria-label="Username" id="experienciaAcademica' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">date_range</i> </span> </div> <select type="text" class="form-control" aria-label="Username" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
             '[]"><option value="Periodo 2015-1">Periodo 2015-1 </option> <option value="Periodo 2015-2">Periodo 2015-2 </option> <option value="Periodo 2016-1">Periodo 2016-1 </option> <option value="Periodo 2016-2">Periodo 2016-2 </option> <option value="Periodo 2017-1">Periodo 2017-1 </option> <option value="Periodo 2017-2">Periodo 2017-2 </option> <option value="Periodo 2018-1">Periodo 2018-1 </option> <option value="Periodo 2018-2">Periodo 2018-2 </option> <option value="Periodo 2019-1">Periodo 2019-1 </option> <option value="Periodo 2019-2">Periodo 2019-2 </option> <option value="Periodo 2020-1">Periodo 2020-1 </option> <option value="Periodo 2020-2">Periodo 2020-2 </option> </select> </div> </div> </div> <div class="form-group"> <textarea class="form-control" id="experienciaAcademica' +
             x + '[]" required name="experienciaAcademica' + x +
@@ -79,15 +79,15 @@ $(document).ready(function() {
         }
         y++;
         cambiar = document.getElementById("expLaborales");
-        cambiar.innerHTML = "<p>(" + y + ")Experiencias laborales</p>";
+        cambiar.innerHTML = "<p>(" + y + ")Experiencias Laborales</p>";
         $('#agregar2').append('<div id="row4' + y +
-            '" class="elementPro"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="experienciaProfesional' +
+            '" class="elementPro"> <div class="row no-gutters"> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">work</i> </span> </div> <input type="text" class="form-control" placeholder="Cargo" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">phone</i> </span> </div> <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="experienciaProfesional' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">account_balance</i> </span> </div> <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" id="experienciaProfesional' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de Inicio</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">date_range</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
-            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de finalizacion</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">assignment_ind</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" id="experienciaProfesional' +
+            '[]"> </div> </div> <div class="col-md-6 mb-3"> <h5>Fecha de Finalización</h5> <br> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text"> <i class="material-icons">date_range</i> </span> </div> <input type="date" class="form-control" placeholder="" aria-label="Username" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +
             '[]"> </div> </div> </div> <div class="form-group"> <textarea class="form-control" rows="5" style="resize: none;" placeholder="Describa el cargo" id="experienciaProfesional' +
             y + '[]" required name="experienciaProfesional' + y +

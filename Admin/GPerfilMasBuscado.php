@@ -24,7 +24,7 @@ include('menuAdmi.php');
         <div class="col-sm-12">
 				<div class="card card-default">
 					<div class="card-header justify-content-center">
-						<h2 class="text-center">Carrera más solicitada</h2>
+						<h2 class="text-center">Carrera Más Solicitada</h2>
 					</div>
 					<div class="card-body">
                     <div id="cargaPB"></div>
@@ -36,7 +36,7 @@ include('menuAdmi.php');
             <div class="col-sm-12">
 				<div class="card card-default">
 					<div class="card-header justify-content-center">
-						<h2 class="text-center">Facultad más solicitada</h2>
+						<h2 class="text-center">Facultad Más Solicitada</h2>
 					</div>
 					<div class="card-body">
                     <div id="cargaPB1"></div>

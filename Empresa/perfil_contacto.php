@@ -87,7 +87,7 @@ include('Header.php');
                                             </div>
 
                                             <div class="form-group mb-4">
-                                                <label for="userName">Correo empresarial</label>
+                                                <label for="userName">Correo Empresarial</label>
                                                 <input type="text" class="form-control" id="userName" value="<?php echo (($_SESSION['user']))  ?>" readonly></input>
 
                                                 <span class="d-block mt-1"></span>
@@ -97,7 +97,7 @@ include('Header.php');
                                             <div class="form-group mb-4">
                                                 <label for="telefono">Teléfono</label>
                                                 <input type="text" class="form-control" name="telefonoContacto" id="telefonoContacto" value="<?php echo ($contactoEmpresa->getTelefonoContacto())?>"
-                                                maxlength="15" pattern="(^[+]?[0-9]{7,15})" title="El Formato de telefono puede comenzar con + o solo numeros (max 15)">
+                                                maxlength="15" pattern="(^[+]?[0-9]{7,15})" title="El Formato de telefono puede comenzar con + o solo números (max 15)">
                                             </div>
 
                                             <div class="form-group mb-4">
@@ -106,24 +106,24 @@ include('Header.php');
                                             </div>
 
                                             <div class="form-group mb-4">
-                                                <label for="email">Correo contacto</label>
+                                                <label for="email">Correo Contacto</label>
                                                 <input type="email" class="form-control" name="correoContacto" id="correoContacto" value="<?php echo ($contactoEmpresa->getCorreoContacto()) ?>">
                                             </div>
 
                                             <div class="form-group mb-4">
-                                                <label for="conPassword1">Contraseña actual</label>
+                                                <label for="conPassword1">Contraseña Actual</label>
                                                 <input type="password" class="form-control" id="conPassword1" name="conPassword1" value="">
                                             </div>
 
 
                                             <div class="form-group mb-4">
-                                                <label for="newPassword">Contraseña nueva</label>
+                                                <label for="newPassword">Contraseña Nueva</label>
                                                 <input type="password" class="form-control" id="newPassword" name="newPassword" value=""
-                                                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="El formato de la contraseña debe ser contener al menos 1 mayúscula, 1 minúscula y 1 numero min 6 caracteres ">
+                                                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="El formato de la contraseña debe ser contener al menos 1 mayúscula, 1 minúscula y 1 número min 6 caracteres ">
                                             </div>
 
                                             <div class="form-group mb-4">
-                                                <label for="conPassword">Confirmar contraseña</label>
+                                                <label for="conPassword">Confirmar Contraseña</label>
                                                 <input type="password" class="form-control" id="conPassword" name="conPassword" value="">
                                             </div>
 

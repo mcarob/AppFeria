@@ -72,7 +72,7 @@ include('menuAdmi.php');
             </div>
 
                     <div class="card-header justify-content-center">
-                        <h2 class="text-center">Motivos más seleccionados</h2>
+                        <h2 class="text-center">Motivos Más Seleccionados</h2>
                     </div>
                     <div class="card-body">
                         <div id="motivosG"></div>

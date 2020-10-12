@@ -21,7 +21,7 @@ include('menuAdmi.php');
 			<div class="col-12">
 				<div class="card card-default">
 					<div class="card-header justify-content-center">
-						<h2 class="text-center">Inscripciones de estudiantes por mes</h2>
+						<h2 class="text-center">Inscripciones De Estudiantes Por Mes</h2>
 					</div>
 					<div class="card-body" style="height: 450px;">
 						<canvas id="linechart" class="chartjs"></canvas>

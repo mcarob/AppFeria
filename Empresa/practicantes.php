@@ -37,7 +37,7 @@ include('Header.php');
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Practicantes en la empresa</h1>
+            <h1>Practicantes en la Empresa</h1>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0">
@@ -65,7 +65,7 @@ include('Header.php');
                             <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Titulo promoción</th>
+                                        <th>Título Promoción</th>
                                         <th>Nombres</th>
                                         <th>Correo</th>
                                         <th>Cédula</th>

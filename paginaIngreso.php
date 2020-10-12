@@ -141,3 +141,9 @@ if(isset($_SESSION['user'])){
 
 ?>
 
+<html>
+<head>
+<title>Iniciar Sesión</title>
+</head>
+</html>
+

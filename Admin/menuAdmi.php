@@ -141,7 +141,7 @@
               <div class="sub-menu">
                 <li>
                   <a class="sidenav-item-link" href="GMotivos.php">
-                    <span class="nav-text">Mótivos más seleccionados</span>
+                    <span class="nav-text">Mótivos Más Seleccionados</span>
 
                   </a>
                 </li>
@@ -153,26 +153,26 @@
                 </li>
                 <li>
                   <a class="sidenav-item-link" href="GPracticantesXempresa.php">
-                    <span class="nav-text">Practicantes por Empresa</span>
+                    <span class="nav-text">Practicantes Por Empresa</span>
 
                   </a>
                 </li>
                 <li>
                   <a class="sidenav-item-link" href="GVacantesEstado.php">
-                    <span class="nav-text">Estado de las vacantes</span>
+                    <span class="nav-text">Estado De Las vacantes</span>
 
                   </a>
                 </li>
                 <li>
                   <a class="sidenav-item-link" href="GPerfilMasBuscado.php">
-                    <span class="nav-text">Perfil más buscado</span>
+                    <span class="nav-text">Perfil Más Buscado</span>
 
                   </a>
                 </li>
 
                 <li>
                   <a class="sidenav-item-link" href="GOfertasXCiudad.php">
-                    <span class="nav-text">Ofertas por ubicación</span>
+                    <span class="nav-text">Ofertas Por Ubicación</span>
 
                   </a>
                 </li>

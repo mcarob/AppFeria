@@ -75,7 +75,7 @@ function pasarformacion($var){
     }
     $base='   <div id="informacion3">
     <div id="contorno3">
-        Formacion academica
+        Formación Académica
     </div>
     <div id="datos3">
         <br>
@@ -116,7 +116,7 @@ foreach ($cantidad as $f){
 }
 $base='    <div id="informacion4">
 <div id="contorno4">
-    Educacion Complementaria
+    Educación Complementaria
 </div>
 <div id="datos4">
     <br>
@@ -157,7 +157,7 @@ function pasarExAcademica($var){
     }
     $base='    <div id="informacion5">
     <div id="contorno5">
-        Experiencia academica
+        Experiencia Académica
     </div>
     <div id="datos5">
         <br>
@@ -196,7 +196,7 @@ function pasarExLabora($var){
     }
     $base='    <div id="informacion6">
     <div id="contorno6">
-        Experiencia laboral
+        Experiencia Laboral
     </div>
     <div id="datos6">
         <br>

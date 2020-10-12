@@ -92,7 +92,7 @@
                             <div class="sub-menu">
                                 <li>
                                     <a class="sidenav-item-link" href="ListaPostulaciones.php">
-                                        <span class="nav-text">Mis postulaciones</span>
+                                        <span class="nav-text">Mis Postulaciones</span>
                                     </a>
                                 </li>
                                 <li>

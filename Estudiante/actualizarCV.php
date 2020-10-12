@@ -111,7 +111,7 @@ include('Header.php');
                                 </button>
                                 <button type="button" class="btn btn-warning "
                                     style="background-color: #0B7984; border-color: #0B7984;" onclick="mandarHoja()">
-                                    <font color="White">Ver en pdf</font>
+                                    <font color="White">Ver en PDF</font>
                                 </button>
 
                             </div>

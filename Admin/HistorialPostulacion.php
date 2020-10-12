@@ -59,10 +59,10 @@ include('menuAdmi.php')
                                 <thead>
                                     <tr>
                                         <th>Nombre Empresa</th>
-                                        <th>Nombre estudiante</th>
-                                        <th>Cédula estudiante</th>
+                                        <th>Nombre Estudiante</th>
+                                        <th>Cédula Estudiante</th>
                                         <th>Carrera</th>
-                                        <th>Titulo promoción</th>
+                                        <th>Título Promoción</th>
                                         <th>Estado</th>
                                         <th>Acción</th>
                                     </tr>
@@ -117,7 +117,7 @@ include('menuAdmi.php')
                 <div class="modal-body">
                     <form method="POST" id='formAgregarOf'>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Motivo de la decisión: </label>
+                            <label for="exampleInputEmail1">Motivo De La Decisión: </label>
                             <label  class="form-control" name="motivo" value="" id="motivoLista1"></label>
                         </div>
 
@@ -129,7 +129,7 @@ include('menuAdmi.php')
                     </form> 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerar</button>
+                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>

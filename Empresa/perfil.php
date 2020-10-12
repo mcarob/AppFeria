@@ -83,7 +83,7 @@ include('Header.php');
                                                         name="camaracomercioE" aria-describedby="inputGroupFileAddon01">
                                                     <label class="custom-file-label" for="camaracomercio"
                                                         name="camaracomercio" id="nombreccomercio">Subir
-                                                        Camara de Comercio</label>
+                                                        Cámara de Comercio</label>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 
@@ -122,14 +122,14 @@ include('Header.php');
                                                 readonly>
                                         </div>
                                         <div class="form-group mb-4">
-                                            <label for="userName">Nombre del contacto</label>
+                                            <label for="userName">Nombre del Contacto</label>
                                             <input type="text" class="form-control" name="contactoEmpresa"
                                                 id="contactoEmpresa" value="<?php echo($nombreContacto) ?>" readonly>
                                             <span class="d-block mt-1"></span>
                                         </div>
 
                                         <div class="form-group mb-4">
-                                            <label for="email">Telefono</label>
+                                            <label for="email">Teléfono</label>
                                             <input type="text" class="form-control" name="telefonEmpresa"
                                                 id="telefonEmpresa" maxlength="15" pattern="(^[+]?[0-9]{7,15})"
                                                 title="El Formato de telefono puede comenzar con + o solo numeros (max 15)"
@@ -138,7 +138,7 @@ include('Header.php');
 
 
                                         <div class="form-group mb-4">
-                                            <label for="conPassword1">Contraseña actual</label>
+                                            <label for="conPassword1">Contraseña Actual</label>
                                             <input type="password" class="form-control" id="conPassword1"
                                                 name="conPassword1" value="">
                                         </div>

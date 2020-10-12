@@ -98,7 +98,7 @@ include('Header.php');
                                         </div>
 
                                         <div class="form-group mb-4">
-                                            <label for="userName">Nombre de usuario</label>
+                                            <label for="userName">Nombre de Usuario</label>
 
                                             <input type="text" class="form-control" name="userName" id="userName"
                                                 value=<?php echo ('"'.($_SESSION['user']).'"')  ?> readonly></input>
@@ -115,21 +115,21 @@ include('Header.php');
                                         </div>
 
                                         <div class="form-group mb-4">
-                                            <label for="conPassword1">Contraseña actual</label>
+                                            <label for="conPassword1">Contraseña Actual</label>
                                             <input type="password" class="form-control" id="conPassword1"
                                                 name="conPassword1" value="">
                                         </div>
 
 
                                         <div class="form-group mb-4">
-                                            <label for="newPassword">Contraseña nueva</label>
+                                            <label for="newPassword">Contraseña Nueva</label>
                                             <input type="password" class="form-control" id="newPassword"
                                                 name="newPassword" value="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
                                                 title="El formato de la contraseña debe ser contener al menos 1 mayúscula, 1 minúscula y 1 numero min 6 caracteres ">
                                         </div>
 
                                         <div class="form-group mb-4">
-                                            <label for="conPassword">Confirmar contraseña</label>
+                                            <label for="conPassword">Confirmar Contraseña</label>
                                             <input type="password" class="form-control" id="conPassword"
                                                 name="conPassword" value="">
                                         </div>

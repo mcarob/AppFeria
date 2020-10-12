@@ -112,7 +112,7 @@ include('Header.php');
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Ofertas laborales</h1>
+            <h1>Ofertas Laborales</h1>
         </div>
         <div class="card card-default">
 

@@ -18,7 +18,7 @@
         </div>
         <input type="text" id="registroE" name="REM" value="REM" hidden>
         <input autocomplete="new-false" type="text" class="form-control" id="nombreE" name="nombreE"
-            placeholder="Nombre o Razon Social" aria-label="Nombre Empresa" maxlength="60" required>
+            placeholder="Nombre o Razón Social" aria-label="Nombre Empresa" maxlength="60" required>
     </div>
     <div class="row no-gutters">
         <div class="col-md-6 mb">
@@ -56,7 +56,7 @@
         <input autocomplete="false" type="text"
             pattern="^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(.[A-Za-z0-9]+)(.[A-Za-z]{2,})$"
             title="No Cumple con el Formato de Correo Electrónico" class="form-control" id="emailE" name="emailE"
-            required placeholder="Correo Electronico Empresa" maxlength="60" aria-label="Username">
+            required placeholder="Correo Electrónico Empresa" maxlength="60" aria-label="Username">
     </div>
 
     <div class="input-group mb-3">
@@ -67,12 +67,12 @@
             <input type="file" class="custom-file-input" id="camaracomercioE" name="camaracomercioE" required
                 aria-describedby="inputGroupFileAddon01">
             <label class="custom-file-label" for="camaracomercio" name="camaracomercio" id="nombreccomercio">Subir
-                Camara de Comercio</label>
+                Cámara de Comercio</label>
         </div>
     </div>
     <div class="form-group">
         <textarea class="form-control" id="exampleFormControlTextarea1" id="descE" name="descE" required rows="5"
-            style="resize: none;" maxlength="1200" placeholder="Descripcción Empresa (max 1200)"></textarea>
+            style="resize: none;" maxlength="1200" placeholder="Descripción Empresa (max 1200)"></textarea>
     </div>
 
 
@@ -126,7 +126,7 @@
                 </div>
                 <input autocomplete="false" type="text" class="form-control" id="telC" name="telC" required
                     placeholder="Teléfono " maxlength="15" pattern="(^[+]?[0-9]{7,15})"
-                    title="El Formato de telefono puede comenzar con + o solo numeros (max 15)" aria-label="Username">
+                    title="El Formato de teléfono puede comenzar con + o solo numeros (max 15)" aria-label="Username">
             </div>
         </div>
     </div>
@@ -137,7 +137,7 @@
             </span>
         </div>
         <input autocomplete="false" type="text" class="form-control" id="emailC" name="emailC" required
-            placeholder="Correo Electronico Contacto"
+            placeholder="Correo Electrónico Contacto"
             pattern="^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(.[A-Za-z0-9]+)(.[A-Za-z]{2,})$"
             title="No Cumple con el Formato de Correo Electrónico" maxlength="60" aria-label="Username">
     </div>
