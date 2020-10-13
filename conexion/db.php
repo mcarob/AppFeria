@@ -12,6 +12,7 @@ class DB{
         $this->db       = 'feria1_db';
         $this->user     = 'usuarioferiadb';
         $this->password = "3057900368";
+        #3058900368Aa
         $this->charset  = 'utf8mb4';
     }
 

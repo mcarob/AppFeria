@@ -22,8 +22,6 @@ $objeto = new ControladorPostulacion;
 $lista = $objeto->buscarPostulacionXempresa($empresa->getCodEmpresa());
 $cod_postulacion = 0;
 ?>
-
-
 <link href="../assets/plugins/nprogress/nprogress.css" rel="stylesheet" />
 <link href="../assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
 <link href="../assets/plugins/data-tables/datatables.bootstrap4.min.css" rel="stylesheet" />
@@ -251,10 +249,9 @@ include('menuEmpresa.php')
     ?>
      <script>
 
-
     function abrirPDF(cod) {
         var win = window.open('abrirHojaVida.php?idHoja='+cod, '_blank');
         win.focus();
-    
+
     }
     </script>
