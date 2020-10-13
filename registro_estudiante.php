@@ -118,7 +118,7 @@
                 <input autocomplete="off" type="password" class="form-control" placeholder="Contraseña"
                 required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
                     aria-label="Username" id="contraES" name="contraES"
-                    title="El formato de la contraseña debe ser contener al menos 1 mayúscula, 1 minúscula y 1 numero min 6 caracteres ">
+                    title="El formato de la contraseña debe ser contener al menos 1 mayúscula, 1 minúscula y 1 numero min 8 caracteres ">
             </div>
         </div>
         <div class="col-md-6 mb-3">

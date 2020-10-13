@@ -14,11 +14,13 @@ class enviarCorreo{
     public function enviarMensaje($nombre,$para,$asunto,$mensaje){
         try {
             $mail = new PHPMailer(true);
-            $mail->isSMTP();
+            #$mail->isSMTP();
+            $mail->SMTPDebug = 2;
+            $mail->Debugoutput = 'html';
             $mail->Host='smtp.gmail.com';
             $mail->Port=587;
             $mail->SMTPAuth=true;
-            // $mail->SMTPD=2;
+             //$mail->SMTPD=2;
             $mail->SMTPOptions = array(
                 'ssl' => array(
                     'verify_peer' => false,
@@ -26,14 +28,14 @@ class enviarCorreo{
                     'allow_self_signed' => true
                 )
             );
-            $mail->Username='proyectoferia20202@gmail.com';
-            $mail->Password='feria1234';
+            $mail->Username='oportunidadeslaborales.ingenieria@unbosque.edu.co';
+            $mail->Password='Octubre2020';
             $mail->CharSet = 'UTF-8';
             $ruta=$_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/assets/img/logo1.png';
             $ruta2=$_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/assets/img/Calidad.PNG';
-            $mail->setFrom('proyectoferia20202@gmail.com','Feria Laboral Universidad El Bosque');
+            $mail->setFrom('oportunidadeslaborales.ingenieria@unbosque.edu.co','Feria Laboral Universidad El Bosque');
             $mail->addAddress($para);
-            $mail->subject="FERIA DE OPORTUNIDADES UEB";
+            $mail->subject=$asunto;
             $mail->isHTML(true);
             $mail->AddEmbeddedImage($ruta, 'my-photo', 'logo.png'); 
             $mail->AddEmbeddedImage($ruta2, 'my-photo-1', 'Calidad.PNG'); 

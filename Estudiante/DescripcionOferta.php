@@ -27,9 +27,14 @@ $postulacionesActivas=$estudiante_dao->desactivarPostulacion($estudiante->getCod
 
 $conEstudiante=new ControladorEstudiantes();
 $formalizado=0;
-if(count($conEstudiante->verFormalizado($estudiante->getCodEstudiante()))>=1)
-{
-    $formalizado=1;
+$respuesta1=$conEstudiante->verFormalizado($estudiante->getCodEstudiante());
+if($respuesta1!=null){
+    if(count($conEstudiante->verFormalizado($estudiante->getCodEstudiante()))>=1)
+    {
+        $formalizado=1;
+    }
+}else{
+    $formalizado=0;
 }
 
 include('menuEstudiante.php');
