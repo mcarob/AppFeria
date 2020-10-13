@@ -58,7 +58,7 @@ $controladorPromocion=new ControladorPostulacion();
 $ciudad=$controladorPromocion->darNombreCiudad($informacion[12]);
 
 ?>
-
+<script src="../assets/plugins/toastr/toastr.min.js"></script>
 
 
 <div class="content-wrapper">
@@ -201,12 +201,12 @@ $ciudad=$controladorPromocion->darNombreCiudad($informacion[12]);
                                         <?php 
                                         if($permitir>=1)
                                         {
-                                            echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" disabled>Postularse</button>';
+                                            echo  '<button id="boton56" type="submit" class="btn btn-primary mb-2 btn-pill" disabled>Postularse</button>';
                                         }else{
                                             if($total>=5 or $formalizado==1){      
-                                               echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" disabled>Postularse</button>';
+                                               echo  '<button  id="boton56" type="submit" class="btn btn-primary mb-2 btn-pill" disabled>Postularse</button>';
                                                }else{      
-                                               echo  '<button type="submit" class="btn btn-primary mb-2 btn-pill" >Postularse</button>';
+                                               echo  '<button id="boton56" type="submit" class="btn btn-primary mb-2 btn-pill" >Postularse</button>';
                                                }
                                             
                                          }       
@@ -228,24 +228,30 @@ $ciudad=$controladorPromocion->darNombreCiudad($informacion[12]);
 
 
     <script>
+    var entrada=0;
         function agregarPostulacion() {
-            datos = $('#postulados').serialize();
-
-            $.ajax({
-                type: "POST",
-                data: datos,
-                url: "agregar_postulacion.php",
-                success: function(r) {
-
-                    console.log(r);
-                    if (r == 1) {
-                        window.location.href = "postulaciones.php";
-
-                    } else {
-
+            document.getElementById("boton56").disabled = true;
+            if(entrada==0){
+                entrada=1;
+                document.getElementById("boton56").disabled = true;
+                datos = $('#postulados').serialize();
+                $.ajax({
+                    type: "POST",
+                    data: datos,
+                    url: "agregar_postulacion.php",
+                    success: function(r) {
+                        console.log(r);
+                        if (r == 1) {
+                            window.location.href = "postulaciones.php";
+                        } else {
+                            toastr["warning"]("No se puede registrarse a esta promoción");
+                        }
                     }
-                }
-            });
+                });
+
+            }else{
+                toastr["warning"]("No se puede registrarse a esta promoción");
+            }   
         }
     </script>
 

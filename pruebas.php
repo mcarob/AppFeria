@@ -1,15 +1,16 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/ProyectoFeria/AppFeria/conexion/db.php');
 
-print("este");
-print($_SERVER['DOCUMENT_ROOT']);
 try {
     $claseCon = new DB();
     $con = $claseCon->connect();
-    $sentencia = $con->prepare("select * from usuario");
-    $respuesta = $sentencia->execute();
+    $sentencia = $con->prepare("select * from promocion_postulacion where COD_ESTUDIANTE=? and COD_PROMOCION_LABORAL=?");
+    $respuesta = $sentencia->execute([5,2]);
+    $entro=false;
     print_r($respuesta);
-    print_r($sentencia->fetchall());
+    print("rrr");
+    $aa=count($sentencia->fetchall());
+    print_r($aa);
     if ($respuesta == 1) {
         echo ("todo salio muy bien");
     }

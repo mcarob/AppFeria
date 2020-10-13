@@ -139,11 +139,11 @@ if (isset($_GET["action"])) {
 
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="lastName">Rango compensacion
+                                                    <label for="lastName">Rango compensación
                                                     </label>
                                                     <!-- <input type="text" class="form-control" id="rango" name="rango" value="<?php echo ($informacion->getPromocionRangoCompensacion()) ?>"> -->
                                                     <select name="rango" id="rango" class="form-control">
-                                                        <option value="">Seleccione una opcion</option>
+                                                        <option value="">Seleccione una opción</option>
                                                         <?php if (strpos($informacion->getPromocionRangoCompensacion(), 'Sin remuneracion') !== false) {
                                                             echo '<option value="Sin remuneracion" selected="true" >Sin remuneracion</option>';
                                                             echo '<option value="1 Salario mínimo" >1 Salario mínimo</option>';

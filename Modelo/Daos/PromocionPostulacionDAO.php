@@ -28,15 +28,24 @@ class PromocionPostulacionDAO
     
    
     public function agregarPost(PromocionPostulacion $oferta){
-        $sql="insert into promocion_postulacion (COD_PROMOCION_LABORAL, COD_ESTUDIANTE, COD_ESTADO_PROCESO,
-        COD_HOJA_VIDA,fecha_postulacion,motivo_resultado, COD_MOTIVO_RECHAZO)
-        values 
-        (?,?,?,?,now(),?,9)";
-        $respuesta=$this->con->prepare($sql)->execute([$oferta->getCodPromo(),$oferta->getCodEstudiante(),$oferta->getCodEstadoProceso(),
-        $oferta->getHojaVida(),$oferta->getMotivo()]);
-        
-        return $respuesta;
-        
+        $sql1="select * from promocion_postulacion where COD_ESTUDIANTE=? and COD_PROMOCION_LABORAL=?";
+        $r1=$this->con->prepare($sql1);
+        $r1->execute([$oferta->getCodEstudiante(),$oferta->getCodPromo()]);
+        $entro=false;
+        if(count($r1->fetchall())){  
+            $entro=true;
+            return 0;
+        }
+        if(!$entro){
+            $sql="insert into promocion_postulacion (COD_PROMOCION_LABORAL, COD_ESTUDIANTE, COD_ESTADO_PROCESO,
+            COD_HOJA_VIDA,fecha_postulacion,motivo_resultado, COD_MOTIVO_RECHAZO)
+            values 
+            (?,?,?,?,now(),?,9)";
+            $respuesta=$this->con->prepare($sql)->execute([$oferta->getCodPromo(),$oferta->getCodEstudiante(),$oferta->getCodEstadoProceso(),
+            $oferta->getHojaVida(),$oferta->getMotivo()]); 
+            return $respuesta;  
+        }
+
     }
 
 

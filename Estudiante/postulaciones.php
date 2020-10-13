@@ -46,23 +46,24 @@ if(isset($_GET["action"])){
     // entra cuando esta buscando por empresa
     if($palabrasb && $ciudadb){
         //si esta buscnado ciudad y palabras claves 
-        $pase = '&search=' . $_GET["search"].'&city=' . $_GET["city"];
+        $pase = '&search=' . $_GET["search"].'&city=' . $_GET["city"].'$action='.$_GET["action"];
         $listaPromociones=$conPromocion->ofertasFiltroCiudadPalabraConEmpresaEstudiante($_GET["action"],($pagina-1)*8,8,$_GET["search"],$_GET["city"]);
         $total=$conPromocion->cantidadofertasFiltroCiudadPalabraConEmpresaEstudiante($_GET["action"],$_GET["search"],$_GET["city"]);
     }elseif($ciudadb){
         // si esta buscando solo ciudad 
-        $pase = '&city=' . $_GET["city"];
+        $pase = '&city=' . $_GET["city"].'$action='.$_GET["action"];
         $listaPromociones=$conPromocion->ofertasFiltroCiudadConEmpresaEstudiante($_GET["action"],($pagina-1)*8,8,$_GET["city"]);
         $total=$conPromocion->cantidadofertasFiltroCiudadConEmpresaEstudiante($_GET["action"],$_GET["city"]);
 
     }elseif($palabrasb){
         // si esta buscando solo palabras claves 
-        $pase = '&search=' . $_GET["search"];
+        $pase = '&search=' . $_GET["search"].'$action='.$_GET["action"];
         $listaPromociones=$conPromocion->ofertasFiltroPalabraConEmpresaEstudiante($_GET["action"],($pagina-1)*8,8,$_GET["search"]);
         $total=$conPromocion->cantidadofertasFiltroPalabraConEmpresaEstudiante($_GET["action"],$_GET["search"]);
 
     }else{
         // si tiene solo pagina 
+        $pase = '&action='.$_GET["action"];
         $listaPromociones=$conPromocion->ofertasConFiltroEstudiante($_GET["action"],($pagina-1)*8,8);
         $total=$conPromocion->cantidadofertasConFiltro($_GET["action"]);
     }
@@ -87,7 +88,7 @@ if(isset($_GET["action"])){
         $total=$conPromocion->cantidadofertasFiltroPalabraSinEmpresaEstudiante($_GET["search"]);
 
     }else{
-        // si tiene solo pagina 
+        
         $listaPromociones=$conPromocion->ofertassinFiltroEstudiante(($pagina-1)*8,8);
         $total=$conPromocion->cantidadofertasSinFiltro();
     }
@@ -171,11 +172,10 @@ include('Header.php');
 
                 }
                 ?>
-                <div class="row">
+ 
                     <?php
-            foreach ($listaPromociones as $fila) {
-
-            ?>
+                        foreach ($listaPromociones as $fila) {
+                    ?>
                     <div class="col-lg-3 col-md-4 col-sm-6  py-3 d-flex align-items-stretch">
                         <div class="card">
                             <div class="card-header">
@@ -207,7 +207,6 @@ include('Header.php');
                     <?php
             }
             ?>
-                </div>
             </div>
             <div class="card-footer text" style="background-color: white;" >
                 <nav aria-label="Page navigation example">
