@@ -19,7 +19,7 @@ $listaComple=$controladorListas->darListaCompelemtaria();
 
 <br>
 <div class="form-group">
-    <textarea class="form-control" id="perfil" name="perfil" rows="5" style="resize: none;"
+    <textarea class="form-control" id="perfil" name="perfil" rows="5" style="resize: none;" required
         placeholder="Descripcción del perfil (max 1200)"><?php echo($datosPersonales->getPerfil()) ?></textarea>
 </div>
 

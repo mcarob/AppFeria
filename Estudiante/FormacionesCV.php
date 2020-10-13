@@ -11,7 +11,7 @@
 
 <br>
 <div class="form-group">
-    <textarea class="form-control" id="perfil" name="perfil" rows="5" style="resize: none;"
+    <textarea class="form-control" id="perfil" name="perfil" rows="5" style="resize: none;" required
         placeholder="Descripción del perfil (max 1200)" ></textarea>
 </div>
 

@@ -128,8 +128,6 @@ include('Header.php');
                 if (r == 1) {
                     toastr["success"]('Guardando hoja de vida...', "NOTIFICACIÓN");
                     window.location.href = "actualizarCV.php";
-                } else if (r == 3) {
-                    toastr["success"](r, "ERROR");
                 } else {
 
                     toastr["success"](r, "ALERTA");

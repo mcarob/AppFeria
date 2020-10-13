@@ -35,10 +35,12 @@ $datosPersonales=array(
 $controladorHoja=new ControladorHojaDeVida();
 $hoja=new HojaDeVida(0,$datosPersonales[0],$datosPersonales[1],$datosPersonales[2],$datosPersonales[3],$datosPersonales[4]);
 
-echo($codigoHoja=$controladorHoja->agregarHojaDeVida($hoja));
+$codigoHoja=$controladorHoja->agregarHojaDeVida($hoja);
 
-
-
+if($codigoHoja!=null)
+{
+    echo (1);
+}
 
 
 $controladorReferencia=new ControladorReferenica();

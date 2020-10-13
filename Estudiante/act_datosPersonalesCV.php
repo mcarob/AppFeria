@@ -83,9 +83,9 @@ $ciudadEd = $ciudadesCon->darciudadxnom(($datosPersonales->getHojaCiudad()));
                     <i class="material-icons">home</i>
                 </span>
             </div>
-            <select name="ciudad" id="ciudad" class="form-control">
+            <select name="ciudad" id="ciudad" class="form-control" required>
             <option> <?php echo $ciudadEd[1] ?> </option>
-            <option>Seleccione una Ciudad</option>
+            <option></option>
             </select>
         </div>
     </div>

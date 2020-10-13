@@ -80,8 +80,8 @@ $departamentos=$ciudadesCon->darTodosDepartamentos();
                     <i class="material-icons">home</i>
                 </span>
             </div>
-            <select name="ciudad" id="ciudad" class="form-control">
-                <option>Seleccione una Ciudad</option>
+            <select name="ciudad" id="ciudad" class="form-control" required>
+                <option></option>
             </select>
         </div>
     </div>
