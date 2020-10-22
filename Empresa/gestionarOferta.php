@@ -6,14 +6,13 @@ $cPromocionLab = new ControladorPromocion();
 
 if (isset($_GET['action'])) {
 
-    echo($_GET['action']);
     switch ($_GET['action']) {
         case 'cambiar':
            $r=$cPromocionLab->cambiarEstadoVacante($_GET['codigo']);
             if($r){
                 header("location:Ofertas.php");
            }else{
-            echo ($r);
+            header("location:Ofertas.php");
            }
         break;
               
@@ -22,7 +21,7 @@ if (isset($_GET['action'])) {
              if($r){
                  header("location:Ofertas.php");
             }else{
-             echo ($r);
+                header("location:Ofertas.php");
             }
          break;
     }
