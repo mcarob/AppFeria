@@ -94,7 +94,7 @@ $fecha_actual = date("Y-m-d")
 
                                             <textarea maxlength="100" type="text"
                                                 placeholder="Describa el perfil buscado (Max. 100 caracteres)"
-                                                class="form-control" id="perfil" value="" name="perfil"></textarea>
+                                                class="form-control" id="perfil" value="" name="perfil" required maxlength="100"></textarea>
                                             <span class="d-block mt-1"></span>
                                         </div>
                                         <div class="row mb-2">
@@ -103,7 +103,7 @@ $fecha_actual = date("Y-m-d")
                                                     <label for="firstName">Perfil Estudiante</label>
                                                     <select class="form-control"id="perfilest"
                                                         name="perfilest"
-                                                        onchange="getCity(this.value);">
+                                                        onchange="getCity(this.value);" required>
                                                         <option value="6">Indiferente Al Perfil</option>
                                                         <?php
                                                         foreach ($listaCarreras as $carre) {
@@ -131,14 +131,14 @@ $fecha_actual = date("Y-m-d")
                                                     <label for="lastName">Fecha de Inicio
                                                     </label>
                                                     <input type="date" class="form-control" id="fechaInicio"
-                                                        name="fechaInicio" value="">
+                                                        name="fechaInicio" value="" required> 
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="firstName">Cargo</label>
                                                     <input type="text" class="form-control" id="cargo"
-                                                        name="cargo" value="">
+                                                        name="cargo" value="" required  maxlength="20">
                                                 </div>
                                             </div>
                                             <input type="hidden" id="remuneracion" name="remuneracion" value="">
@@ -177,8 +177,8 @@ $fecha_actual = date("Y-m-d")
                                                     </label>
                                                     <textarea type="" class="form-control"
                                                         placeholder="Describa los beneficios que tendran sus practicantes"
-                                                        id="beneficioExtra" name="beneficioExtra"
-                                                        
+                                                        id="beneficioExtra" name="beneficioExtra" required maxlength="20"
+                                                    
                                                         value=""></textarea>
                                                     <br>
 
@@ -189,7 +189,7 @@ $fecha_actual = date("Y-m-d")
                                 </div>
                                 <div class="form-group mb-4">
                                     <label for="des">Rango Remuneración</label>
-                                    <select name="ranRemuneracion" id="ranRemuneracion" class="form-control">
+                                    <select name="ranRemuneracion" id="ranRemuneracion" class="form-control" required>
                                         <option value="Sin remuneracion">Sin Remuneración</option>
                                         <option value="0 - 1 Salarios mínimos">1 Salario Mínimos</option>
                                         <option value="1 - 2 Salarios mínimos">1 - 2 Salarios Mínimos</option>
@@ -200,14 +200,14 @@ $fecha_actual = date("Y-m-d")
                                 <div class="form-group mb-4">
                                     <label for="des">Numero de Vacantes</label>
                                     <input type="number" class="form-control" id="numVacantes" name="numVacantes"
-                                        min="1" pattern="^[0-9]+" value=""></input>
+                                        min="1" pattern="^[0-9]+" value="" required></input>
                                 </div>
 
 
 
                                 <div class="form-group mb-4">
                                     <label for="des">Título de la Oferta</label>
-                                    <input type="text" class="form-control" id="titulo" name="titulo" value=""></input>
+                                    <input type="text" class="form-control" id="titulo" name="titulo" value="" required maxlength="15"></input>
                                 </div>
 
 
@@ -292,7 +292,7 @@ $fecha_actual = date("Y-m-d")
 
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect1">Seleccione la Jornada</label>
-                                    <select class="form-control" id="hora" name="hora">
+                                    <select class="form-control" id="hora" name="hora" required>
                                         <option value="6:00 am - 3:00 pm">6:00 am - 3:00 pm</option>
                                         <option value="7:00 am - 4:00 pm">7:00 am - 4:00 pm</option>
                                         <option value="8:00 am - 5:00 pm">8:00 am - 5:00 pm</option>
@@ -307,8 +307,8 @@ $fecha_actual = date("Y-m-d")
                                     <label for="des">Descripción</label>
                                     <textarea type="" class="form-control"
                                         placeholder="Describa la oferta (Max. 1200 caracteres)" id="descripcion"
-                                        name="descripcion" value=""></textarea>
-                                    <input maxlength="1200" type="hidden" class="form-control" id="codEmpresa"
+                                        name="descripcion" value="" required maxlength="1200"></textarea>
+                                    <input  type="hidden" class="form-control" id="codEmpresa"
                                         name="codEmpresa" value=<?php echo ($empresa->getCodEmpresa()) ?>>
                                 </div>
 
