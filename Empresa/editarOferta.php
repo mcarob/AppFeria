@@ -87,7 +87,7 @@ if (isset($_GET["action"])) {
                                                     <div class="form-group">
                                                         <input type="hidden" class="form-control" name="codigo" id="codigo" value="<?php echo ($informacion->getCodPromocion()) ?>">
                                                         <label for="firstName"> Ubicación (Departamento)</label>
-                                                        <select class="form-control" name="departamento" id="depa-lista" onchange="getCity(this.value);">
+                                                        <select class="form-control" name="departamento" id="depa-lista" onchange="getCity(this.value);" required>
                                                         <option value="">Seleccione un Departamento</option>
                                                         <option value="<?php echo $deparxCiudad[0]?>" selected><?php echo $deparxCiudad[1]?></option>
                                                         <?php
@@ -104,7 +104,7 @@ if (isset($_GET["action"])) {
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="firstName"> Ubicación (Ciudad)</label>
-                                                    <select name="ciudad" id="ciudad" class="form-control">
+                                                    <select name="ciudad" id="ciudad" class="form-control" required>
                                                         <option> <?php echo $ciudadEd[1] ?> </option>
                                                         <option>Seleccione una Ciudad</option>
                                                     </select>
@@ -123,7 +123,7 @@ if (isset($_GET["action"])) {
                                                 <div class="form-group">
                                                     <label for="lastName">Fecha de inicio
                                                     </label>
-                                                    <input type="date" class="form-control" id="inicio" name="inicio" value="<?php echo ($informacion->getPromocionInicio()) ?>">
+                                                    <input type="date" class="form-control" id="inicio" name="inicio" value="<?php echo ($informacion->getPromocionInicio()) ?> " required>
                                                 </div>
                                             </div>
 
@@ -131,8 +131,9 @@ if (isset($_GET["action"])) {
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="firstName">Cargo</label>
-                                                    <input type="text" class="form-control" id="cargo" name="cargo" value="<?php echo ($informacion->getPromocionCargoFuncion()) ?>"></input>
-                                                    <input type="hidden" class="form-control" name="estado" id="estado" value="<?php echo ($informacion->getPromocionEstado()) ?>">
+                                                    <input type="text" class="form-control" id="cargo" name="cargo" value="<?php echo ($informacion->getPromocionCargoFuncion()) ?>"
+                                                    required  maxlength="20"></input>
+                                                    <input type="hidden" class="form-control" name="estado" id="estado" value="<?php echo ($informacion->getPromocionEstado()) ?>" >
                                                 </div>
                                             </div>
 
@@ -186,7 +187,7 @@ if (isset($_GET["action"])) {
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="descripcion">Limite vacantes</label>
-                                                    <input type="number" class="form-control" id="vacantes" name="vacantes" value="<?php echo ($informacion->getLimiteVacantes()) ?>" />
+                                                    <input type="number" class="form-control" id="vacantes" name="vacantes" value="<?php echo ($informacion->getLimiteVacantes()) ?> "required min="1"/>
                                                 </div>
                                             </div>
 
@@ -197,13 +198,13 @@ if (isset($_GET["action"])) {
 
                                         <div class="form-group mb-4">
                                             <label for="userName">Titulo</label>
-                                            <input type="text" class="form-control" name="titulo" id="titulo" value="<?php echo ($informacion->getTituloPromocion()) ?>">
+                                            <input type="text" class="form-control" name="titulo" id="titulo" value="<?php echo ($informacion->getTituloPromocion()) ?>" required  maxlength="30">
                                             <span class="d-block mt-1"></span>
                                         </div>
 
                                         <div class="form-group mb-4">
-                                            <label for="userName">Perfil</label>
-                                            <textarea type="text" class="form-control" name="perfil" id="perfil" rows="5"><?php echo ($informacion->getPromocionPerfil()) ?></textarea>
+                                            <label for="userName">Perfil Buscado</label>
+                                            <textarea type="text" class="form-control" name="perfil" id="perfil" rows="5" required  maxlength="100" ><?php echo ($informacion->getPromocionPerfil()) ?></textarea>
                                             <span class="d-block mt-1"></span>
                                         </div>
 
@@ -355,14 +356,14 @@ if (isset($_GET["action"])) {
 
                                         <div class="form-group mb-4">
                                             <label for="descripcion">Beneficios</label>
-                                            <input type="text" class="form-control" id="beneficios" name="beneficios" value="<?php echo ($informacion->getPromocionBeneficios()) ?>" />
+                                            <input type="text" class="form-control" id="beneficios" name="beneficios" value="<?php echo ($informacion->getPromocionBeneficios()) ?>" required  maxlength="30" />
                                         </div>
 
 
 
                                         <div class="form-group mb-4">
                                             <label for="descripcion">Descripción</label>
-                                            <textArea type="text" class="form-control" id="descripcion" rows="5" name="descripcion"><?php echo ($informacion->getPromocionDescripcion()) ?></textArea>
+                                            <textArea type="text" class="form-control" id="descripcion" rows="5" name="descripcion" required  maxlength="1200"><?php echo ($informacion->getPromocionDescripcion()) ?></textArea>
                                         </div>
 
                                         <div class="d-flex justify-content-end mt-5">
