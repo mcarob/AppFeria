@@ -149,7 +149,7 @@ $fecha_actual = date("Y-m-d")
                                                 <div class="form-group">
                                                     <label for="firstName"> Ubicación (Departamento)</label>
                                                     <select class="form-control" name="departamento" id="depa-lista"
-                                                        onchange="getCity(this.value);">
+                                                        onchange="getCity(this.value);" required>
                                                         <option value="">Seleccione un Departamento</option>
                                                         <?php
                                                         foreach ($departamentos as $depar) {
@@ -165,7 +165,7 @@ $fecha_actual = date("Y-m-d")
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="firstName"> Ubicación (Ciudad)</label>
-                                                    <select name="ciudad" id="ciudad" class="form-control">
+                                                    <select name="ciudad" id="ciudad" class="form-control" required>
                                                         <option>Seleccione una Ciudad</option>
                                                     </select>
                                                 </div>
