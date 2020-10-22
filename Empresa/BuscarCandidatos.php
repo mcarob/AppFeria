@@ -270,7 +270,7 @@ include('menuEmpresa.php');
         variableCod = valor;
     }
     function cargarHoja(cod){
-        var win = window.open('abrirHV.php?idHoja='+cod, '_blank');
+        var win = window.open('AbrirHV.php?idHoja='+cod, '_blank');
         win.focus();
     }
 
