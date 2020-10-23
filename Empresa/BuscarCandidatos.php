@@ -68,9 +68,13 @@ include('menuEmpresa.php');
 
         <div class="row">
             <div class="col-12">
+            <button type="button" class="btn mb-1 btn-success btn-pill" data-container="body" data-toggle="popover"
+        data-placement="right"
+        data-content="En la opcion 'search' podra buscar palabras que esten contenidas en la hoja de vida de algun estudiante, 
+        por ejemplo, al colocar 'JAVA' se filtrara los estudiantes que dentro de su hoja de vida hagan uso de esta palabra.">?</button>
+                </br></br>
                 <div class="card card-default">
-
-
+    
                     <div class="card-body">
                         <div class="responsive-data-table">
                             <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
