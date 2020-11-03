@@ -26,7 +26,7 @@ class EstudianteDAO
 
     // Lista de estudiantes con el usuario activo
     public function vistaEstudiantes(){
-        $sentencia = $this->con->prepare("SELECT * FROM vistaestudiantes where estado_usuario=1");
+        $sentencia = $this->con->prepare("SELECT * FROM vistaestudiantes WHERE  COD_ESTUDIANTE not in (select COD_ESTUDIANTE from legalizacion) and  estado_usuario=1");
         $sentencia->execute();
         $em = array();
          while ($fila = $sentencia->fetch()) {

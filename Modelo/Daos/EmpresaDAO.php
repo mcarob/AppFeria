@@ -57,8 +57,8 @@ class EmpresaDAO extends DB
     $classEnviar= new enviarCorreo();
     $codigo=intval(rand(0,9).rand(0,9).rand(0,9).rand(0,9));
     $mensaje='Muchas gracias por registrarse en la aplicación de "Feria de Oportunidades Universidad El Bosque", para continuar con el proceso de inscripción, por favor ingrese a la aplicación con su correo electrónico, 
-    la contraseña será el nit de la empresa, para su primer ingreso, deberá ingresar el codigo de verificacion que esta a continuación :  '.$codigo. " podrás acceder a toda la funciones 
-    hasta que la Universidad El Bosque, confirme su registro. 
+    la contraseña será el nit de la empresa, para su primer ingreso, deberá ingresar el codigo de verificacion que esta a continuación :  '.$codigo. " ,podrás acceder a todas la funciones 
+    hasta que la Universidad El Bosque confirme su registro. 
      Muchas Gracias";
     $md5Codigo=md5($codigo);
     $sentencia = $this->con->prepare("CALL agregar_Empresa(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
